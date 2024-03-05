@@ -12,7 +12,7 @@ pip install contactsoftware-functions
 A minimal Function implementation consists of three files:
 
 - `environment.yaml` describes the environment and the Functions contained in it
-- `requirements.txt` contains the dependencies of you Functions (usually only contactsoftware-functions)
+- `requirements.txt` contains the dependencies of your Functions (usually only contactsoftware-functions)
 - `mymodule.py` a Python file containing the code of your Functions (feel free to pick a different name)
 
 Here is the complete structure:
