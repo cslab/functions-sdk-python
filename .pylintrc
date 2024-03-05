@@ -1,0 +1,19 @@
+[MASTER]
+persistent=no
+extension-pkg-whitelist=pydantic
+
+[FORMAT]
+good-names = i, j, k, ex, Run, _, pk, x, y, e, db, f, dt, id
+
+[MESSAGES CONTROL]
+
+disable=missing-module-docstring,
+        line-too-long,
+        missing-function-docstring,
+        missing-class-docstring,
+        no-else-return,
+        duplicate-code,
+        import-error,
+        too-few-public-methods,
+        too-many-arguments,
+        no-name-in-module

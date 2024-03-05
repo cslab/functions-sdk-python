@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "response_type": {
+      "const": "data",
+      "title": "Response Type"
+    },
+    "event_id": {
+      "description": "",
+      "title": "Event Id",
+      "type": "string"
+    },
+    "data": {
+      "description": "Data that should be returned.",
+      "title": "Data",
+      "type": "object"
+    }
+  },
+  "required": [
+    "response_type",
+    "event_id",
+    "data"
+  ],
+  "title": "DataResponse",
+  "type": "object"
+}

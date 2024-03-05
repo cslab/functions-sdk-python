@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "contactsoftware-functions"
+version = "0.6.0"
+readme = "README.md"
+
+license = "MIT"
+authors = [
+    "Julian Alberts <jal@contact.de>",
+    "Jens Kürten <jku@contact.de>"
+]
+description = "Library for creating Functions for CIM Database Cloud."
+
+packages = [
+    { include = "csfunctions"}
+   ]
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+PyYAML = "^6.0"
+click = "^8.0.4"
+requests = "^2.27.1"
+urllib3 = "1.26.18"
+rich = "^12.0.1"
+pydantic = ">=2.3"
+appdirs = "^1.4.4"
+requests-mock = "^1.9.0"
+
+[tool.poetry.group.test.dependencies]
+requests-mock = "^1.11.0"
+pytest = "^7.4.0"
+
+[tool.black]
+line-length = 120

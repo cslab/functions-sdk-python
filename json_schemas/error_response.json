@@ -1,0 +1,37 @@
+{
+  "properties": {
+    "response_type": {
+      "const": "error",
+      "title": "Response Type"
+    },
+    "event_id": {
+      "description": "",
+      "title": "Event Id",
+      "type": "string"
+    },
+    "message": {
+      "description": "error message",
+      "title": "Message",
+      "type": "string"
+    },
+    "error_type": {
+      "description": "type of error (e.g. ValueError)",
+      "title": "Error Type",
+      "type": "string"
+    },
+    "trace": {
+      "description": "trace to the error",
+      "title": "Trace",
+      "type": "string"
+    }
+  },
+  "required": [
+    "response_type",
+    "event_id",
+    "message",
+    "error_type",
+    "trace"
+  ],
+  "title": "ErrorResponse",
+  "type": "object"
+}

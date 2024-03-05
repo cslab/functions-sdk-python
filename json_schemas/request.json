@@ -1,0 +1,2573 @@
+{
+  "$defs": {
+    "Briefcase": {
+      "description": "Briefcases are used by Workflows and can contain parts, documents or engineering changes.",
+      "properties": {
+        "object_type": {
+          "const": "briefcase",
+          "default": "briefcase",
+          "title": "Object Type"
+        },
+        "cdb_object_id": {
+          "description": "Briefcase ID",
+          "title": "Cdb Object Id",
+          "type": "string"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Briefcase Name",
+          "title": "Name"
+        },
+        "part_ids": {
+          "default": [],
+          "description": "List of part IDs in this Briefcase. (teilenummer@t_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Part Ids",
+          "type": "array"
+        },
+        "document_ids": {
+          "default": [],
+          "description": "List of document IDs in this Briefcase. (z_nummer@z_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Document Ids",
+          "type": "array"
+        },
+        "engineering_change_ids": {
+          "default": [],
+          "description": "List of engineering change IDs in this Briefcase. (cdb_ec_id)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Engineering Change Ids",
+          "type": "array"
+        },
+        "parts": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "documents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "engineering_changes": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EngineeringChange"
+          },
+          "title": "Engineering Changes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cdb_object_id"
+      ],
+      "title": "Briefcase",
+      "type": "object"
+    },
+    "Document": {
+      "description": "Normal Document that doesn't contain a CAD-Model.",
+      "properties": {
+        "object_type": {
+          "const": "document",
+          "default": "document",
+          "title": "Object Type"
+        },
+        "z_nummer": {
+          "description": "document number",
+          "title": "Z Nummer",
+          "type": "string"
+        },
+        "z_index": {
+          "description": "index",
+          "title": "Z Index",
+          "type": "string"
+        },
+        "titel": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "title",
+          "title": "Titel"
+        },
+        "category1_name_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Main Category",
+          "title": "Category1 Name En"
+        },
+        "category1_name_de": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Main Category",
+          "title": "Category1 Name De"
+        },
+        "category2_name_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Category",
+          "title": "Category2 Name En"
+        },
+        "category2_name_de": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Category",
+          "title": "Category2 Name De"
+        },
+        "z_categ1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Main Category",
+          "title": "Z Categ1"
+        },
+        "z_categ2": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Category",
+          "title": "Z Categ2"
+        },
+        "cdb_obsolete": {
+          "description": "Obsolete",
+          "title": "Cdb Obsolete",
+          "type": "integer"
+        },
+        "z_status": {
+          "description": "Status Number",
+          "title": "Z Status",
+          "type": "integer"
+        },
+        "z_status_txt": {
+          "description": "Status Text",
+          "title": "Z Status Txt",
+          "type": "string"
+        },
+        "autoren": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Authors, comma separated",
+          "title": "Autoren"
+        },
+        "z_bereich": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Department.",
+          "title": "Z Bereich"
+        },
+        "z_language": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "language",
+          "title": "Z Language"
+        },
+        "keywords": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Keywords",
+          "title": "Keywords"
+        },
+        "z_bemerkung": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Remarks",
+          "title": "Z Bemerkung"
+        },
+        "joined_status_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Status",
+          "title": "Joined Status Name"
+        },
+        "erzeug_system": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Program that created the document",
+          "title": "Erzeug System"
+        },
+        "cdb_lock": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "User that locked the document.",
+          "title": "Cdb Lock"
+        },
+        "mapped_cdb_lock_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Username that locked the document.",
+          "title": "Mapped Cdb Lock Name"
+        },
+        "ce_valid_from": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Effective from",
+          "title": "Ce Valid From"
+        },
+        "ce_valid_to": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Effective to",
+          "title": "Ce Valid To"
+        },
+        "cdb_ec_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Engineering Change ID",
+          "title": "Cdb Ec Id"
+        },
+        "ursprungs_z": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Origin",
+          "title": "Ursprungs Z"
+        },
+        "teilenummer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Part No.",
+          "title": "Teilenummer"
+        },
+        "t_index": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Part Index",
+          "title": "T Index"
+        },
+        "cdb_project_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Project No.",
+          "title": "Cdb Project Id"
+        },
+        "project_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Project Name",
+          "title": "Project Name"
+        },
+        "src_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Source",
+          "title": "Src Name"
+        },
+        "src_cdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Source created on",
+          "title": "Src Cdate"
+        },
+        "src_rdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Source received on",
+          "title": "Src Rdate"
+        },
+        "src_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Original No.",
+          "title": "Src Number"
+        },
+        "src_index": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Original Index",
+          "title": "Src Index"
+        },
+        "src_fname": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Original Filename",
+          "title": "Src Fname"
+        },
+        "source_oid": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Based on Template",
+          "title": "Source Oid"
+        },
+        "cdb_cpersno": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Created by",
+          "title": "Cdb Cpersno"
+        },
+        "mapped_cdb_cpersno_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Created by",
+          "title": "Mapped Cdb Cpersno Name"
+        },
+        "cdb_cdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Created on",
+          "title": "Cdb Cdate"
+        },
+        "cdb_mpersno": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Last Modified by",
+          "title": "Cdb Mpersno"
+        },
+        "mapped_cdb_mpersno_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Last Modified by",
+          "title": "Mapped Cdb Mpersno Name"
+        },
+        "cdb_mdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Last Modified on",
+          "title": "Cdb Mdate"
+        },
+        "cdb_m2persno": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "File Last Saved by",
+          "title": "Cdb M2Persno"
+        },
+        "mapped_cdb_m2persno_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "File Last Saved by",
+          "title": "Mapped Cdb M2Persno Name"
+        },
+        "cdb_m2date": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "File Last Saved on",
+          "title": "Cdb M2Date"
+        },
+        "z_art": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Document Type",
+          "title": "Z Art"
+        },
+        "mapped_materialnr_erp": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Materialnumber ERP",
+          "title": "Mapped Materialnr Erp"
+        },
+        "files": {
+          "default": [],
+          "description": "Files attached to the document",
+          "items": {
+            "$ref": "#/$defs/File"
+          },
+          "title": "Files",
+          "type": "array"
+        },
+        "part": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Part"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "z_nummer",
+        "z_index",
+        "titel",
+        "category1_name_en",
+        "category1_name_de",
+        "category2_name_en",
+        "category2_name_de",
+        "z_categ1",
+        "z_categ2",
+        "cdb_obsolete",
+        "z_status",
+        "z_status_txt",
+        "autoren",
+        "joined_status_name"
+      ],
+      "title": "Document",
+      "type": "object"
+    },
+    "DocumentReleaseData": {
+      "properties": {
+        "documents": {
+          "description": "List if documents that were released.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of parts that belong to the released documents",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "dialog_data": {
+          "$ref": "#/$defs/DocumentReleaseDialogData"
+        }
+      },
+      "required": [
+        "documents",
+        "parts",
+        "dialog_data"
+      ],
+      "title": "DocumentReleaseData",
+      "type": "object"
+    },
+    "DocumentReleaseDialogData": {
+      "properties": {
+        "cdbprot_remark": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "remark",
+          "title": "Cdbprot Remark"
+        },
+        "cdb_ec_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Engineering Change ID",
+          "title": "Cdb Ec Id"
+        }
+      },
+      "title": "DocumentReleaseDialogData",
+      "type": "object"
+    },
+    "DocumentReleaseEvent": {
+      "properties": {
+        "name": {
+          "const": "document_release",
+          "title": "Name"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/DocumentReleaseData"
+        }
+      },
+      "required": [
+        "name",
+        "event_id",
+        "data"
+      ],
+      "title": "DocumentReleaseEvent",
+      "type": "object"
+    },
+    "DummyEvent": {
+      "description": "Dummy Event, for unit testing",
+      "properties": {
+        "name": {
+          "const": "dummy",
+          "title": "Name"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/DummyEventData"
+            }
+          ],
+          "default": []
+        }
+      },
+      "required": [
+        "name",
+        "event_id"
+      ],
+      "title": "DummyEvent",
+      "type": "object"
+    },
+    "DummyEventData": {
+      "properties": {
+        "documents": {
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "parts"
+      ],
+      "title": "DummyEventData",
+      "type": "object"
+    },
+    "EngineeringChange": {
+      "properties": {
+        "object_type": {
+          "const": "engineering_change",
+          "default": "engineering_change",
+          "title": "Object Type"
+        },
+        "cdb_ec_id": {
+          "description": "Engineering Change ID",
+          "title": "Cdb Ec Id",
+          "type": "string"
+        },
+        "cdb_project_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Project ID",
+          "title": "Cdb Project Id"
+        },
+        "ec_state": {
+          "default": "",
+          "description": "",
+          "title": "Ec State",
+          "type": "string"
+        },
+        "end_time_plan": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Planned end time",
+          "title": "End Time Plan"
+        },
+        "status": {
+          "description": "Status",
+          "title": "Status",
+          "type": "integer"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Title",
+          "title": "Title"
+        },
+        "template_ec_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Template ID",
+          "title": "Template Ec Id"
+        },
+        "c_department": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Department",
+          "title": "C Department"
+        },
+        "c_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Description",
+          "title": "C Description"
+        },
+        "c_event": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Event",
+          "title": "C Event"
+        },
+        "c_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Reason",
+          "title": "C Reason"
+        },
+        "c_source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Source",
+          "title": "C Source"
+        },
+        "category": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Category",
+          "title": "Category"
+        },
+        "part_ids": {
+          "default": [],
+          "description": "List of part IDs, that were changed. (teilenummer@t_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Part Ids",
+          "type": "array"
+        },
+        "document_ids": {
+          "default": [],
+          "description": "List of document IDs, that were changed. (z_nummer@z_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Document Ids",
+          "type": "array"
+        },
+        "planned_changes_part_ids": {
+          "default": [],
+          "description": "List of part IDs, that were planned to be changed. (teilenummer@t_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Planned Changes Part Ids",
+          "type": "array"
+        },
+        "planned_changes_document_ids": {
+          "default": [],
+          "description": "List of document IDs, that were planned to be changed. (z_nummer@z_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Planned Changes Document Ids",
+          "type": "array"
+        },
+        "accompanying_document_ids": {
+          "default": [],
+          "description": "List of document IDs, that accompany the change. (z_nummer@z_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Accompanying Document Ids",
+          "type": "array"
+        },
+        "parts": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "documents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "planned_changes_parts": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Planned Changes Parts",
+          "type": "array"
+        },
+        "planned_changes_documents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Planned Changes Documents",
+          "type": "array"
+        },
+        "accompanying_documents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Accompanying Documents",
+          "type": "array"
+        },
+        "cdb_cpersno": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Created by",
+          "title": "Cdb Cpersno"
+        },
+        "cdb_cdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Created on",
+          "title": "Cdb Cdate"
+        },
+        "cdb_mpersno": {
+          "default": "",
+          "description": "Last Modified by",
+          "title": "Cdb Mpersno",
+          "type": "string"
+        },
+        "cdb_mdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Last Modified on",
+          "title": "Cdb Mdate"
+        }
+      },
+      "required": [
+        "cdb_ec_id",
+        "status"
+      ],
+      "title": "EngineeringChange",
+      "type": "object"
+    },
+    "EngineeringChangeRelease": {
+      "properties": {
+        "name": {
+          "const": "engineering_change_release",
+          "title": "Name"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/EngineeringChangeReleaseData"
+        }
+      },
+      "required": [
+        "name",
+        "event_id",
+        "data"
+      ],
+      "title": "EngineeringChangeRelease",
+      "type": "object"
+    },
+    "EngineeringChangeReleaseData": {
+      "properties": {
+        "documents": {
+          "description": "List of included documents.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of included parts.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "engineering_changes": {
+          "description": "List of engineering changes that were released.",
+          "items": {
+            "$ref": "#/$defs/EngineeringChange"
+          },
+          "title": "Engineering Changes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "parts",
+        "engineering_changes"
+      ],
+      "title": "EngineeringChangeReleaseData",
+      "type": "object"
+    },
+    "FieldValueCalculationData": {
+      "properties": {
+        "scheme_updates": {
+          "title": "Scheme Updates",
+          "type": "object"
+        },
+        "ctx": {
+          "title": "Ctx",
+          "type": "object"
+        },
+        "obj": {
+          "title": "Obj",
+          "type": "object"
+        },
+        "old_cfv_str": {
+          "title": "Old Cfv Str",
+          "type": "string"
+        },
+        "matches": {
+          "items": {},
+          "title": "Matches",
+          "type": "array"
+        },
+        "prefix": {
+          "title": "Prefix",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scheme_updates",
+        "ctx",
+        "obj",
+        "old_cfv_str",
+        "matches",
+        "prefix"
+      ],
+      "title": "FieldValueCalculationData",
+      "type": "object"
+    },
+    "FieldValueCalculationEvent": {
+      "properties": {
+        "name": {
+          "const": "field_value_calculation",
+          "title": "Name"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/FieldValueCalculationData"
+        }
+      },
+      "required": [
+        "name",
+        "event_id",
+        "data"
+      ],
+      "title": "FieldValueCalculationEvent",
+      "type": "object"
+    },
+    "File": {
+      "properties": {
+        "object_type": {
+          "const": "file",
+          "default": "file",
+          "title": "Object Type"
+        },
+        "cdb_object_id": {
+          "description": "ID",
+          "title": "Cdb Object Id",
+          "type": "string"
+        },
+        "cdbf_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "file name",
+          "title": "Cdbf Name"
+        },
+        "cdbf_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "file type",
+          "title": "Cdbf Type"
+        },
+        "cdb_cpersno": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Created by",
+          "title": "Cdb Cpersno"
+        },
+        "mapped_cdb_cpersno_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Created by",
+          "title": "Mapped Cdb Cpersno Name"
+        },
+        "cdb_cdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Created on",
+          "title": "Cdb Cdate"
+        },
+        "cdb_mpersno": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Last Modified by",
+          "title": "Cdb Mpersno"
+        },
+        "mapped_cdb_mpersno_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Last Modified by",
+          "title": "Mapped Cdb Mpersno Name"
+        },
+        "cdb_mdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Last Modified on",
+          "title": "Cdb Mdate"
+        },
+        "blob_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Presigned Blob URL",
+          "title": "Blob Url"
+        }
+      },
+      "required": [
+        "cdb_object_id",
+        "cdbf_name",
+        "cdbf_type"
+      ],
+      "title": "File",
+      "type": "object"
+    },
+    "MetaData": {
+      "properties": {
+        "app_lang": {
+          "description": "ISO code of the session language that triggered the webhook.",
+          "title": "App Lang",
+          "type": "string"
+        },
+        "app_user": {
+          "description": "User id of the user that triggered the webhook. (personalnummer)",
+          "title": "App User",
+          "type": "string"
+        },
+        "request_id": {
+          "description": "Unique identifier of this request.",
+          "title": "Request Id",
+          "type": "string"
+        },
+        "service_url": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Url of the access service. None if not available.",
+          "title": "Service Url"
+        },
+        "service_token": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Token for the access service. None if not available.",
+          "title": "Service Token"
+        },
+        "request_datetime": {
+          "description": "Time when the request was started.",
+          "format": "date-time",
+          "title": "Request Datetime",
+          "type": "string"
+        },
+        "transaction_id": {
+          "description": "Unique identifier of the transaction.",
+          "title": "Transaction Id",
+          "type": "string"
+        },
+        "instance_url": {
+          "description": "URL to the instance where the webhook was triggered.",
+          "format": "uri",
+          "minLength": 1,
+          "title": "Instance Url",
+          "type": "string"
+        },
+        "db_service_url": {
+          "anyOf": [
+            {
+              "format": "uri",
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "URL to the DB Access Service responsible for the instance.",
+          "title": "Db Service Url"
+        }
+      },
+      "required": [
+        "app_lang",
+        "app_user",
+        "request_id",
+        "request_datetime",
+        "transaction_id",
+        "instance_url"
+      ],
+      "title": "MetaData",
+      "type": "object"
+    },
+    "Part": {
+      "properties": {
+        "object_type": {
+          "const": "part",
+          "default": "part",
+          "title": "Object Type"
+        },
+        "teilenummer": {
+          "description": "part number",
+          "title": "Teilenummer",
+          "type": "string"
+        },
+        "t_index": {
+          "description": "part index",
+          "title": "T Index",
+          "type": "string"
+        },
+        "status": {
+          "description": "Status Number",
+          "title": "Status",
+          "type": "integer"
+        },
+        "materialnr_erp": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Material No. (ERP)",
+          "title": "Materialnr Erp"
+        },
+        "benennung": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Name",
+          "title": "Benennung"
+        },
+        "eng_benennung": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Name",
+          "title": "Eng Benennung"
+        },
+        "benennung2": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Additional Name",
+          "title": "Benennung2"
+        },
+        "t_kategorie_name_de": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Category Name",
+          "title": "T Kategorie Name De"
+        },
+        "t_kategorie_name_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Category Name",
+          "title": "T Kategorie Name En"
+        },
+        "cdb_t_project_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Project ID",
+          "title": "Cdb T Project Id"
+        },
+        "t_bereich": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Department",
+          "title": "T Bereich"
+        },
+        "cdb_t_ec_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Engineering Change ID",
+          "title": "Cdb T Ec Id"
+        },
+        "item_maturity": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Maturity Level",
+          "title": "Item Maturity"
+        },
+        "gebrauchsstand_name_de": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Usage Status",
+          "title": "Gebrauchsstand Name De"
+        },
+        "gebrauchsstand_name_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Usage Status",
+          "title": "Gebrauchsstand Name En"
+        },
+        "ce_valid_from": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Effective from",
+          "title": "Ce Valid From"
+        },
+        "ce_valid_to": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Effective to",
+          "title": "Ce Valid To"
+        },
+        "mengeneinheit_name_de": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Quantity Unit",
+          "title": "Mengeneinheit Name De"
+        },
+        "mengeneinheit_name_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Quantity Unit",
+          "title": "Mengeneinheit Name En"
+        },
+        "st_gewicht": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Weight (kg)",
+          "title": "St Gewicht"
+        },
+        "material_object_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Material ID",
+          "title": "Material Object Id"
+        },
+        "surface_name_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Surface",
+          "title": "Surface Name En"
+        },
+        "surface_name_de": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Surface",
+          "title": "Surface Name De"
+        },
+        "techdaten": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Engineering Data",
+          "title": "Techdaten"
+        },
+        "cssaas_mirrored_from": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mirror Part ID",
+          "title": "Cssaas Mirrored From"
+        },
+        "t_ersatz_fuer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Replacement for",
+          "title": "T Ersatz Fuer"
+        },
+        "t_ersatz_durch": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Replaced by",
+          "title": "T Ersatz Durch"
+        },
+        "din": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Norms",
+          "title": "Din"
+        },
+        "bemerkung": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Remarks",
+          "title": "Bemerkung"
+        },
+        "cdb_copy_of_item_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Copy of ID",
+          "title": "Cdb Copy Of Item Id"
+        },
+        "type_object_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "BOM Type ID",
+          "title": "Type Object Id"
+        },
+        "cdb_depends_on": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Derived from",
+          "title": "Cdb Depends On"
+        },
+        "site_object_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Plant",
+          "title": "Site Object Id"
+        },
+        "cssaas_frame_add_attr_1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Additional Attribute 1",
+          "title": "Cssaas Frame Add Attr 1"
+        },
+        "cssaas_frame_add_attr_2": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Additional Attribute 2",
+          "title": "Cssaas Frame Add Attr 2"
+        },
+        "cssaas_frame_add_attr_3": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Additional Attribute 3",
+          "title": "Cssaas Frame Add Attr 3"
+        },
+        "cssaas_frame_add_attr_4": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Additional Attribute 4",
+          "title": "Cssaas Frame Add Attr 4"
+        },
+        "cssaas_frame_add_attr_5": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Additional Attribute 5",
+          "title": "Cssaas Frame Add Attr 5"
+        },
+        "cdb_cpersno": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Created by",
+          "title": "Cdb Cpersno"
+        },
+        "cdb_cpersno_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Created by",
+          "title": "Cdb Cpersno Name"
+        },
+        "cdb_cdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Created on",
+          "title": "Cdb Cdate"
+        },
+        "cdb_mpersno": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Last Modified by",
+          "title": "Cdb Mpersno"
+        },
+        "cdb_mpersno_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Last Modified by",
+          "title": "Cdb Mpersno Name"
+        },
+        "cdb_mdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Last Modified on",
+          "title": "Cdb Mdate"
+        },
+        "cdb_m2persno": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "File Last Saved by",
+          "title": "Cdb M2Persno"
+        },
+        "cdb_m2persno_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "File Last Saved by",
+          "title": "Cdb M2Persno Name"
+        },
+        "cdb_m2date": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "File Last Saved on",
+          "title": "Cdb M2Date"
+        },
+        "st_durchmesser": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Diameter",
+          "title": "St Durchmesser"
+        },
+        "st_laenge": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Length",
+          "title": "St Laenge"
+        },
+        "st_hoehe": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Height",
+          "title": "St Hoehe"
+        },
+        "cdb_object_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Object ID",
+          "title": "Cdb Object Id"
+        },
+        "site_erp": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Plant",
+          "title": "Site Erp"
+        },
+        "fertart": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Production Type",
+          "title": "Fertart"
+        },
+        "t_pruef_datum": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Release Date",
+          "title": "T Pruef Datum"
+        },
+        "oberflaeche": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Surface",
+          "title": "Oberflaeche"
+        },
+        "mengeneinheit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Unit of Measure",
+          "title": "Mengeneinheit"
+        },
+        "gebrauchsstand": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Usability",
+          "title": "Gebrauchsstand"
+        },
+        "st_breite": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Width",
+          "title": "St Breite"
+        },
+        "document_ids": {
+          "default": [],
+          "description": "List of document IDs, that were changed. (z_nummer@z_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Document Ids",
+          "type": "array"
+        },
+        "documents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        }
+      },
+      "required": [
+        "teilenummer",
+        "t_index",
+        "status"
+      ],
+      "title": "Part",
+      "type": "object"
+    },
+    "PartReleaseData": {
+      "properties": {
+        "parts": {
+          "description": "List if parts that were released.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "documents": {
+          "description": "List if documents that are referenced by the released part.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "dialog_data": {
+          "$ref": "#/$defs/PartReleaseDialogData"
+        }
+      },
+      "required": [
+        "parts",
+        "documents",
+        "dialog_data"
+      ],
+      "title": "PartReleaseData",
+      "type": "object"
+    },
+    "PartReleaseDialogData": {
+      "properties": {
+        "cdbprot_remark": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "remark",
+          "title": "Cdbprot Remark"
+        },
+        "cdb_ec_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Engineering Change ID",
+          "title": "Cdb Ec Id"
+        }
+      },
+      "title": "PartReleaseDialogData",
+      "type": "object"
+    },
+    "PartReleaseEvent": {
+      "properties": {
+        "name": {
+          "const": "part_release",
+          "title": "Name"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/PartReleaseData"
+        }
+      },
+      "required": [
+        "name",
+        "event_id",
+        "data"
+      ],
+      "title": "PartReleaseEvent",
+      "type": "object"
+    },
+    "Workflow": {
+      "properties": {
+        "object_type": {
+          "const": "workflow",
+          "default": "workflow",
+          "title": "Object Type"
+        },
+        "cdb_process_id": {
+          "description": "Workflow ID",
+          "title": "Cdb Process Id",
+          "type": "string"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Title",
+          "title": "Title"
+        },
+        "started_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Date when the workflow was started.",
+          "title": "Started At"
+        },
+        "started_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ID of the user who started the workflow.",
+          "title": "Started By"
+        },
+        "local_briefcase_ids": {
+          "default": [],
+          "description": "List of local briefcase ids (cdb_object_id)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Local Briefcase Ids",
+          "type": "array"
+        },
+        "global_briefcase_ids": {
+          "default": [],
+          "description": "List of global briefcase ids (cdb_object_id)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Global Briefcase Ids",
+          "type": "array"
+        },
+        "local_briefcases": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Briefcase"
+          },
+          "title": "Local Briefcases",
+          "type": "array"
+        },
+        "global_briefcases": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Briefcase"
+          },
+          "title": "Global Briefcases",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cdb_process_id"
+      ],
+      "title": "Workflow",
+      "type": "object"
+    },
+    "WorkflowTaskTriggerEvent": {
+      "properties": {
+        "name": {
+          "const": "workflow_task_trigger",
+          "title": "Name"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/WorkflowTaskTriggerEventData"
+        }
+      },
+      "required": [
+        "name",
+        "event_id",
+        "data"
+      ],
+      "title": "WorkflowTaskTriggerEvent",
+      "type": "object"
+    },
+    "WorkflowTaskTriggerEventData": {
+      "properties": {
+        "workflows": {
+          "description": "List of workflows in this event",
+          "items": {
+            "$ref": "#/$defs/Workflow"
+          },
+          "title": "Workflows",
+          "type": "array"
+        },
+        "parts": {
+          "default": [],
+          "description": "List if parts attached to the workflow.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "documents": {
+          "default": [],
+          "description": "List if documents attached to the workflow.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "engineering_changes": {
+          "default": [],
+          "description": "List of engineering changes attached to the workflow.",
+          "items": {
+            "$ref": "#/$defs/EngineeringChange"
+          },
+          "title": "Engineering Changes",
+          "type": "array"
+        },
+        "briefcases": {
+          "default": [],
+          "description": "List of briefcases attached to the workflow.",
+          "items": {
+            "$ref": "#/$defs/Briefcase"
+          },
+          "title": "Briefcases",
+          "type": "array"
+        }
+      },
+      "required": [
+        "workflows"
+      ],
+      "title": "WorkflowTaskTriggerEventData",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "metadata": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/MetaData"
+        }
+      ],
+      "description": "General information."
+    },
+    "event": {
+      "discriminator": {
+        "mapping": {
+          "document_release": "#/$defs/DocumentReleaseEvent",
+          "dummy": "#/$defs/DummyEvent",
+          "engineering_change_release": "#/$defs/EngineeringChangeRelease",
+          "field_value_calculation": "#/$defs/FieldValueCalculationEvent",
+          "part_release": "#/$defs/PartReleaseEvent",
+          "workflow_task_trigger": "#/$defs/WorkflowTaskTriggerEvent"
+        },
+        "propertyName": "name"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/DocumentReleaseEvent"
+        },
+        {
+          "$ref": "#/$defs/PartReleaseEvent"
+        },
+        {
+          "$ref": "#/$defs/FieldValueCalculationEvent"
+        },
+        {
+          "$ref": "#/$defs/DummyEvent"
+        },
+        {
+          "$ref": "#/$defs/EngineeringChangeRelease"
+        },
+        {
+          "$ref": "#/$defs/WorkflowTaskTriggerEvent"
+        }
+      ],
+      "title": "Event"
+    }
+  },
+  "required": [
+    "metadata",
+    "event"
+  ],
+  "title": "Request",
+  "type": "object"
+}

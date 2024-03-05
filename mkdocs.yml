@@ -1,0 +1,38 @@
+site_name: Functions-SDK for Python
+theme:
+  name: material
+  font:
+    text: Source Sans Pro
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  logo: assets/branding_web_app_icon.png
+  favicon: assets/branding_web_favicon.ico
+extra_css:
+  - stylesheets/extra.css
+repo_url: https://github.com/cslab/functions-sdk-python
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - toc
+nav:
+  - Home: index.md
+  - Key concepts: key_concepts.md
+  - Getting started: getting_started.md
+  - Reference:
+    - reference/events.md
+    - reference/objects.md
+    - reference/actions.md
+    - Python runtime: reference/runtime.md

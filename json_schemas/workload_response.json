@@ -1,0 +1,111 @@
+{
+  "$defs": {
+    "AbortAndShowErrorAction": {
+      "properties": {
+        "name": {
+          "const": "abort_and_show_error",
+          "title": "Name"
+        },
+        "id": {
+          "description": "unique identifier",
+          "title": "Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/AbortAndShowErrorData"
+        }
+      },
+      "required": [
+        "name",
+        "id",
+        "data"
+      ],
+      "title": "AbortAndShowErrorAction",
+      "type": "object"
+    },
+    "AbortAndShowErrorData": {
+      "properties": {
+        "message": {
+          "default": "unknown error",
+          "description": "error message to be shown to the user",
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "title": "AbortAndShowErrorData",
+      "type": "object"
+    },
+    "DummyAction": {
+      "description": "Dummy Action, for unit testing",
+      "properties": {
+        "name": {
+          "const": "dummy",
+          "title": "Name"
+        },
+        "id": {
+          "description": "unique identifier",
+          "title": "Id",
+          "type": "string"
+        },
+        "data": {
+          "anyOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Data"
+        }
+      },
+      "required": [
+        "name",
+        "id"
+      ],
+      "title": "DummyAction",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "response_type": {
+      "const": "workload",
+      "title": "Response Type"
+    },
+    "event_id": {
+      "description": "",
+      "title": "Event Id",
+      "type": "string"
+    },
+    "actions": {
+      "description": "actions that should be performed by the elements instance",
+      "items": {
+        "discriminator": {
+          "mapping": {
+            "abort_and_show_error": "#/$defs/AbortAndShowErrorAction",
+            "dummy": "#/$defs/DummyAction"
+          },
+          "propertyName": "name"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/$defs/AbortAndShowErrorAction"
+          },
+          {
+            "$ref": "#/$defs/DummyAction"
+          }
+        ]
+      },
+      "title": "Actions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "response_type",
+    "event_id",
+    "actions"
+  ],
+  "title": "WorkloadResponse",
+  "type": "object"
+}
