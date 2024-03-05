@@ -1,5 +1,5 @@
 This section is aimed at developers that want to build their own Functions-SDK.
-If are building Functions with **csfunctions** you can skip this part.
+If you are building Functions with **csfunctions** you can skip this part.
 
 ## Architecture
 Function environment are docker containers that run in AWS-lambda. The Python runtime utilizes awslambdaric to handle the requests. The Python runtime is part of the CIM Database Cloud Functions infrastructure and currently cannot be customized.
@@ -38,4 +38,4 @@ The return value of the execute method is the json encoded response payload.
 
 ## Payloads
 
-The Request and response payloads are described in the CIM Database Cloud documentation. The functions-sdk-python GitHub repository also contains the complete JSON-schema files.
+The Request and response payloads are described in the CIM Database Cloud documentation. The [functions-sdk-python](https://github.com/cslab/functions-sdk-python) GitHub repository also contains the complete [JSON-schema files](https://github.com/cslab/functions-sdk-python/tree/main/json_schemas).

@@ -6,6 +6,8 @@ Functions are deeply integrated in the CIM Database Cloud Webhooks technology. T
 
 **Documentation:** https://cslab.github.io/functions-sdk-python/
 
+**Source code:** https://github.com/cslab/functions-sdk-python
+
 ## Requirements
 
 Python 3.10+

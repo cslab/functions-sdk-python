@@ -12,7 +12,7 @@ pip install contactsoftware-functions
 A minimal Function implementation consists of three files:
 
 - `environment.yaml` describes the environment and the Functions contained in it
-- `requirements.txt` contains the dependencies of you Functions (usually only contactsoftware-functions)
+- `requirements.txt` contains the dependencies of your Functions (usually only contactsoftware-functions)
 - `mymodule.py` a Python file containing the code of your Functions (feel free to pick a different name)
 
 Here is the complete structure:
@@ -37,7 +37,7 @@ def send_doc_to_erp(metadata: MetaData, event: DocumentReleaseEvent, service: Se
 ```
 
 While you don't have to use type annotations, it is highly recommended because it enables autocomplete in your IDE and helps you spot mistakes faster.
-For our example we only need the DocumentReleaseEvent. It contains a list of documents that were released. Typically this will only be a single document, however it is best practices to iterate over all of the documents.
+For our example we only need the [DocumentReleaseEvent](reference/events.md/#documentreleaseevent). It contains a list of documents that were released. Typically this will only be a single document, however it is best practices to iterate over all of the documents.
 
 ``` python title="mymodule.py"
 import requests
@@ -60,6 +60,9 @@ def send_doc_to_erp(metadata: MetaData, event: DocumentReleaseEvent, service: Se
       return ValueError(f"Failed to upload document to ERP. Got response code {res.status_code}")
 
 ```
+
+Here we send a payload, containing a few attributes from the released document, to [example.com](https://example.com). This is just for illustration purposes!
+Please refer to the documentation of your ERP system on how the request needs to be formatted and which endpoint and credentials to use.
 
 ### Register the Function
 
@@ -113,6 +116,6 @@ Upload code into new environment:
 cfc env deploy myenv
 ```
 
-### Test the function
-To test your function you need to connect the Function to an event in your CIM Database Cloud instance.
+### Test the Function
+To test your Function you need to connect the Function to an event in your CIM Database Cloud instance.
 Please refer to the Webhooks CIM Database Cloud documentation on how to do that.

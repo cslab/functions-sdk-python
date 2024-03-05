@@ -9,6 +9,8 @@ authors = [
     "Jens Kürten <jku@contact.de>"
 ]
 description = "Library for creating Functions for CIM Database Cloud."
+repository = "https://github.com/cslab/functions-sdk-python"
+documentation = "https://cslab.github.io/functions-sdk-python/"
 
 packages = [
     { include = "csfunctions"}
