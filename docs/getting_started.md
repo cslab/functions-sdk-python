@@ -61,6 +61,9 @@ def send_doc_to_erp(metadata: MetaData, event: DocumentReleaseEvent, service: Se
 
 ```
 
+Here we send a payload, containing a few attributes from the released document, to https://example.com. This is just for illustration purposes!
+Please refer to the documentation of your ERP system on how the request needs to be formated and which endpoint and credentials to use.
+
 ### Register the Function
 
 The Function needs to be registered in the `environment.yaml`:
