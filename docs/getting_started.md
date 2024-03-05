@@ -116,6 +116,6 @@ Upload code into new environment:
 cfc env deploy myenv
 ```
 
-### Test the function
-To test your function you need to connect the Function to an event in your CIM Database Cloud instance.
+### Test the Function
+To test your Function you need to connect the Function to an event in your CIM Database Cloud instance.
 Please refer to the Webhooks CIM Database Cloud documentation on how to do that.
