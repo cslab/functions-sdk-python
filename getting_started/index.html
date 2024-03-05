@@ -675,7 +675,7 @@
 <p>A minimal Function implementation consists of three files:</p>
 <ul>
 <li><code>environment.yaml</code> describes the environment and the Functions contained in it</li>
-<li><code>requirements.txt</code> contains the dependencies of you Functions (usually only contactsoftware-functions)</li>
+<li><code>requirements.txt</code> contains the dependencies of your Functions (usually only contactsoftware-functions)</li>
 <li><code>mymodule.py</code> a Python file containing the code of your Functions (feel free to pick a different name)</li>
 </ul>
 <p>Here is the complete structure:</p>
@@ -693,7 +693,7 @@
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  <span class="o">...</span>
 </code></pre></div>
 <p>While you don't have to use type annotations, it is highly recommended because it enables autocomplete in your IDE and helps you spot mistakes faster.
-For our example we only need the DocumentReleaseEvent. It contains a list of documents that were released. Typically this will only be a single document, however it is best practices to iterate over all of the documents.</p>
+For our example we only need the <a href="../reference/events/#documentreleaseevent">DocumentReleaseEvent</a>. It contains a list of documents that were released. Typically this will only be a single document, however it is best practices to iterate over all of the documents.</p>
 <div class="highlight"><span class="filename">mymodule.py</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">requests</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">import</span> <span class="nn">json</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
@@ -713,6 +713,8 @@ For our example we only need the DocumentReleaseEvent. It contains a list of doc
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>      <span class="k">return</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to upload document to ERP. Got response code </span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
+<p>Here we send a payload, containing a few attributes from the released document, to <a href="https://example.com">example.com</a>. This is just for illustration purposes!
+Please refer to the documentation of your ERP system on how the request needs to be formatted and which endpoint and credentials to use.</p>
 <h3 id="register-the-function">Register the Function</h3>
 <p>The Function needs to be registered in the <code>environment.yaml</code>:</p>
 <div class="highlight"><span class="filename">environment.yaml</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">runtime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3.10</span>
