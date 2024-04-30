@@ -6,7 +6,11 @@
         "object_type": {
           "const": "briefcase",
           "default": "briefcase",
-          "title": "Object Type"
+          "enum": [
+            "briefcase"
+          ],
+          "title": "Object Type",
+          "type": "string"
         },
         "cdb_object_id": {
           "description": "Briefcase ID",
@@ -90,7 +94,11 @@
         "object_type": {
           "const": "document",
           "default": "document",
-          "title": "Object Type"
+          "enum": [
+            "document"
+          ],
+          "title": "Object Type",
+          "type": "string"
         },
         "z_nummer": {
           "description": "document number",
@@ -775,7 +783,11 @@
       "properties": {
         "name": {
           "const": "document_release",
-          "title": "Name"
+          "enum": [
+            "document_release"
+          ],
+          "title": "Name",
+          "type": "string"
         },
         "event_id": {
           "description": "unique identifier",
@@ -799,7 +811,11 @@
       "properties": {
         "name": {
           "const": "dummy",
-          "title": "Name"
+          "enum": [
+            "dummy"
+          ],
+          "title": "Name",
+          "type": "string"
         },
         "event_id": {
           "description": "unique identifier",
@@ -851,7 +867,11 @@
         "object_type": {
           "const": "engineering_change",
           "default": "engineering_change",
-          "title": "Object Type"
+          "enum": [
+            "engineering_change"
+          ],
+          "title": "Object Type",
+          "type": "string"
         },
         "cdb_ec_id": {
           "description": "Engineering Change ID",
@@ -1144,7 +1164,11 @@
       "properties": {
         "name": {
           "const": "engineering_change_release",
-          "title": "Name"
+          "enum": [
+            "engineering_change_release"
+          ],
+          "title": "Name",
+          "type": "string"
         },
         "event_id": {
           "description": "unique identifier",
@@ -1241,7 +1265,11 @@
       "properties": {
         "name": {
           "const": "field_value_calculation",
-          "title": "Name"
+          "enum": [
+            "field_value_calculation"
+          ],
+          "title": "Name",
+          "type": "string"
         },
         "event_id": {
           "description": "unique identifier",
@@ -1265,7 +1293,11 @@
         "object_type": {
           "const": "file",
           "default": "file",
-          "title": "Object Type"
+          "enum": [
+            "file"
+          ],
+          "title": "Object Type",
+          "type": "string"
         },
         "cdb_object_id": {
           "description": "ID",
@@ -1493,7 +1525,11 @@
         "object_type": {
           "const": "part",
           "default": "part",
-          "title": "Object Type"
+          "enum": [
+            "part"
+          ],
+          "title": "Object Type",
+          "type": "string"
         },
         "teilenummer": {
           "description": "part number",
@@ -2331,7 +2367,11 @@
       "properties": {
         "name": {
           "const": "part_release",
-          "title": "Name"
+          "enum": [
+            "part_release"
+          ],
+          "title": "Name",
+          "type": "string"
         },
         "event_id": {
           "description": "unique identifier",
@@ -2355,7 +2395,11 @@
         "object_type": {
           "const": "workflow",
           "default": "workflow",
-          "title": "Object Type"
+          "enum": [
+            "workflow"
+          ],
+          "title": "Object Type",
+          "type": "string"
         },
         "cdb_process_id": {
           "description": "Workflow ID",
@@ -2447,7 +2491,11 @@
       "properties": {
         "name": {
           "const": "workflow_task_trigger",
-          "title": "Name"
+          "enum": [
+            "workflow_task_trigger"
+          ],
+          "title": "Name",
+          "type": "string"
         },
         "event_id": {
           "description": "unique identifier",

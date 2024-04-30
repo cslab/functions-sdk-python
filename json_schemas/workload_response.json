@@ -4,7 +4,11 @@
       "properties": {
         "name": {
           "const": "abort_and_show_error",
-          "title": "Name"
+          "enum": [
+            "abort_and_show_error"
+          ],
+          "title": "Name",
+          "type": "string"
         },
         "id": {
           "description": "unique identifier",
@@ -40,7 +44,11 @@
       "properties": {
         "name": {
           "const": "dummy",
-          "title": "Name"
+          "enum": [
+            "dummy"
+          ],
+          "title": "Name",
+          "type": "string"
         },
         "id": {
           "description": "unique identifier",
@@ -71,7 +79,11 @@
   "properties": {
     "response_type": {
       "const": "workload",
-      "title": "Response Type"
+      "enum": [
+        "workload"
+      ],
+      "title": "Response Type",
+      "type": "string"
     },
     "event_id": {
       "description": "",
