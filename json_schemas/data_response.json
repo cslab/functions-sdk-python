@@ -2,7 +2,11 @@
   "properties": {
     "response_type": {
       "const": "data",
-      "title": "Response Type"
+      "enum": [
+        "data"
+      ],
+      "title": "Response Type",
+      "type": "string"
     },
     "event_id": {
       "description": "",

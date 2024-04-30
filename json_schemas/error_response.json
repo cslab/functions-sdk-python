@@ -2,7 +2,11 @@
   "properties": {
     "response_type": {
       "const": "error",
-      "title": "Response Type"
+      "enum": [
+        "error"
+      ],
+      "title": "Response Type",
+      "type": "string"
     },
     "event_id": {
       "description": "",
