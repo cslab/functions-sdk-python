@@ -12,7 +12,7 @@ from csfunctions import ErrorResponse, Event, Request
 from csfunctions.config import ConfigModel, FunctionModel
 from csfunctions.logging import RedirectToLoki, Stream
 from csfunctions.objects.base import BaseObject
-from csfunctions.response import ResponseUnion, EmptyResponse
+from csfunctions.response import EmptyResponse, ResponseUnion
 from csfunctions.service import Service
 
 _log_stream = Stream()
