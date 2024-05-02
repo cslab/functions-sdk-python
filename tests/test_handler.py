@@ -19,6 +19,8 @@ functions:
     entrypoint: main.main
   - name: ping
     entrypoint: tests.utils.ping_function
+  - name: empty
+    entrypoint: tests.utils.empty_function
 """
             )
 
@@ -37,7 +39,7 @@ functions:
         link_objects(request.event)
         expected = {
             "response_type": "data",
-            "event_id": request.metadata.request_id,
+            "event_id": request.event.event_id,
             "data": {
                 "metadata": request.metadata.model_dump(mode="json"),
                 "event": request.event.model_dump(mode="json"),
