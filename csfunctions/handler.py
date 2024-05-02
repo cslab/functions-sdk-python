@@ -107,16 +107,17 @@ def execute(function_name: str, request_body: str, function_dir: str = "src") ->
         service = Service(str(request.metadata.service_url), request.metadata.service_token)
 
         with RedirectToLoki(_log_stream, request.event.event_id):
-            result = function_callback(request.metadata, request.event, service)
+            response = function_callback(request.metadata, request.event, service)
 
-        if result is None:
-            result = EmptyResponse()
+        if response is None:
+            response = EmptyResponse()
 
         if not isinstance(
-            result, ResponseUnion
+            response, ResponseUnion
         ):  # need to check for ResponseUnion instead of Response, because isinstance doesn't work with annotated unions
             raise ValueError("Function needs to return a Response object.")
-    except Exception as e:  # pylint: disable=broad-except
-        result = ErrorResponse(message=str(e), error_type=type(e).__name__, trace=traceback.format_exc(), id="")
 
-    return result.model_dump_json()
+    except Exception as e:  # pylint: disable=broad-except
+        response = ErrorResponse(message=str(e), error_type=type(e).__name__, trace=traceback.format_exc(), id="")
+
+    return response.model_dump_json()
