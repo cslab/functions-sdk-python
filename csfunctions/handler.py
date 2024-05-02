@@ -12,7 +12,7 @@ from csfunctions import ErrorResponse, Event, Request
 from csfunctions.config import ConfigModel, FunctionModel
 from csfunctions.logging import RedirectToLoki, Stream
 from csfunctions.objects.base import BaseObject
-from csfunctions.response import ResponseUnion
+from csfunctions.response import ResponseUnion, EmptyResponse
 from csfunctions.service import Service
 
 _log_stream = Stream()
@@ -108,6 +108,9 @@ def execute(function_name: str, request_body: str, function_dir: str = "src") ->
 
         with RedirectToLoki(_log_stream, request.event.event_id):
             result = function_callback(request.metadata, request.event, service)
+
+        if result is None:
+            result = EmptyResponse()
 
         if not isinstance(
             result, ResponseUnion
