@@ -47,6 +47,15 @@ functions:
         }
         self.assertEqual(json.dumps(expected, separators=(",", ":")), result)
 
+        # test empty function
+        request = deepcopy(dummy_request)  # make a deepcopy, since request object will be modified by link_objects
+        result = execute("empty", json.dumps(request.model_dump(mode="json"), separators=(",", ":")), self.source_dir)
+        expected = {
+            "response_type": "empty",
+            "event_id": request.event.event_id,
+        }
+        self.assertEqual(json.dumps(expected, separators=(",", ":")), result)
+
     def test_link_objects(self):
         request = deepcopy(dummy_request)  # make a deepcopy, since request object will be modified by link_objects
 

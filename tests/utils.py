@@ -13,6 +13,13 @@ def ping_function(metadata: MetaData, event: DummyEvent, _: Service):
     return DataResponse(data={"metadata": metadata.model_dump(), "event": event.model_dump()}, event_id="123")
 
 
+def empty_function(*args, **kwargs):  # pylint: disable=unused-argument
+    """
+    An empty function that doesn't do anything.
+    """
+    pass  # pylint: disable=unnecessary-pass
+
+
 dummy_document = Document(
     **{
         "object_type": "document",
