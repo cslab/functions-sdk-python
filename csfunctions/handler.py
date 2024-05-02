@@ -117,6 +117,9 @@ def execute(function_name: str, request_body: str, function_dir: str = "src") ->
         ):  # need to check for ResponseUnion instead of Response, because isinstance doesn't work with annotated unions
             raise ValueError("Function needs to return a Response object.")
 
+        # make sure the event_id is filled out correctly
+        response.event_id = request.event.event_id
+
     except Exception as e:  # pylint: disable=broad-except
         response = ErrorResponse(message=str(e), error_type=type(e).__name__, trace=traceback.format_exc(), id="")
 
