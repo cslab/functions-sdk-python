@@ -115,7 +115,7 @@ def execute(function_name: str, request_body: str, function_dir: str = "src") ->
         if not isinstance(
             response, ResponseUnion
         ):  # need to check for ResponseUnion instead of Response, because isinstance doesn't work with annotated unions
-            raise ValueError("Function needs to return a Response object.")
+            raise ValueError("Function needs to return a Response object or None.")
 
         # make sure the event_id is filled out correctly
         response.event_id = request.event.event_id
