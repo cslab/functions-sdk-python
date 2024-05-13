@@ -74,19 +74,5 @@ class ErrorResponse(BaseModel):
     trace: str = Field(..., description="trace to the error")
 
 
-class EmptyResponse(BaseModel):
-    def __init__(
-        self,
-        event_id: str | None = None,
-        response_type: Literal[ResponseType.EMPTY] | None = None,  # pylint: disable=unused-argument,
-        **kwargs
-    ):
-        event_id = event_id or str(uuid4())
-        super().__init__(response_type=ResponseType.EMPTY, event_id=event_id, **kwargs)
-
-    response_type: Literal[ResponseType.EMPTY]
-    event_id: str = Field(..., description="")
-
-
-ResponseUnion = Union[WorkloadResponse, DataResponse, ErrorResponse, EmptyResponse]
+ResponseUnion = Union[WorkloadResponse, DataResponse, ErrorResponse]
 Response = Annotated[ResponseUnion, Field(discriminator="response_type")]
