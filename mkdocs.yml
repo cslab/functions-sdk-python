@@ -36,3 +36,4 @@ nav:
     - reference/objects.md
     - reference/actions.md
     - Python runtime: reference/runtime.md
+  - Release notes: release_notes.md

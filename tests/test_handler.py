@@ -19,6 +19,8 @@ functions:
     entrypoint: main.main
   - name: ping
     entrypoint: tests.utils.ping_function
+  - name: empty
+    entrypoint: tests.utils.empty_function
 """
             )
 
@@ -37,13 +39,18 @@ functions:
         link_objects(request.event)
         expected = {
             "response_type": "data",
-            "event_id": request.metadata.request_id,
+            "event_id": request.event.event_id,
             "data": {
                 "metadata": request.metadata.model_dump(mode="json"),
                 "event": request.event.model_dump(mode="json"),
             },
         }
         self.assertEqual(json.dumps(expected, separators=(",", ":")), result)
+
+        # test empty function
+        request = deepcopy(dummy_request)  # make a deepcopy, since request object will be modified by link_objects
+        result = execute("empty", json.dumps(request.model_dump(mode="json"), separators=(",", ":")), self.source_dir)
+        self.assertEqual("", result)
 
     def test_link_objects(self):
         request = deepcopy(dummy_request)  # make a deepcopy, since request object will be modified by link_objects

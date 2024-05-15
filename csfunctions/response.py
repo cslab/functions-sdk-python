@@ -11,6 +11,7 @@ class ResponseType(str, Enum):
     WORKLOAD = "workload"
     DATA = "data"
     ERROR = "error"
+    EMPTY = "empty"
 
 
 class WorkloadResponse(BaseModel):
