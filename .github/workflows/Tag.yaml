@@ -68,8 +68,9 @@ jobs:
 
       - name: Build Package
         run: |
-          poetry build
           poetry config pypi-token.pypi ${{secrets.PYPI_LIB_TOKEN}}
+          poetry version ${{ github.ref_name }}
+          poetry build
           poetry publish
 
   publish-docs:
