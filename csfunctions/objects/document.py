@@ -69,6 +69,7 @@ class Document(BaseObject):
     cdb_m2date: datetime | None = Field(None, description="File Last Saved on")
     z_art: str | None = Field(None, description="Document Type")
     mapped_materialnr_erp: str | None = Field(None, description="Materialnumber ERP")
+    cdb_object_id: str | None = Field(None, description="Object ID")
 
     files: list[File] = Field([], description="Files attached to the document")
 

@@ -677,6 +677,19 @@
           "description": "Materialnumber ERP",
           "title": "Mapped Materialnr Erp"
         },
+        "cdb_object_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Object ID",
+          "title": "Cdb Object Id"
+        },
         "files": {
           "default": [],
           "description": "Files attached to the document",
@@ -941,6 +954,19 @@
           "default": "",
           "description": "Template ID",
           "title": "Template Ec Id"
+        },
+        "cdb_object_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Object ID",
+          "title": "Cdb Object Id"
         },
         "c_department": {
           "anyOf": [

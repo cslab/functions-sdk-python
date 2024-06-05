@@ -21,6 +21,7 @@ class EngineeringChange(BaseObject):
     status: int = Field(..., description="Status")
     title: str | None = Field("", description="Title")
     template_ec_id: str | None = Field("", description="Template ID")
+    cdb_object_id: str | None = Field(None, description="Object ID")
 
     c_department: str | None = Field("", description="Department")
     c_description: str | None = Field("", description="Description")
