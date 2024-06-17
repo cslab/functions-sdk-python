@@ -10,12 +10,9 @@ from pydantic import BaseModel
 
 from csfunctions import ErrorResponse, Event, Request
 from csfunctions.config import ConfigModel, FunctionModel
-from csfunctions.logging import RedirectToLoki, Stream
 from csfunctions.objects.base import BaseObject
 from csfunctions.response import ResponseUnion
 from csfunctions.service import Service
-
-_log_stream = Stream()
 
 
 def _load_config(function_dir) -> ConfigModel:
@@ -106,8 +103,7 @@ def execute(function_name: str, request_body: str, function_dir: str = "src") ->
         function_callback = get_function_callable(function_name, function_dir)
         service = Service(str(request.metadata.service_url), request.metadata.service_token)
 
-        with RedirectToLoki(_log_stream, request.event.event_id):
-            response = function_callback(request.metadata, request.event, service)
+        response = function_callback(request.metadata, request.event, service)
 
         if response is None:
             return ""
