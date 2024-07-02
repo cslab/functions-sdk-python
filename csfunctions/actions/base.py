@@ -1,6 +1,6 @@
 from enum import Enum
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 
 class ActionNames(str, Enum):
@@ -10,5 +10,4 @@ class ActionNames(str, Enum):
 
 class BaseAction(BaseModel):
     name: str
-    id: str = Field(..., description="unique identifier")
-    data: dict | None = None
+    id: str | None = None
