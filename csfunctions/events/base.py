@@ -10,9 +10,10 @@ class EventNames(str, Enum):
     ENGINEERING_CHANGE_RELEASE = "engineering_change_release"
     FIELD_VALUE_CALCULATION = "field_value_calculation"
     WORKFLOW_TASK_TRIGGER = "workflow_task_trigger"
+    RELEASE_CHECK = "release_check"
+    RELEASED = "released"
 
 
 class BaseEvent(BaseModel):
     name: str
     event_id: str = Field(..., description="unique identifier")
-    data: dict | None = None
