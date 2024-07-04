@@ -4,6 +4,7 @@
       "properties": {
         "name": {
           "const": "abort_and_show_error",
+          "default": "abort_and_show_error",
           "enum": [
             "abort_and_show_error"
           ],
@@ -11,24 +12,17 @@
           "type": "string"
         },
         "id": {
-          "description": "unique identifier",
-          "title": "Id",
-          "type": "string"
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
         },
-        "data": {
-          "$ref": "#/$defs/AbortAndShowErrorData"
-        }
-      },
-      "required": [
-        "name",
-        "id",
-        "data"
-      ],
-      "title": "AbortAndShowErrorAction",
-      "type": "object"
-    },
-    "AbortAndShowErrorData": {
-      "properties": {
         "message": {
           "default": "unknown error",
           "description": "error message to be shown to the user",
@@ -36,7 +30,7 @@
           "type": "string"
         }
       },
-      "title": "AbortAndShowErrorData",
+      "title": "AbortAndShowErrorAction",
       "type": "object"
     },
     "DummyAction": {
@@ -51,26 +45,20 @@
           "type": "string"
         },
         "id": {
-          "description": "unique identifier",
-          "title": "Id",
-          "type": "string"
-        },
-        "data": {
           "anyOf": [
             {
-              "type": "object"
+              "type": "string"
             },
             {
               "type": "null"
             }
           ],
           "default": null,
-          "title": "Data"
+          "title": "Id"
         }
       },
       "required": [
-        "name",
-        "id"
+        "name"
       ],
       "title": "DummyAction",
       "type": "object"
