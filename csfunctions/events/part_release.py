@@ -5,11 +5,7 @@ from pydantic import BaseModel, Field
 from csfunctions.objects import Document, Part
 
 from .base import BaseEvent, EventNames
-
-
-class PartReleaseDialogData(BaseModel):
-    cdbprot_remark: str | None = Field("", description="remark")
-    cdb_ec_id: str | None = Field("", description="Engineering Change ID")
+from .dialog_data import PartReleaseDialogData
 
 
 class PartReleaseData(BaseModel):
