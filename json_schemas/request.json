@@ -730,6 +730,63 @@
       "title": "Document",
       "type": "object"
     },
+    "DocumentReleaseCheckData": {
+      "properties": {
+        "documents": {
+          "description": "List of documents that will be released.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of parts that belong to the documents",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "dialog_data": {
+          "$ref": "#/$defs/DocumentReleaseDialogData"
+        }
+      },
+      "required": [
+        "documents",
+        "parts",
+        "dialog_data"
+      ],
+      "title": "DocumentReleaseCheckData",
+      "type": "object"
+    },
+    "DocumentReleaseCheckEvent": {
+      "properties": {
+        "name": {
+          "const": "document_release_check",
+          "default": "document_release_check",
+          "enum": [
+            "document_release_check"
+          ],
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/DocumentReleaseCheckData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "DocumentReleaseCheckEvent",
+      "type": "object"
+    },
     "DocumentReleaseData": {
       "properties": {
         "documents": {
@@ -1220,6 +1277,68 @@
         "data"
       ],
       "title": "EngineeringChangeRelease",
+      "type": "object"
+    },
+    "EngineeringChangeReleaseCheck": {
+      "properties": {
+        "name": {
+          "const": "engineering_change_release_check",
+          "default": "engineering_change_release_check",
+          "enum": [
+            "engineering_change_release_check"
+          ],
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/EngineeringChangeReleaseCheckData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "EngineeringChangeReleaseCheck",
+      "type": "object"
+    },
+    "EngineeringChangeReleaseCheckData": {
+      "properties": {
+        "documents": {
+          "description": "List of included documents.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of included parts.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "engineering_changes": {
+          "description": "List of engineering changes that will be released.",
+          "items": {
+            "$ref": "#/$defs/EngineeringChange"
+          },
+          "title": "Engineering Changes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "parts",
+        "engineering_changes"
+      ],
+      "title": "EngineeringChangeReleaseCheckData",
       "type": "object"
     },
     "EngineeringChangeReleaseData": {
@@ -2336,6 +2455,63 @@
       "title": "Part",
       "type": "object"
     },
+    "PartReleaseCheckData": {
+      "properties": {
+        "parts": {
+          "description": "List of parts that will be released.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "documents": {
+          "description": "List of documents that are referenced by the parts.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "dialog_data": {
+          "$ref": "#/$defs/PartReleaseDialogData"
+        }
+      },
+      "required": [
+        "parts",
+        "documents",
+        "dialog_data"
+      ],
+      "title": "PartReleaseCheckData",
+      "type": "object"
+    },
+    "PartReleaseCheckEvent": {
+      "properties": {
+        "name": {
+          "const": "part_release_check",
+          "enum": [
+            "part_release_check"
+          ],
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/PartReleaseCheckData"
+        }
+      },
+      "required": [
+        "name",
+        "event_id",
+        "data"
+      ],
+      "title": "PartReleaseCheckEvent",
+      "type": "object"
+    },
     "PartReleaseData": {
       "properties": {
         "parts": {
@@ -2432,160 +2608,6 @@
         "data"
       ],
       "title": "PartReleaseEvent",
-      "type": "object"
-    },
-    "ReleaseCheckData": {
-      "properties": {
-        "documents": {
-          "description": "List of documents that will be released.",
-          "items": {
-            "$ref": "#/$defs/Document"
-          },
-          "title": "Documents",
-          "type": "array"
-        },
-        "parts": {
-          "description": "List of parts that will be released.",
-          "items": {
-            "$ref": "#/$defs/Part"
-          },
-          "title": "Parts",
-          "type": "array"
-        },
-        "engineering_changes": {
-          "description": "List of engineering changes will be released.",
-          "items": {
-            "$ref": "#/$defs/EngineeringChange"
-          },
-          "title": "Engineering Changes",
-          "type": "array"
-        },
-        "dialog_data": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/DocumentReleaseDialogData"
-            },
-            {
-              "$ref": "#/$defs/PartReleaseDialogData"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Dialog Data"
-        }
-      },
-      "required": [
-        "documents",
-        "parts",
-        "engineering_changes",
-        "dialog_data"
-      ],
-      "title": "ReleaseCheckData",
-      "type": "object"
-    },
-    "ReleaseCheckEvent": {
-      "properties": {
-        "name": {
-          "const": "release_check",
-          "default": "release_check",
-          "enum": [
-            "release_check"
-          ],
-          "title": "Name",
-          "type": "string"
-        },
-        "event_id": {
-          "description": "unique identifier",
-          "title": "Event Id",
-          "type": "string"
-        },
-        "data": {
-          "$ref": "#/$defs/ReleaseCheckData"
-        }
-      },
-      "required": [
-        "event_id",
-        "data"
-      ],
-      "title": "ReleaseCheckEvent",
-      "type": "object"
-    },
-    "ReleasedData": {
-      "properties": {
-        "documents": {
-          "description": "List of documents that have been be released.",
-          "items": {
-            "$ref": "#/$defs/Document"
-          },
-          "title": "Documents",
-          "type": "array"
-        },
-        "parts": {
-          "description": "List of parts that have been released.",
-          "items": {
-            "$ref": "#/$defs/Part"
-          },
-          "title": "Parts",
-          "type": "array"
-        },
-        "engineering_changes": {
-          "description": "List of engineering changes have been released.",
-          "items": {
-            "$ref": "#/$defs/EngineeringChange"
-          },
-          "title": "Engineering Changes",
-          "type": "array"
-        },
-        "dialog_data": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/DocumentReleaseDialogData"
-            },
-            {
-              "$ref": "#/$defs/PartReleaseDialogData"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "title": "Dialog Data"
-        }
-      },
-      "required": [
-        "documents",
-        "parts",
-        "engineering_changes",
-        "dialog_data"
-      ],
-      "title": "ReleasedData",
-      "type": "object"
-    },
-    "ReleasedEvent": {
-      "properties": {
-        "name": {
-          "const": "released",
-          "default": "released",
-          "enum": [
-            "released"
-          ],
-          "title": "Name",
-          "type": "string"
-        },
-        "event_id": {
-          "description": "unique identifier",
-          "title": "Event Id",
-          "type": "string"
-        },
-        "data": {
-          "$ref": "#/$defs/ReleasedData"
-        }
-      },
-      "required": [
-        "event_id",
-        "data"
-      ],
-      "title": "ReleasedEvent",
       "type": "object"
     },
     "Workflow": {
@@ -2779,12 +2801,13 @@
       "discriminator": {
         "mapping": {
           "document_release": "#/$defs/DocumentReleaseEvent",
+          "document_release_check": "#/$defs/DocumentReleaseCheckEvent",
           "dummy": "#/$defs/DummyEvent",
           "engineering_change_release": "#/$defs/EngineeringChangeRelease",
+          "engineering_change_release_check": "#/$defs/EngineeringChangeReleaseCheck",
           "field_value_calculation": "#/$defs/FieldValueCalculationEvent",
           "part_release": "#/$defs/PartReleaseEvent",
-          "release_check": "#/$defs/ReleaseCheckEvent",
-          "released": "#/$defs/ReleasedEvent",
+          "part_release_check": "#/$defs/PartReleaseCheckEvent",
           "workflow_task_trigger": "#/$defs/WorkflowTaskTriggerEvent"
         },
         "propertyName": "name"
@@ -2794,7 +2817,13 @@
           "$ref": "#/$defs/DocumentReleaseEvent"
         },
         {
+          "$ref": "#/$defs/DocumentReleaseCheckEvent"
+        },
+        {
           "$ref": "#/$defs/PartReleaseEvent"
+        },
+        {
+          "$ref": "#/$defs/PartReleaseCheckEvent"
         },
         {
           "$ref": "#/$defs/FieldValueCalculationEvent"
@@ -2806,13 +2835,10 @@
           "$ref": "#/$defs/EngineeringChangeRelease"
         },
         {
+          "$ref": "#/$defs/EngineeringChangeReleaseCheck"
+        },
+        {
           "$ref": "#/$defs/WorkflowTaskTriggerEvent"
-        },
-        {
-          "$ref": "#/$defs/ReleaseCheckEvent"
-        },
-        {
-          "$ref": "#/$defs/ReleasedEvent"
         }
       ],
       "title": "Event"
