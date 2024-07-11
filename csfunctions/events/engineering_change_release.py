@@ -16,8 +16,5 @@ class EngineeringChangeReleaseData(BaseModel):
 
 
 class EngineeringChangeRelease(BaseEvent):
-    def __init__(self, event_id: str, data: EngineeringChangeReleaseData, **_):
-        super().__init__(name=EventNames.ENGINEERING_CHANGE_RELEASE, event_id=event_id, data=data)
-
-    name: Literal[EventNames.ENGINEERING_CHANGE_RELEASE]
+    name: Literal[EventNames.ENGINEERING_CHANGE_RELEASE] = EventNames.ENGINEERING_CHANGE_RELEASE
     data: EngineeringChangeReleaseData

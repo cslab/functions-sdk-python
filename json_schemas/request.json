@@ -862,6 +862,7 @@
       "properties": {
         "name": {
           "const": "document_release",
+          "default": "document_release",
           "enum": [
             "document_release"
           ],
@@ -878,7 +879,6 @@
         }
       },
       "required": [
-        "name",
         "event_id",
         "data"
       ],
@@ -1256,6 +1256,7 @@
       "properties": {
         "name": {
           "const": "engineering_change_release",
+          "default": "engineering_change_release",
           "enum": [
             "engineering_change_release"
           ],
@@ -1272,7 +1273,6 @@
         }
       },
       "required": [
-        "name",
         "event_id",
         "data"
       ],
@@ -2587,6 +2587,7 @@
       "properties": {
         "name": {
           "const": "part_release",
+          "default": "part_release",
           "enum": [
             "part_release"
           ],
@@ -2603,7 +2604,6 @@
         }
       },
       "required": [
-        "name",
         "event_id",
         "data"
       ],
