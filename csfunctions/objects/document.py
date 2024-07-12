@@ -31,7 +31,7 @@ class Document(BaseObject):
     category2_name_de: str | None = Field(..., description="Category")
     z_categ1: str | None = Field(..., description="Main Category")
     z_categ2: str | None = Field(..., description="Category")
-    cdb_obsolete: int = Field(..., description="Obsolete")
+    cdb_obsolete: int | None = Field(..., description="Obsolete")
     z_status: int = Field(..., description="Status Number")
     z_status_txt: str = Field(..., description="Status Text")
     autoren: str | None = Field(..., description="Authors, comma separated")
