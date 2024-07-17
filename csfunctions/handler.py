@@ -8,7 +8,8 @@ from typing import Callable
 import yaml
 from pydantic import BaseModel
 
-from csfunctions import ErrorResponse, Event, Request
+from csfunctions import ErrorResponse, Event, Request, WorkloadResponse
+from csfunctions.actions import ActionUnion
 from csfunctions.config import ConfigModel, FunctionModel
 from csfunctions.objects.base import BaseObject
 from csfunctions.response import ResponseUnion
@@ -107,6 +108,13 @@ def execute(function_name: str, request_body: str, function_dir: str = "src") ->
 
         if response is None:
             return ""
+
+        if isinstance(response, ActionUnion):
+            # wrap returned Actions into a WorkloadResponse
+            response = WorkloadResponse(actions=[response])
+        elif isinstance(response, list) and all(isinstance(o, ActionUnion) for o in response):
+            # wrap list of Actions into a WorkloadResponse
+            response = WorkloadResponse(actions=response)
 
         if not isinstance(
             response, ResponseUnion

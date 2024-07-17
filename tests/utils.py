@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from csfunctions import DataResponse, MetaData, Request, Service
+from csfunctions.actions import AbortAndShowErrorAction
 from csfunctions.events import DummyEvent
 from csfunctions.objects import Document, EngineeringChange, Part
 
@@ -18,6 +19,20 @@ def empty_function(*args, **kwargs):  # pylint: disable=unused-argument
     An empty function that doesn't do anything.
     """
     pass  # pylint: disable=unnecessary-pass
+
+
+def action_function(*args, **kwargs):  # pylint: disable=unused-argument
+    """
+    A Function that returns an Action
+    """
+    return AbortAndShowErrorAction(message="Testerror")
+
+
+def action_list_function(*args, **kwargs):  # pylint: disable=unused-argument
+    """
+    A Function that returns a list of  Actions
+    """
+    return [AbortAndShowErrorAction(message="Testerror"), AbortAndShowErrorAction(message="Testerror")]
 
 
 dummy_document = Document(
