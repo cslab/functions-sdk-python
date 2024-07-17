@@ -195,9 +195,16 @@
           "title": "Z Categ2"
         },
         "cdb_obsolete": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
           "description": "Obsolete",
-          "title": "Cdb Obsolete",
-          "type": "integer"
+          "title": "Cdb Obsolete"
         },
         "z_status": {
           "description": "Status Number",
