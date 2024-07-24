@@ -5,7 +5,6 @@ Functions can return a list of "Actions" that should be performed in CIM Databas
 Actions need to be packaged in a WorkloadResponse, however csfunctions will handle that for you if your Function returns an Action or a list of Actions:
 
 ```python
-from csfunctions import WorkloadResponse
 from csfunctions.actions import AbortAndShowErrorAction
 
 def my_function(metadata, event, service):
