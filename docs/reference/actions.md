@@ -2,7 +2,7 @@ Functions can return a list of "Actions" that should be performed in CIM Databas
 
 ### Return an Action:
 
-Actions need to be packaged in a WorkloadResponse, however csfunctions will handle that for you if your Function returns an Action or a list of Actions:
+Example:
 
 ```python
 from csfunctions.actions import AbortAndShowErrorAction
