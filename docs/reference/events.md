@@ -3,8 +3,8 @@ Events always have a `name` and a `data` attribute. The contents of those attrib
 ## DocumentReleaseCheckEvent
 `csfunctions.events.DocumentReleaseCheckEvent`
 
-This event is fired when a document is about to be released, but **before** the release has happened. Raising an exception will prevent the release.
-At this point it is not guaranteed yet that the document will be released, meaning the document should not be sent to e.g. an ERP system.
+This event is fired when a user tries to release a document. Raising an exception will prevent the release. If the release is done via the express release, the event is triggered before reviewers are notified.
+Be aware that the document is not released yet and the release might still be aborted for other reasons (e.g. the reviewers don't give approval), so don't sent the document to e.g. an ERP system yet.
 
 **Supported actions:**
 
@@ -53,8 +53,8 @@ This event is fired **after** a document has been released. Raising an exception
 ## EngineeringChangeReleaseCheck
 `csfunctions.events.EngineeringChangeReleaseCheck`
 
-This event is fired when an engineering change is about to be released, but **before** the release has happened. Raising an exception will prevent the release.
-At this point it is not guaranteed yet that the engineering change will be released, meaning the engineering change should not be sent to e.g. an ERP system.
+This event is fired when a user tries to release an engineering change. Raising an exception will prevent the release.
+Be aware that the engineering change is not released yet and the release might still be aborted for other reasons, so don't sent the engineering change to e.g. an ERP system yet.
 
 **Supported actions:**
 
@@ -112,8 +112,8 @@ This event is fired **after** a part has been released. Raising an exception thu
 ## PartReleaseCheckEvent
 `csfunctions.events.PartReleaseCheckEvent`
 
-This event is fired when a part is about to be released, but **before** the release has happened. Raising an exception will prevent the release.
-At this point it is not guaranteed yet that the part will be released, meaning the part should not be sent to e.g. an ERP system.
+This event is fired when a user tries to release a part. Raising an exception will prevent the release. If the release is done via the express release, the event is triggered before reviewers are notified.
+Be aware that the part is not released yet and the release might still be aborted for other reasons (e.g. the reviewers don't give approval), so don't sent the part to e.g. an ERP system yet.
 
 **Supported actions:**
 
