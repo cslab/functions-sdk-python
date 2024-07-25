@@ -87,28 +87,6 @@ This event is fired **after** an engineering change has been released. Raising a
 |parts| list[[Part](objects.md#part)]|List of included parts.|
 
 
-## PartReleaseEvent
-`csfunctions.events.PartReleaseEvent`
-
-This event is fired **after** a part has been released. Raising an exception thus can not prevent the release.
-
-**PartReleaseEvent.name:** part_release
-
-**PartReleaseEvent.data:**
-
-|Attribute|Type|Description|
-|-|-|-|
-|parts| list[[Part](objects.md#part)]|List of parts that were released.|
-|documents| list[[Document](objects.md#document)]|List of documents that belong to the released parts.|
-|dialog_data|PartReleaseDialogData|Contents of the dialog.|
-
-**PartReleaseDialogData:**
-
-|Attribute|Type|Description|
-|-|-|-|
-|cdbprot_remark|str \| None | Remark|
-|cdb_ec_id|str \| None| Engineering Change ID|
-
 ## PartReleaseCheckEvent
 `csfunctions.events.PartReleaseCheckEvent`
 
@@ -135,6 +113,30 @@ Be aware that the part is not released yet and the release might still be aborte
 |-|-|-|
 |cdbprot_remark|str \| None | Remark|
 |cdb_ec_id|str \| None| Engineering Change ID|
+
+
+## PartReleaseEvent
+`csfunctions.events.PartReleaseEvent`
+
+This event is fired **after** a part has been released. Raising an exception thus can not prevent the release.
+
+**PartReleaseEvent.name:** part_release
+
+**PartReleaseEvent.data:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|parts| list[[Part](objects.md#part)]|List of parts that were released.|
+|documents| list[[Document](objects.md#document)]|List of documents that belong to the released parts.|
+|dialog_data|PartReleaseDialogData|Contents of the dialog.|
+
+**PartReleaseDialogData:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|cdbprot_remark|str \| None | Remark|
+|cdb_ec_id|str \| None| Engineering Change ID|
+
 
 ## WorkflowTaskTriggerEvent
 `csfunctions.events.WorkflowTaskTriggerEvent`
