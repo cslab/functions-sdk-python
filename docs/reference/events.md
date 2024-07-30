@@ -17,7 +17,7 @@ Be aware that the document is not released yet and the release might still be ab
 |Attribute|Type|Description|
 |-|-|-|
 |documents| list[[Document](objects.md#document)]|List of documents that will be released.|
-|parts| list[[Part](objects.md#part)]|List of parts that belong to the documents.|
+|attached_parts| list[[Part](objects.md#part)]|List of parts that belong to the documents.|
 |dialog_data|DocumentReleaseDialogData|Contents of the dialog.|
 
 **DocumentReleaseCheckDialogData:**
@@ -67,8 +67,8 @@ Be aware that the engineering change is not released yet and the release might s
 |Attribute|Type|Description|
 |-|-|-|
 |engineering_changes| list[[EngineeringChange](objects.md#engineeringchange)]|List of engineering changes that will be released.|
-|documents| list[[Document](objects.md#document)]|List of included documents.|
-|parts| list[[Part](objects.md#part)]|List of included parts.|
+|attached_documents| list[[Document](objects.md#document)]|List of included documents.|
+|attached_parts| list[[Part](objects.md#part)]|List of included parts.|
 
 
 ## EngineeringChangeRelease
@@ -104,7 +104,7 @@ Be aware that the part is not released yet and the release might still be aborte
 |Attribute|Type|Description|
 |-|-|-|
 |parts| list[[Part](objects.md#part)]|List of parts that will released.|
-|documents| list[[Document](objects.md#document)]|List of documents that belong to the released parts.|
+|attached_documents| list[[Document](objects.md#document)]|List of documents that belong to the released parts.|
 |dialog_data|PartReleaseDialogData|Contents of the dialog.|
 
 **PartReleaseCheckDialogData:**
