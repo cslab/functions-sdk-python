@@ -3,12 +3,17 @@ from typing import TYPE_CHECKING, Literal, Optional
 
 from pydantic import Field
 
+from csfunctions.util import get_items_of_type
+
 from .base import BaseObject, ObjectType
 
 if TYPE_CHECKING:
     from csfunctions.events import EventData
 
+try:
     from .document import Document
+except ImportError:
+    pass
 
 
 class Part(BaseObject):
@@ -77,8 +82,8 @@ class Part(BaseObject):
     documents: list["Document"] = Field([], exclude=True)
 
     def link_objects(self, data: "EventData"):
-        documents = getattr(data, "documents", None)
-        if documents and self.document_ids:
+        if self.document_ids:
+            documents = get_items_of_type(data, Document)
             self._link_documents(documents)
 
     def _link_documents(self, documents: list["Document"]):

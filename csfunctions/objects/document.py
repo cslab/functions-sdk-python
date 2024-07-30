@@ -3,6 +3,8 @@ from typing import TYPE_CHECKING, Literal, Optional
 
 from pydantic import Field
 
+from csfunctions.util import get_items_of_type
+
 from .base import BaseObject, ObjectType
 from .file import File
 
@@ -79,8 +81,8 @@ class Document(BaseObject):
     part: Optional["Part"] = Field(None, exclude=True)
 
     def link_objects(self, data: "EventData"):
-        parts = getattr(data, "parts", None)
-        if parts and self.teilenummer:
+        if self.teilenummer:
+            parts = get_items_of_type(data, Part)
             self._link_part(parts)
 
     def _link_part(self, parts: list["Part"]):
