@@ -10,7 +10,7 @@ from .dialog_data import PartReleaseDialogData
 
 class PartReleaseCheckData(BaseModel):
     parts: list[Part] = Field(..., description="List of parts that will be released.")
-    documents: list[Document] = Field(..., description="List of documents that are referenced by the parts.")
+    attached_documents: list[Document] = Field(..., description="List of documents that are referenced by the parts.")
     dialog_data: PartReleaseDialogData
 
 

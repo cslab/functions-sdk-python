@@ -747,12 +747,12 @@
           "title": "Documents",
           "type": "array"
         },
-        "parts": {
+        "attached_parts": {
           "description": "List of parts that belong to the documents",
           "items": {
             "$ref": "#/$defs/Part"
           },
-          "title": "Parts",
+          "title": "Attached Parts",
           "type": "array"
         },
         "dialog_data": {
@@ -761,7 +761,7 @@
       },
       "required": [
         "documents",
-        "parts",
+        "attached_parts",
         "dialog_data"
       ],
       "title": "DocumentReleaseCheckData",
@@ -1315,20 +1315,20 @@
     },
     "EngineeringChangeReleaseCheckData": {
       "properties": {
-        "documents": {
+        "attached_documents": {
           "description": "List of included documents.",
           "items": {
             "$ref": "#/$defs/Document"
           },
-          "title": "Documents",
+          "title": "Attached Documents",
           "type": "array"
         },
-        "parts": {
+        "attached_parts": {
           "description": "List of included parts.",
           "items": {
             "$ref": "#/$defs/Part"
           },
-          "title": "Parts",
+          "title": "Attached Parts",
           "type": "array"
         },
         "engineering_changes": {
@@ -1341,8 +1341,8 @@
         }
       },
       "required": [
-        "documents",
-        "parts",
+        "attached_documents",
+        "attached_parts",
         "engineering_changes"
       ],
       "title": "EngineeringChangeReleaseCheckData",
@@ -2472,12 +2472,12 @@
           "title": "Parts",
           "type": "array"
         },
-        "documents": {
+        "attached_documents": {
           "description": "List of documents that are referenced by the parts.",
           "items": {
             "$ref": "#/$defs/Document"
           },
-          "title": "Documents",
+          "title": "Attached Documents",
           "type": "array"
         },
         "dialog_data": {
@@ -2486,7 +2486,7 @@
       },
       "required": [
         "parts",
-        "documents",
+        "attached_documents",
         "dialog_data"
       ],
       "title": "PartReleaseCheckData",
