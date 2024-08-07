@@ -48,7 +48,7 @@ Normal Document that doesn't contain a CAD-Model.
 |category2_name_de|str \| None|Category|
 |z_categ1|str \| None|Main Category|
 |z_categ2|str \| None|Category|
-|cdb_obsolete|int|Obsolete|
+|cdb_obsolete|int \| None|Obsolete|
 |z_status|int|Status Number|
 |z_status_txt|str|Status Text|
 |autoren|str \| None|Authors, comma separated|
@@ -86,6 +86,7 @@ Normal Document that doesn't contain a CAD-Model.
 |cdb_m2date|datetime \| None|File Last Saved on|
 |z_art|str \| None|Document Type|
 |mapped_materialnr_erp|str \| None|Materialnumber ERP|
+|cdb_object_id|str \| None|Object ID|
 |files|list[[File](objects.md#file)]|Files attached to the document|
 |part|typing.Optional[[Part](objects.md#part)]||
 
@@ -101,6 +102,7 @@ Normal Document that doesn't contain a CAD-Model.
 |status|int|Status|
 |title|str \| None|Title|
 |template_ec_id|str \| None|Template ID|
+|cdb_object_id|str \| None|Object ID|
 |c_department|str \| None|Department|
 |c_description|str \| None|Description|
 |c_event|str \| None|Event|

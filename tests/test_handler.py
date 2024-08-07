@@ -3,6 +3,7 @@ import os
 from copy import deepcopy
 from unittest import TestCase
 
+from csfunctions import WorkloadResponse
 from csfunctions.handler import execute, get_function_callable, link_objects
 from tests.utils import dummy_request, ping_function
 
@@ -21,6 +22,10 @@ functions:
     entrypoint: tests.utils.ping_function
   - name: empty
     entrypoint: tests.utils.empty_function
+  - name: action
+    entrypoint: tests.utils.action_function
+  - name: actionlist
+    entrypoint: tests.utils.action_list_function
 """
             )
 
@@ -51,6 +56,21 @@ functions:
         request = deepcopy(dummy_request)  # make a deepcopy, since request object will be modified by link_objects
         result = execute("empty", json.dumps(request.model_dump(mode="json"), separators=(",", ":")), self.source_dir)
         self.assertEqual("", result)
+
+        # test function returns Action
+        request = deepcopy(dummy_request)  # make a deepcopy, since request object will be modified by link_objects
+        result = execute("action", json.dumps(request.model_dump(mode="json"), separators=(",", ":")), self.source_dir)
+        parsed_result = WorkloadResponse.model_validate_json(result)  # should be a workload response
+        self.assertEqual(1, len(parsed_result.actions))
+
+        # test function returns list of Actions
+        request = deepcopy(dummy_request)  # make a deepcopy, since request object will be modified by link_objects
+        result = execute(
+            "actionlist", json.dumps(request.model_dump(mode="json"), separators=(",", ":")), self.source_dir
+        )
+
+        parsed_result = WorkloadResponse.model_validate_json(result)  # should be a workload response
+        self.assertEqual(2, len(parsed_result.actions))
 
     def test_link_objects(self):
         request = deepcopy(dummy_request)  # make a deepcopy, since request object will be modified by link_objects

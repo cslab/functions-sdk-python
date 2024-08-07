@@ -1,5 +1,32 @@
 Events always have a `name` and a `data` attribute. The contents of those attributes depend on the type of the event.
 
+## DocumentReleaseCheckEvent
+`csfunctions.events.DocumentReleaseCheckEvent`
+
+This event is fired when a user tries to release a document. Raising an exception will prevent the release. If the release is done via the express release, the event is triggered before reviewers are notified.
+Be aware that the document is not released yet and the release might still be aborted for other reasons (e.g. the reviewers don't give approval), so don't sent the document to e.g. an ERP system yet.
+
+**Supported actions:**
+
+- [AbortAndShowErrorAction](actions.md#AbortAndShowErrorAction)
+
+**DocumentReleaseCheckEvent.name:** document_release_check
+
+**DocumentReleaseCheckEvent.data:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|documents| list[[Document](objects.md#document)]|List of documents that will be released.|
+|attached_parts| list[[Part](objects.md#part)]|List of parts that belong to the documents.|
+|dialog_data|DocumentReleaseDialogData|Contents of the dialog.|
+
+**DocumentReleaseCheckDialogData:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|cdbprot_remark|str \| None | Remark|
+|cdb_ec_id|str \| None| Engineering Change ID|
+
 ## DocumentReleaseEvent
 `csfunctions.events.DocumentReleaseEvent`
 
@@ -23,6 +50,27 @@ This event is fired **after** a document has been released. Raising an exception
 |cdb_ec_id|str \| None| Engineering Change ID|
 
 
+## EngineeringChangeReleaseCheck
+`csfunctions.events.EngineeringChangeReleaseCheck`
+
+This event is fired when a user tries to release an engineering change. Raising an exception will prevent the release.
+Be aware that the engineering change is not released yet and the release might still be aborted for other reasons, so don't sent the engineering change to e.g. an ERP system yet.
+
+**Supported actions:**
+
+- [AbortAndShowErrorAction](actions.md#AbortAndShowErrorAction)
+
+**EngineeringChangeReleaseCheck.name:** engineering_change_check_release
+
+**EngineeringChangeReleaseCheck.data:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|engineering_changes| list[[EngineeringChange](objects.md#engineeringchange)]|List of engineering changes that will be released.|
+|attached_documents| list[[Document](objects.md#document)]|List of included documents.|
+|attached_parts| list[[Part](objects.md#part)]|List of included parts.|
+
+
 ## EngineeringChangeRelease
 `csfunctions.events.EngineeringChangeRelease`
 
@@ -37,6 +85,34 @@ This event is fired **after** an engineering change has been released. Raising a
 |engineering_changes| list[[EngineeringChange](objects.md#engineeringchange)]|List of engineering changes that were released.|
 |documents| list[[Document](objects.md#document)]|List of included documents.|
 |parts| list[[Part](objects.md#part)]|List of included parts.|
+
+
+## PartReleaseCheckEvent
+`csfunctions.events.PartReleaseCheckEvent`
+
+This event is fired when a user tries to release a part. Raising an exception will prevent the release. If the release is done via the express release, the event is triggered before reviewers are notified.
+Be aware that the part is not released yet and the release might still be aborted for other reasons (e.g. the reviewers don't give approval), so don't sent the part to e.g. an ERP system yet.
+
+**Supported actions:**
+
+- [AbortAndShowErrorAction](actions.md#AbortAndShowErrorAction)
+
+**PartRPartReleaseCheckEventeleaseEvent.name:** part_release_check
+
+**PartReleaseCheckEvent.data:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|parts| list[[Part](objects.md#part)]|List of parts that will released.|
+|attached_documents| list[[Document](objects.md#document)]|List of documents that belong to the released parts.|
+|dialog_data|PartReleaseDialogData|Contents of the dialog.|
+
+**PartReleaseCheckDialogData:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|cdbprot_remark|str \| None | Remark|
+|cdb_ec_id|str \| None| Engineering Change ID|
 
 
 ## PartReleaseEvent
@@ -60,6 +136,7 @@ This event is fired **after** a part has been released. Raising an exception thu
 |-|-|-|
 |cdbprot_remark|str \| None | Remark|
 |cdb_ec_id|str \| None| Engineering Change ID|
+
 
 ## WorkflowTaskTriggerEvent
 `csfunctions.events.WorkflowTaskTriggerEvent`

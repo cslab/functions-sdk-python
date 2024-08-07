@@ -18,7 +18,7 @@ class TestECRelease(TestCase):
         data = EngineeringChangeReleaseData(
             documents=[document], parts=[part], engineering_changes=[engineering_change]
         )
-        event = EngineeringChangeRelease("123", data)
+        event = EngineeringChangeRelease(event_id="123", data=data)
         request.event = event
 
         # objects are not linked yet

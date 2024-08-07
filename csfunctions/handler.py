@@ -8,9 +8,10 @@ from typing import Callable
 import yaml
 from pydantic import BaseModel
 
-from csfunctions import ErrorResponse, Event, Request
+from csfunctions import ErrorResponse, Event, Request, WorkloadResponse
+from csfunctions.actions import ActionUnion
 from csfunctions.config import ConfigModel, FunctionModel
-from csfunctions.objects.base import BaseObject
+from csfunctions.objects import BaseObject
 from csfunctions.response import ResponseUnion
 from csfunctions.service import Service
 
@@ -44,26 +45,6 @@ def get_function_callable(function_name: str, function_dir: str) -> Callable:
     sys.path.insert(0, function_dir)
     mod = import_module(module, "")
     return getattr(mod, function_name)
-
-
-def link_documents2parts(event: Event) -> None:
-    """
-    Links the relationship document -> part
-    """
-    if hasattr(event.data, "documents") and hasattr(event.data, "parts"):
-        # build parts dicts, indexed by teilenummer@index
-        parts = {}
-        for part in event.data.parts:
-            key = part.teilenummer + "@" + part.t_index
-            parts[key] = part
-
-        # link the parts to the documents
-        for document in event.data.documents:
-            if document.teilenummer is None or document.t_index is None:
-                continue
-            key = document.teilenummer + "@" + document.t_index
-            if key in parts:
-                document.part = parts[key]
 
 
 def link_objects(event: Event):
@@ -107,6 +88,13 @@ def execute(function_name: str, request_body: str, function_dir: str = "src") ->
 
         if response is None:
             return ""
+
+        if isinstance(response, ActionUnion):
+            # wrap returned Actions into a WorkloadResponse
+            response = WorkloadResponse(actions=[response])
+        elif isinstance(response, list) and all(isinstance(o, ActionUnion) for o in response):
+            # wrap list of Actions into a WorkloadResponse
+            response = WorkloadResponse(actions=response)
 
         if not isinstance(
             response, ResponseUnion

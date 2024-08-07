@@ -2,6 +2,7 @@ from typing import Annotated, Union
 
 from pydantic import Field
 
+from .base import BaseObject
 from .briefcase import Briefcase
 from .classification import ObjectPropertyValue
 from .document import CADDocument, Document

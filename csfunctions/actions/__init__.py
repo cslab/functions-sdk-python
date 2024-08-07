@@ -3,6 +3,8 @@ from typing import Annotated, Union
 from pydantic import Field
 
 from .abort_and_show_error import AbortAndShowErrorAction
+from .base import ActionNames
 from .dummy import DummyAction
 
-Action = Annotated[Union[AbortAndShowErrorAction, DummyAction], Field(discriminator="name")]
+ActionUnion = Union[AbortAndShowErrorAction, DummyAction]
+Action = Annotated[ActionUnion, Field(discriminator="name")]
