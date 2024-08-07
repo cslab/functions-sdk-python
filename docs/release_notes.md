@@ -1,3 +1,10 @@
+### Version 0.8.0:
+
+- Feature: New "Release Check" events for Documents, Parts and Engineering Changes, which are triggered before an object is released and allow the release to be aborted by returning an Action.
+
+- Feature: Actions can be returned by a Function to perform actions in CIM Database in response to an event. The first new Action `AbortAndShowErrorAction` can be used to abort the current operation in CIM Database, e.g. to abort a release process if certain conditions are not met.
+
+
 ### Version 0.7.2
 - Fix: removed (broken) logging redirect (will be handled by the runtime instead)
 

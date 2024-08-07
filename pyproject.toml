@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "contactsoftware-functions"
-version = "0.8.0.dev2"
+version = "0.8.0"
 readme = "README.md"
 
 license = "MIT"
