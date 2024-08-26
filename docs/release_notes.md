@@ -1,3 +1,6 @@
+### Version 0.8.1:
+- Fix: removed incorrect dependency to urllib3
+
 ### Version 0.8.0:
 
 - Feature: New "Release Check" events for Documents, Parts and Engineering Changes, which are triggered before an object is released and allow the release to be aborted by returning an Action.
