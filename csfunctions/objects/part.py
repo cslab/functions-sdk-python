@@ -116,3 +116,5 @@ class BOMItem(BaseObject):
     menge: float | None = Field(None, description="Quantity")
     stlbemerkung: str | None = Field(None, description="Remarks")
     mengeneinheit: str | None = Field(None, description="Unit of Measure")
+    teilenummer: str = Field(..., description="part number")
+    t_index: str = Field(..., description="part index")
