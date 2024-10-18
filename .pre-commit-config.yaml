@@ -2,25 +2,15 @@
 # See https://pre-commit.com/hooks.html for more hooks
 exclude: ^.*migrations/versions
 repos:
-  - repo: https://github.com/timothycrosley/isort
-    rev: 5.12.0
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.7.0
     hooks:
-      - id: isort
-        exclude: ^.*migrations/versions
-        args: [
-          "--line-length=120","--profile=black"
-        ]
-  - repo: https://github.com/ambv/black
-    rev: 23.7.0
-    hooks:
-      - id: black
-
-
-  - repo: https://github.com/PyCQA/flake8
-    rev: 6.1.0
-    hooks:
-      - id: flake8
-        args: [  "--max-line-length=120", "--per-file-ignores=*/__init__.py: F401"]
+      # Run the linter.
+      - id: ruff
+        args: [ --fix ]
+      # Run the formatter.
+      - id: ruff-format
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
@@ -39,13 +29,7 @@ repos:
       - id: end-of-file-fixer
       - id: mixed-line-ending
       - id: trailing-whitespace
-  - repo: https://github.com/pycqa/pylint
-    rev: v2.15.7
-    hooks:
-      - id: pylint
-        args: ["--output-format", "parseable", "-d", "W0511", "-j", "4"]
-
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.5
+    rev: 1.7.10
     hooks:
       - id: bandit

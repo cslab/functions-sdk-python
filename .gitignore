@@ -9,3 +9,4 @@ venv/
 dist/
 .pytest_cache
 site/
+.ruff_cache
