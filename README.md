@@ -1,4 +1,4 @@
- <h1><a href="https://github.com/cslab/functions-sdk"><img src="https://www.contact-software.com/design/img/logo-icon.svg" width="50" alt="CONTACT Logo"></a> Functions-SDK for Python</h1>
+ <h1><a href="https://github.com/cslab/functions-sdk"><img src="https://github.com/cslab/functions-sdk-python/blob/main/docs/assets/contact-logo.svg" width="50" alt="CONTACT Logo"></a> Functions-SDK for Python</h1>
 
 This SDK provides the **csfunctions** library for developing Functions with Python.
 
