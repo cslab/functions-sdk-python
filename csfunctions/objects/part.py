@@ -1,3 +1,4 @@
+from contextlib import suppress
 from datetime import date, datetime
 from typing import TYPE_CHECKING, Literal, Optional
 
@@ -10,10 +11,8 @@ from .base import BaseObject, ObjectType
 if TYPE_CHECKING:
     from csfunctions.events import EventData
 
-try:
+with suppress(ImportError):
     from .document import Document
-except ImportError:
-    pass
 
 
 class Part(BaseObject):
@@ -82,6 +81,8 @@ class Part(BaseObject):
     documents: list["Document"] = Field([], exclude=True)
 
     def link_objects(self, data: "EventData"):
+        from .document import Document
+
         if self.document_ids:
             documents = get_items_of_type(data, Document)
             self._link_documents(documents)
