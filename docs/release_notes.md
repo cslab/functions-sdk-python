@@ -1,3 +1,6 @@
+### Version 0.8.2:
+- added the fields `teilenummer`and `t_index` to BOMItem
+
 ### Version 0.8.1:
 - Fix: removed incorrect dependency to urllib3
 

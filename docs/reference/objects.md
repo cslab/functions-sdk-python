@@ -15,6 +15,8 @@
 |menge|float \| None|Quantity|
 |stlbemerkung|str \| None|Remarks|
 |mengeneinheit|str \| None|Unit of Measure|
+|teilenummer|str|part number|
+|t_index|str|part index|
 
 ## Briefcase
 `csfunctions.objects.Briefcase`
@@ -236,7 +238,7 @@ An objects property, used by classification.
 |gebrauchsstand|str \| None|Usability|
 |st_breite|float \| None|Width|
 |document_ids|list[str]|List of document IDs, that were changed. (z_nummer@z_index)|
-|documents|list['Document']||
+|documents|list[[Document](objects.md#document)]||
 
 ## Workflow
 `csfunctions.objects.Workflow`
