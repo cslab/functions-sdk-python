@@ -20,7 +20,7 @@ class WorkloadResponse(BaseModel):
         actions: list[Action],
         event_id: str | None = None,
         response_type: Literal[ResponseType.WORKLOAD] | None = None,  # pylint: disable=unused-argument
-        **kwargs
+        **kwargs,
     ):
         event_id = event_id or str(uuid4())
         super().__init__(response_type=ResponseType.WORKLOAD, event_id=event_id, actions=actions, **kwargs)
@@ -36,7 +36,7 @@ class DataResponse(BaseModel):
         data: dict,
         event_id: str | None = None,
         response_type: Literal[ResponseType.DATA] | None = None,
-        **kwargs  # pylint: disable=unused-argument
+        **kwargs,  # pylint: disable=unused-argument
     ):
         event_id = event_id or str(uuid4())
 
@@ -55,7 +55,7 @@ class ErrorResponse(BaseModel):
         trace: str = "",
         event_id: str | None = None,
         response_type: Literal[ResponseType.ERROR] | None = None,  # pylint: disable=unused-argument
-        **kwargs
+        **kwargs,
     ):
         event_id = event_id or str(uuid4())
         super().__init__(
@@ -64,7 +64,7 @@ class ErrorResponse(BaseModel):
             message=message,
             error_type=error_type,
             trace=trace,
-            **kwargs
+            **kwargs,
         )
 
     response_type: Literal[ResponseType.ERROR]

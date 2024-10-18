@@ -26,3 +26,18 @@ Object = Annotated[
     ],
     Field(discriminator="object_type"),
 ]
+
+
+__all__ = [
+    "Document",
+    "CADDocument",
+    "Part",
+    "File",
+    "EngineeringChange",
+    "Material",
+    "BOMItem",
+    "ObjectPropertyValue",
+    "Briefcase",
+    "Workflow",
+    "BaseObject",
+]

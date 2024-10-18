@@ -33,7 +33,7 @@ class Briefcase(BaseObject):
     def link_objects(self, data: "EventData"):
         parts = getattr(data, "parts", None)
         documents = getattr(data, "documents", None)
-        engineering_changes = getattr(data, "engineering_changes")
+        engineering_changes = getattr(data, "engineering_changes", None)
 
         if parts and self.part_ids:
             self._link_parts(parts)

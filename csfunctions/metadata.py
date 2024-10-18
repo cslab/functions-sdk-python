@@ -13,7 +13,7 @@ class MetaData(BaseModel):
         transaction_id: str,
         instance_url: str,
         db_service_url: str | None = None,
-        **kwargs
+        **kwargs,
     ):
         super().__init__(
             app_lang=app_lang,
@@ -23,7 +23,7 @@ class MetaData(BaseModel):
             request_datetime=request_datetime,
             transaction_id=transaction_id,
             instance_url=instance_url,
-            **kwargs
+            **kwargs,
         )
 
     app_lang: str = Field(..., description="ISO code of the session language that triggered the webhook.")

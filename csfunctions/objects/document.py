@@ -1,3 +1,4 @@
+from contextlib import suppress
 from datetime import date, datetime
 from typing import TYPE_CHECKING, Literal, Optional
 
@@ -8,10 +9,8 @@ from csfunctions.util import get_items_of_type
 from .base import BaseObject, ObjectType
 from .file import File
 
-try:
+with suppress(ImportError):
     from .part import Part
-except ImportError:
-    pass
 
 if TYPE_CHECKING:
     from csfunctions.events import EventData
@@ -81,6 +80,8 @@ class Document(BaseObject):
     part: Optional["Part"] = Field(None, exclude=True)
 
     def link_objects(self, data: "EventData"):
+        from .part import Part
+
         if self.teilenummer:
             parts = get_items_of_type(data, Part)
             self._link_part(parts)
