@@ -3,6 +3,8 @@ from typing import TYPE_CHECKING, Literal
 
 from pydantic import Field
 
+from csfunctions.util import get_items_of_type
+
 from .base import BaseObject, ObjectType
 from .document import Document
 from .part import Part
@@ -57,8 +59,11 @@ class EngineeringChange(BaseObject):
     cdb_mdate: datetime | None = Field(None, description="Last Modified on")
 
     def link_objects(self, data: "EventData"):
-        parts = getattr(data, "parts", None)
-        documents = getattr(data, "documents", None)
+        from .document import Document
+        from .part import Part
+
+        parts = get_items_of_type(data, Part)
+        documents = get_items_of_type(data, Document)
 
         if parts and self.part_ids:
             self._link_parts(parts)
