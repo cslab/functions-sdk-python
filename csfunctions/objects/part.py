@@ -101,6 +101,7 @@ class Material(BaseObject):
     material_id: str | None = Field(None, description="Material ID")
     name_de: str | None = Field(None, description="Name DE")
     name_en: str | None = Field(None, description="Name EN")
+    short_name: str | None = Field(None, description="Short Name")
 
 
 class BOMItem(BaseObject):
