@@ -1,3 +1,6 @@
+### Version 0.8.3:
+- added the fields `short_name`, `application` and `remark` to Material
+
 ### Version 0.8.2:
 - added the fields `teilenummer`and `t_index` to BOMItem
 
