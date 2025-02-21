@@ -144,7 +144,7 @@ The event is triggered before any field calculations are performed.
 |Attribute|Type|Description|
 |-|-|-|
 |parts| list[[Part](objects.md#part)]|List of parts that are about to be created.|
-|attached_documents| list[[Document](objects.md#document)]|Contains the original part(s) if a part is a copy.|
+|attached_parts| list[[Part](objects.md#part)]|Contains the original part(s) if a part is a copy.|
 
 ## PartModifyCheckEvent
 `csfunctions.events.PartModifyCheckEvent`
