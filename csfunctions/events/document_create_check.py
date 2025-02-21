@@ -1,0 +1,20 @@
+from typing import Literal
+
+from pydantic import BaseModel, Field
+
+from csfunctions.objects import Document, Part
+
+from .base import BaseEvent, EventNames
+
+
+class DocumentCreateCheckData(BaseModel):
+    documents: list[Document] = Field(..., description="List of documents that are about to be created")
+    attached_parts: list[Part] = Field(..., description="List of parts that belong to the documents")
+    attached_documents: list[Document] = Field(
+        ..., description="Contains the original document(s) if a document is a copy"
+    )
+
+
+class DocumentCreateCheckEvent(BaseEvent):
+    name: Literal[EventNames.DOCUMENT_CREATE_CHECK] = EventNames.DOCUMENT_CREATE_CHECK
+    data: DocumentCreateCheckData
