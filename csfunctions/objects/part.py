@@ -19,7 +19,7 @@ class Part(BaseObject):
     object_type: Literal[ObjectType.PART] = ObjectType.PART
 
     teilenummer: str = Field(..., description="part number")
-    t_index: str = Field(..., description="part index")
+    t_index: str = Field("", description="part index")
     status: int = Field(..., description="Status Number")
     materialnr_erp: str | None = Field(None, description="Material No. (ERP)")
     benennung: str | None = Field(None, description="Name")

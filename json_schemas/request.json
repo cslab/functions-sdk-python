@@ -106,6 +106,7 @@
           "type": "string"
         },
         "z_index": {
+          "default": "",
           "description": "index",
           "title": "Z Index",
           "type": "string"
@@ -720,7 +721,6 @@
       },
       "required": [
         "z_nummer",
-        "z_index",
         "titel",
         "category1_name_en",
         "category1_name_de",
@@ -754,20 +754,11 @@
           },
           "title": "Attached Parts",
           "type": "array"
-        },
-        "attached_documents": {
-          "description": "Contains the original document(s) if a document is a copy",
-          "items": {
-            "$ref": "#/$defs/Document"
-          },
-          "title": "Attached Documents",
-          "type": "array"
         }
       },
       "required": [
         "documents",
-        "attached_parts",
-        "attached_documents"
+        "attached_parts"
       ],
       "title": "DocumentCreateCheckData",
       "type": "object"
@@ -1813,6 +1804,7 @@
           "type": "string"
         },
         "t_index": {
+          "default": "",
           "description": "part index",
           "title": "T Index",
           "type": "string"
@@ -2571,7 +2563,6 @@
       },
       "required": [
         "teilenummer",
-        "t_index",
         "status"
       ],
       "title": "Part",
@@ -2587,18 +2578,18 @@
           "title": "Parts",
           "type": "array"
         },
-        "attached_parts": {
-          "description": "Contains the original part(s) if a part is a copy",
+        "attached_documents": {
+          "description": "List of documents that are referenced by the parts.",
           "items": {
-            "$ref": "#/$defs/Part"
+            "$ref": "#/$defs/Document"
           },
-          "title": "Attached Parts",
+          "title": "Attached Documents",
           "type": "array"
         }
       },
       "required": [
         "parts",
-        "attached_parts"
+        "attached_documents"
       ],
       "title": "PartCreateCheckData",
       "type": "object"
@@ -2639,10 +2630,19 @@
           },
           "title": "Parts",
           "type": "array"
+        },
+        "attached_documents": {
+          "description": "List of documents that are referenced by the parts.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Attached Documents",
+          "type": "array"
         }
       },
       "required": [
-        "parts"
+        "parts",
+        "attached_documents"
       ],
       "title": "PartModifyCheckData",
       "type": "object"

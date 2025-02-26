@@ -24,7 +24,7 @@ class Document(BaseObject):
     object_type: Literal[ObjectType.DOCUMENT] = ObjectType.DOCUMENT
 
     z_nummer: str = Field(..., description="document number")
-    z_index: str = Field(..., description="index")
+    z_index: str = Field("", description="index")
     titel: str | None = Field(..., description="title")
     category1_name_en: str | None = Field(..., description="Main Category")
     category1_name_de: str | None = Field(..., description="Main Category")
