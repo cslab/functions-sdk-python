@@ -19,7 +19,6 @@ The event is triggered before any field calculations are performed.
 |-|-|-|
 |documents| list[[Document](objects.md#document)]|List of documents that are about to be created.|
 |attached_parts| list[[Part](objects.md#part)]|List of parts that belong to the documents.|
-|attached_documents| list[[Document](objects.md#document)]|Contains the original document(s) if a document is a copy.|
 
 ## DocumentModifyCheckEvent
 `csfunctions.events.DocumentModifyCheckEvent`

@@ -10,9 +10,6 @@ from .base import BaseEvent, EventNames
 class DocumentCreateCheckData(BaseModel):
     documents: list[Document] = Field(..., description="List of documents that are about to be created")
     attached_parts: list[Part] = Field(..., description="List of parts that belong to the documents")
-    attached_documents: list[Document] = Field(
-        ..., description="Contains the original document(s) if a document is a copy"
-    )
 
 
 class DocumentCreateCheckEvent(BaseEvent):
