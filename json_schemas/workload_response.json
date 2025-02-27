@@ -38,6 +38,7 @@
       "properties": {
         "name": {
           "const": "dummy",
+          "default": "dummy",
           "enum": [
             "dummy"
           ],
@@ -57,9 +58,6 @@
           "title": "Id"
         }
       },
-      "required": [
-        "name"
-      ],
       "title": "DummyAction",
       "type": "object"
     }
