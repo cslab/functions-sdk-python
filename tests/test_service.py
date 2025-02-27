@@ -10,7 +10,7 @@ class TestNumberGeneratorService(TestCase):
     endpoint = "numgen"
     service_url = "https://some_service_url"
     service_token = "some_service_token"  # nosec
-    service = None
+    service: Service
 
     @classmethod
     def setUpClass(cls) -> None:

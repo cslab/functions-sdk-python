@@ -25,14 +25,14 @@ class Workflow(BaseObject):
     global_briefcases: list[Briefcase] = Field([], exclude=True)
 
     def link_objects(self, data: "EventData"):
-        local_briefcases = getattr(data, "local_briefcases", None)
-        global_briefcases = getattr(data, "local_briefcases", None)
+        local_briefcases: list[Briefcase] | None = getattr(data, "local_briefcases", None)
+        global_briefcases: list[Briefcase] | None = getattr(data, "local_briefcases", None)
 
         if local_briefcases and self.local_briefcase_ids:
             self._link_local_briefcases(local_briefcases)
 
         if global_briefcases and self.global_briefcase_ids:
-            self._link_global_briefcases(local_briefcases)
+            self._link_global_briefcases(global_briefcases)
 
     def _link_local_briefcases(self, local_briefcases: list["Briefcase"]):
         for local_briefcase in local_briefcases:

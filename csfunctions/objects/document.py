@@ -98,4 +98,4 @@ class CADDocument(Document):
     Special Document type that contains a CAD-Model.
     """
 
-    object_type: Literal[ObjectType.CAD_DOCUMENT] = ObjectType.CAD_DOCUMENT
+    object_type: Literal[ObjectType.CAD_DOCUMENT] = ObjectType.CAD_DOCUMENT  # type: ignore[assignment]

@@ -1,3 +1,5 @@
+from typing import Optional
+
 import requests
 
 
@@ -6,7 +8,7 @@ class Service:
     Provides access to services on the elements instance, e.g. generating numbers.
     """
 
-    def __init__(self, service_url: str, service_token: str):
+    def __init__(self, service_url: str | None, service_token: str | None):
         self.generator = NumberGeneratorService(service_url, service_token)
 
 
@@ -23,7 +25,7 @@ class BaseService:
         self.service_url = service_url
         self.service_token = service_token
 
-    def request(self, endpoint: str, method: str = "GET", params: dict = None) -> dict | list:
+    def request(self, endpoint: str, method: str = "GET", params: Optional[dict] = None) -> dict | list:
         """
         Make a request to the access service.
         """
@@ -35,7 +37,7 @@ class BaseService:
         headers = {"Authorization": f"Bearer {self.service_token}"}
         params = params or {}
         url = self.service_url.rstrip("/") + "/" + endpoint.lstrip("/")
-        response = requests.request(method, url=url, params=params, headers=headers)
+        response = requests.request(method, url=url, params=params, headers=headers, timeout=10)
 
         if response.status_code == 401:
             raise Unauthorized
@@ -78,4 +80,8 @@ class NumberGeneratorService(BaseService):
         """
         params = {"name": name, "count": count}
         data = self.request(self.endpoint, params=params)
+        if not isinstance(data, dict):
+            raise ValueError(f"Access service returned invalid data. Expected dict, got {type(data)}")
+        if "numbers" not in data:
+            raise ValueError(f"Access service returned invalid data. Expected 'numbers' key, got {data.keys()}")
         return data["numbers"]

@@ -3,6 +3,7 @@ from datetime import datetime
 from csfunctions import DataResponse, MetaData, Request, Service
 from csfunctions.actions import AbortAndShowErrorAction
 from csfunctions.events import DummyEvent
+from csfunctions.events.dummy import DummyEventData
 from csfunctions.objects import Document, EngineeringChange, Part
 
 
@@ -149,7 +150,7 @@ dummy_request = Request(
         instance_url="https://instance.contact-cloud.com",
         service_url=None,
     ),
-    event=DummyEvent(event_id="42", data={"documents": [dummy_document], "parts": [dummy_part]}),
+    event=DummyEvent(event_id="42", data=DummyEventData(documents=[dummy_document], parts=[dummy_part])),
 )
 
 
