@@ -19,7 +19,8 @@ repos:
             [
                 types-mock,
                 types-requests,
-                types-PyYAML
+                types-PyYAML,
+                pydantic
             ]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0

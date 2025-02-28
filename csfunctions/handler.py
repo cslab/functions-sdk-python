@@ -6,11 +6,11 @@ from importlib import import_module
 from typing import Callable
 
 import yaml
-from pydantic import BaseModel
 
 from csfunctions import ErrorResponse, Event, Request, WorkloadResponse
 from csfunctions.actions import ActionUnion
 from csfunctions.config import ConfigModel, FunctionModel
+from csfunctions.events import EventData
 from csfunctions.objects import BaseObject
 from csfunctions.response import ResponseUnion
 from csfunctions.service import Service
@@ -53,7 +53,7 @@ def link_objects(event: Event):
     e.g. document.part
     """
     data = getattr(event, "data", None)
-    if not isinstance(data, BaseModel):
+    if data is None or not isinstance(data, EventData):  # type: ignore  # MyPy doesn't like PEP604
         return
 
     # we expect all objects to be passed in Event.data
