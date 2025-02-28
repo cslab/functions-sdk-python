@@ -18,8 +18,5 @@ class WorkflowTaskTriggerEventData(BaseModel):
 
 
 class WorkflowTaskTriggerEvent(BaseEvent):
-    def __init__(self, event_id: str, data: WorkflowTaskTriggerEventData, **_):
-        super().__init__(name=EventNames.WORKFLOW_TASK_TRIGGER, event_id=event_id, data=data)
-
-    name: Literal[EventNames.WORKFLOW_TASK_TRIGGER]
+    name: Literal[EventNames.WORKFLOW_TASK_TRIGGER] = EventNames.WORKFLOW_TASK_TRIGGER
     data: WorkflowTaskTriggerEventData

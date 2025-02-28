@@ -6,11 +6,11 @@ from importlib import import_module
 from typing import Callable
 
 import yaml
-from pydantic import BaseModel
 
 from csfunctions import ErrorResponse, Event, Request, WorkloadResponse
 from csfunctions.actions import ActionUnion
 from csfunctions.config import ConfigModel, FunctionModel
+from csfunctions.events import EventData
 from csfunctions.objects import BaseObject
 from csfunctions.response import ResponseUnion
 from csfunctions.service import Service
@@ -31,7 +31,7 @@ def _get_function(function_name: str, function_dir: str) -> FunctionModel:
     config = _load_config(function_dir)
     func = next(func for func in config.functions if func.name == function_name)
     if not func:
-        raise ValueError(f"Could not find function with name { function_name} in the environment.yaml.")
+        raise ValueError(f"Could not find function with name {function_name} in the environment.yaml.")
     return func
 
 
@@ -53,7 +53,7 @@ def link_objects(event: Event):
     e.g. document.part
     """
     data = getattr(event, "data", None)
-    if not isinstance(data, BaseModel):
+    if data is None or not isinstance(data, EventData):  # type: ignore  # MyPy doesn't like PEP604
         return
 
     # we expect all objects to be passed in Event.data
@@ -81,24 +81,26 @@ def execute(function_name: str, request_body: str, function_dir: str = "src") ->
     try:
         request = Request(**json.loads(request_body))
         link_objects(request.event)
+
         function_callback = get_function_callable(function_name, function_dir)
-        service = Service(str(request.metadata.service_url), request.metadata.service_token)
+        service = Service(
+            str(request.metadata.service_url) if request.metadata.service_url else None, request.metadata.service_token
+        )
 
         response = function_callback(request.metadata, request.event, service)
 
         if response is None:
             return ""
 
-        if isinstance(response, ActionUnion):
+        if isinstance(response, ActionUnion):  # type: ignore  # MyPy doesn't like PEP604
             # wrap returned Actions into a WorkloadResponse
             response = WorkloadResponse(actions=[response])
-        elif isinstance(response, list) and all(isinstance(o, ActionUnion) for o in response):
+        elif isinstance(response, list) and all(isinstance(o, ActionUnion) for o in response):  # type: ignore  # MyPy doesn't like PEP604
             # wrap list of Actions into a WorkloadResponse
             response = WorkloadResponse(actions=response)
 
-        if not isinstance(
-            response, ResponseUnion
-        ):  # need to check for ResponseUnion instead of Response, because isinstance doesn't work with annotated unions
+        if not isinstance(response, ResponseUnion):  # type: ignore  # MyPy doesn't like PEP604
+            # need to check for ResponseUnion instead of Response, because isinstance doesn't work with annotated unions
             raise ValueError("Function needs to return a Response object or None.")
 
         # make sure the event_id is filled out correctly

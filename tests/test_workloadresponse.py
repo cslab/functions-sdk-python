@@ -7,7 +7,7 @@ from csfunctions.actions import AbortAndShowErrorAction
 
 
 class TestWorkloadResponse(TestCase):
-    def test_discriminator(self):
+    def test_discriminator(self) -> None:
         """
         Test that the discriminator on action objects (and responses) works
         """
