@@ -754,20 +754,11 @@
           },
           "title": "Attached Parts",
           "type": "array"
-        },
-        "attached_documents": {
-          "description": "Contains the original document(s) if a document is a copy",
-          "items": {
-            "$ref": "#/$defs/Document"
-          },
-          "title": "Attached Documents",
-          "type": "array"
         }
       },
       "required": [
         "documents",
-        "attached_parts",
-        "attached_documents"
+        "attached_parts"
       ],
       "title": "DocumentCreateCheckData",
       "type": "object"
@@ -2587,18 +2578,18 @@
           "title": "Parts",
           "type": "array"
         },
-        "attached_parts": {
-          "description": "Contains the original part(s) if a part is a copy",
+        "attached_documents": {
+          "description": "List of documents that are referenced by the parts.",
           "items": {
-            "$ref": "#/$defs/Part"
+            "$ref": "#/$defs/Document"
           },
-          "title": "Attached Parts",
+          "title": "Attached Documents",
           "type": "array"
         }
       },
       "required": [
         "parts",
-        "attached_parts"
+        "attached_documents"
       ],
       "title": "PartCreateCheckData",
       "type": "object"
@@ -2639,10 +2630,19 @@
           },
           "title": "Parts",
           "type": "array"
+        },
+        "attached_documents": {
+          "description": "List of documents that are referenced by the parts.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Attached Documents",
+          "type": "array"
         }
       },
       "required": [
-        "parts"
+        "parts",
+        "attached_documents"
       ],
       "title": "PartModifyCheckData",
       "type": "object"
