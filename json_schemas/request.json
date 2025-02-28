@@ -6,9 +6,6 @@
         "object_type": {
           "const": "briefcase",
           "default": "briefcase",
-          "enum": [
-            "briefcase"
-          ],
           "title": "Object Type",
           "type": "string"
         },
@@ -94,9 +91,6 @@
         "object_type": {
           "const": "document",
           "default": "document",
-          "enum": [
-            "document"
-          ],
           "title": "Object Type",
           "type": "string"
         },
@@ -772,9 +766,6 @@
         "name": {
           "const": "document_release_check",
           "default": "document_release_check",
-          "enum": [
-            "document_release_check"
-          ],
           "title": "Name",
           "type": "string"
         },
@@ -829,9 +820,6 @@
         "dialog_type": {
           "const": "document_release",
           "default": "document_release",
-          "enum": [
-            "document_release"
-          ],
           "title": "Dialog Type",
           "type": "string"
         },
@@ -870,9 +858,6 @@
         "name": {
           "const": "document_release",
           "default": "document_release",
-          "enum": [
-            "document_release"
-          ],
           "title": "Name",
           "type": "string"
         },
@@ -898,9 +883,6 @@
         "name": {
           "const": "dummy",
           "default": "dummy",
-          "enum": [
-            "dummy"
-          ],
           "title": "Name",
           "type": "string"
         },
@@ -910,11 +892,7 @@
           "type": "string"
         },
         "data": {
-          "allOf": [
-            {
-              "$ref": "#/$defs/DummyEventData"
-            }
-          ],
+          "$ref": "#/$defs/DummyEventData",
           "description": "Dummy Event Data"
         }
       },
@@ -954,9 +932,6 @@
         "object_type": {
           "const": "engineering_change",
           "default": "engineering_change",
-          "enum": [
-            "engineering_change"
-          ],
           "title": "Object Type",
           "type": "string"
         },
@@ -1265,9 +1240,6 @@
         "name": {
           "const": "engineering_change_release",
           "default": "engineering_change_release",
-          "enum": [
-            "engineering_change_release"
-          ],
           "title": "Name",
           "type": "string"
         },
@@ -1292,9 +1264,6 @@
         "name": {
           "const": "engineering_change_release_check",
           "default": "engineering_change_release_check",
-          "enum": [
-            "engineering_change_release_check"
-          ],
           "title": "Name",
           "type": "string"
         },
@@ -1427,9 +1396,6 @@
       "properties": {
         "name": {
           "const": "field_value_calculation",
-          "enum": [
-            "field_value_calculation"
-          ],
           "title": "Name",
           "type": "string"
         },
@@ -1455,9 +1421,6 @@
         "object_type": {
           "const": "file",
           "default": "file",
-          "enum": [
-            "file"
-          ],
           "title": "Object Type",
           "type": "string"
         },
@@ -1687,9 +1650,6 @@
         "object_type": {
           "const": "part",
           "default": "part",
-          "enum": [
-            "part"
-          ],
           "title": "Object Type",
           "type": "string"
         },
@@ -2497,9 +2457,6 @@
       "properties": {
         "name": {
           "const": "part_release_check",
-          "enum": [
-            "part_release_check"
-          ],
           "title": "Name",
           "type": "string"
         },
@@ -2555,9 +2512,6 @@
         "dialog_type": {
           "const": "part_release",
           "default": "part_release",
-          "enum": [
-            "part_release"
-          ],
           "title": "Dialog Type",
           "type": "string"
         },
@@ -2596,9 +2550,6 @@
         "name": {
           "const": "part_release",
           "default": "part_release",
-          "enum": [
-            "part_release"
-          ],
           "title": "Name",
           "type": "string"
         },
@@ -2623,9 +2574,6 @@
         "object_type": {
           "const": "workflow",
           "default": "workflow",
-          "enum": [
-            "workflow"
-          ],
           "title": "Object Type",
           "type": "string"
         },
@@ -2720,9 +2668,6 @@
         "name": {
           "const": "workflow_task_trigger",
           "default": "workflow_task_trigger",
-          "enum": [
-            "workflow_task_trigger"
-          ],
           "title": "Name",
           "type": "string"
         },
@@ -2798,11 +2743,7 @@
   },
   "properties": {
     "metadata": {
-      "allOf": [
-        {
-          "$ref": "#/$defs/MetaData"
-        }
-      ],
+      "$ref": "#/$defs/MetaData",
       "description": "General information."
     },
     "event": {
