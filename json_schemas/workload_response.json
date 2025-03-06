@@ -35,6 +35,7 @@
       "properties": {
         "name": {
           "const": "dummy",
+          "default": "dummy",
           "title": "Name",
           "type": "string"
         },
@@ -51,9 +52,6 @@
           "title": "Id"
         }
       },
-      "required": [
-        "name"
-      ],
       "title": "DummyAction",
       "type": "object"
     }

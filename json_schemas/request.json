@@ -882,6 +882,7 @@
       "properties": {
         "name": {
           "const": "dummy",
+          "default": "dummy",
           "title": "Name",
           "type": "string"
         },
@@ -892,12 +893,12 @@
         },
         "data": {
           "$ref": "#/$defs/DummyEventData",
-          "default": []
+          "description": "Dummy Event Data"
         }
       },
       "required": [
-        "name",
-        "event_id"
+        "event_id",
+        "data"
       ],
       "title": "DummyEvent",
       "type": "object"
@@ -2666,6 +2667,7 @@
       "properties": {
         "name": {
           "const": "workflow_task_trigger",
+          "default": "workflow_task_trigger",
           "title": "Name",
           "type": "string"
         },
@@ -2679,7 +2681,6 @@
         }
       },
       "required": [
-        "name",
         "event_id",
         "data"
       ],
