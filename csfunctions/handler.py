@@ -2,6 +2,7 @@ import json
 import os
 import sys
 import traceback
+from functools import lru_cache
 from importlib import import_module
 from typing import Callable
 
@@ -16,7 +17,14 @@ from csfunctions.response import ResponseUnion
 from csfunctions.service import Service
 
 
-def _load_config(function_dir) -> ConfigModel:
+class FunctionNotRegistered(ValueError):
+    """
+    Raised when a function is not found in the environment.yaml.
+    """
+
+
+@lru_cache(maxsize=1)
+def load_environment_config(function_dir: str) -> ConfigModel:
     path = os.path.join(function_dir, "environment.yaml")
     if not os.path.exists(path):
         raise OSError(f"environment file {path} does not exist")
@@ -28,10 +36,10 @@ def _load_config(function_dir) -> ConfigModel:
 
 
 def _get_function(function_name: str, function_dir: str) -> FunctionModel:
-    config = _load_config(function_dir)
+    config = load_environment_config(function_dir)
     func = next(func for func in config.functions if func.name == function_name)
     if not func:
-        raise ValueError(f"Could not find function with name {function_name} in the environment.yaml.")
+        raise FunctionNotRegistered(f"Could not find function with name {function_name} in the environment.yaml.")
     return func
 
 
