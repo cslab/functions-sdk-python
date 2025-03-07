@@ -1,5 +1,45 @@
 Events always have a `name` and a `data` attribute. The contents of those attributes depend on the type of the event.
 
+
+## DocumentCreateCheckEvent
+`csfunctions.events.DocumentCreateCheckEvent`
+
+This event is fired when a user tries to create or copy a document. Raising an exception will prevent the creation.
+The event is triggered before any field calculations are performed.
+
+**Supported actions:**
+
+- [AbortAndShowErrorAction](actions.md#AbortAndShowErrorAction)
+
+**DocumentCreateCheckEvent.name:** document_create_check
+
+**DocumentCreateCheckEvent.data:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|documents| list[[Document](objects.md#document)]|List of documents that are about to be created.|
+|linked_parts| list[[Part](objects.md#part)]|List of parts that belong to the documents.|
+
+## DocumentModifyCheckEvent
+`csfunctions.events.DocumentModifyCheckEvent`
+
+This event is fired when a user tries to modify a document. Raising an exception will prevent the modification.
+The event is triggered before any field calculations are performed.
+
+**Supported actions:**
+
+- [AbortAndShowErrorAction](actions.md#AbortAndShowErrorAction)
+
+**DocumentModifyCheckEvent.name:** document_modify_check
+
+**DocumentModifyCheckEvent.data:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|documents| list[[Document](objects.md#document)]|List of documents that are about to be modified.|
+|linked_parts| list[[Part](objects.md#part)]|List of parts that belong to the documents.|
+
+
 ## DocumentReleaseCheckEvent
 `csfunctions.events.DocumentReleaseCheckEvent`
 
@@ -86,6 +126,43 @@ This event is fired **after** an engineering change has been released. Raising a
 |documents| list[[Document](objects.md#document)]|List of included documents.|
 |parts| list[[Part](objects.md#part)]|List of included parts.|
 
+## PartCreateCheckEvent
+`csfunctions.events.PartCreateCheckEvent`
+
+This event is fired when a user tries to create or copy a part. Raising an exception will prevent the creation.
+The event is triggered before any field calculations are performed.
+
+**Supported actions:**
+
+- [AbortAndShowErrorAction](actions.md#AbortAndShowErrorAction)
+
+**PartCreateCheckEvent.name:** part_create_check
+
+**PartCreateCheckEvent.data:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|parts| list[[Part](objects.md#part)]|List of parts that are about to be created.|
+|linked_documents| list[[Document](objects.md#document)]|List of documents that are referenced by the parts.|
+
+## PartModifyCheckEvent
+`csfunctions.events.PartModifyCheckEvent`
+
+This event is fired when a user tries to modify a part. Raising an exception will prevent the modification.
+The event is triggered before any field calculations are performed.
+
+**Supported actions:**
+
+- [AbortAndShowErrorAction](actions.md#AbortAndShowErrorAction)
+
+**PartModifyCheckEvent.name:** part_modify_check
+
+**PartModifyCheckEvent.data:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|parts| list[[Part](objects.md#part)]|List of parts that are about to be modified.|
+|linked_documents| list[[Document](objects.md#document)]|List of documents that are referenced by the parts.|
 
 ## PartReleaseCheckEvent
 `csfunctions.events.PartReleaseCheckEvent`
