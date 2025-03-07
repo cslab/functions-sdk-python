@@ -2,6 +2,9 @@
   "properties": {
     "response_type": {
       "const": "data",
+      "enum": [
+        "data"
+      ],
       "title": "Response Type",
       "type": "string"
     },
