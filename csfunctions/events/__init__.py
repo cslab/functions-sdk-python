@@ -10,6 +10,7 @@ from .dummy import DummyEvent, DummyEventData
 from .engineering_change_release import EngineeringChangeRelease, EngineeringChangeReleaseData
 from .engineering_change_release_check import EngineeringChangeReleaseCheck, EngineeringChangeReleaseCheckData
 from .field_value_calculation import FieldValueCalculationData, FieldValueCalculationEvent
+from .part_field_calculation import PartFieldCalculationData, PartFieldCalculationEvent
 from .part_release import PartReleaseData, PartReleaseEvent
 from .part_release_check import PartReleaseCheckData, PartReleaseCheckEvent
 from .workflow_task_trigger import WorkflowTaskTriggerEvent, WorkflowTaskTriggerEventData
@@ -21,6 +22,7 @@ Event = Annotated[
         DocumentFieldCalculationEvent,
         PartReleaseEvent,
         PartReleaseCheckEvent,
+        PartFieldCalculationEvent,
         FieldValueCalculationEvent,
         DummyEvent,
         EngineeringChangeRelease,
@@ -35,6 +37,7 @@ EventData = Union[
     DocumentFieldCalculationData,
     PartReleaseData,
     PartReleaseCheckData,
+    PartFieldCalculationData,
     FieldValueCalculationData,
     DummyEventData,
     EngineeringChangeReleaseData,
@@ -48,6 +51,7 @@ __all__ = [
     "DocumentFieldCalculationEvent",
     "PartReleaseEvent",
     "PartReleaseCheckEvent",
+    "PartFieldCalculationEvent",
     "FieldValueCalculationEvent",
     "DummyEvent",
     "EngineeringChangeRelease",
@@ -65,4 +69,5 @@ __all__ = [
     "WorkflowTaskTriggerEventData",
     "DocumentReleaseDialogData",
     "PartReleaseDialogData",
+    "PartFieldCalculationData",
 ]

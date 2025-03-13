@@ -2490,6 +2490,73 @@
       "title": "Part",
       "type": "object"
     },
+    "PartFieldCalculationData": {
+      "properties": {
+        "part": {
+          "$ref": "#/$defs/Part",
+          "description": "Current state of the part"
+        },
+        "action": {
+          "description": "Action being performed",
+          "enum": [
+            "create",
+            "modify",
+            "copy",
+            "index"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "linked_documents": {
+          "description": "List of documents that are referenced by the parts.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Linked Documents",
+          "type": "array"
+        },
+        "linked_parts": {
+          "description": "Related parts (e.g. source part)",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Linked Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "part",
+        "action",
+        "linked_documents",
+        "linked_parts"
+      ],
+      "title": "PartFieldCalculationData",
+      "type": "object"
+    },
+    "PartFieldCalculationEvent": {
+      "properties": {
+        "name": {
+          "const": "part_field_calculation",
+          "default": "part_field_calculation",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/PartFieldCalculationData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "PartFieldCalculationEvent",
+      "type": "object"
+    },
     "PartReleaseCheckData": {
       "properties": {
         "parts": {
@@ -2823,6 +2890,7 @@
           "engineering_change_release": "#/$defs/EngineeringChangeRelease",
           "engineering_change_release_check": "#/$defs/EngineeringChangeReleaseCheck",
           "field_value_calculation": "#/$defs/FieldValueCalculationEvent",
+          "part_field_calculation": "#/$defs/PartFieldCalculationEvent",
           "part_release": "#/$defs/PartReleaseEvent",
           "part_release_check": "#/$defs/PartReleaseCheckEvent",
           "workflow_task_trigger": "#/$defs/WorkflowTaskTriggerEvent"
@@ -2844,6 +2912,9 @@
         },
         {
           "$ref": "#/$defs/PartReleaseCheckEvent"
+        },
+        {
+          "$ref": "#/$defs/PartFieldCalculationEvent"
         },
         {
           "$ref": "#/$defs/FieldValueCalculationEvent"
