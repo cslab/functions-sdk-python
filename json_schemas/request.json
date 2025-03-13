@@ -762,9 +762,6 @@
         "name": {
           "const": "document_create_check",
           "default": "document_create_check",
-          "enum": [
-            "document_create_check"
-          ],
           "title": "Name",
           "type": "string"
         },
@@ -815,9 +812,6 @@
         "name": {
           "const": "document_modify_check",
           "default": "document_modify_check",
-          "enum": [
-            "document_modify_check"
-          ],
           "title": "Name",
           "type": "string"
         },
@@ -2560,9 +2554,6 @@
         "name": {
           "const": "part_create_check",
           "default": "part_create_check",
-          "enum": [
-            "part_create_check"
-          ],
           "title": "Name",
           "type": "string"
         },
@@ -2613,9 +2604,6 @@
         "name": {
           "const": "part_modify_check",
           "default": "part_modify_check",
-          "enum": [
-            "part_modify_check"
-          ],
           "title": "Name",
           "type": "string"
         },
