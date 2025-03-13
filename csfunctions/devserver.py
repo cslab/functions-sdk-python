@@ -5,7 +5,11 @@ The Functions are then available via HTTP requests to the server.
 """
 
 import argparse
+import hashlib
+import hmac
 import json
+import logging
+import time
 
 from werkzeug.serving import run_simple
 from werkzeug.wrappers import Request, Response
@@ -34,7 +38,40 @@ def _is_error_response(function_response: str | dict):
         return False
 
 
-def handle_request(request: Request, function_dir: str = "") -> Response:
+def _verify_hmac_signature(
+    signature: str | None, timestamp: str | None, body: str, secret_token: str, max_age: int = 60
+) -> bool:
+    """
+    Verify the HMAC signature of the request.
+    If timestamp is older than max_age seconds, the request is rejected. (default: 60 seconds, disable with -1)
+    """
+    if not secret_token:
+        # this should not happen, since this function should only be called if a secret token is set
+        raise ValueError("Missing secret token")
+
+    if not signature:
+        logging.warning("Request does not contain a signature")
+        return False
+
+    if not timestamp:
+        logging.warning("Request does not contain a timestamp")
+        return False
+
+    if max_age >= 0 and int(timestamp) < time.time() - max_age:
+        logging.warning("Timestamp of request is older than %d seconds", max_age)
+        return False
+
+    return hmac.compare_digest(
+        signature,
+        hmac.new(
+            secret_token.encode("utf-8"),
+            f"{timestamp}{body}".encode(),
+            hashlib.sha256,
+        ).hexdigest(),
+    )
+
+
+def handle_request(request: Request, function_dir: str = "", secret_token: str | None = None) -> Response:
     """
     Handles a request to the development server.
     Extracts the function name from the request path and executes the Function using the execute handler.
@@ -43,6 +80,11 @@ def handle_request(request: Request, function_dir: str = "") -> Response:
     if not function_name:
         return Response("No function name provided", status=400)
     body = request.get_data(as_text=True)
+    signature = request.headers.get("X-CON-Signature-256")
+    timestamp = request.headers.get("X-CON-Timestamp")
+
+    if secret_token and not _verify_hmac_signature(signature, timestamp, body, secret_token):
+        return Response("Invalid signature", status=401)
 
     try:
         # we assume the function is in the current working directory
@@ -58,22 +100,30 @@ def handle_request(request: Request, function_dir: str = "") -> Response:
     return Response(response, content_type="application/json")
 
 
-def create_application(function_dir: str = ""):
+def create_application(function_dir: str = "", secret_token: str | None = None):
     def application(environ, start_response):
         request = Request(environ)
-        response = handle_request(request, function_dir=function_dir)
+        response = handle_request(request, function_dir=function_dir, secret_token=secret_token)
         return response(environ, start_response)
 
     return application
 
 
-def run_server(function_dir: str = ""):
+def run_server(function_dir: str = "", secret_token: str | None = None):
     # B104: binding to all interfaces is intentional - this is a development server
-    run_simple("0.0.0.0", 8000, create_application(function_dir=function_dir), use_reloader=True)  # nosec: B104
+    run_simple(
+        "0.0.0.0",  # nosec: B104
+        8000,
+        create_application(function_dir=function_dir, secret_token=secret_token),
+        use_reloader=True,
+    )
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--dir", type=str, default="", help="The directory containing the environment.yaml file")
+    parser.add_argument(
+        "--secret-token", type=str, default="", help="The secret token to use for the development server"
+    )
     args = parser.parse_args()
-    run_server(function_dir=args.dir)
+    run_server(function_dir=args.dir, secret_token=args.secret_token)
