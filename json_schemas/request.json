@@ -731,6 +731,73 @@
       "title": "Document",
       "type": "object"
     },
+    "DocumentFieldCalculationData": {
+      "properties": {
+        "document": {
+          "$ref": "#/$defs/Document",
+          "description": "Current state of the document"
+        },
+        "action": {
+          "description": "Action being performed",
+          "enum": [
+            "create",
+            "modify",
+            "copy",
+            "index"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "linked_parts": {
+          "description": "Parts that belong to the document",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Linked Parts",
+          "type": "array"
+        },
+        "linked_documents": {
+          "description": "Related documents (e.g. source document)",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Linked Documents",
+          "type": "array"
+        }
+      },
+      "required": [
+        "document",
+        "action",
+        "linked_parts",
+        "linked_documents"
+      ],
+      "title": "DocumentFieldCalculationData",
+      "type": "object"
+    },
+    "DocumentFieldCalculationEvent": {
+      "properties": {
+        "name": {
+          "const": "document_field_calculation",
+          "default": "document_field_calculation",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/DocumentFieldCalculationData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "DocumentFieldCalculationEvent",
+      "type": "object"
+    },
     "DocumentReleaseCheckData": {
       "properties": {
         "documents": {
@@ -2749,6 +2816,7 @@
     "event": {
       "discriminator": {
         "mapping": {
+          "document_field_calculation": "#/$defs/DocumentFieldCalculationEvent",
           "document_release": "#/$defs/DocumentReleaseEvent",
           "document_release_check": "#/$defs/DocumentReleaseCheckEvent",
           "dummy": "#/$defs/DummyEvent",
@@ -2767,6 +2835,9 @@
         },
         {
           "$ref": "#/$defs/DocumentReleaseCheckEvent"
+        },
+        {
+          "$ref": "#/$defs/DocumentFieldCalculationEvent"
         },
         {
           "$ref": "#/$defs/PartReleaseEvent"

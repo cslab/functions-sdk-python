@@ -3,6 +3,7 @@ from typing import Annotated, Union
 from pydantic import Field
 
 from .dialog_data import DocumentReleaseDialogData, PartReleaseDialogData
+from .document_field_calculation import DocumentFieldCalculationData, DocumentFieldCalculationEvent
 from .document_release import DocumentReleaseData, DocumentReleaseEvent
 from .document_release_check import DocumentReleaseCheckData, DocumentReleaseCheckEvent
 from .dummy import DummyEvent, DummyEventData
@@ -17,6 +18,7 @@ Event = Annotated[
     Union[
         DocumentReleaseEvent,
         DocumentReleaseCheckEvent,
+        DocumentFieldCalculationEvent,
         PartReleaseEvent,
         PartReleaseCheckEvent,
         FieldValueCalculationEvent,
@@ -30,6 +32,7 @@ Event = Annotated[
 EventData = Union[
     DocumentReleaseData,
     DocumentReleaseCheckData,
+    DocumentFieldCalculationData,
     PartReleaseData,
     PartReleaseCheckData,
     FieldValueCalculationData,
@@ -42,6 +45,7 @@ EventData = Union[
 __all__ = [
     "DocumentReleaseEvent",
     "DocumentReleaseCheckEvent",
+    "DocumentFieldCalculationEvent",
     "PartReleaseEvent",
     "PartReleaseCheckEvent",
     "FieldValueCalculationEvent",
@@ -51,6 +55,7 @@ __all__ = [
     "WorkflowTaskTriggerEvent",
     "DocumentReleaseData",
     "DocumentReleaseCheckData",
+    "DocumentFieldCalculationData",
     "PartReleaseData",
     "PartReleaseCheckData",
     "FieldValueCalculationData",

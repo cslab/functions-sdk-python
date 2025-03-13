@@ -7,6 +7,7 @@ class EventNames(str, Enum):
     DUMMY = "dummy"
     DOCUMENT_RELEASE = "document_release"
     DOCUMENT_RELEASE_CHECK = "document_release_check"
+    DOCUMENT_FIELD_CALCULATION = "document_field_calculation"
     PART_RELEASE = "part_release"
     PART_RELEASE_CHECK = "part_release_check"
     ENGINEERING_CHANGE_RELEASE = "engineering_change_release"
