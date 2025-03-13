@@ -4,6 +4,7 @@ The Functions are then available via HTTP requests to the server.
 
 """
 
+import argparse
 import json
 
 from werkzeug.serving import run_simple
@@ -33,7 +34,7 @@ def _is_error_response(function_response: str | dict):
         return False
 
 
-def handle_request(request: Request) -> Response:
+def handle_request(request: Request, function_dir: str = "") -> Response:
     """
     Handles a request to the development server.
     Extracts the function name from the request path and executes the Function using the execute handler.
@@ -45,7 +46,7 @@ def handle_request(request: Request) -> Response:
 
     try:
         # we assume the function is in the current working directory
-        response = execute(function_name, body, function_dir="")
+        response = execute(function_name, body, function_dir=function_dir)
     except FunctionNotRegistered as e:
         return Response(str(e), status=404)
 
@@ -57,16 +58,22 @@ def handle_request(request: Request) -> Response:
     return Response(response, content_type="application/json")
 
 
-def application(environ, start_response):
-    request = Request(environ)
-    response = handle_request(request)
-    return response(environ, start_response)
+def create_application(function_dir: str = ""):
+    def application(environ, start_response):
+        request = Request(environ)
+        response = handle_request(request, function_dir=function_dir)
+        return response(environ, start_response)
+
+    return application
 
 
-def run_server():
+def run_server(function_dir: str = ""):
     # B104: binding to all interfaces is intentional - this is a development server
-    run_simple("0.0.0.0", 8000, application, use_reloader=True)  # nosec: B104
+    run_simple("0.0.0.0", 8000, create_application(function_dir=function_dir), use_reloader=True)  # nosec: B104
 
 
 if __name__ == "__main__":
-    run_server()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dir", type=str, default="", help="The directory containing the environment.yaml file")
+    args = parser.parse_args()
+    run_server(function_dir=args.dir)
