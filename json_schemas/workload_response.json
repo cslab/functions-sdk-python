@@ -5,9 +5,6 @@
         "name": {
           "const": "abort_and_show_error",
           "default": "abort_and_show_error",
-          "enum": [
-            "abort_and_show_error"
-          ],
           "title": "Name",
           "type": "string"
         },
@@ -38,9 +35,7 @@
       "properties": {
         "name": {
           "const": "dummy",
-          "enum": [
-            "dummy"
-          ],
+          "default": "dummy",
           "title": "Name",
           "type": "string"
         },
@@ -57,9 +52,6 @@
           "title": "Id"
         }
       },
-      "required": [
-        "name"
-      ],
       "title": "DummyAction",
       "type": "object"
     }
@@ -67,9 +59,6 @@
   "properties": {
     "response_type": {
       "const": "workload",
-      "enum": [
-        "workload"
-      ],
       "title": "Response Type",
       "type": "string"
     },

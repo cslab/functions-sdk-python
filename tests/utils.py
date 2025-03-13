@@ -3,6 +3,7 @@ from datetime import datetime
 from csfunctions import DataResponse, MetaData, Request, Service
 from csfunctions.actions import AbortAndShowErrorAction
 from csfunctions.events import DummyEvent
+from csfunctions.events.dummy import DummyEventData
 from csfunctions.objects import Document, EngineeringChange, Part
 
 
@@ -35,8 +36,8 @@ def action_list_function(*args, **kwargs):  # pylint: disable=unused-argument
     return [AbortAndShowErrorAction(message="Testerror"), AbortAndShowErrorAction(message="Testerror")]
 
 
-dummy_document = Document(
-    **{
+dummy_document = Document.model_validate(
+    {
         "object_type": "document",
         "z_nummer": "D000017",
         "z_index": "a",
@@ -86,8 +87,8 @@ dummy_document = Document(
     }
 )
 
-dummy_part = Part(
-    **{
+dummy_part = Part.model_validate(
+    {
         "object_type": "part",
         "teilenummer": "000000",
         "t_index": "a",
@@ -140,21 +141,25 @@ dummy_part = Part(
 )
 
 dummy_request = Request(
-    metadata=MetaData(
-        request_id="123",
-        app_lang="de",
-        app_user="caddok",
-        request_datetime=datetime(2000, 1, 1),
-        transaction_id="123asd",
-        instance_url="https://instance.contact-cloud.com",
-        service_url=None,
+    metadata=MetaData.model_validate(
+        {
+            "request_id": "123",
+            "app_lang": "de",
+            "app_user": "caddok",
+            "request_datetime": datetime(2000, 1, 1),
+            "transaction_id": "123asd",
+            "instance_url": "https://instance.contact-cloud.com",
+            "service_url": None,
+            "service_token": "123",
+            "db_service_url": None,
+        }
     ),
-    event=DummyEvent(event_id="42", data={"documents": [dummy_document], "parts": [dummy_part]}),
+    event=DummyEvent(event_id="42", data=DummyEventData(documents=[dummy_document], parts=[dummy_part])),
 )
 
 
-dummy_ec = EngineeringChange(
-    **{
+dummy_ec = EngineeringChange.model_validate(
+    {
         "object_type": "engineering_change",
         "cdb_ec_id": "EC00000005",
         "cdb_project_id": "",
