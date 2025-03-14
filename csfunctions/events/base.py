@@ -15,6 +15,10 @@ class EventNames(str, Enum):
     ENGINEERING_CHANGE_RELEASE_CHECK = "engineering_change_release_check"
     FIELD_VALUE_CALCULATION = "field_value_calculation"
     WORKFLOW_TASK_TRIGGER = "workflow_task_trigger"
+    DOCUMENT_CREATE_CHECK = "document_create_check"
+    DOCUMENT_MODIFY_CHECK = "document_modify_check"
+    PART_CREATE_CHECK = "part_create_check"
+    PART_MODIFY_CHECK = "part_modify_check"
 
 
 class BaseEvent(BaseModel):

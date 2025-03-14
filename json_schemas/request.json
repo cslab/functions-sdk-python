@@ -731,6 +731,56 @@
       "title": "Document",
       "type": "object"
     },
+    "DocumentCreateCheckData": {
+      "properties": {
+        "documents": {
+          "description": "List of documents that are about to be created",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "linked_parts": {
+          "description": "List of parts that belong to the documents",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Linked Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "linked_parts"
+      ],
+      "title": "DocumentCreateCheckData",
+      "type": "object"
+    },
+    "DocumentCreateCheckEvent": {
+      "properties": {
+        "name": {
+          "const": "document_create_check",
+          "default": "document_create_check",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/DocumentCreateCheckData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "DocumentCreateCheckEvent",
+      "type": "object"
+    },
     "DocumentFieldCalculationData": {
       "properties": {
         "document": {
@@ -796,6 +846,56 @@
         "data"
       ],
       "title": "DocumentFieldCalculationEvent",
+      "type": "object"
+    },
+    "DocumentModifyCheckData": {
+      "properties": {
+        "documents": {
+          "description": "List of documents that are about to be modified",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "linked_parts": {
+          "description": "List of parts that belong to the documents",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Linked Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "linked_parts"
+      ],
+      "title": "DocumentModifyCheckData",
+      "type": "object"
+    },
+    "DocumentModifyCheckEvent": {
+      "properties": {
+        "name": {
+          "const": "document_modify_check",
+          "default": "document_modify_check",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/DocumentModifyCheckData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "DocumentModifyCheckEvent",
       "type": "object"
     },
     "DocumentReleaseCheckData": {
@@ -2490,6 +2590,56 @@
       "title": "Part",
       "type": "object"
     },
+    "PartCreateCheckData": {
+      "properties": {
+        "parts": {
+          "description": "List of parts that are about to be created",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "linked_documents": {
+          "description": "List of documents that are referenced by the parts.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Linked Documents",
+          "type": "array"
+        }
+      },
+      "required": [
+        "parts",
+        "linked_documents"
+      ],
+      "title": "PartCreateCheckData",
+      "type": "object"
+    },
+    "PartCreateCheckEvent": {
+      "properties": {
+        "name": {
+          "const": "part_create_check",
+          "default": "part_create_check",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/PartCreateCheckData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "PartCreateCheckEvent",
+      "type": "object"
+    },
     "PartFieldCalculationData": {
       "properties": {
         "part": {
@@ -2555,6 +2705,56 @@
         "data"
       ],
       "title": "PartFieldCalculationEvent",
+      "type": "object"
+    },
+    "PartModifyCheckData": {
+      "properties": {
+        "parts": {
+          "description": "List of parts that are about to be modified",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "linked_documents": {
+          "description": "List of documents that are referenced by the parts.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Linked Documents",
+          "type": "array"
+        }
+      },
+      "required": [
+        "parts",
+        "linked_documents"
+      ],
+      "title": "PartModifyCheckData",
+      "type": "object"
+    },
+    "PartModifyCheckEvent": {
+      "properties": {
+        "name": {
+          "const": "part_modify_check",
+          "default": "part_modify_check",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/PartModifyCheckData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "PartModifyCheckEvent",
       "type": "object"
     },
     "PartReleaseCheckData": {
@@ -2883,14 +3083,18 @@
     "event": {
       "discriminator": {
         "mapping": {
+          "document_create_check": "#/$defs/DocumentCreateCheckEvent",
           "document_field_calculation": "#/$defs/DocumentFieldCalculationEvent",
+          "document_modify_check": "#/$defs/DocumentModifyCheckEvent",
           "document_release": "#/$defs/DocumentReleaseEvent",
           "document_release_check": "#/$defs/DocumentReleaseCheckEvent",
           "dummy": "#/$defs/DummyEvent",
           "engineering_change_release": "#/$defs/EngineeringChangeRelease",
           "engineering_change_release_check": "#/$defs/EngineeringChangeReleaseCheck",
           "field_value_calculation": "#/$defs/FieldValueCalculationEvent",
+          "part_create_check": "#/$defs/PartCreateCheckEvent",
           "part_field_calculation": "#/$defs/PartFieldCalculationEvent",
+          "part_modify_check": "#/$defs/PartModifyCheckEvent",
           "part_release": "#/$defs/PartReleaseEvent",
           "part_release_check": "#/$defs/PartReleaseCheckEvent",
           "workflow_task_trigger": "#/$defs/WorkflowTaskTriggerEvent"
@@ -2930,6 +3134,18 @@
         },
         {
           "$ref": "#/$defs/WorkflowTaskTriggerEvent"
+        },
+        {
+          "$ref": "#/$defs/DocumentCreateCheckEvent"
+        },
+        {
+          "$ref": "#/$defs/DocumentModifyCheckEvent"
+        },
+        {
+          "$ref": "#/$defs/PartCreateCheckEvent"
+        },
+        {
+          "$ref": "#/$defs/PartModifyCheckEvent"
         }
       ],
       "title": "Event"
