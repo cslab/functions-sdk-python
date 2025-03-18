@@ -12,7 +12,6 @@ class PartFieldCalculationData(BaseModel):
     action: Literal["create", "modify", "copy", "index"] = Field(..., description="Action being performed")
 
     linked_documents: list[Document] = Field(..., description="List of documents that are referenced by the parts.")
-    linked_parts: list[Part] = Field(..., description="Related parts (e.g. source part)")
 
 
 class PartFieldCalculationEvent(BaseEvent):
