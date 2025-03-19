@@ -18,7 +18,6 @@ Optional arguments:
 
 --secret <secret>
     The secret token to use for the development server.
-    (default: empty)
 
 --port <port>
     The port to run the development server on.
@@ -26,7 +25,6 @@ Optional arguments:
 
 --no-reload
     Disable auto reloading of the server.
-    (default: false)
 """
 
 import argparse
