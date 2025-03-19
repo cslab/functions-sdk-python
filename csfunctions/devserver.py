@@ -115,7 +115,7 @@ def run_server():
         "0.0.0.0",  # nosec: B104
         int(os.environ.get("CON_DEV_PORT", 8000)),
         create_application(),
-        use_reloader=True,
+        use_reloader=not bool(os.environ.get("CON_DEV_NO_RELOAD")),
         extra_files=[os.path.join(os.environ.get("CON_DEV_DIR", ""), "environment.yaml")],
     )
 
@@ -125,15 +125,17 @@ if __name__ == "__main__":
     parser.add_argument("--dir", type=str, help="The directory containing the environment.yaml file")
     parser.add_argument("--secret", type=str, help="The secret token to use for the development server")
     parser.add_argument("--port", type=int, help="The port to run the development server on")
+    parser.add_argument("--no-reload", action="store_true", help="Disable auto reloading of the server")
     args = parser.parse_args()
 
     # Command line arguments take precedence over environment variables
     if args.dir:
         os.environ["CON_DEV_DIR"] = args.dir
-    if args.secret_token:
-        os.environ["CON_DEV_SECRET"] = args.secret_token
-
+    if args.secret:
+        os.environ["CON_DEV_SECRET"] = args.secret
     if args.port:
         os.environ["CON_DEV_PORT"] = str(args.port)
+    if args.no_reload:
+        os.environ["CON_DEV_NO_RELOAD"] = "0"
 
     run_server()
