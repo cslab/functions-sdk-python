@@ -2,6 +2,31 @@
 The development server looks for an environment.yaml in the current working directory and reads the Functions from it.
 The Functions are then available via HTTP requests to the server.
 
+The server will automatically restart if you make changes to your Functions code or to the `environment.yaml` file.
+
+Usage:
+
+```bash
+python -m csfunctions.devserver
+```
+
+Optional arguments:
+
+--dir <directory>
+    The directory containing the environment.yaml file.
+    (default: current working directory)
+
+--secret <secret>
+    The secret token to use for the development server.
+    (default: empty)
+
+--port <port>
+    The port to run the development server on.
+    (default: 8000)
+
+--no-reload
+    Disable auto reloading of the server.
+    (default: false)
 """
 
 import argparse
@@ -11,6 +36,8 @@ import json
 import logging
 import os
 import time
+from collections.abc import Iterable
+from wsgiref.types import StartResponse, WSGIEnvironment
 
 from werkzeug.serving import run_simple
 from werkzeug.wrappers import Request, Response
@@ -103,16 +130,13 @@ def handle_request(request: Request) -> Response:
     return Response(response, content_type="application/json")
 
 
-def create_application():
-    def application(environ, start_response):
-        request = Request(environ)
-        response = handle_request(request)
-        return response(environ, start_response)
-
-    return application
+def application(environ: WSGIEnvironment, start_response: StartResponse) -> Iterable[bytes]:
+    request = Request(environ)
+    response = handle_request(request)
+    return response(environ, start_response)
 
 
-def run_server():
+def run_server() -> None:
     port = int(os.environ.get("CON_DEV_PORT", 8000))
     if not 1 <= port <= 65535:
         raise ValueError(f"Invalid port number: {port}")
@@ -122,7 +146,7 @@ def run_server():
     run_simple(
         "0.0.0.0",  # nosec: B104
         port,
-        create_application(),
+        application,
         use_reloader=not bool(os.environ.get("CON_DEV_NO_RELOAD")),
         extra_files=[os.path.join(os.environ.get("CON_DEV_DIR", ""), "environment.yaml")],
     )
@@ -132,10 +156,18 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dir", type=str, help="The directory containing the environment.yaml file")
-    parser.add_argument("--secret", type=str, help="The secret token to use for the development server")
-    parser.add_argument("--port", type=int, help="The port to run the development server on")
-    parser.add_argument("--no-reload", action="store_true", help="Disable auto reloading of the server")
+    parser.add_argument(
+        "--dir",
+        type=str,
+        help="The directory containing the environment.yaml file. (default: current working directory)",
+    )
+    parser.add_argument(
+        "--secret",
+        type=str,
+        help="The secret token to use for the development server.",
+    )
+    parser.add_argument("--port", type=int, help="The port to run the development server on. (default: 8000)")
+    parser.add_argument("--no-reload", action="store_true", help="Disable auto reloading of the server.")
     args = parser.parse_args()
 
     # Command line arguments take precedence over environment variables
