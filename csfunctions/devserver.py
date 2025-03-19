@@ -178,4 +178,11 @@ if __name__ == "__main__":
     if args.no_reload:
         os.environ["CON_DEV_NO_RELOAD"] = "1"
 
+    if not os.environ.get("CON_DEV_SECRET"):
+        logging.warning(
+            "No secret token provided, development server is not secured!"
+            " It is recommended to provide a secret via --secret <secret> to"
+            " enable HMAC validation."
+        )
+
     run_server()
