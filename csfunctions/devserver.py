@@ -84,12 +84,12 @@ def handle_request(request: Request) -> Response:
     signature = request.headers.get("X-CON-Signature-256")
     timestamp = request.headers.get("X-CON-Timestamp")
 
-    secret_token = os.environ.get("CFC_SECRET_TOKEN", "")
+    secret_token = os.environ.get("CON_DEV_SECRET", "")
     if secret_token and not _verify_hmac_signature(signature, timestamp, body, secret_token):
         return Response("Invalid signature", status=401)
 
     try:
-        function_dir = os.environ.get("CFC_FUNCTION_DIR", "")
+        function_dir = os.environ.get("CON_DEV_DIR", "")
         response = execute(function_name, body, function_dir=function_dir)
     except FunctionNotRegistered as e:
         return Response(str(e), status=404)
@@ -113,7 +113,7 @@ def run_server():
     # B104: binding to all interfaces is intentional - this is a development server
     run_simple(
         "0.0.0.0",  # nosec: B104
-        8000,
+        int(os.environ.get("CON_DEV_PORT", 8000)),
         create_application(),
         use_reloader=True,
     )
@@ -122,13 +122,17 @@ def run_server():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--dir", type=str, help="The directory containing the environment.yaml file")
-    parser.add_argument("--secret-token", type=str, help="The secret token to use for the development server")
+    parser.add_argument("--secret", type=str, help="The secret token to use for the development server")
+    parser.add_argument("--port", type=int, help="The port to run the development server on")
     args = parser.parse_args()
 
     # Command line arguments take precedence over environment variables
     if args.dir:
-        os.environ["CFC_FUNCTION_DIR"] = args.dir
+        os.environ["CON_DEV_DIR"] = args.dir
     if args.secret_token:
-        os.environ["CFC_SECRET_TOKEN"] = args.secret_token
+        os.environ["CON_DEV_SECRET"] = args.secret_token
+
+    if args.port:
+        os.environ["CON_DEV_PORT"] = str(args.port)
 
     run_server()
