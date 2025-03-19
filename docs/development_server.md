@@ -37,7 +37,7 @@ The development server will automatically restart if you make changes to your Fu
 After starting the server, you need to expose the server to the outside world, to enable your CIM Database Cloud instance to send webhook requests to your Functions.
 There are multiple ways to do this:
 
-### GitHub Codespaces
+**GitHub Codespaces**
 
 If you are developing Functions in a GitHub Codespace you can simply forward the port of the server, by right clicking on the dev servers port in the the "Ports" tab and changing the visibility to "Public":
 
@@ -52,7 +52,7 @@ For example the `example` function would be available at:
 https://mycodespace-5g7grjgvrv9h4jrx-8000.app.github.dev/example
 ```
 
-### ngrok and Cloudflare
+**ngrok and Cloudflare**
 
 If you are developing Functions locally, you can use services like [ngrok](https://ngrok.com/) or [Cloudflare](https://cloudflare.com) to expose the server.
 
