@@ -79,7 +79,7 @@ For example the `example` function would be available at:
 
 Make sure to set the webhooks event to the correct event you want to test with your Function.
 
-For more detaikled information on how to create a webhook in CIM Database Cloud, please refer to the [CIM Database Cloud documentation](https://saas-docs.contact-cloud.com/2025.7.0-en/admin/admin-contact_cloud/saas_admin/webhooks).
+For more detailed information on how to create a webhook in CIM Database Cloud, please refer to the [CIM Database Cloud documentation](https://saas-docs.contact-cloud.com/2025.7.0-en/admin/admin-contact_cloud/saas_admin/webhooks).
 
 
 ## Securing the development server
