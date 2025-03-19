@@ -31,6 +31,7 @@ nav:
   - Home: index.md
   - Key concepts: key_concepts.md
   - Getting started: getting_started.md
+  - Development server: development_server.md
   - Reference:
     - reference/events.md
     - reference/objects.md
