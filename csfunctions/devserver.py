@@ -116,6 +116,7 @@ def run_server():
         int(os.environ.get("CON_DEV_PORT", 8000)),
         create_application(),
         use_reloader=True,
+        extra_files=[os.path.join(os.environ.get("CON_DEV_DIR", ""), "environment.yaml")],
     )
 
 
