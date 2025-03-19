@@ -7,25 +7,25 @@ This speeds up the development of Functions, because you can instantly test your
 You can start the development server using the following command:
 
 ```bash
-python -m functions.server
+python -m csfunctions.devserver
 ```
 
 You can set the port of the server using the `--port` flag (default is 8000), or by setting the `CON_DEV_PORT` environment variable:
 
 ```bash
-python -m functions.server --port 8080
+python -m csfunctions.devserver --port 8080
 ```
 
 You can set the directory containing the `environment.yaml` file using the `--dir` flag (by default the current working directory is used) or by setting the `CON_DEV_DIR` environment variable:
 
 ```bash
-python -m functions.server --dir ./my_functions
+python -m csfunctions.devserver --dir ./my_functions
 ```
 
 You can enable HMAC verification of requests using the `--secret` flag, or by setting the `CON_DEV_SECRET` environment variable:
 
 ```bash
-python -m functions.server --secret my_secret
+python -m csfunctions.devserver --secret my_secret
 ```
 
 ## Autoreloading
@@ -76,7 +76,7 @@ Since the development server is exposed to the outside world, you should secure 
 You can enable HMAC verification of requests using the `--secret` flag, or by setting the `CON_DEV_SECRET` environment variable:
 
 ```bash
-python -m functions.server --secret my_secret
+python -m csfunctions.devserver --secret my_secret
 ```
 
 Make sure to use the same secret in your CIM Database Cloud instance when setting up the webhook and enable HMAC signing.
