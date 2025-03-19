@@ -90,11 +90,14 @@ def handle_request(request: Request) -> Response:
 
     try:
         function_dir = os.environ.get("CON_DEV_DIR", "")
+        logging.info("Executing function: %s", function_name)
         response = execute(function_name, body, function_dir=function_dir)
     except FunctionNotRegistered as e:
+        logging.warning("Function not found: %s", function_name)
         return Response(str(e), status=404)
 
     if _is_error_response(response):
+        logging.error("Function %s returned error response", function_name)
         return Response(response, status=500, content_type="application/json")
 
     return Response(response, content_type="application/json")
@@ -110,10 +113,15 @@ def create_application():
 
 
 def run_server():
+    port = int(os.environ.get("CON_DEV_PORT", 8000))
+    if not 1 <= port <= 65535:
+        raise ValueError(f"Invalid port number: {port}")
+
+    logging.info("Starting development server on port %d", port)
     # B104: binding to all interfaces is intentional - this is a development server
     run_simple(
         "0.0.0.0",  # nosec: B104
-        int(os.environ.get("CON_DEV_PORT", 8000)),
+        port,
         create_application(),
         use_reloader=not bool(os.environ.get("CON_DEV_NO_RELOAD")),
         extra_files=[os.path.join(os.environ.get("CON_DEV_DIR", ""), "environment.yaml")],
@@ -121,6 +129,8 @@ def run_server():
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--dir", type=str, help="The directory containing the environment.yaml file")
     parser.add_argument("--secret", type=str, help="The secret token to use for the development server")
@@ -136,6 +146,6 @@ if __name__ == "__main__":
     if args.port:
         os.environ["CON_DEV_PORT"] = str(args.port)
     if args.no_reload:
-        os.environ["CON_DEV_NO_RELOAD"] = "0"
+        os.environ["CON_DEV_NO_RELOAD"] = "1"
 
     run_server()
