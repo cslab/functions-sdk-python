@@ -805,21 +805,12 @@
           },
           "title": "Linked Parts",
           "type": "array"
-        },
-        "linked_documents": {
-          "description": "Related documents (e.g. source document)",
-          "items": {
-            "$ref": "#/$defs/Document"
-          },
-          "title": "Linked Documents",
-          "type": "array"
         }
       },
       "required": [
         "document",
         "action",
-        "linked_parts",
-        "linked_documents"
+        "linked_parts"
       ],
       "title": "DocumentFieldCalculationData",
       "type": "object"
@@ -2664,21 +2655,12 @@
           },
           "title": "Linked Documents",
           "type": "array"
-        },
-        "linked_parts": {
-          "description": "Related parts (e.g. source part)",
-          "items": {
-            "$ref": "#/$defs/Part"
-          },
-          "title": "Linked Parts",
-          "type": "array"
         }
       },
       "required": [
         "part",
         "action",
-        "linked_documents",
-        "linked_parts"
+        "linked_documents"
       ],
       "title": "PartFieldCalculationData",
       "type": "object"
