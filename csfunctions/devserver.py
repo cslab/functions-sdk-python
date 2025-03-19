@@ -1,5 +1,5 @@
 """
-The development server looks for an environment.yaml in the current working directory and reads the Functions from it.
+The development server looks for an environment.yaml in the given directory and reads the Functions from it.
 The Functions are then available via HTTP requests to the server.
 
 The server will automatically restart if you make changes to your Functions code or to the `environment.yaml` file.
