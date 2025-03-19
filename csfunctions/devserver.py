@@ -180,9 +180,9 @@ if __name__ == "__main__":
 
     if not os.environ.get("CON_DEV_SECRET"):
         logging.warning(
-            "No secret token provided, development server is not secured!"
+            "\033[91m\033[1mNo secret token provided, development server is not secured!"
             " It is recommended to provide a secret via --secret <secret> to"
-            " enable HMAC validation."
+            " enable HMAC validation.\033[0m"
         )
 
     run_server()
