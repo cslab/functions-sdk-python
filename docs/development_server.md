@@ -1,4 +1,4 @@
-The Functions SDK includes a development server that allows you to run your Functions in your development environment. The server reads Functions from the `environment.yaml` file in your working directory and makes the Functions available via HTTP endpoints. You can then connect those Functions to your CIM Database Cloud instance using Webhooks.
+The Functions SDK includes a development server that allows you to run your Functions in your development environment. The server reads Functions from the `environment.yaml` file in your working directory and makes them available via HTTP endpoints. You can then connect these Functions to your CIM Database Cloud instance using Webhooks.
 
 This speeds up the development of Functions, because you can instantly test your changes, without deploying them to the cloud infrastructure first.
 
@@ -34,12 +34,11 @@ The development server will automatically restart if you make changes to your Fu
 
 ## Exposing the server
 
-After starting the server, you need to expose the server to the outside world, to enable your CIM Database Cloud instance to send webhook requests to your Functions.
-There are multiple ways to do this:
+To enable your CIM Database Cloud instance to send webhook requests to your Functions, you need to make the server accessible from the internet. Here are several ways to do this:
 
 **GitHub Codespaces**
 
-If you are developing Functions in a GitHub Codespace you can simply forward the port of the server, by right clicking on the dev servers port in the the "Ports" tab and changing the visibility to "Public":
+If you are developing Functions in a GitHub Codespace, you can expose the server by right-clicking on the dev server's port in the "Ports" tab and changing the visibility to "Public":
 
 ![GitHub Codespaces](./assets/codespace_port_visibility.png)
 
@@ -54,7 +53,7 @@ https://mycodespace-5g7grjgvrv9h4jrx-8000.app.github.dev/example
 
 **ngrok and Cloudflare**
 
-If you are developing Functions locally, you can use services like [ngrok](https://ngrok.com/) or [Cloudflare](https://cloudflare.com) to expose the server.
+If you are developing Functions locally, you can use services like [ngrok](https://ngrok.com/) or [Cloudflare](https://cloudflare.com) to expose your server to the internet.
 
 Please refer to the documentation of the specific service for instructions on how to do this.
 
@@ -68,9 +67,11 @@ https://my-ngrok-tunnel.ngrok.app/example
 
 ## Create a webhook in CIM Database Cloud
 
-To test your Functions locally, you can create a webhook in your CIM Database Cloud instance and point it to your development server.
+To test your Functions locally, create a webhook in your CIM Database Cloud instance and point it to your development server.
 
-The URL of the webhook will be the URL of the development server, combined with the Functions name set in the `environment.yaml` file using the following format: `https://<development-server-url>/<function-name>`
+The webhook URL should combine your development server URL with the Function name from your `environment.yaml` file using this format:
+
+`https://<development-server-url>/<function-name>`
 
 For example the `example` function would be available at:
 
