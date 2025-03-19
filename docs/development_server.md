@@ -1,4 +1,4 @@
-The Functions SDK includes a development server that allows you to run your Functions in your development environment. The server reads Functions from the `environment.yaml` file in your working directory and makes them available via HTTP endpoints. You can then connect these Functions to your CIM Database Cloud instance using Webhooks.
+The Functions SDK includes a development server that allows you to run your Functions in your development environment. The server reads Functions from the `environment.yaml` file in your working directory and makes them available via HTTP endpoints. You can then connect these Functions to your CIM Database Cloud instance using webhooks.
 
 This speeds up the development of Functions, because you can instantly test your changes, without deploying them to the cloud infrastructure first.
 
@@ -42,7 +42,7 @@ If you are developing Functions in a GitHub Codespace, you can expose the server
 
 ![GitHub Codespaces](./assets/codespace_port_visibility.png)
 
-You can then copy the URL of the server and use it to connect your Functions to your CIM Database Cloud instance using Webhooks.
+You can then copy the URL of the server and use it to connect your Functions to your CIM Database Cloud instance using webhooks.
 
 **ngrok and Cloudflare**
 
