@@ -43,13 +43,6 @@ If you are developing Functions in a GitHub Codespace, you can expose the server
 ![GitHub Codespaces](./assets/codespace_port_visibility.png)
 
 You can then copy the URL of the server and use it to connect your Functions to your CIM Database Cloud instance using Webhooks.
-The URL of the webhook will be the URL of the forwarded port, combined with the Functions set in the `environment.yaml` file.
-
-For example the `example` function would be available at:
-
-```
-https://mycodespace-5g7grjgvrv9h4jrx-8000.app.github.dev/example
-```
 
 **ngrok and Cloudflare**
 
@@ -57,13 +50,6 @@ If you are developing Functions locally, you can use services like [ngrok](https
 
 Please refer to the documentation of the specific service for instructions on how to do this.
 
-The URL for the webhook will be the URL of the service, combined with the Functions set in the `environment.yaml` file.
-
-For example the `example` function would be available at:
-
-```
-https://my-ngrok-tunnel.ngrok.app/example
-```
 
 ## Create a webhook in CIM Database Cloud
 
