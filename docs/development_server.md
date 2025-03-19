@@ -30,7 +30,7 @@ python -m functions.server --secret my_secret
 
 ## Autoreloading
 
-The development server will automatically restart if you make changes to your Functions code. However it will not restart if you make changes to the `environment.yaml` file.
+The development server will automatically restart if you make changes to your Functions code or to the `environment.yaml` file.
 
 ## Exposing the server
 
