@@ -4,6 +4,7 @@ from pydantic import Field
 
 from .dialog_data import DocumentReleaseDialogData, PartReleaseDialogData
 from .document_create_check import DocumentCreateCheckData, DocumentCreateCheckEvent
+from .document_field_calculation import DocumentFieldCalculationData, DocumentFieldCalculationEvent
 from .document_modify_check import DocumentModifyCheckData, DocumentModifyCheckEvent
 from .document_release import DocumentReleaseData, DocumentReleaseEvent
 from .document_release_check import DocumentReleaseCheckData, DocumentReleaseCheckEvent
@@ -12,6 +13,7 @@ from .engineering_change_release import EngineeringChangeRelease, EngineeringCha
 from .engineering_change_release_check import EngineeringChangeReleaseCheck, EngineeringChangeReleaseCheckData
 from .field_value_calculation import FieldValueCalculationData, FieldValueCalculationEvent
 from .part_create_check import PartCreateCheckData, PartCreateCheckEvent
+from .part_field_calculation import PartFieldCalculationData, PartFieldCalculationEvent
 from .part_modify_check import PartModifyCheckData, PartModifyCheckEvent
 from .part_release import PartReleaseData, PartReleaseEvent
 from .part_release_check import PartReleaseCheckData, PartReleaseCheckEvent
@@ -21,8 +23,10 @@ Event = Annotated[
     Union[
         DocumentReleaseEvent,
         DocumentReleaseCheckEvent,
+        DocumentFieldCalculationEvent,
         PartReleaseEvent,
         PartReleaseCheckEvent,
+        PartFieldCalculationEvent,
         FieldValueCalculationEvent,
         DummyEvent,
         EngineeringChangeRelease,
@@ -38,8 +42,10 @@ Event = Annotated[
 EventData = Union[
     DocumentReleaseData,
     DocumentReleaseCheckData,
+    DocumentFieldCalculationData,
     PartReleaseData,
     PartReleaseCheckData,
+    PartFieldCalculationData,
     FieldValueCalculationData,
     DummyEventData,
     EngineeringChangeReleaseData,
@@ -54,8 +60,10 @@ EventData = Union[
 __all__ = [
     "DocumentReleaseEvent",
     "DocumentReleaseCheckEvent",
+    "DocumentFieldCalculationEvent",
     "PartReleaseEvent",
     "PartReleaseCheckEvent",
+    "PartFieldCalculationEvent",
     "FieldValueCalculationEvent",
     "DummyEvent",
     "EngineeringChangeRelease",
@@ -63,6 +71,7 @@ __all__ = [
     "WorkflowTaskTriggerEvent",
     "DocumentReleaseData",
     "DocumentReleaseCheckData",
+    "DocumentFieldCalculationData",
     "PartReleaseData",
     "PartReleaseCheckData",
     "FieldValueCalculationData",
@@ -72,6 +81,7 @@ __all__ = [
     "WorkflowTaskTriggerEventData",
     "DocumentReleaseDialogData",
     "PartReleaseDialogData",
+    "PartFieldCalculationData",
     "DocumentCreateCheckData",
     "DocumentCreateCheckEvent",
     "DocumentModifyCheckData",

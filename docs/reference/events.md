@@ -90,6 +90,26 @@ This event is fired **after** a document has been released. Raising an exception
 |cdb_ec_id|str \| None| Engineering Change ID|
 
 
+## DocumentFieldCalculationEvent
+`csfunctions.events.DocumentFieldCalculationEvent`
+
+This event is fired when a document is created, modified, copied or indexed. It is triggered after the field calculations defined in the datasheet editor are performed.
+
+The event expects a DataResponse containing a dictionary of field names and their new values. Fields that are not mentioned in the response are not updated.
+
+
+**DocumentFieldCalculationEvent.name:** document_field_calculation
+
+**DocumentFieldCalculationEvent.data:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|document|[Document](objects.md#document)|Current state of the document|
+|action|Literal["create", "modify", "copy", "index"]|Action being performed|
+|linked_parts|list[[Part](objects.md#part)]|Parts that belong to the document|
+
+
+
 ## EngineeringChangeReleaseCheck
 `csfunctions.events.EngineeringChangeReleaseCheck`
 
@@ -213,6 +233,24 @@ This event is fired **after** a part has been released. Raising an exception thu
 |-|-|-|
 |cdbprot_remark|str \| None | Remark|
 |cdb_ec_id|str \| None| Engineering Change ID|
+
+
+## PartFieldCalculationEvent
+`csfunctions.events.PartFieldCalculationEvent`
+
+This event is fired when a part is created, modified, copied or indexed. It is triggered after the field calculations defined in the datasheet editor are performed.
+
+The event expects a DataResponse containing a dictionary of field names and their new values. Fields that are not mentioned in the response are not updated.
+
+**PartFieldCalculationEvent.name:** part_field_calculation
+
+**PartFieldCalculationEvent.data:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|part|[Part](objects.md#part)|Current state of the part|
+|action|Literal["create", "modify", "copy", "index"]|Action being performed|
+|linked_documents| list[[Document](objects.md#document)]|List of documents that belong to the part|
 
 
 ## WorkflowTaskTriggerEvent
