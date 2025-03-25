@@ -18,6 +18,7 @@ class ObjectType(str, Enum):
     OBJECT_PROPERTY_VALUE = "object_property_value"
     WORKFLOW = "workflow"
     BRIEFCASE = "briefcase"
+    PERSON = "person"
 
 
 class BaseObject(BaseModel):
