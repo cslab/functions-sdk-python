@@ -1,3 +1,6 @@
+### Version 0.10.0:
+- Feature: Added development server that can be used to run Functions locally for testing and development.
+
 ### Version 0.9.0:
 - Feature: Added new "Create Check" and "Modify Check" events for Documents, Parts and Engineering Changes, which are triggered before an object is created or modified and allow the creation or modification to be aborted by returning an Action.
 
