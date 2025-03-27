@@ -9,6 +9,7 @@ from .document import CADDocument, Document
 from .engineering_change import EngineeringChange
 from .file import File
 from .part import BOMItem, Material, Part
+from .person import Person
 from .workflow import Workflow
 
 Object = Annotated[
@@ -23,6 +24,7 @@ Object = Annotated[
         ObjectPropertyValue,
         Briefcase,
         Workflow,
+        Person,
     ],
     Field(discriminator="object_type"),
 ]
@@ -40,4 +42,5 @@ __all__ = [
     "Briefcase",
     "Workflow",
     "BaseObject",
+    "Person",
 ]
