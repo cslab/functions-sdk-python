@@ -11,6 +11,10 @@ from .document_release_check import DocumentReleaseCheckData, DocumentReleaseChe
 from .dummy import DummyEvent, DummyEventData
 from .engineering_change_release import EngineeringChangeRelease, EngineeringChangeReleaseData
 from .engineering_change_release_check import EngineeringChangeReleaseCheck, EngineeringChangeReleaseCheckData
+from .engineering_change_status_change_check import (
+    EngineeringChangeStatusChangeCheck,
+    EngineeringChangeStatusChangeCheckData,
+)
 from .engineering_change_status_changed import EngineeringChangeStatusChanged, EngineeringChangeStatusChangedData
 from .field_value_calculation import FieldValueCalculationData, FieldValueCalculationEvent
 from .part_create_check import PartCreateCheckData, PartCreateCheckEvent
@@ -33,6 +37,7 @@ Event = Annotated[
         EngineeringChangeRelease,
         EngineeringChangeReleaseCheck,
         EngineeringChangeStatusChanged,
+        EngineeringChangeStatusChangeCheck,
         WorkflowTaskTriggerEvent,
         DocumentCreateCheckEvent,
         DocumentModifyCheckEvent,
@@ -53,6 +58,7 @@ EventData = Union[
     EngineeringChangeReleaseData,
     EngineeringChangeReleaseCheckData,
     EngineeringChangeStatusChangedData,
+    EngineeringChangeStatusChangeCheckData,
     WorkflowTaskTriggerEventData,
     DocumentCreateCheckData,
     DocumentModifyCheckData,
@@ -72,6 +78,7 @@ __all__ = [
     "EngineeringChangeRelease",
     "EngineeringChangeReleaseCheck",
     "EngineeringChangeStatusChanged",
+    "EngineeringChangeStatusChangeCheck",
     "WorkflowTaskTriggerEvent",
     "DocumentReleaseData",
     "DocumentReleaseCheckData",
@@ -83,6 +90,7 @@ __all__ = [
     "EngineeringChangeReleaseData",
     "EngineeringChangeReleaseCheckData",
     "EngineeringChangeStatusChangedData",
+    "EngineeringChangeStatusChangeCheckData",
     "WorkflowTaskTriggerEventData",
     "DocumentReleaseDialogData",
     "PartReleaseDialogData",

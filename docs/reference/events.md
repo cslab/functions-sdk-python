@@ -285,3 +285,23 @@ This event is fired **after** an engineering change's status has been modified. 
 |prev_status|str|The previous status of the engineering change|
 |documents|list[[Document](objects.md#document)]|List of documents attached to the engineering change|
 |parts|list[[Part](objects.md#part)]|List of parts attached to the engineering change|
+
+## EngineeringChangeStatusChangeCheck
+`csfunctions.events.EngineeringChangeStatusChangeCheck`
+
+This event is fired when a user tries to modify an engineering change's status. Raising an exception will prevent the status change.
+
+**Supported actions:**
+
+- [AbortAndShowErrorAction](actions.md#AbortAndShowErrorAction)
+
+**EngineeringChangeStatusChangeCheck.name:** engineering_change_status_change_check
+
+**EngineeringChangeStatusChangeCheck.data:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|engineering_change|[EngineeringChange](objects.md#engineeringchange)|The engineering change that will have its status modified|
+|target_status|int|The status the engineering change will be set to|
+|documents|list[[Document](objects.md#document)]|List of documents attached to the engineering change|
+|parts|list[[Part](objects.md#part)]|List of parts attached to the engineering change|
