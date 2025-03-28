@@ -269,3 +269,19 @@ This event is fired by the workflow task "Trigger Webhook".
 |documents| list[[Document](objects.md#document)]|List of documents attached to the workflow.|
 |engineering_changes| list[[EngineeringChange](objects.md#engineeringchange)]|List of engineering changes attached to the workflow.|
 |briefcases| list[[Briefcase](objects.md#briefcase)]|List of briefcases attached to the workflow.|
+
+## EngineeringChangeStatusChanged
+`csfunctions.events.EngineeringChangeStatusChanged`
+
+This event is fired **after** an engineering change's status has been modified. Raising an exception cannot prevent the status change.
+
+**EngineeringChangeStatusChanged.name:** engineering_change_status_changed
+
+**EngineeringChangeStatusChanged.data:**
+
+|Attribute|Type|Description|
+|-|-|-|
+|engineering_change|[EngineeringChange](objects.md#engineeringchange)|The engineering change that had its status modified|
+|prev_status|str|The previous status of the engineering change|
+|documents|list[[Document](objects.md#document)]|List of documents attached to the engineering change|
+|parts|list[[Part](objects.md#part)]|List of parts attached to the engineering change|
