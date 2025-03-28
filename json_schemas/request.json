@@ -1511,6 +1511,67 @@
       "title": "EngineeringChangeReleaseData",
       "type": "object"
     },
+    "EngineeringChangeStatusChangeCheck": {
+      "properties": {
+        "name": {
+          "const": "engineering_change_status_change_check",
+          "default": "engineering_change_status_change_check",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/EngineeringChangeStatusChangeCheckData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "EngineeringChangeStatusChangeCheck",
+      "type": "object"
+    },
+    "EngineeringChangeStatusChangeCheckData": {
+      "properties": {
+        "engineering_change": {
+          "$ref": "#/$defs/EngineeringChange",
+          "description": "The engineering change that will have its status modified"
+        },
+        "target_status": {
+          "description": "The target status of the engineering change",
+          "title": "Target Status",
+          "type": "integer"
+        },
+        "documents": {
+          "description": "List of documents attached to the engineering change",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of parts attached to the engineering change",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "engineering_change",
+        "target_status",
+        "documents",
+        "parts"
+      ],
+      "title": "EngineeringChangeStatusChangeCheckData",
+      "type": "object"
+    },
     "EngineeringChangeStatusChanged": {
       "properties": {
         "name": {
@@ -3134,6 +3195,7 @@
           "dummy": "#/$defs/DummyEvent",
           "engineering_change_release": "#/$defs/EngineeringChangeRelease",
           "engineering_change_release_check": "#/$defs/EngineeringChangeReleaseCheck",
+          "engineering_change_status_change_check": "#/$defs/EngineeringChangeStatusChangeCheck",
           "engineering_change_status_changed": "#/$defs/EngineeringChangeStatusChanged",
           "field_value_calculation": "#/$defs/FieldValueCalculationEvent",
           "part_create_check": "#/$defs/PartCreateCheckEvent",
@@ -3178,6 +3240,9 @@
         },
         {
           "$ref": "#/$defs/EngineeringChangeStatusChanged"
+        },
+        {
+          "$ref": "#/$defs/EngineeringChangeStatusChangeCheck"
         },
         {
           "$ref": "#/$defs/WorkflowTaskTriggerEvent"
