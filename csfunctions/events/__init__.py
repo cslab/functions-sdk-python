@@ -11,6 +11,11 @@ from .document_release_check import DocumentReleaseCheckData, DocumentReleaseChe
 from .dummy import DummyEvent, DummyEventData
 from .engineering_change_release import EngineeringChangeRelease, EngineeringChangeReleaseData
 from .engineering_change_release_check import EngineeringChangeReleaseCheck, EngineeringChangeReleaseCheckData
+from .engineering_change_status_change_check import (
+    EngineeringChangeStatusChangeCheck,
+    EngineeringChangeStatusChangeCheckData,
+)
+from .engineering_change_status_changed import EngineeringChangeStatusChanged, EngineeringChangeStatusChangedData
 from .field_value_calculation import FieldValueCalculationData, FieldValueCalculationEvent
 from .part_create_check import PartCreateCheckData, PartCreateCheckEvent
 from .part_field_calculation import PartFieldCalculationData, PartFieldCalculationEvent
@@ -31,6 +36,8 @@ Event = Annotated[
         DummyEvent,
         EngineeringChangeRelease,
         EngineeringChangeReleaseCheck,
+        EngineeringChangeStatusChanged,
+        EngineeringChangeStatusChangeCheck,
         WorkflowTaskTriggerEvent,
         DocumentCreateCheckEvent,
         DocumentModifyCheckEvent,
@@ -50,6 +57,8 @@ EventData = Union[
     DummyEventData,
     EngineeringChangeReleaseData,
     EngineeringChangeReleaseCheckData,
+    EngineeringChangeStatusChangedData,
+    EngineeringChangeStatusChangeCheckData,
     WorkflowTaskTriggerEventData,
     DocumentCreateCheckData,
     DocumentModifyCheckData,
@@ -68,6 +77,8 @@ __all__ = [
     "DummyEvent",
     "EngineeringChangeRelease",
     "EngineeringChangeReleaseCheck",
+    "EngineeringChangeStatusChanged",
+    "EngineeringChangeStatusChangeCheck",
     "WorkflowTaskTriggerEvent",
     "DocumentReleaseData",
     "DocumentReleaseCheckData",
@@ -78,6 +89,8 @@ __all__ = [
     "DummyEventData",
     "EngineeringChangeReleaseData",
     "EngineeringChangeReleaseCheckData",
+    "EngineeringChangeStatusChangedData",
+    "EngineeringChangeStatusChangeCheckData",
     "WorkflowTaskTriggerEventData",
     "DocumentReleaseDialogData",
     "PartReleaseDialogData",
