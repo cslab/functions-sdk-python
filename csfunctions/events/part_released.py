@@ -5,15 +5,15 @@ from pydantic import BaseModel, Field
 from csfunctions.objects import Document, Part
 
 from .base import BaseEvent, EventNames
-from .dialog_data import PartReleaseDialogData
+from .dialog_data import PartReleasedDialogData
 
 
-class PartReleaseData(BaseModel):
+class PartReleasedData(BaseModel):
     parts: list[Part] = Field(..., description="List if parts that were released.")
     documents: list[Document] = Field(..., description="List if documents that are referenced by the released part.")
-    dialog_data: PartReleaseDialogData
+    dialog_data: PartReleasedDialogData
 
 
-class PartReleaseEvent(BaseEvent):
-    name: Literal[EventNames.PART_RELEASE] = EventNames.PART_RELEASE
-    data: PartReleaseData
+class PartReleasedEvent(BaseEvent):
+    name: Literal[EventNames.PART_RELEASED] = EventNames.PART_RELEASED
+    data: PartReleasedData

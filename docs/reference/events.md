@@ -67,14 +67,14 @@ Be aware that the document is not released yet and the release might still be ab
 |cdbprot_remark|str \| None | Remark|
 |cdb_ec_id|str \| None| Engineering Change ID|
 
-## DocumentReleaseEvent
-`csfunctions.events.DocumentReleaseEvent`
+## DocumentReleasedEvent
+`csfunctions.events.DocumentReleasedEvent`
 
 This event is fired **after** a document has been released. Raising an exception thus can not prevent the release.
 
-**DocumentReleaseEvent.name:** document_release
+**DocumentReleasedEvent.name:** document_released
 
-**DocumentReleaseEvent.data:**
+**DocumentReleasedEvent.data:**
 
 |Attribute|Type|Description|
 |-|-|-|
@@ -82,7 +82,7 @@ This event is fired **after** a document has been released. Raising an exception
 |parts| list[[Part](objects.md#part)]|List of parts that belong to the released documents.|
 |dialog_data|DocumentReleaseDialogData|Contents of the dialog.|
 
-**DocumentReleaseDialogData:**
+**DocumentReleasedDialogData:**
 
 |Attribute|Type|Description|
 |-|-|-|
@@ -131,14 +131,14 @@ Be aware that the engineering change is not released yet and the release might s
 |attached_parts| list[[Part](objects.md#part)]|List of included parts.|
 
 
-## EngineeringChangeRelease
-`csfunctions.events.EngineeringChangeRelease`
+## EngineeringChangeReleasedEvent
+`csfunctions.events.EngineeringChangeReleasedEvent`
 
 This event is fired **after** an engineering change has been released. Raising an exception thus can not prevent the release.
 
-**EngineeringChangeRelease.name:** engineering_change_release
+**EngineeringChangeReleasedEvent.name:** engineering_change_released
 
-**EngineeringChangeRelease.data:**
+**EngineeringChangeReleasedEvent.data:**
 
 |Attribute|Type|Description|
 |-|-|-|
@@ -212,22 +212,22 @@ Be aware that the part is not released yet and the release might still be aborte
 |cdb_ec_id|str \| None| Engineering Change ID|
 
 
-## PartReleaseEvent
-`csfunctions.events.PartReleaseEvent`
+## PartReleasedEvent
+`csfunctions.events.PartReleasedEvent`
 
 This event is fired **after** a part has been released. Raising an exception thus can not prevent the release.
 
-**PartReleaseEvent.name:** part_release
+**PartReleasedEvent.name:** part_released
 
-**PartReleaseEvent.data:**
+**PartReleasedEvent.data:**
 
 |Attribute|Type|Description|
 |-|-|-|
 |parts| list[[Part](objects.md#part)]|List of parts that were released.|
 |documents| list[[Document](objects.md#document)]|List of documents that belong to the released parts.|
-|dialog_data|PartReleaseDialogData|Contents of the dialog.|
+|dialog_data|PartReleasedDialogData|Contents of the dialog.|
 
-**PartReleaseDialogData:**
+**PartReleasedDialogData:**
 
 |Attribute|Type|Description|
 |-|-|-|

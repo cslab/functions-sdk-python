@@ -1,3 +1,11 @@
+### Version unreleased:
+Breaking changes:
+Changed the names of the events and their classes, to be more consistent:
+  - `DocumentReleaseEvent` -> `DocumentReleasedEvent`
+  - `PartReleaseEvent` -> `PartReleasedEvent`
+  - `EngineeringChangeReleaseEvent` -> `EngineeringChangeReleasedEvent`
+
+
 ### Version 0.11.0:
 - Feature: Added Document and Part field calculation events.
 

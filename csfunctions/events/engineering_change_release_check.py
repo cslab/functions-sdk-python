@@ -15,6 +15,6 @@ class EngineeringChangeReleaseCheckData(BaseModel):
     )
 
 
-class EngineeringChangeReleaseCheck(BaseEvent):
+class EngineeringChangeReleaseCheckEvent(BaseEvent):
     name: Literal[EventNames.ENGINEERING_CHANGE_RELEASE_CHECK] = EventNames.ENGINEERING_CHANGE_RELEASE_CHECK
     data: EngineeringChangeReleaseCheckData

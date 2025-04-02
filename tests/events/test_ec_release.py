@@ -1,7 +1,7 @@
 from copy import deepcopy
 from unittest import TestCase
 
-from csfunctions.events import EngineeringChangeRelease, EngineeringChangeReleaseData
+from csfunctions.events import EngineeringChangeReleasedData, EngineeringChangeReleasedEvent
 from csfunctions.handler import link_objects
 from tests.utils import dummy_document, dummy_ec, dummy_part, dummy_request
 
@@ -15,10 +15,10 @@ class TestECRelease(TestCase):
 
         request = dummy_request
 
-        data = EngineeringChangeReleaseData(
+        data = EngineeringChangeReleasedData(
             documents=[document], parts=[part], engineering_changes=[engineering_change]
         )
-        event = EngineeringChangeRelease(event_id="123", data=data)
+        event = EngineeringChangeReleasedEvent(event_id="123", data=data)
         request.event = event
 
         # objects are not linked yet
