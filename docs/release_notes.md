@@ -1,3 +1,6 @@
+### Version 0.11.0:
+- Feature: Added Document and Part field calculation events.
+
 ### Version 0.10.0:
 - Feature: Added development server that can be used to run Functions locally for testing and development.
 
