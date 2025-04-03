@@ -35,12 +35,16 @@ import logging
 import os
 import time
 from collections.abc import Iterable
-from wsgiref.types import StartResponse, WSGIEnvironment
+from typing import TYPE_CHECKING
 
 from werkzeug.serving import run_simple
 from werkzeug.wrappers import Request, Response
 
 from csfunctions.handler import FunctionNotRegistered, execute
+
+if TYPE_CHECKING:
+    # these annotations are not available in python 3.10
+    from wsgiref.types import StartResponse, WSGIEnvironment
 
 
 def _is_error_response(function_response: str | dict):
