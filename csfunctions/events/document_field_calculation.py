@@ -10,7 +10,7 @@ from .base import BaseEvent, EventNames
 class DocumentFieldCalculationData(BaseModel):
     document: Document = Field(..., description="Current state of the document")
     action: Literal["create", "modify", "copy", "index"] = Field(..., description="Action being performed")
-    linked_parts: list[Part] = Field(..., description="Parts that belong to the document")
+    parts: list[Part] = Field(..., description="Parts that belong to the document")
 
 
 class DocumentFieldCalculationEvent(BaseEvent):

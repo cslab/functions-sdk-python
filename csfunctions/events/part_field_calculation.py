@@ -11,7 +11,7 @@ class PartFieldCalculationData(BaseModel):
     part: Part = Field(..., description="Current state of the part")
     action: Literal["create", "modify", "copy", "index"] = Field(..., description="Action being performed")
 
-    linked_documents: list[Document] = Field(..., description="List of documents that are referenced by the parts.")
+    documents: list[Document] = Field(..., description="List of documents that are referenced by the parts.")
 
 
 class PartFieldCalculationEvent(BaseEvent):

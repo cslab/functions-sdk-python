@@ -8,8 +8,8 @@ from .base import BaseEvent, EventNames
 
 
 class EngineeringChangeReleaseCheckData(BaseModel):
-    attached_documents: list[Document] = Field(..., description="List of included documents.")
-    attached_parts: list[Part] = Field(..., description="List of included parts.")
+    documents: list[Document] = Field(..., description="List of included documents.")
+    parts: list[Part] = Field(..., description="List of included parts.")
     engineering_changes: list[EngineeringChange] = Field(
         ..., description="List of engineering changes that will be released."
     )

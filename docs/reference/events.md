@@ -18,7 +18,7 @@ The event is triggered before any field calculations are performed.
 |Attribute|Type|Description|
 |-|-|-|
 |documents| list[[Document](objects.md#document)]|List of documents that are about to be created.|
-|linked_parts| list[[Part](objects.md#part)]|List of parts that belong to the documents.|
+|parts| list[[Part](objects.md#part)]|List of parts that belong to the documents.|
 
 ## DocumentModifyCheckEvent
 `csfunctions.events.DocumentModifyCheckEvent`
@@ -37,7 +37,7 @@ The event is triggered before any field calculations are performed.
 |Attribute|Type|Description|
 |-|-|-|
 |documents| list[[Document](objects.md#document)]|List of documents that are about to be modified.|
-|linked_parts| list[[Part](objects.md#part)]|List of parts that belong to the documents.|
+|parts| list[[Part](objects.md#part)]|List of parts that belong to the documents.|
 
 
 ## DocumentReleaseCheckEvent
@@ -57,7 +57,7 @@ Be aware that the document is not released yet and the release might still be ab
 |Attribute|Type|Description|
 |-|-|-|
 |documents| list[[Document](objects.md#document)]|List of documents that will be released.|
-|attached_parts| list[[Part](objects.md#part)]|List of parts that belong to the documents.|
+|parts| list[[Part](objects.md#part)]|List of parts that belong to the documents.|
 |dialog_data|DocumentReleaseDialogData|Contents of the dialog.|
 
 **DocumentReleaseCheckDialogData:**
@@ -106,7 +106,7 @@ The event expects a DataResponse containing a dictionary of field names and thei
 |-|-|-|
 |document|[Document](objects.md#document)|Current state of the document|
 |action|Literal["create", "modify", "copy", "index"]|Action being performed|
-|linked_parts|list[[Part](objects.md#part)]|Parts that belong to the document|
+|parts|list[[Part](objects.md#part)]|Parts that belong to the document|
 
 
 
@@ -127,8 +127,8 @@ Be aware that the engineering change is not released yet and the release might s
 |Attribute|Type|Description|
 |-|-|-|
 |engineering_changes| list[[EngineeringChange](objects.md#engineeringchange)]|List of engineering changes that will be released.|
-|attached_documents| list[[Document](objects.md#document)]|List of included documents.|
-|attached_parts| list[[Part](objects.md#part)]|List of included parts.|
+|documents| list[[Document](objects.md#document)]|List of included documents.|
+|parts| list[[Part](objects.md#part)]|List of included parts.|
 
 
 ## EngineeringChangeReleasedEvent
@@ -163,7 +163,7 @@ The event is triggered before any field calculations are performed.
 |Attribute|Type|Description|
 |-|-|-|
 |parts| list[[Part](objects.md#part)]|List of parts that are about to be created.|
-|linked_documents| list[[Document](objects.md#document)]|List of documents that are referenced by the parts.|
+|documents| list[[Document](objects.md#document)]|List of documents that are referenced by the parts.|
 
 ## PartModifyCheckEvent
 `csfunctions.events.PartModifyCheckEvent`
@@ -182,7 +182,7 @@ The event is triggered before any field calculations are performed.
 |Attribute|Type|Description|
 |-|-|-|
 |parts| list[[Part](objects.md#part)]|List of parts that are about to be modified.|
-|linked_documents| list[[Document](objects.md#document)]|List of documents that are referenced by the parts.|
+|documents| list[[Document](objects.md#document)]|List of documents that are referenced by the parts.|
 
 ## PartReleaseCheckEvent
 `csfunctions.events.PartReleaseCheckEvent`
@@ -201,7 +201,7 @@ Be aware that the part is not released yet and the release might still be aborte
 |Attribute|Type|Description|
 |-|-|-|
 |parts| list[[Part](objects.md#part)]|List of parts that will released.|
-|attached_documents| list[[Document](objects.md#document)]|List of documents that belong to the released parts.|
+|documents| list[[Document](objects.md#document)]|List of documents that belong to the released parts.|
 |dialog_data|PartReleaseDialogData|Contents of the dialog.|
 
 **PartReleaseCheckDialogData:**
@@ -250,7 +250,7 @@ The event expects a DataResponse containing a dictionary of field names and thei
 |-|-|-|
 |part|[Part](objects.md#part)|Current state of the part|
 |action|Literal["create", "modify", "copy", "index"]|Action being performed|
-|linked_documents| list[[Document](objects.md#document)]|List of documents that belong to the part|
+|documents| list[[Document](objects.md#document)]|List of documents that belong to the part|
 
 
 ## WorkflowTaskTriggerEvent

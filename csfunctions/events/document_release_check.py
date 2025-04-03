@@ -10,7 +10,7 @@ from .dialog_data import DocumentReleasedDialogData
 
 class DocumentReleaseCheckData(BaseModel):
     documents: list[Document] = Field(..., description="List of documents that will be released.")
-    attached_parts: list[Part] = Field(..., description="List of parts that belong to the documents")
+    parts: list[Part] = Field(..., description="List of parts that belong to the documents")
     dialog_data: DocumentReleasedDialogData
 
 

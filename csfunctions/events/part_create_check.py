@@ -9,7 +9,7 @@ from .base import BaseEvent, EventNames
 
 class PartCreateCheckData(BaseModel):
     parts: list[Part] = Field(..., description="List of parts that are about to be created")
-    linked_documents: list[Document] = Field(..., description="List of documents that are referenced by the parts.")
+    documents: list[Document] = Field(..., description="List of documents that are referenced by the parts.")
 
 
 class PartCreateCheckEvent(BaseEvent):
