@@ -11,6 +11,7 @@
       "type": "string"
     },
     "data": {
+      "additionalProperties": true,
       "description": "Data that should be returned.",
       "title": "Data",
       "type": "object"

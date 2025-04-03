@@ -35,7 +35,6 @@ import logging
 import os
 import time
 from collections.abc import Iterable
-from wsgiref.types import StartResponse, WSGIEnvironment
 
 from werkzeug.serving import run_simple
 from werkzeug.wrappers import Request, Response
@@ -128,7 +127,7 @@ def handle_request(request: Request) -> Response:
     return Response(response, content_type="application/json")
 
 
-def application(environ: WSGIEnvironment, start_response: StartResponse) -> Iterable[bytes]:
+def application(environ, start_response) -> Iterable[bytes]:
     request = Request(environ)
     response = handle_request(request)
     return response(environ, start_response)
