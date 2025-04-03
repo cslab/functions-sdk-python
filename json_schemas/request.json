@@ -741,18 +741,18 @@
           "title": "Documents",
           "type": "array"
         },
-        "linked_parts": {
+        "parts": {
           "description": "List of parts that belong to the documents",
           "items": {
             "$ref": "#/$defs/Part"
           },
-          "title": "Linked Parts",
+          "title": "Parts",
           "type": "array"
         }
       },
       "required": [
         "documents",
-        "linked_parts"
+        "parts"
       ],
       "title": "DocumentCreateCheckData",
       "type": "object"
@@ -798,19 +798,19 @@
           "title": "Action",
           "type": "string"
         },
-        "linked_parts": {
+        "parts": {
           "description": "Parts that belong to the document",
           "items": {
             "$ref": "#/$defs/Part"
           },
-          "title": "Linked Parts",
+          "title": "Parts",
           "type": "array"
         }
       },
       "required": [
         "document",
         "action",
-        "linked_parts"
+        "parts"
       ],
       "title": "DocumentFieldCalculationData",
       "type": "object"
@@ -849,18 +849,18 @@
           "title": "Documents",
           "type": "array"
         },
-        "linked_parts": {
+        "parts": {
           "description": "List of parts that belong to the documents",
           "items": {
             "$ref": "#/$defs/Part"
           },
-          "title": "Linked Parts",
+          "title": "Parts",
           "type": "array"
         }
       },
       "required": [
         "documents",
-        "linked_parts"
+        "parts"
       ],
       "title": "DocumentModifyCheckData",
       "type": "object"
@@ -899,21 +899,21 @@
           "title": "Documents",
           "type": "array"
         },
-        "attached_parts": {
+        "parts": {
           "description": "List of parts that belong to the documents",
           "items": {
             "$ref": "#/$defs/Part"
           },
-          "title": "Attached Parts",
+          "title": "Parts",
           "type": "array"
         },
         "dialog_data": {
-          "$ref": "#/$defs/DocumentReleaseDialogData"
+          "$ref": "#/$defs/DocumentReleasedDialogData"
         }
       },
       "required": [
         "documents",
-        "attached_parts",
+        "parts",
         "dialog_data"
       ],
       "title": "DocumentReleaseCheckData",
@@ -943,7 +943,37 @@
       "title": "DocumentReleaseCheckEvent",
       "type": "object"
     },
-    "DocumentReleaseDialogData": {
+    "DocumentReleasedData": {
+      "properties": {
+        "documents": {
+          "description": "List of documents that were released.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of parts that belong to the released documents",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "dialog_data": {
+          "$ref": "#/$defs/DocumentReleasedDialogData"
+        }
+      },
+      "required": [
+        "documents",
+        "parts",
+        "dialog_data"
+      ],
+      "title": "DocumentReleasedData",
+      "type": "object"
+    },
+    "DocumentReleasedDialogData": {
       "properties": {
         "dialog_type": {
           "const": "document_release",
@@ -978,37 +1008,7 @@
           "title": "Cdb Ec Id"
         }
       },
-      "title": "DocumentReleaseDialogData",
-      "type": "object"
-    },
-    "DocumentReleasedData": {
-      "properties": {
-        "documents": {
-          "description": "List of documents that were released.",
-          "items": {
-            "$ref": "#/$defs/Document"
-          },
-          "title": "Documents",
-          "type": "array"
-        },
-        "parts": {
-          "description": "List of parts that belong to the released documents",
-          "items": {
-            "$ref": "#/$defs/Part"
-          },
-          "title": "Parts",
-          "type": "array"
-        },
-        "dialog_data": {
-          "$ref": "#/$defs/DocumentReleaseDialogData"
-        }
-      },
-      "required": [
-        "documents",
-        "parts",
-        "dialog_data"
-      ],
-      "title": "DocumentReleasedData",
+      "title": "DocumentReleasedDialogData",
       "type": "object"
     },
     "DocumentReleasedEvent": {
@@ -1395,20 +1395,20 @@
     },
     "EngineeringChangeReleaseCheckData": {
       "properties": {
-        "attached_documents": {
+        "documents": {
           "description": "List of included documents.",
           "items": {
             "$ref": "#/$defs/Document"
           },
-          "title": "Attached Documents",
+          "title": "Documents",
           "type": "array"
         },
-        "attached_parts": {
+        "parts": {
           "description": "List of included parts.",
           "items": {
             "$ref": "#/$defs/Part"
           },
-          "title": "Attached Parts",
+          "title": "Parts",
           "type": "array"
         },
         "engineering_changes": {
@@ -1421,8 +1421,8 @@
         }
       },
       "required": [
-        "attached_documents",
-        "attached_parts",
+        "documents",
+        "parts",
         "engineering_changes"
       ],
       "title": "EngineeringChangeReleaseCheckData",
@@ -2594,18 +2594,18 @@
           "title": "Parts",
           "type": "array"
         },
-        "linked_documents": {
+        "documents": {
           "description": "List of documents that are referenced by the parts.",
           "items": {
             "$ref": "#/$defs/Document"
           },
-          "title": "Linked Documents",
+          "title": "Documents",
           "type": "array"
         }
       },
       "required": [
         "parts",
-        "linked_documents"
+        "documents"
       ],
       "title": "PartCreateCheckData",
       "type": "object"
@@ -2651,19 +2651,19 @@
           "title": "Action",
           "type": "string"
         },
-        "linked_documents": {
+        "documents": {
           "description": "List of documents that are referenced by the parts.",
           "items": {
             "$ref": "#/$defs/Document"
           },
-          "title": "Linked Documents",
+          "title": "Documents",
           "type": "array"
         }
       },
       "required": [
         "part",
         "action",
-        "linked_documents"
+        "documents"
       ],
       "title": "PartFieldCalculationData",
       "type": "object"
@@ -2702,18 +2702,18 @@
           "title": "Parts",
           "type": "array"
         },
-        "linked_documents": {
+        "documents": {
           "description": "List of documents that are referenced by the parts.",
           "items": {
             "$ref": "#/$defs/Document"
           },
-          "title": "Linked Documents",
+          "title": "Documents",
           "type": "array"
         }
       },
       "required": [
         "parts",
-        "linked_documents"
+        "documents"
       ],
       "title": "PartModifyCheckData",
       "type": "object"
@@ -2752,21 +2752,21 @@
           "title": "Parts",
           "type": "array"
         },
-        "attached_documents": {
+        "documents": {
           "description": "List of documents that are referenced by the parts.",
           "items": {
             "$ref": "#/$defs/Document"
           },
-          "title": "Attached Documents",
+          "title": "Documents",
           "type": "array"
         },
         "dialog_data": {
-          "$ref": "#/$defs/PartReleaseDialogData"
+          "$ref": "#/$defs/PartReleasedDialogData"
         }
       },
       "required": [
         "parts",
-        "attached_documents",
+        "documents",
         "dialog_data"
       ],
       "title": "PartReleaseCheckData",
@@ -2796,7 +2796,37 @@
       "title": "PartReleaseCheckEvent",
       "type": "object"
     },
-    "PartReleaseDialogData": {
+    "PartReleasedData": {
+      "properties": {
+        "parts": {
+          "description": "List if parts that were released.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "documents": {
+          "description": "List if documents that are referenced by the released part.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "dialog_data": {
+          "$ref": "#/$defs/PartReleasedDialogData"
+        }
+      },
+      "required": [
+        "parts",
+        "documents",
+        "dialog_data"
+      ],
+      "title": "PartReleasedData",
+      "type": "object"
+    },
+    "PartReleasedDialogData": {
       "properties": {
         "dialog_type": {
           "const": "part_release",
@@ -2831,37 +2861,7 @@
           "title": "Cdb Ec Id"
         }
       },
-      "title": "PartReleaseDialogData",
-      "type": "object"
-    },
-    "PartReleasedData": {
-      "properties": {
-        "parts": {
-          "description": "List if parts that were released.",
-          "items": {
-            "$ref": "#/$defs/Part"
-          },
-          "title": "Parts",
-          "type": "array"
-        },
-        "documents": {
-          "description": "List if documents that are referenced by the released part.",
-          "items": {
-            "$ref": "#/$defs/Document"
-          },
-          "title": "Documents",
-          "type": "array"
-        },
-        "dialog_data": {
-          "$ref": "#/$defs/PartReleaseDialogData"
-        }
-      },
-      "required": [
-        "parts",
-        "documents",
-        "dialog_data"
-      ],
-      "title": "PartReleasedData",
+      "title": "PartReleasedDialogData",
       "type": "object"
     },
     "PartReleasedEvent": {
