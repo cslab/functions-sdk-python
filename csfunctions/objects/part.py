@@ -1,4 +1,3 @@
-from contextlib import suppress
 from datetime import date, datetime
 from typing import TYPE_CHECKING, Literal, Optional
 
@@ -11,7 +10,6 @@ from .base import BaseObject, ObjectType
 if TYPE_CHECKING:
     from csfunctions.events import EventData
 
-with suppress(ImportError):
     from .document import Document
 
 

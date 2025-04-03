@@ -6,6 +6,9 @@ Changed the names of the events and their classes, to be more consistent:
   - `EngineeringChangeReleaseEvent` -> `EngineeringChangeReleasedEvent`
 
 
+### Version 0.11.1:
+- Fix: crash when using pydantic>=2.11
+
 ### Version 0.11.0:
 - Feature: Added Document and Part field calculation events.
 

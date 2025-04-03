@@ -1514,14 +1514,17 @@
     "FieldValueCalculationData": {
       "properties": {
         "scheme_updates": {
+          "additionalProperties": true,
           "title": "Scheme Updates",
           "type": "object"
         },
         "ctx": {
+          "additionalProperties": true,
           "title": "Ctx",
           "type": "object"
         },
         "obj": {
+          "additionalProperties": true,
           "title": "Obj",
           "type": "object"
         },
