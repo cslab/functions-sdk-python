@@ -1,4 +1,3 @@
-from contextlib import suppress
 from datetime import date, datetime
 from typing import TYPE_CHECKING, Literal, Optional
 
@@ -8,9 +7,7 @@ from csfunctions.util import get_items_of_type
 
 from .base import BaseObject, ObjectType
 from .file import File
-
-with suppress(ImportError):
-    from .part import Part
+from .part import Part
 
 if TYPE_CHECKING:
     from csfunctions.events import EventData
@@ -99,3 +96,6 @@ class CADDocument(Document):
     """
 
     object_type: Literal[ObjectType.CAD_DOCUMENT] = ObjectType.CAD_DOCUMENT  # type: ignore[assignment]
+
+
+Part.model_rebuild()
