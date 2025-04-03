@@ -1,3 +1,13 @@
+### Version unreleased:
+Breaking changes:
+- Changed the names of the events and their classes, to be more consistent:
+  - `DocumentReleaseEvent` -> `DocumentReleasedEvent`
+  - `PartReleaseEvent` -> `PartReleasedEvent`
+  - `EngineeringChangeRelease` -> `EngineeringChangeReleasedEvent`
+  - `EngineeringChangeCheck`> `EngineeringChangeCheckEvent`
+
+- Event data now consistently uses the attributes `parts` and `documents` instead of `linked_parts` or `attached_parts`
+
 ### Version 0.11.1:
 - Fix: crash when using pydantic>=2.11
 

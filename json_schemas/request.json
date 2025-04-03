@@ -741,18 +741,18 @@
           "title": "Documents",
           "type": "array"
         },
-        "linked_parts": {
+        "parts": {
           "description": "List of parts that belong to the documents",
           "items": {
             "$ref": "#/$defs/Part"
           },
-          "title": "Linked Parts",
+          "title": "Parts",
           "type": "array"
         }
       },
       "required": [
         "documents",
-        "linked_parts"
+        "parts"
       ],
       "title": "DocumentCreateCheckData",
       "type": "object"
@@ -798,19 +798,19 @@
           "title": "Action",
           "type": "string"
         },
-        "linked_parts": {
+        "parts": {
           "description": "Parts that belong to the document",
           "items": {
             "$ref": "#/$defs/Part"
           },
-          "title": "Linked Parts",
+          "title": "Parts",
           "type": "array"
         }
       },
       "required": [
         "document",
         "action",
-        "linked_parts"
+        "parts"
       ],
       "title": "DocumentFieldCalculationData",
       "type": "object"
@@ -849,18 +849,18 @@
           "title": "Documents",
           "type": "array"
         },
-        "linked_parts": {
+        "parts": {
           "description": "List of parts that belong to the documents",
           "items": {
             "$ref": "#/$defs/Part"
           },
-          "title": "Linked Parts",
+          "title": "Parts",
           "type": "array"
         }
       },
       "required": [
         "documents",
-        "linked_parts"
+        "parts"
       ],
       "title": "DocumentModifyCheckData",
       "type": "object"
@@ -899,21 +899,21 @@
           "title": "Documents",
           "type": "array"
         },
-        "attached_parts": {
+        "parts": {
           "description": "List of parts that belong to the documents",
           "items": {
             "$ref": "#/$defs/Part"
           },
-          "title": "Attached Parts",
+          "title": "Parts",
           "type": "array"
         },
         "dialog_data": {
-          "$ref": "#/$defs/DocumentReleaseDialogData"
+          "$ref": "#/$defs/DocumentReleasedDialogData"
         }
       },
       "required": [
         "documents",
-        "attached_parts",
+        "parts",
         "dialog_data"
       ],
       "title": "DocumentReleaseCheckData",
@@ -943,7 +943,7 @@
       "title": "DocumentReleaseCheckEvent",
       "type": "object"
     },
-    "DocumentReleaseData": {
+    "DocumentReleasedData": {
       "properties": {
         "documents": {
           "description": "List of documents that were released.",
@@ -962,7 +962,7 @@
           "type": "array"
         },
         "dialog_data": {
-          "$ref": "#/$defs/DocumentReleaseDialogData"
+          "$ref": "#/$defs/DocumentReleasedDialogData"
         }
       },
       "required": [
@@ -970,10 +970,10 @@
         "parts",
         "dialog_data"
       ],
-      "title": "DocumentReleaseData",
+      "title": "DocumentReleasedData",
       "type": "object"
     },
-    "DocumentReleaseDialogData": {
+    "DocumentReleasedDialogData": {
       "properties": {
         "dialog_type": {
           "const": "document_release",
@@ -1008,14 +1008,14 @@
           "title": "Cdb Ec Id"
         }
       },
-      "title": "DocumentReleaseDialogData",
+      "title": "DocumentReleasedDialogData",
       "type": "object"
     },
-    "DocumentReleaseEvent": {
+    "DocumentReleasedEvent": {
       "properties": {
         "name": {
-          "const": "document_release",
-          "default": "document_release",
+          "const": "document_released",
+          "default": "document_released",
           "title": "Name",
           "type": "string"
         },
@@ -1025,14 +1025,14 @@
           "type": "string"
         },
         "data": {
-          "$ref": "#/$defs/DocumentReleaseData"
+          "$ref": "#/$defs/DocumentReleasedData"
         }
       },
       "required": [
         "event_id",
         "data"
       ],
-      "title": "DocumentReleaseEvent",
+      "title": "DocumentReleasedEvent",
       "type": "object"
     },
     "DummyEvent": {
@@ -1393,31 +1393,42 @@
       "title": "EngineeringChange",
       "type": "object"
     },
-    "EngineeringChangeRelease": {
+    "EngineeringChangeReleaseCheckData": {
       "properties": {
-        "name": {
-          "const": "engineering_change_release",
-          "default": "engineering_change_release",
-          "title": "Name",
-          "type": "string"
+        "documents": {
+          "description": "List of included documents.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
         },
-        "event_id": {
-          "description": "unique identifier",
-          "title": "Event Id",
-          "type": "string"
+        "parts": {
+          "description": "List of included parts.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
         },
-        "data": {
-          "$ref": "#/$defs/EngineeringChangeReleaseData"
+        "engineering_changes": {
+          "description": "List of engineering changes that will be released.",
+          "items": {
+            "$ref": "#/$defs/EngineeringChange"
+          },
+          "title": "Engineering Changes",
+          "type": "array"
         }
       },
       "required": [
-        "event_id",
-        "data"
+        "documents",
+        "parts",
+        "engineering_changes"
       ],
-      "title": "EngineeringChangeRelease",
+      "title": "EngineeringChangeReleaseCheckData",
       "type": "object"
     },
-    "EngineeringChangeReleaseCheck": {
+    "EngineeringChangeReleaseCheckEvent": {
       "properties": {
         "name": {
           "const": "engineering_change_release_check",
@@ -1438,45 +1449,10 @@
         "event_id",
         "data"
       ],
-      "title": "EngineeringChangeReleaseCheck",
+      "title": "EngineeringChangeReleaseCheckEvent",
       "type": "object"
     },
-    "EngineeringChangeReleaseCheckData": {
-      "properties": {
-        "attached_documents": {
-          "description": "List of included documents.",
-          "items": {
-            "$ref": "#/$defs/Document"
-          },
-          "title": "Attached Documents",
-          "type": "array"
-        },
-        "attached_parts": {
-          "description": "List of included parts.",
-          "items": {
-            "$ref": "#/$defs/Part"
-          },
-          "title": "Attached Parts",
-          "type": "array"
-        },
-        "engineering_changes": {
-          "description": "List of engineering changes that will be released.",
-          "items": {
-            "$ref": "#/$defs/EngineeringChange"
-          },
-          "title": "Engineering Changes",
-          "type": "array"
-        }
-      },
-      "required": [
-        "attached_documents",
-        "attached_parts",
-        "engineering_changes"
-      ],
-      "title": "EngineeringChangeReleaseCheckData",
-      "type": "object"
-    },
-    "EngineeringChangeReleaseData": {
+    "EngineeringChangeReleasedData": {
       "properties": {
         "documents": {
           "description": "List of included documents.",
@@ -1508,7 +1484,31 @@
         "parts",
         "engineering_changes"
       ],
-      "title": "EngineeringChangeReleaseData",
+      "title": "EngineeringChangeReleasedData",
+      "type": "object"
+    },
+    "EngineeringChangeReleasedEvent": {
+      "properties": {
+        "name": {
+          "const": "engineering_change_released",
+          "default": "engineering_change_released",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/EngineeringChangeReleasedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "EngineeringChangeReleasedEvent",
       "type": "object"
     },
     "FieldValueCalculationData": {
@@ -2594,18 +2594,18 @@
           "title": "Parts",
           "type": "array"
         },
-        "linked_documents": {
+        "documents": {
           "description": "List of documents that are referenced by the parts.",
           "items": {
             "$ref": "#/$defs/Document"
           },
-          "title": "Linked Documents",
+          "title": "Documents",
           "type": "array"
         }
       },
       "required": [
         "parts",
-        "linked_documents"
+        "documents"
       ],
       "title": "PartCreateCheckData",
       "type": "object"
@@ -2651,19 +2651,19 @@
           "title": "Action",
           "type": "string"
         },
-        "linked_documents": {
+        "documents": {
           "description": "List of documents that are referenced by the parts.",
           "items": {
             "$ref": "#/$defs/Document"
           },
-          "title": "Linked Documents",
+          "title": "Documents",
           "type": "array"
         }
       },
       "required": [
         "part",
         "action",
-        "linked_documents"
+        "documents"
       ],
       "title": "PartFieldCalculationData",
       "type": "object"
@@ -2702,18 +2702,18 @@
           "title": "Parts",
           "type": "array"
         },
-        "linked_documents": {
+        "documents": {
           "description": "List of documents that are referenced by the parts.",
           "items": {
             "$ref": "#/$defs/Document"
           },
-          "title": "Linked Documents",
+          "title": "Documents",
           "type": "array"
         }
       },
       "required": [
         "parts",
-        "linked_documents"
+        "documents"
       ],
       "title": "PartModifyCheckData",
       "type": "object"
@@ -2752,21 +2752,21 @@
           "title": "Parts",
           "type": "array"
         },
-        "attached_documents": {
+        "documents": {
           "description": "List of documents that are referenced by the parts.",
           "items": {
             "$ref": "#/$defs/Document"
           },
-          "title": "Attached Documents",
+          "title": "Documents",
           "type": "array"
         },
         "dialog_data": {
-          "$ref": "#/$defs/PartReleaseDialogData"
+          "$ref": "#/$defs/PartReleasedDialogData"
         }
       },
       "required": [
         "parts",
-        "attached_documents",
+        "documents",
         "dialog_data"
       ],
       "title": "PartReleaseCheckData",
@@ -2796,7 +2796,7 @@
       "title": "PartReleaseCheckEvent",
       "type": "object"
     },
-    "PartReleaseData": {
+    "PartReleasedData": {
       "properties": {
         "parts": {
           "description": "List if parts that were released.",
@@ -2815,7 +2815,7 @@
           "type": "array"
         },
         "dialog_data": {
-          "$ref": "#/$defs/PartReleaseDialogData"
+          "$ref": "#/$defs/PartReleasedDialogData"
         }
       },
       "required": [
@@ -2823,10 +2823,10 @@
         "documents",
         "dialog_data"
       ],
-      "title": "PartReleaseData",
+      "title": "PartReleasedData",
       "type": "object"
     },
-    "PartReleaseDialogData": {
+    "PartReleasedDialogData": {
       "properties": {
         "dialog_type": {
           "const": "part_release",
@@ -2861,14 +2861,14 @@
           "title": "Cdb Ec Id"
         }
       },
-      "title": "PartReleaseDialogData",
+      "title": "PartReleasedDialogData",
       "type": "object"
     },
-    "PartReleaseEvent": {
+    "PartReleasedEvent": {
       "properties": {
         "name": {
-          "const": "part_release",
-          "default": "part_release",
+          "const": "part_released",
+          "default": "part_released",
           "title": "Name",
           "type": "string"
         },
@@ -2878,14 +2878,14 @@
           "type": "string"
         },
         "data": {
-          "$ref": "#/$defs/PartReleaseData"
+          "$ref": "#/$defs/PartReleasedData"
         }
       },
       "required": [
         "event_id",
         "data"
       ],
-      "title": "PartReleaseEvent",
+      "title": "PartReleasedEvent",
       "type": "object"
     },
     "Workflow": {
@@ -3071,24 +3071,24 @@
           "document_create_check": "#/$defs/DocumentCreateCheckEvent",
           "document_field_calculation": "#/$defs/DocumentFieldCalculationEvent",
           "document_modify_check": "#/$defs/DocumentModifyCheckEvent",
-          "document_release": "#/$defs/DocumentReleaseEvent",
           "document_release_check": "#/$defs/DocumentReleaseCheckEvent",
+          "document_released": "#/$defs/DocumentReleasedEvent",
           "dummy": "#/$defs/DummyEvent",
-          "engineering_change_release": "#/$defs/EngineeringChangeRelease",
-          "engineering_change_release_check": "#/$defs/EngineeringChangeReleaseCheck",
+          "engineering_change_release_check": "#/$defs/EngineeringChangeReleaseCheckEvent",
+          "engineering_change_released": "#/$defs/EngineeringChangeReleasedEvent",
           "field_value_calculation": "#/$defs/FieldValueCalculationEvent",
           "part_create_check": "#/$defs/PartCreateCheckEvent",
           "part_field_calculation": "#/$defs/PartFieldCalculationEvent",
           "part_modify_check": "#/$defs/PartModifyCheckEvent",
-          "part_release": "#/$defs/PartReleaseEvent",
           "part_release_check": "#/$defs/PartReleaseCheckEvent",
+          "part_released": "#/$defs/PartReleasedEvent",
           "workflow_task_trigger": "#/$defs/WorkflowTaskTriggerEvent"
         },
         "propertyName": "name"
       },
       "oneOf": [
         {
-          "$ref": "#/$defs/DocumentReleaseEvent"
+          "$ref": "#/$defs/DocumentReleasedEvent"
         },
         {
           "$ref": "#/$defs/DocumentReleaseCheckEvent"
@@ -3097,7 +3097,7 @@
           "$ref": "#/$defs/DocumentFieldCalculationEvent"
         },
         {
-          "$ref": "#/$defs/PartReleaseEvent"
+          "$ref": "#/$defs/PartReleasedEvent"
         },
         {
           "$ref": "#/$defs/PartReleaseCheckEvent"
@@ -3112,10 +3112,10 @@
           "$ref": "#/$defs/DummyEvent"
         },
         {
-          "$ref": "#/$defs/EngineeringChangeRelease"
+          "$ref": "#/$defs/EngineeringChangeReleasedEvent"
         },
         {
-          "$ref": "#/$defs/EngineeringChangeReleaseCheck"
+          "$ref": "#/$defs/EngineeringChangeReleaseCheckEvent"
         },
         {
           "$ref": "#/$defs/WorkflowTaskTriggerEvent"

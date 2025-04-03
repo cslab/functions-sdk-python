@@ -5,13 +5,13 @@ from pydantic import BaseModel, Field
 
 class EventNames(str, Enum):
     DUMMY = "dummy"
-    DOCUMENT_RELEASE = "document_release"
+    DOCUMENT_RELEASED = "document_released"
     DOCUMENT_RELEASE_CHECK = "document_release_check"
     DOCUMENT_FIELD_CALCULATION = "document_field_calculation"
-    PART_RELEASE = "part_release"
+    PART_RELEASED = "part_released"
     PART_RELEASE_CHECK = "part_release_check"
     PART_FIELD_CALCULATION = "part_field_calculation"
-    ENGINEERING_CHANGE_RELEASE = "engineering_change_release"
+    ENGINEERING_CHANGE_RELEASED = "engineering_change_released"
     ENGINEERING_CHANGE_RELEASE_CHECK = "engineering_change_release_check"
     FIELD_VALUE_CALCULATION = "field_value_calculation"
     WORKFLOW_TASK_TRIGGER = "workflow_task_trigger"
