@@ -1,4 +1,4 @@
-### 0.12.0:
+### Version 0.12.0:
 Breaking changes:
 
 - Changed the names of the events and their classes, to be more consistent:
