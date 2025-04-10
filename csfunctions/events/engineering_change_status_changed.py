@@ -16,6 +16,6 @@ class EngineeringChangeStatusChangedData(BaseModel):
     parts: list[Part] = Field(..., description="List of parts attached to the engineering change")
 
 
-class EngineeringChangeStatusChanged(BaseEvent):
+class EngineeringChangeStatusChangedEvent(BaseEvent):
     name: Literal[EventNames.ENGINEERING_CHANGE_STATUS_CHANGED] = EventNames.ENGINEERING_CHANGE_STATUS_CHANGED
     data: EngineeringChangeStatusChangedData
