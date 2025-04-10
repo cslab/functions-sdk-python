@@ -72,6 +72,10 @@ Be aware that the document is not released yet and the release might still be ab
 
 This event is fired **after** a document has been released. Raising an exception thus can not prevent the release.
 
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#StartWorkflowAction)
+
 **DocumentReleasedEvent.name:** document_released
 
 **DocumentReleasedEvent.data:**
@@ -135,6 +139,10 @@ Be aware that the engineering change is not released yet and the release might s
 `csfunctions.events.EngineeringChangeReleasedEvent`
 
 This event is fired **after** an engineering change has been released. Raising an exception thus can not prevent the release.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#StartWorkflowAction)
 
 **EngineeringChangeReleasedEvent.name:** engineering_change_released
 
@@ -216,6 +224,10 @@ Be aware that the part is not released yet and the release might still be aborte
 `csfunctions.events.PartReleasedEvent`
 
 This event is fired **after** a part has been released. Raising an exception thus can not prevent the release.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#StartWorkflowAction)
 
 **PartReleasedEvent.name:** part_released
 
