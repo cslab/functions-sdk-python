@@ -2,15 +2,15 @@ from typing import Annotated, Union
 
 from pydantic import Field
 
-from .dialog_data import DocumentReleaseDialogData, PartReleaseDialogData
+from .dialog_data import DocumentReleasedDialogData, PartReleasedDialogData
 from .document_create_check import DocumentCreateCheckData, DocumentCreateCheckEvent
 from .document_field_calculation import DocumentFieldCalculationData, DocumentFieldCalculationEvent
 from .document_modify_check import DocumentModifyCheckData, DocumentModifyCheckEvent
-from .document_release import DocumentReleaseData, DocumentReleaseEvent
 from .document_release_check import DocumentReleaseCheckData, DocumentReleaseCheckEvent
+from .document_released import DocumentReleasedData, DocumentReleasedEvent
 from .dummy import DummyEvent, DummyEventData
-from .engineering_change_release import EngineeringChangeRelease, EngineeringChangeReleaseData
-from .engineering_change_release_check import EngineeringChangeReleaseCheck, EngineeringChangeReleaseCheckData
+from .engineering_change_release_check import EngineeringChangeReleaseCheckData, EngineeringChangeReleaseCheckEvent
+from .engineering_change_released import EngineeringChangeReleasedData, EngineeringChangeReleasedEvent
 from .engineering_change_status_change_check import (
     EngineeringChangeStatusChangeCheck,
     EngineeringChangeStatusChangeCheckData,
@@ -20,22 +20,22 @@ from .field_value_calculation import FieldValueCalculationData, FieldValueCalcul
 from .part_create_check import PartCreateCheckData, PartCreateCheckEvent
 from .part_field_calculation import PartFieldCalculationData, PartFieldCalculationEvent
 from .part_modify_check import PartModifyCheckData, PartModifyCheckEvent
-from .part_release import PartReleaseData, PartReleaseEvent
 from .part_release_check import PartReleaseCheckData, PartReleaseCheckEvent
+from .part_released import PartReleasedData, PartReleasedEvent
 from .workflow_task_trigger import WorkflowTaskTriggerEvent, WorkflowTaskTriggerEventData
 
 Event = Annotated[
     Union[
-        DocumentReleaseEvent,
+        DocumentReleasedEvent,
         DocumentReleaseCheckEvent,
         DocumentFieldCalculationEvent,
-        PartReleaseEvent,
+        PartReleasedEvent,
         PartReleaseCheckEvent,
         PartFieldCalculationEvent,
         FieldValueCalculationEvent,
         DummyEvent,
-        EngineeringChangeRelease,
-        EngineeringChangeReleaseCheck,
+        EngineeringChangeReleasedEvent,
+        EngineeringChangeReleaseCheckEvent,
         EngineeringChangeStatusChanged,
         EngineeringChangeStatusChangeCheck,
         WorkflowTaskTriggerEvent,
@@ -47,15 +47,15 @@ Event = Annotated[
     Field(discriminator="name"),
 ]
 EventData = Union[
-    DocumentReleaseData,
+    DocumentReleasedData,
     DocumentReleaseCheckData,
     DocumentFieldCalculationData,
-    PartReleaseData,
+    PartReleasedData,
     PartReleaseCheckData,
     PartFieldCalculationData,
     FieldValueCalculationData,
     DummyEventData,
-    EngineeringChangeReleaseData,
+    EngineeringChangeReleasedData,
     EngineeringChangeReleaseCheckData,
     EngineeringChangeStatusChangedData,
     EngineeringChangeStatusChangeCheckData,
@@ -67,33 +67,31 @@ EventData = Union[
 ]
 
 __all__ = [
-    "DocumentReleaseEvent",
+    "DocumentReleasedEvent",
     "DocumentReleaseCheckEvent",
     "DocumentFieldCalculationEvent",
-    "PartReleaseEvent",
+    "PartReleasedEvent",
     "PartReleaseCheckEvent",
     "PartFieldCalculationEvent",
     "FieldValueCalculationEvent",
     "DummyEvent",
-    "EngineeringChangeRelease",
-    "EngineeringChangeReleaseCheck",
-    "EngineeringChangeStatusChanged",
-    "EngineeringChangeStatusChangeCheck",
+    "EngineeringChangeReleasedEvent",
+    "EngineeringChangeReleaseCheckEvent",
     "WorkflowTaskTriggerEvent",
-    "DocumentReleaseData",
+    "DocumentReleasedData",
     "DocumentReleaseCheckData",
     "DocumentFieldCalculationData",
-    "PartReleaseData",
+    "PartReleasedData",
     "PartReleaseCheckData",
     "FieldValueCalculationData",
     "DummyEventData",
-    "EngineeringChangeReleaseData",
+    "EngineeringChangeReleasedData",
     "EngineeringChangeReleaseCheckData",
     "EngineeringChangeStatusChangedData",
     "EngineeringChangeStatusChangeCheckData",
     "WorkflowTaskTriggerEventData",
-    "DocumentReleaseDialogData",
-    "PartReleaseDialogData",
+    "DocumentReleasedDialogData",
+    "PartReleasedDialogData",
     "PartFieldCalculationData",
     "DocumentCreateCheckData",
     "DocumentCreateCheckEvent",
