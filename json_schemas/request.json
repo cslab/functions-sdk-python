@@ -1511,30 +1511,6 @@
       "title": "EngineeringChangeReleasedEvent",
       "type": "object"
     },
-    "EngineeringChangeStatusChangeCheck": {
-      "properties": {
-        "name": {
-          "const": "engineering_change_status_change_check",
-          "default": "engineering_change_status_change_check",
-          "title": "Name",
-          "type": "string"
-        },
-        "event_id": {
-          "description": "unique identifier",
-          "title": "Event Id",
-          "type": "string"
-        },
-        "data": {
-          "$ref": "#/$defs/EngineeringChangeStatusChangeCheckData"
-        }
-      },
-      "required": [
-        "event_id",
-        "data"
-      ],
-      "title": "EngineeringChangeStatusChangeCheck",
-      "type": "object"
-    },
     "EngineeringChangeStatusChangeCheckData": {
       "properties": {
         "engineering_change": {
@@ -1572,11 +1548,11 @@
       "title": "EngineeringChangeStatusChangeCheckData",
       "type": "object"
     },
-    "EngineeringChangeStatusChanged": {
+    "EngineeringChangeStatusChangeCheckEvent": {
       "properties": {
         "name": {
-          "const": "engineering_change_status_changed",
-          "default": "engineering_change_status_changed",
+          "const": "engineering_change_status_change_check",
+          "default": "engineering_change_status_change_check",
           "title": "Name",
           "type": "string"
         },
@@ -1586,14 +1562,14 @@
           "type": "string"
         },
         "data": {
-          "$ref": "#/$defs/EngineeringChangeStatusChangedData"
+          "$ref": "#/$defs/EngineeringChangeStatusChangeCheckData"
         }
       },
       "required": [
         "event_id",
         "data"
       ],
-      "title": "EngineeringChangeStatusChanged",
+      "title": "EngineeringChangeStatusChangeCheckEvent",
       "type": "object"
     },
     "EngineeringChangeStatusChangedData": {
@@ -1631,6 +1607,30 @@
         "parts"
       ],
       "title": "EngineeringChangeStatusChangedData",
+      "type": "object"
+    },
+    "EngineeringChangeStatusChangedEvent": {
+      "properties": {
+        "name": {
+          "const": "engineering_change_status_changed",
+          "default": "engineering_change_status_changed",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/EngineeringChangeStatusChangedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "EngineeringChangeStatusChangedEvent",
       "type": "object"
     },
     "FieldValueCalculationData": {
@@ -3196,10 +3196,10 @@
           "document_release_check": "#/$defs/DocumentReleaseCheckEvent",
           "document_released": "#/$defs/DocumentReleasedEvent",
           "dummy": "#/$defs/DummyEvent",
-          "engineering_change_release": "#/$defs/EngineeringChangeRelease",
-          "engineering_change_release_check": "#/$defs/EngineeringChangeReleaseCheck",
-          "engineering_change_status_change_check": "#/$defs/EngineeringChangeStatusChangeCheck",
-          "engineering_change_status_changed": "#/$defs/EngineeringChangeStatusChanged",
+          "engineering_change_release_check": "#/$defs/EngineeringChangeReleaseCheckEvent",
+          "engineering_change_released": "#/$defs/EngineeringChangeReleasedEvent",
+          "engineering_change_status_change_check": "#/$defs/EngineeringChangeStatusChangeCheckEvent",
+          "engineering_change_status_changed": "#/$defs/EngineeringChangeStatusChangedEvent",
           "field_value_calculation": "#/$defs/FieldValueCalculationEvent",
           "part_create_check": "#/$defs/PartCreateCheckEvent",
           "part_field_calculation": "#/$defs/PartFieldCalculationEvent",
@@ -3242,16 +3242,10 @@
           "$ref": "#/$defs/EngineeringChangeReleaseCheckEvent"
         },
         {
-          "$ref": "#/$defs/EngineeringChangeStatusChanged"
+          "$ref": "#/$defs/EngineeringChangeStatusChangedEvent"
         },
         {
-          "$ref": "#/$defs/EngineeringChangeStatusChangeCheck"
-        },
-        {
-          "$ref": "#/$defs/EngineeringChangeStatusChanged"
-        },
-        {
-          "$ref": "#/$defs/EngineeringChangeStatusChangeCheck"
+          "$ref": "#/$defs/EngineeringChangeStatusChangeCheckEvent"
         },
         {
           "$ref": "#/$defs/WorkflowTaskTriggerEvent"
