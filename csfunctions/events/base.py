@@ -19,6 +19,7 @@ class EventNames(str, Enum):
     DOCUMENT_MODIFY_CHECK = "document_modify_check"
     PART_CREATE_CHECK = "part_create_check"
     PART_MODIFY_CHECK = "part_modify_check"
+    CUSTOM_OPERATION_DOCUMENT = "custom_operation_document"
 
 
 class BaseEvent(BaseModel):
