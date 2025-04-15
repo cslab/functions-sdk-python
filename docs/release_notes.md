@@ -1,3 +1,6 @@
+### Version 0.13.0:
+- Feature: Added status change events for engineering changes
+
 ### Version 0.12.0:
 Breaking changes:
 
