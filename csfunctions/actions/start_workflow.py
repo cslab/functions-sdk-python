@@ -19,6 +19,12 @@ class TaskConfiguration(BaseModel):
         default_factory=list,
         description="List of recipients for the task (only used by information tasks)",
     )
+    description: str | None = Field(
+        default=None, description="Description of the task. If not set, the existing description will be kept."
+    )
+    title: str | None = Field(
+        default=None, description="Title of the task. If not set, the existing title will be kept."
+    )
 
 
 class StartWorkflowAction(BaseAction):

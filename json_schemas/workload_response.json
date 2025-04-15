@@ -181,6 +181,32 @@
           },
           "title": "Recipients",
           "type": "array"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Description of the task. If not set, the existing description will be kept.",
+          "title": "Description"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Title of the task. If not set, the existing title will be kept.",
+          "title": "Title"
         }
       },
       "required": [

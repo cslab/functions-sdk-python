@@ -50,6 +50,8 @@ Creates a new workflow from a template and starts it.
 |task_id|str|Identifier for the task|
 |responsible|[Subject](actions.md#Subject) \| None|Responsible Subject for the task|
 |recipients|list[[Subject](actions.md#Subject)]|List of recipients  (only used by information tasks)|
+|description|str \| None|Description of the task. If not set, the existing description will be kept.|
+|title|str \| None|Title of the task. If not set, the existing title will be kept.|
 
 **Subject:**
 
