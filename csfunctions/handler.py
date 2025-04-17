@@ -77,6 +77,10 @@ def link_objects(event: Event):
                 # the list might contain entries that are not objects, so we check first
                 if isinstance(obj, BaseObject):
                     obj.link_objects(data)
+        elif isinstance(field, BaseObject):
+            # if the field is not a list, we check if it is an object and link it
+            field.link_objects(data)
+        # if the field is not a list or an object, we ignore it
 
 
 def execute(function_name: str, request_body: str, function_dir: str = "src") -> str:
