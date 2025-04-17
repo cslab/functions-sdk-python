@@ -68,8 +68,8 @@ def link_objects(event: Event):
     # e.g. all parts would be in Event.data.parts = list[Part]
 
     for field_name in data.model_fields_set:
-        # go through each field in data and look for fields that are lists
-        # objects will always be passed in a list
+        # go through each field in data and look for fields that are lists of BaseObjects
+        # or direct BaseObjects
 
         field = getattr(data, field_name)
         if isinstance(field, list):
