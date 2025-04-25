@@ -1,3 +1,6 @@
+### Version 0.13.1:
+- Fix: Status Changed Events did not correctly link Engineering Changes.
+
 ### Version 0.13.0:
 - Feature: Added status change events for engineering changes
 

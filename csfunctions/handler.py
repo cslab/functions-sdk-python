@@ -68,8 +68,8 @@ def link_objects(event: Event):
     # e.g. all parts would be in Event.data.parts = list[Part]
 
     for field_name in data.model_fields_set:
-        # go through each field in data and look for fields that are lists
-        # objects will always be passed in a list
+        # go through each field in data and look for fields that are lists of BaseObjects
+        # or direct BaseObjects
 
         field = getattr(data, field_name)
         if isinstance(field, list):
@@ -78,9 +78,7 @@ def link_objects(event: Event):
                 if isinstance(obj, BaseObject):
                     obj.link_objects(data)
         elif isinstance(field, BaseObject):
-            # if the field is not a list, we check if it is an object and link it
             field.link_objects(data)
-        # if the field is not a list or an object, we ignore it
 
 
 def execute(function_name: str, request_body: str, function_dir: str = "src") -> str:
