@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import sys
 import traceback
@@ -15,6 +16,8 @@ from csfunctions.events import EventData
 from csfunctions.objects import BaseObject
 from csfunctions.response import ResponseUnion
 from csfunctions.service import Service
+
+logger = logging.getLogger(__name__)
 
 
 class FunctionNotRegistered(ValueError):
@@ -117,6 +120,7 @@ def execute(function_name: str, request_body: str, function_dir: str = "src") ->
         response.event_id = request.event.event_id
 
     except Exception as e:  # pylint: disable=broad-except
+        logger.error("An error occurred while executing function %s", function_name, exc_info=True)
         response = ErrorResponse(message=str(e), error_type=type(e).__name__, trace=traceback.format_exc(), id="")
 
     return response.model_dump_json()
