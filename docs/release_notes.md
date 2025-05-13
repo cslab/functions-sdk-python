@@ -1,3 +1,6 @@
+### Version xx.xx.xx:
+- Feat: Improve error logging when using the devserver
+
 ### Version 0.13.1:
 - Fix: Status Changed Events did not correctly link Engineering Changes.
 
