@@ -94,7 +94,8 @@
           "title": "Cdb Project Id"
         },
         "title": {
-          "description": "Title of the workflow",
+          "description": "Title of the workflow (max. 255 characters)",
+          "maxLength": 255,
           "title": "Title",
           "type": "string"
         },
@@ -185,6 +186,7 @@
         "description": {
           "anyOf": [
             {
+              "maxLength": 1024,
               "type": "string"
             },
             {
@@ -192,12 +194,13 @@
             }
           ],
           "default": null,
-          "description": "Description of the task. If not set, the existing description will be kept.",
+          "description": "Description of the task. If not set, the existing description will be kept. (max. 1024 characters)",
           "title": "Description"
         },
         "title": {
           "anyOf": [
             {
+              "maxLength": 60,
               "type": "string"
             },
             {
@@ -205,7 +208,7 @@
             }
           ],
           "default": null,
-          "description": "Title of the task. If not set, the existing title will be kept.",
+          "description": "Title of the task. If not set, the existing title will be kept. (max. 60 characters)",
           "title": "Title"
         }
       },
