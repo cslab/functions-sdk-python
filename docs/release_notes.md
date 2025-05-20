@@ -1,5 +1,6 @@
-### Version xx.xx.xx:
+### Version 0.14.0:
 - Feat: Improve error logging when using the devserver
+- Feat: Add StartWorkflowAction
 
 ### Version 0.13.1:
 - Fix: Status Changed Events did not correctly link Engineering Changes.
