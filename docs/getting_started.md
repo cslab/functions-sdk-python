@@ -37,16 +37,16 @@ def send_doc_to_erp(metadata: MetaData, event: DocumentReleaseEvent, service: Se
 ```
 
 While you don't have to use type annotations, it is highly recommended because it enables autocomplete in your IDE and helps you spot mistakes faster.
-For our example we only need the [DocumentReleaseEvent](reference/events.md/#documentreleaseevent). It contains a list of documents that were released. Typically this will only be a single document, however it is best practices to iterate over all of the documents.
+For our example we only need the [DocumentReleasedEvent](reference/events.md/#documentreleasedevent). It contains a list of documents that were released. Typically this will only be a single document, however it is best practices to iterate over all of the documents.
 
 ``` python title="mymodule.py"
 import requests
 import json
 
 from csfunctions import MetaData, Service
-from csfunctions.events import DocumentReleaseEvent
+from csfunctions.events import DocumentReleasedEvent
 
-def send_doc_to_erp(metadata: MetaData, event: DocumentReleaseEvent, service: Service):
+def send_doc_to_erp(metadata: MetaData, event: DocumentReleasedEvent, service: Service):
   # iterate over the documents contained in the event
   for document in event.data.documents:
     # create the payload for our (fictional ERP system)
