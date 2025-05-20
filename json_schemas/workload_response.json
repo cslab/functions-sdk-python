@@ -54,6 +54,169 @@
       },
       "title": "DummyAction",
       "type": "object"
+    },
+    "StartWorkflowAction": {
+      "properties": {
+        "name": {
+          "const": "start_workflow",
+          "default": "start_workflow",
+          "title": "Name",
+          "type": "string"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "template_id": {
+          "description": "ID of the workflow template to start",
+          "title": "Template Id",
+          "type": "string"
+        },
+        "cdb_project_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ID of the project in which the workflow should be started",
+          "title": "Cdb Project Id"
+        },
+        "title": {
+          "description": "Title of the workflow (max. 255 characters)",
+          "maxLength": 255,
+          "title": "Title",
+          "type": "string"
+        },
+        "attachment_ids": {
+          "description": "List of cdb_object_ids to attach to the workflow",
+          "items": {
+            "type": "string"
+          },
+          "title": "Attachment Ids",
+          "type": "array"
+        },
+        "global_briefcase_object_ids": {
+          "description": "List of cdb_object_ids to attach to the global briefcase",
+          "items": {
+            "type": "string"
+          },
+          "title": "Global Briefcase Object Ids",
+          "type": "array"
+        },
+        "task_configurations": {
+          "description": "List of task configurations",
+          "items": {
+            "$ref": "#/$defs/TaskConfiguration"
+          },
+          "title": "Task Configurations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "template_id",
+        "title"
+      ],
+      "title": "StartWorkflowAction",
+      "type": "object"
+    },
+    "Subject": {
+      "properties": {
+        "subject_id": {
+          "description": "ID of the subject, eg. a role name or personalnummer",
+          "title": "Subject Id",
+          "type": "string"
+        },
+        "subject_type": {
+          "description": "Type of the subject: Person, PCS Role or Common Role",
+          "enum": [
+            "Person",
+            "PCS Role",
+            "Common Role"
+          ],
+          "title": "Subject Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "subject_id",
+        "subject_type"
+      ],
+      "title": "Subject",
+      "type": "object"
+    },
+    "TaskConfiguration": {
+      "properties": {
+        "task_id": {
+          "description": "Identifier for the task",
+          "title": "Task Id",
+          "type": "string"
+        },
+        "responsible": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Subject"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Responsible subject for the task"
+        },
+        "recipients": {
+          "description": "List of recipients for the task (only used by information tasks)",
+          "items": {
+            "$ref": "#/$defs/Subject"
+          },
+          "title": "Recipients",
+          "type": "array"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "maxLength": 1024,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Description of the task. If not set, the existing description will be kept. (max. 1024 characters)",
+          "title": "Description"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "maxLength": 60,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Title of the task. If not set, the existing title will be kept. (max. 60 characters)",
+          "title": "Title"
+        }
+      },
+      "required": [
+        "task_id"
+      ],
+      "title": "TaskConfiguration",
+      "type": "object"
     }
   },
   "properties": {
@@ -73,7 +236,8 @@
         "discriminator": {
           "mapping": {
             "abort_and_show_error": "#/$defs/AbortAndShowErrorAction",
-            "dummy": "#/$defs/DummyAction"
+            "dummy": "#/$defs/DummyAction",
+            "start_workflow": "#/$defs/StartWorkflowAction"
           },
           "propertyName": "name"
         },
@@ -83,6 +247,9 @@
           },
           {
             "$ref": "#/$defs/DummyAction"
+          },
+          {
+            "$ref": "#/$defs/StartWorkflowAction"
           }
         ]
       },
