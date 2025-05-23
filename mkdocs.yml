@@ -38,18 +38,18 @@ plugins:
 
 
 nav:
-  - Intro: index.md
-  - Key concepts: key_concepts.md
+  - Home: index.md
   - Getting started: getting_started.md
+  - Concepts: key_concepts.md
+  - Examples:
+    - examples/index.md
+    - examples/enforce_field_rules.md
+    - examples/field_calculation.md
+    - examples/workflows.md
   - Reference:
     - reference/events.md
     - reference/objects.md
     - reference/actions.md
     - development_server.md
     - Python runtime: reference/runtime.md
-  - Examples:
-    - examples/index.md
-    - examples/enforce_field_rules.md
-    - examples/field_calculation.md
-    - examples/workflows.md
-  - Release notes: release_notes.md
+  - Releases: release_notes.md
