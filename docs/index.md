@@ -2,25 +2,25 @@
 
 This SDK provides the **csfunctions** library for developing Functions with Python.
 
-Functions are deeply integrated in the [CIM Database Cloud](https://www.cim-database-cloud.com){:target="_blank"} Webhooks technology. They are designed to work seamlessly together. The goal is to allow implementing custom business logic in a CIM Database Cloud SaaS application without leaving the CONTACT Cloud and without the need to create and maintain a separate infrastructure.
+Functions are deeply integrated with the [CIM Database Cloud](https://www.cim-database-cloud.com){:target="_blank"} Webhooks technology. They are designed to work seamlessly together. The goal is to allow you to implement custom business logic in a CIM Database Cloud SaaS application without leaving CONTACT Cloud and without the need to create and maintain separate infrastructure.
 
 ## Requirements
 
 Python 3.10+
 
-csfunctions is build with [Pydantic 2](https://docs.pydantic.dev/latest/){:target="_blank"}
+csfunctions is built with [Pydantic 2](https://docs.pydantic.dev/latest/){:target="_blank"}.
 
 ## Installation
 Install using pip:
-``` sh
+```bash
 pip install contactsoftware-functions
 ```
 ## Usage
 ### Build the Function
 
-Folder content of a minimal example for a Function implementation:
+Folder contents of a minimal example for a Function implementation:
 
-``` bash
+```bash
   my_example_functions/
   ├── environment.yaml
   ├── mymodule.py
@@ -30,7 +30,7 @@ Folder content of a minimal example for a Function implementation:
 
 Code for a Function:
 
-``` python title="mymodule.py"
+```python title="mymodule.py"
 import requests
 import json
 
@@ -38,9 +38,9 @@ from csfunctions import MetaData, Service
 from csfunctions.events import DocumentReleaseEvent
 
 def send_doc_to_erp(metadata: MetaData, event: DocumentReleaseEvent, service: Service):
-  # iterate over the documents contained in the event
+  # Iterate over the documents contained in the event
   for document in event.data.documents:
-    # create the payload for our (fictional ERP system)
+    # Create the payload for our (fictional ERP system)
     payload = json.dumps({
       "document_number": document.z_nummer,
       "document_index": document.z_index,
@@ -52,9 +52,9 @@ def send_doc_to_erp(metadata: MetaData, event: DocumentReleaseEvent, service: Se
 
 ```
 
-Environment file to define runtime and Function entrypoints:
+Environment file to define runtime and Function entry points:
 
-``` yaml title="environment.yaml"
+```yaml title="environment.yaml"
 runtime: python3.10
 version: v1
 functions:
@@ -65,12 +65,12 @@ functions:
 
 Define requirements:
 
-``` python title="requirements.txt"
+```python title="requirements.txt"
 contactsoftware-functions
 ```
 
 ### Deploy the Code
-To deploy the Code you first need to install the [contactsoftware-functions-client](https://pypi.org/project/contactsoftware-functions-client/){:target="_blank"} and retrieve developer credentials in the CONTACT Portal.
+To deploy the code, you first need to install the [contactsoftware-functions-client](https://pypi.org/project/contactsoftware-functions-client/){:target="_blank"} and retrieve developer credentials in the CONTACT Portal.
 
 Install client:
 
@@ -90,7 +90,7 @@ Create a new environment:
 cfc env create myenv
 ```
 
-Upload code into new environment:
+Upload code into the new environment:
 
 ```bash
 cfc env deploy myenv
