@@ -51,11 +51,9 @@ def calculate_part_number(metadata: MetaData, event: PartFieldCalculationEvent, 
     You can check `event.data.action` to decide for which operations (*copy*, *create*, *index*, and *modify*) you want your field calculation to return a new value.
     Some fields, like part number (*teilenummer*), can only be set during the initial creation.
 
-## Translate a field with DeepL
+## Translate a part name with DeepL
 
-Inside Functions, you can fetch data from external systems and fill out fields based on that data. This is something that would not be possible with the field calculations in the datasheet editor. For example, you could use this to fetch new part numbers from an ERP system.
-
-This example uses the API from [DeepL](https://www.deepl.com){:target="_blank"} to translate a field from German to English. The example uses the additional attributes 1 and 2 on parts, but you can of course change that to any attributes that fit your use case.
+This example uses the [DeepL API](https://www.deepl.com){:target="_blank"} to translate the part name of newly created parts from German to English or vice versa, depending on which name is already provided. You can easily adapt this example to translate other fields or use a different translation API if needed.
 
 ```python
 import os
@@ -72,10 +70,18 @@ def part_field_calculation(metadata, event: PartFieldCalculationEvent, service):
         # Only translate on creation
         return
 
-    if event.data.part.cssaas_frame_add_attr_1:
+    if event.data.part.eng_benennung and not event.data.part.benennung:
+        # English part name is set but German name is missing
+        # -> translate English name to German
         translated_text = translate_text(
-            event.data.part.cssaas_frame_add_attr_1, "EN", "DE")
-        return DataResponse(data={"cssaas_frame_add_attr_2": translated_text})
+            event.data.part.eng_benennung, target_lang="DE", source_lang="EN")
+        return DataResponse(data={"benennung": translated_text})
+    elif event.data.part.benennung and not event.data.part.eng_benennung:
+        # German name is set but English name is missing
+        # -> translate German name to English
+        translated_text = translate_text(
+            event.data.part.benennung, target_lang="EN", source_lang="DE")
+        return DataResponse(data={"eng_benennung": translated_text})
 
 def translate_text(text, target_lang, source_lang=None):
     url = "https://api-free.deepl.com/v2/translate"
