@@ -463,9 +463,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#translate-a-field-with-deepl" class="md-nav__link">
+  <a href="#translate-a-part-name-with-deepl" class="md-nav__link">
     <span class="md-ellipsis">
-      Translate a field with DeepL
+      Translate a part name with DeepL
     </span>
   </a>
   
@@ -740,9 +740,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#translate-a-field-with-deepl" class="md-nav__link">
+  <a href="#translate-a-part-name-with-deepl" class="md-nav__link">
     <span class="md-ellipsis">
-      Translate a field with DeepL
+      Translate a part name with DeepL
     </span>
   </a>
   
@@ -809,9 +809,8 @@
 <p>You can check <code>event.data.action</code> to decide for which operations (<em>copy</em>, <em>create</em>, <em>index</em>, and <em>modify</em>) you want your field calculation to return a new value.
 Some fields, like part number (<em>teilenummer</em>), can only be set during the initial creation.</p>
 </div>
-<h2 id="translate-a-field-with-deepl">Translate a field with DeepL</h2>
-<p>Inside Functions, you can fetch data from external systems and fill out fields based on that data. This is something that would not be possible with the field calculations in the datasheet editor. For example, you could use this to fetch new part numbers from an ERP system.</p>
-<p>This example uses the API from <a href="https://www.deepl.com" target="_blank">DeepL&nbsp;⧉</a> to translate a field from German to English. The example uses the additional attributes 1 and 2 on parts, but you can of course change that to any attributes that fit your use case.</p>
+<h2 id="translate-a-part-name-with-deepl">Translate a part name with DeepL</h2>
+<p>This example uses the <a href="https://www.deepl.com" target="_blank">DeepL API&nbsp;⧉</a> to translate the part name of newly created parts from German to English or vice versa, depending on which name is already provided. You can easily adapt this example to translate other fields or use a different translation API if needed.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">csfunctions</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataResponse</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">csfunctions.events</span><span class="w"> </span><span class="kn">import</span> <span class="n">PartFieldCalculationEvent</span>
@@ -826,24 +825,32 @@ Some fields, like part number (<em>teilenummer</em>), can only be set during the
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="c1"># Only translate on creation</span>
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="k">return</span>
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">cssaas_frame_add_attr_1</span><span class="p">:</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="n">translated_text</span> <span class="o">=</span> <span class="n">translate_text</span><span class="p">(</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>            <span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">cssaas_frame_add_attr_1</span><span class="p">,</span> <span class="s2">&quot;EN&quot;</span><span class="p">,</span> <span class="s2">&quot;DE&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="k">return</span> <span class="n">DataResponse</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cssaas_frame_add_attr_2&quot;</span><span class="p">:</span> <span class="n">translated_text</span><span class="p">})</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="k">def</span><span class="w"> </span><span class="nf">translate_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">target_lang</span><span class="p">,</span> <span class="n">source_lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api-free.deepl.com/v2/translate&quot;</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>        <span class="s2">&quot;auth_key&quot;</span><span class="p">:</span> <span class="n">DEEPL_API_KEY</span><span class="p">,</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>        <span class="s2">&quot;target_lang&quot;</span><span class="p">:</span> <span class="n">target_lang</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>    <span class="p">}</span>
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>    <span class="k">if</span> <span class="n">source_lang</span><span class="p">:</span>
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;source_lang&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">source_lang</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;translations&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">eng_benennung</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">benennung</span><span class="p">:</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="c1"># English part name is set but German name is missing</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="c1"># -&gt; translate English name to German</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="n">translated_text</span> <span class="o">=</span> <span class="n">translate_text</span><span class="p">(</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>            <span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">eng_benennung</span><span class="p">,</span> <span class="n">target_lang</span><span class="o">=</span><span class="s2">&quot;DE&quot;</span><span class="p">,</span> <span class="n">source_lang</span><span class="o">=</span><span class="s2">&quot;EN&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>        <span class="k">return</span> <span class="n">DataResponse</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;benennung&quot;</span><span class="p">:</span> <span class="n">translated_text</span><span class="p">})</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">benennung</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">eng_benennung</span><span class="p">:</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        <span class="c1"># German name is set but English name is missing</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>        <span class="c1"># -&gt; translate German name to English</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>        <span class="n">translated_text</span> <span class="o">=</span> <span class="n">translate_text</span><span class="p">(</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>            <span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">part</span><span class="o">.</span><span class="n">benennung</span><span class="p">,</span> <span class="n">target_lang</span><span class="o">=</span><span class="s2">&quot;EN&quot;</span><span class="p">,</span> <span class="n">source_lang</span><span class="o">=</span><span class="s2">&quot;DE&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>        <span class="k">return</span> <span class="n">DataResponse</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;eng_benennung&quot;</span><span class="p">:</span> <span class="n">translated_text</span><span class="p">})</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="k">def</span><span class="w"> </span><span class="nf">translate_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">target_lang</span><span class="p">,</span> <span class="n">source_lang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api-free.deepl.com/v2/translate&quot;</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>        <span class="s2">&quot;auth_key&quot;</span><span class="p">:</span> <span class="n">DEEPL_API_KEY</span><span class="p">,</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>        <span class="s2">&quot;target_lang&quot;</span><span class="p">:</span> <span class="n">target_lang</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>    <span class="p">}</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>    <span class="k">if</span> <span class="n">source_lang</span><span class="p">:</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;source_lang&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">source_lang</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;translations&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
