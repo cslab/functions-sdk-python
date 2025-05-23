@@ -48,7 +48,7 @@ You can then copy the URL of the server and use it to connect your Functions to 
 
 **ngrok and Cloudflare**
 
-If you are developing Functions locally, you can use services like [ngrok](https://ngrok.com/) or [Cloudflare](https://cloudflare.com) to expose your server to the internet.
+If you are developing Functions locally, you can use services like [ngrok](https://ngrok.com/){:target="_blank"} or [Cloudflare](https://cloudflare.com){:target="_blank"} to expose your server to the internet.
 
 Please refer to the documentation of the specific service for instructions on how to do this.
 

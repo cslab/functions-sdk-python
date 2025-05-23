@@ -55,7 +55,7 @@ def calculate_part_number(metadata: MetaData, event: PartFieldCalculationEvent, 
 
 Inside Functions, you can fetch data from external systems and fill out fields based on that data. This is something that would not be possible with the field calculations in the datasheet editor. For example, you could use this to fetch new part numbers from an ERP system.
 
-This example uses the API from [DeepL](https://www.deepl.com) to translate a field from German to English. The example uses the additional attributes 1 and 2 on parts, but you can of course change that to any attributes that fit your use case.
+This example uses the API from [DeepL](https://www.deepl.com){:target="_blank"} to translate a field from German to English. The example uses the additional attributes 1 and 2 on parts, but you can of course change that to any attributes that fit your use case.
 
 ```python
 import os
