@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 ### Version 0.14.0:
 - Feat: Improve error logging when using the devserver
 - Feat: Add StartWorkflowAction

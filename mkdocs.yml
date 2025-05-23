@@ -17,24 +17,39 @@ theme:
         name: Switch to light mode
   logo: assets/branding_web_app_icon.png
   favicon: assets/branding_web_favicon.ico
+  features:
+    - content.code.copy
+    - navigation.indexes
 extra_css:
   - stylesheets/extra.css
 repo_url: https://github.com/cslab/functions-sdk-python
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.superfences
   - attr_list
   - md_in_html
   - toc
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+plugins:
+  - search
+  - link-marker
+
+
 nav:
   - Home: index.md
-  - Key concepts: key_concepts.md
   - Getting started: getting_started.md
-  - Development server: development_server.md
+  - Concepts: key_concepts.md
+  - Examples:
+    - examples/index.md
+    - examples/enforce_field_rules.md
+    - examples/field_calculation.md
+    - examples/workflows.md
   - Reference:
     - reference/events.md
     - reference/objects.md
     - reference/actions.md
+    - development_server.md
     - Python runtime: reference/runtime.md
-  - Release notes: release_notes.md
+  - Releases: release_notes.md

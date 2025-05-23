@@ -38,4 +38,4 @@ The return value of the execute method is the json encoded response payload.
 
 ## Payloads
 
-The Request and response payloads are described in the CIM Database Cloud documentation. The [functions-sdk-python](https://github.com/cslab/functions-sdk-python) GitHub repository also contains the complete [JSON-schema files](https://github.com/cslab/functions-sdk-python/tree/main/json_schemas).
+The Request and response payloads are described in the CIM Database Cloud documentation. The [functions-sdk-python](https://github.com/cslab/functions-sdk-python){:target="_blank"} GitHub repository also contains the complete [JSON-schema files](https://github.com/cslab/functions-sdk-python/tree/main/json_schemas){:target="_blank"}.
