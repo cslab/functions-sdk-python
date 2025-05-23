@@ -1,0 +1,107 @@
+# Field calculation
+
+The data sheet editor in CIM Database Cloud already allows you to define some basic [field calculations](https://saas-docs.contact-cloud.com/2025.13.1-en/admin/admin-contact_cloud/saas_admin/app_setup_data_edit_field_calc){:target="_blank"} to fill out fields automatically.
+
+However, the Python expressions available in the datasheet editor are limited. Functions allow for much more freedom in defining your field calculations, and allow you to do things like *"fetching external data"* or *"referencing other objects"*.
+
+Field calculations with Functions utilize the "<Object\>FieldCalulationEvent", e.g. [PartFieldCalculationEvent](../reference/events.md#partfieldcalculationevent), which expect the response to contain a `DataResponse` with a dictionary containing the fields that should be updated.
+
+```python
+return DataResponse(data={somefield="new value"})
+```
+
+
+## Custom part number for external parts
+
+This example shows you the basics of calculating fields with Functions and how to use the `service` parameter to generate a fresh number.
+
+The example Function checks if the part is an *"External"* part and generates a custom part number for it.
+
+```python
+from csfunctions import DataResponse
+from csfunctions.events import PartFieldCalculationEvent
+from csfunctions.metadata import MetaData
+from csfunctions.service import Service
+
+
+def calculate_part_number(metadata: MetaData, event: PartFieldCalculationEvent, service: Service):
+    """
+    Example Function.
+    This function is triggered when a part fields should be calculated.
+    For "External" parts we want to set the part number as "E-000123".
+    All other parts should keep the standard part number.
+
+    """
+    if event.data.action != "create":
+        # part number can only be set when the part is created
+        return
+
+    # match "External Single Part" or "External Assembly"
+    if event.data.part.t_kategorie_name_en.startswith("External"):
+
+        # generate a new number using the service
+        new_number = service.generator.get_number("external_part_number")
+
+        # new_number is an integer, so we need to convert it to a string
+        # and pad it with leading zeros to 6 digits
+        new_part_number = str(new_number).zfill(6)
+
+        # then add the prefix "E-" to the number
+        new_part_number = "E-" + new_part_number
+
+        # finally we return the new part number (teilenummer)
+        return DataResponse(data={"teilenummer": new_part_number})
+```
+
+!!! tip
+    You can check `event.data.action` to decide for which operations (*copy*,*create*,*index* and *modify*) you want your field calculation to return a new value.
+    Some fields, like part number (*teilenummer*) can only be set during the initial creation.
+
+## Translate a field with DeepL
+
+Inside Functions you can fetch data from external systems and fill out fields based on that data. This is something that would not be possible with the field calculations in the datasheet editor. You could use this for example to fetch new part numbers from an ERP system.
+
+This example uses the API from [DeepL](https://www.deepl.com) to translate a field from German to English. The example uses the additional attributes 1 and 2 on parts, but you can of course change that to any attributes that fit your use-case.
+
+```python
+import os
+from csfunctions import DataResponse
+from csfunctions.events import PartFieldCalculationEvent
+import requests
+
+# set the DEEPL_API_KEY during deployment like this:
+# cfc env deploy <environment name> --environment-variables "DEEPL_API_KEY=<your API key>"
+DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
+
+def part_field_calculation(metadata, event: PartFieldCalculationEvent, service):
+    if event.data.action != "create":
+        # only translate on creation
+        return
+
+    if event.data.part.cssaas_frame_add_attr_1:
+        translated_text = translate_text(
+            event.data.part.cssaas_frame_add_attr_1, "EN", "DE")
+        return DataResponse(data={"cssaas_frame_add_attr_2": translated_text})
+
+def translate_text(text, target_lang, source_lang=None):
+    url = "https://api-free.deepl.com/v2/translate"
+    data = {
+        "auth_key": DEEPL_API_KEY,
+        "text": text,
+        "target_lang": target_lang.upper()
+    }
+    if source_lang:
+        data["source_lang"] = source_lang.upper()
+
+    response = requests.post(url, data=data)
+    response.raise_for_status()
+    return response.json()["translations"][0]["text"]
+
+```
+
+!!! note
+    This example requires a DeepL API key to function. Adding secrets like API keys to your code is a bad practice, which is why the example fetches the API key from an environment variable.
+
+    You can set environment variables during deployment of your Function to the CIM Database Cloud Functions infrastructure like this:
+
+    `cfc env deploy <environment name> --environment-variables "DEEPL_API_KEY=<your API key>"`
