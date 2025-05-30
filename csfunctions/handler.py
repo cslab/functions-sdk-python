@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import sys
 import traceback
@@ -15,6 +16,8 @@ from csfunctions.events import EventData
 from csfunctions.objects import BaseObject
 from csfunctions.response import ResponseUnion
 from csfunctions.service import Service
+
+logger = logging.getLogger(__name__)
 
 
 class FunctionNotRegistered(ValueError):
@@ -68,8 +71,8 @@ def link_objects(event: Event):
     # e.g. all parts would be in Event.data.parts = list[Part]
 
     for field_name in data.model_fields_set:
-        # go through each field in data and look for fields that are lists
-        # objects will always be passed in a list
+        # go through each field in data and look for fields that are lists of BaseObjects
+        # or direct BaseObjects
 
         field = getattr(data, field_name)
         if isinstance(field, list):
@@ -77,6 +80,8 @@ def link_objects(event: Event):
                 # the list might contain entries that are not objects, so we check first
                 if isinstance(obj, BaseObject):
                     obj.link_objects(data)
+        elif isinstance(field, BaseObject):
+            field.link_objects(data)
 
 
 def execute(function_name: str, request_body: str, function_dir: str = "src") -> str:
@@ -115,6 +120,7 @@ def execute(function_name: str, request_body: str, function_dir: str = "src") ->
         response.event_id = request.event.event_id
 
     except Exception as e:  # pylint: disable=broad-except
+        logger.error("An error occurred while executing function %s", function_name, exc_info=True)
         response = ErrorResponse(message=str(e), error_type=type(e).__name__, trace=traceback.format_exc(), id="")
 
     return response.model_dump_json()

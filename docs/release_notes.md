@@ -1,3 +1,18 @@
+---
+hide:
+  - toc
+---
+
+### Version 0.14.0:
+- Feat: Improve error logging when using the devserver
+- Feat: Add StartWorkflowAction
+
+### Version 0.13.1:
+- Fix: Status Changed Events did not correctly link Engineering Changes.
+
+### Version 0.13.0:
+- Feature: Added status change events for engineering changes
+
 ### Version 0.12.0:
 Breaking changes:
 

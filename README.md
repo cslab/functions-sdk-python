@@ -12,7 +12,7 @@ Functions are deeply integrated in the CIM Database Cloud Webhooks technology. T
 
 Python 3.10+
 
-csfunctions is build with [Pydantic 2](https://docs.pydantic.dev/latest/)
+csfunctions is built with [Pydantic 2](https://docs.pydantic.dev/latest/)
 
 ## Installation
 Install using pip:
