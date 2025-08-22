@@ -1,9 +1,10 @@
+from datetime import datetime
 from unittest import TestCase
 
 import requests_mock
 
-from csfunctions import Service
-from csfunctions.service import BaseService, Unauthorized
+from csfunctions import MetaData, Service
+from csfunctions.service.base import BaseService, Unauthorized
 
 
 class TestNumberGeneratorService(TestCase):
@@ -14,15 +15,30 @@ class TestNumberGeneratorService(TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        cls.service = Service(cls.service_url, cls.service_token)
+        cls.endpoint = "numgen"
+        cls.service_url = "https://some_service_url"
+        cls.service_token = "some_service_token"  # nosec
+        metadata = MetaData.model_validate(
+            {
+                "request_id": "req-1",
+                "app_lang": "en",
+                "app_user": "tester",
+                "request_datetime": datetime(2000, 1, 1),
+                "transaction_id": "txn-1",
+                "instance_url": "https://instance.contact-cloud.com",
+                "service_url": cls.service_url,
+                "service_token": cls.service_token,
+                "db_service_url": None,
+            }
+        )
+        cls.service = Service(metadata=metadata)
 
     @requests_mock.Mocker()
     def test_get_number(self, mock_request: requests_mock.Mocker):
         mock_request.get(f"{self.service_url}/{self.endpoint}?name=test&count=1", text='{"numbers": [1,2,3]}')
-
         number = self.service.generator.get_number("test")
         last_request = mock_request.last_request
-
+        self.assertIsNotNone(last_request)
         self.assertEqual("GET", last_request.method)
         self.assertEqual(f"Bearer {self.service_token}", last_request.headers["Authorization"])
         self.assertEqual(1, number)
@@ -30,10 +46,9 @@ class TestNumberGeneratorService(TestCase):
     @requests_mock.Mocker()
     def test_get_numbers(self, mock_request: requests_mock.Mocker):
         mock_request.get(f"{self.service_url}/{self.endpoint}?name=test&count=3", text='{"numbers": [1,2,3]}')
-
         numbers = self.service.generator.get_numbers("test", 3)
         last_request = mock_request.last_request
-
+        self.assertIsNotNone(last_request)
         self.assertEqual("GET", last_request.method)
         self.assertEqual(f"Bearer {self.service_token}", last_request.headers["Authorization"])
         self.assertEqual([1, 2, 3], numbers)
@@ -48,10 +63,24 @@ class TestBaseService(TestCase):
         params = {"param1": 1, "param2": 2}
 
         mock_request.get(f"{service_url}/{endpoint}?param1=1&param2=2", text="{}")
-        service = BaseService(service_url, service_token)
+        metadata = MetaData.model_validate(
+            {
+                "request_id": "req-1",
+                "app_lang": "en",
+                "app_user": "tester",
+                "request_datetime": datetime(2000, 1, 1),
+                "transaction_id": "txn-1",
+                "instance_url": "https://instance.contact-cloud.com",
+                "service_url": service_url,
+                "service_token": service_token,
+                "db_service_url": None,
+            }
+        )
+        service = BaseService(metadata=metadata)
 
         response = service.request(endpoint, "GET", params)
         last_request = mock_request.last_request
+        self.assertIsNotNone(last_request)
         self.assertEqual("GET", last_request.method)
         self.assertEqual(f"Bearer {service_token}", last_request.headers["Authorization"])
         self.assertEqual({}, response)
@@ -70,6 +99,7 @@ class TestBaseService(TestCase):
         mock_request.get(f"{service_url}/{endpoint}", text="{}")
         response = service.request(endpoint, "GET")
         last_request = mock_request.last_request
+        self.assertIsNotNone(last_request)
         self.assertEqual("GET", last_request.method)
         self.assertEqual(f"Bearer {service_token}", last_request.headers["Authorization"])
         self.assertEqual({}, response)
