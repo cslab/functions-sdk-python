@@ -1,6 +1,6 @@
 # Functions Access Service
 
-The Functions Access Service provides access to backend services like number generators and file uplads. These services are available through the `service` parameter that is passed to all Functions.
+The Functions Access Service provides access to backend services like number generators and file uploads. These services are available through the `service` parameter that is passed to all Functions.
 
 The Access Service is ratelimited to `100 req/min` per token. Functions recieve a fresh token for every call.
 
