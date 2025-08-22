@@ -18,12 +18,13 @@ from csfunctions.service.file_upload_schemas import (
 
 
 def _generate_lock_id():
+    """Generate a random 12-character lock ID."""
     return "".join(choice(ascii_letters) for i in range(12))  # nosec
 
 
 class FileUploadService(BaseService):
     def _create_new_file(self, filename: str, parent_object_id: str, persno: str, check_access: bool = True) -> str:
-        """Creates a new (empty) file attached to the parent object and returns the cdb_object_id."""
+        """Create a new empty file attached to the parent object."""
         response_json = self.request(
             endpoint="/file_upload/create",
             method="POST",
@@ -37,6 +38,7 @@ class FileUploadService(BaseService):
     def _get_presigned_write_urls(
         self, file_object_id: str, filesize: int, lock_id: str, persno: str, check_access: bool = True
     ) -> PresignedWriteUrls:
+        """Request presigned URLs for uploading file chunks."""
         response_json = self.request(
             endpoint=f"/file_upload/{file_object_id}/generate_presigned_url",
             method="POST",
@@ -50,7 +52,7 @@ class FileUploadService(BaseService):
     def _upload_from_stream(
         self, presigned_urls: PresignedWriteUrls, stream: BinaryIO
     ) -> tuple[PresignedWriteUrls, str]:
-        """Upload file stream in chunks using presigned URLs and return updated context + sha256 hash."""
+        """Upload file stream in chunks and return updated presigned URLs and sha256 hash."""
         etags: list[str] = []
         sha256 = hashlib.sha256()
         for url in presigned_urls.urls:
@@ -70,6 +72,7 @@ class FileUploadService(BaseService):
 
     @staticmethod
     def _get_stream_size(stream: BinaryIO) -> int:
+        """Get the size of a seekable stream."""
         if not stream.seekable():
             raise ValueError("Stream is not seekable; size cannot be determined.")
         current_pos = stream.tell()
@@ -89,6 +92,7 @@ class FileUploadService(BaseService):
         sha256: str | None = None,
         delete_derived_files: bool = True,
     ) -> None:
+        """Mark the upload as complete and finalize the file."""
         self.request(
             endpoint=f"/file_upload/{file_object_id}/complete",
             method="POST",
@@ -106,6 +110,7 @@ class FileUploadService(BaseService):
     def _abort_upload(
         self, file_object_id: str, lock_id: str, persno: str, presigned_write_urls: PresignedWriteUrls
     ) -> None:
+        """Abort an ongoing file upload."""
         self.request(
             endpoint=f"/file_upload/{file_object_id}/abort",
             method="POST",
