@@ -141,6 +141,11 @@ class FileUploadService(BaseService):
             check_access: Whether to check access permissions.
             filesize: Size of the file in bytes (required only if the stream is not seekable).
             delete_derived_files: Whether to delete derived files after upload.
+
+        Raises:
+            csfunctions.service.Unauthorized: If access check fails.
+            csfunctions.service.Conflict: If the file is already locked.
+            csfunctions.service.NotFound: If the file object does not exist.
         """
         persno = persno or self.metadata.app_user
         if filesize is None:
@@ -197,6 +202,10 @@ class FileUploadService(BaseService):
 
         Returns:
             The ID of the newly created file object.
+
+        Raises:
+            csfunctions.service.Unauthorized: If access check fails.
+            csfunctions.service.NotFound: If the parent object does not exist.
         """
         persno = persno or self.metadata.app_user
         file_object_id = self._create_new_file(
