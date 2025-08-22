@@ -46,7 +46,7 @@ class FileUploadService(BaseService):
 
         return PresignedWriteUrls.model_validate(response_json)
 
-    def _upload_file_content(
+    def _upload_from_stream(
         self, presigned_urls: PresignedWriteUrls, stream: BinaryIO
     ) -> tuple[PresignedWriteUrls, str]:
         """Upload file stream in chunks using presigned URLs and return updated context + sha256 hash."""
@@ -122,7 +122,7 @@ class FileUploadService(BaseService):
             persno=persno,
             check_access=check_access,
         )
-        presigned_with_etags, sha256 = self._upload_file_content(presigned_urls=presigned, stream=stream)
+        presigned_with_etags, sha256 = self._upload_from_stream(presigned_urls=presigned, stream=stream)
         self._complete_upload(
             file_object_id=file_object_id,
             filesize=filesize,
