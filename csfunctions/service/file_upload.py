@@ -8,6 +8,7 @@ import requests
 
 from csfunctions.service.base import BaseService
 from csfunctions.service.file_upload_schemas import (
+    AbortFileUploadRequest,
     CompleteFileUploadRequest,
     CreateNewFileRequest,
     CreateNewFileResponse,
@@ -102,6 +103,19 @@ class FileUploadService(BaseService):
             ).model_dump(),
         )
 
+    def _abort_upload(
+        self, file_object_id: str, lock_id: str, persno: str, presigned_write_urls: PresignedWriteUrls
+    ) -> None:
+        self.request(
+            endpoint=f"/file_upload/{file_object_id}/abort",
+            method="POST",
+            json=AbortFileUploadRequest(
+                lock_id=lock_id,
+                persno=persno,
+                presigned_write_urls=presigned_write_urls,
+            ).model_dump(),
+        )
+
     def upload_file_content(
         self,
         file_object_id: str,
@@ -122,17 +136,27 @@ class FileUploadService(BaseService):
             persno=persno,
             check_access=check_access,
         )
-        presigned_with_etags, sha256 = self._upload_from_stream(presigned_urls=presigned, stream=stream)
-        self._complete_upload(
-            file_object_id=file_object_id,
-            filesize=filesize,
-            lock_id=lock_id,
-            presigned_urls=presigned_with_etags,
-            persno=persno,
-            check_access=check_access,
-            sha256=sha256,
-            delete_derived_files=delete_derived_files,
-        )
+        try:
+            presigned_with_etags, sha256 = self._upload_from_stream(presigned_urls=presigned, stream=stream)
+            self._complete_upload(
+                file_object_id=file_object_id,
+                filesize=filesize,
+                lock_id=lock_id,
+                presigned_urls=presigned_with_etags,
+                persno=persno,
+                check_access=check_access,
+                sha256=sha256,
+                delete_derived_files=delete_derived_files,
+            )
+        except Exception as e:
+            # if something goes wrong during upload we try to abort
+            self._abort_upload(
+                file_object_id=file_object_id,
+                lock_id=lock_id,
+                persno=persno,
+                presigned_write_urls=presigned,
+            )
+            raise e
 
     def upload_new_file(
         self,

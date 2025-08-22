@@ -295,3 +295,57 @@ class TestFileUploadService(TestCase):
             self.assertEqual(kwargs["persno"], "tester")
             self.assertEqual(kwargs["sha256"], "deadbeef")
             self.assertEqual(kwargs["delete_derived_files"], False)
+
+    def test_abort_upload(self):
+        presigned = PresignedWriteUrls(
+            blob_id="blob123",
+            urls=["https://upload.url/1"],
+            chunksize=4,
+            headers={"Authorization": "Bearer token"},
+        )
+        with patch.object(self.service, "request", return_value=None) as mock_request:
+            self.service._abort_upload(
+                file_object_id="file123",
+                lock_id="lockid",
+                persno="tester",
+                presigned_write_urls=presigned,
+            )
+            mock_request.assert_called_once()
+            args, kwargs = mock_request.call_args
+            self.assertIn("endpoint", kwargs)
+            self.assertTrue("abort" in kwargs["endpoint"])
+            self.assertEqual(kwargs["method"], "POST")
+            self.assertEqual(kwargs["json"]["lock_id"], "lockid")
+            self.assertEqual(kwargs["json"]["persno"], "tester")
+            self.assertEqual(kwargs["json"]["presigned_write_urls"], presigned.model_dump())
+
+    def test_upload_file_content_aborts_on_error(self):
+        # Patch internal methods to simulate error and check abort
+        with (
+            patch.object(self.service, "_get_stream_size", return_value=4),
+            patch.object(self.service, "_get_presigned_write_urls") as mock_presigned,
+            patch.object(self.service, "_upload_from_stream", side_effect=Exception("upload error")),
+            patch.object(self.service, "_abort_upload") as mock_abort,
+        ):
+            mock_presigned.return_value = PresignedWriteUrls(
+                blob_id="blob123",
+                urls=["https://upload.url/1", "https://upload.url/2"],
+                chunksize=2,
+                headers={"Authorization": "Bearer token"},
+            )
+            stream = io.BytesIO(b"abcd")
+            with self.assertRaises(Exception) as cm:
+                self.service.upload_file_content(
+                    file_object_id="file123",
+                    stream=stream,
+                    persno="tester",
+                    check_access=True,
+                    filesize=None,
+                    delete_derived_files=False,
+                )
+            self.assertEqual(str(cm.exception), "upload error")
+            mock_abort.assert_called_once()
+            args, kwargs = mock_abort.call_args
+            self.assertEqual(kwargs["file_object_id"], "file123")
+            self.assertEqual(kwargs["persno"], "tester")
+            self.assertEqual(kwargs["presigned_write_urls"], mock_presigned.return_value)
