@@ -146,6 +146,7 @@ class FileUploadService(BaseService):
             csfunctions.service.Unauthorized: If access check fails.
             csfunctions.service.Conflict: If the file is already locked.
             csfunctions.service.NotFound: If the file object does not exist.
+            csfunctions.service.RateLimitExceeded: If the services rate limit is exceeded.
         """
         persno = persno or self.metadata.app_user
         if filesize is None:
@@ -206,6 +207,7 @@ class FileUploadService(BaseService):
         Raises:
             csfunctions.service.Unauthorized: If access check fails.
             csfunctions.service.NotFound: If the parent object does not exist.
+            csfunctions.service.RateLimitExceeded: If the services rate limit is exceeded.
         """
         persno = persno or self.metadata.app_user
         file_object_id = self._create_new_file(

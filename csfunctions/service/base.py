@@ -21,6 +21,10 @@ class UnprocessableEntity(Exception):
     pass
 
 
+class RateLimitExceeded(Exception):
+    pass
+
+
 class BaseService:
     """
     Base class for services.
@@ -54,6 +58,8 @@ class BaseService:
             raise NotFound
         elif response.status_code == 422:
             raise UnprocessableEntity(response.text)
+        elif response.status_code == 429:
+            raise RateLimitExceeded(response.text)
         if response.status_code == 200:
             return response.json()
         else:
