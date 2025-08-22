@@ -125,6 +125,18 @@ class FileUploadService(BaseService):
         filesize: int | None = None,
         delete_derived_files: bool = True,
     ) -> None:
+        """
+        Uploads content to an existing file object in chunks using presigned URLs.
+        Handles aborting the upload if an error occurs.
+
+        Args:
+            file_object_id: The ID of the file object to upload to.
+            stream: A binary stream containing the file data.
+            persno: The user/person number who is uploading the file (default is user that triggered the Function).
+            check_access: Whether to check access permissions.
+            filesize: Size of the file in bytes (required only if the stream is not seekable).
+            delete_derived_files: Whether to delete derived files after upload.
+        """
         persno = persno or self.metadata.app_user
         if filesize is None:
             filesize = self._get_stream_size(stream)
@@ -167,6 +179,20 @@ class FileUploadService(BaseService):
         check_access: bool = True,
         filesize: int | None = None,
     ) -> str:
+        """
+        Creates a new file attached to the parent object and uploads content from the provided stream.
+
+        Args:
+            parent_object_id: The ID of the parent object to attach the file to.
+            filename: The name of the new file.
+            stream: A binary stream containing the file data.
+            persno: The user/person number who is uploading the file (default is user that triggered the Function).
+            check_access: Whether to check access permissions.
+            filesize: Size of the file in bytes (required only if the stream is not seekable).
+
+        Returns:
+            The ID of the newly created file object.
+        """
         persno = persno or self.metadata.app_user
         file_object_id = self._create_new_file(
             filename=filename,
