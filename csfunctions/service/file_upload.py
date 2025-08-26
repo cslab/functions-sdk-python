@@ -143,7 +143,8 @@ class FileUploadService(BaseService):
             delete_derived_files: Whether to delete derived files after upload.
 
         Raises:
-            csfunctions.service.Unauthorized: If access check fails.
+            csfunctions.service.Forbidden: If access check fails.
+            csfunctions.service.Unauthorized: If the service token is invalid.
             csfunctions.service.Conflict: If the file is already locked.
             csfunctions.service.NotFound: If the file object does not exist.
             csfunctions.service.RateLimitExceeded: If the services rate limit is exceeded.
@@ -205,7 +206,8 @@ class FileUploadService(BaseService):
             The ID of the newly created file object.
 
         Raises:
-            csfunctions.service.Unauthorized: If access check fails.
+            csfunctions.service.Forbidden: If access check fails.
+            csfunctions.service.Unauthorized: If the service token is invalid.
             csfunctions.service.NotFound: If the parent object does not exist.
             csfunctions.service.RateLimitExceeded: If the services rate limit is exceeded.
         """

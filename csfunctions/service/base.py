@@ -9,6 +9,10 @@ class Unauthorized(Exception):
     pass
 
 
+class Forbidden(Exception):
+    pass
+
+
 class Conflict(Exception):
     pass
 
@@ -52,6 +56,8 @@ class BaseService:
 
         if response.status_code == 401:
             raise Unauthorized
+        if response.status_code == 403:
+            raise Forbidden
         elif response.status_code == 409:
             raise Conflict
         elif response.status_code == 404:

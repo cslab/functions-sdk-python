@@ -73,7 +73,8 @@ Creates a new file attached to the parent object and uploads content from the pr
 
 **Exceptions:**
 
-- `csfunctions.service.Unauthorized`: If access check fails.
+- `csfunctions.service.Unauthorized`: If th service token is invalid.
+- `csfunctions.service.Forbidden`: If access check fails.
 - `csfunctions.service.NotFound`: If the parent object does not exist.
 
 
@@ -119,7 +120,8 @@ Uploads new content to an existing file object, overwriting its previous content
 
 **Exceptions:**
 
-- `csfunctions.service.Unauthorized`: If access check fails.
+- `csfunctions.service.Unauthorized`: If th service token is invalid.
+- `csfunctions.service.Forbidden`: If access check fails.
 - `csfunctions.service.Conflict`: If the file is already locked.
 - `csfunctions.service.NotFound`: If the file object does not exist.
 - `csfunctions.service.RateLimitExceeded`: If the services rate limit is exceeded.
