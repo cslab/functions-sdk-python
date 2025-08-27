@@ -50,7 +50,7 @@ The `service.file_upload` object allows you to upload new files to the CIM Datab
 ### Upload a new file
 
 ```python
-service.upload_new_file(
+service.file_upload.upload_new_file(
         self,
         parent_object_id: str,
         filename: str,
