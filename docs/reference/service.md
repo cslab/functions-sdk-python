@@ -102,7 +102,7 @@ service.file_upload.upload_file_content(
     check_access: bool = True,
     filesize: int | None = None,
     delete_derived_files: bool = True,
-    ) -> None:
+    ) -> None
 ```
 Uploads new content to an existing file object, overwriting its previous contents.
 
