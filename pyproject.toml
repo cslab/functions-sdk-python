@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "contactsoftware-functions"
-version = "0.14.0"
+version = "0.15.0.dev1"
 readme = "README.md"
 
 license = "MIT"
@@ -33,6 +33,8 @@ requests-mock = "^1.12.1"
 mkdocs = "^1.6.1"
 mkdocs-material = "^9.6.14"
 mkdocs-link-marker = "^0.1.3"
+types-requests = "^2.32.4.20250809"
+types-pyyaml = "^6.0.12.20250822"
 
 [tool.ruff]
 line-length = 120
