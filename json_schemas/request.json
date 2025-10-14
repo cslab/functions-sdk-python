@@ -691,6 +691,3246 @@
           "description": "Object ID",
           "title": "Cdb Object Id"
         },
+        "cca_char_doc_1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 1"
+        },
+        "cca_char_doc_2": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 2"
+        },
+        "cca_char_doc_3": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 3"
+        },
+        "cca_char_doc_4": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 4"
+        },
+        "cca_char_doc_5": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 5"
+        },
+        "cca_char_doc_6": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 6"
+        },
+        "cca_char_doc_7": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 7"
+        },
+        "cca_char_doc_8": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 8"
+        },
+        "cca_char_doc_9": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 9"
+        },
+        "cca_char_doc_10": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 10"
+        },
+        "cca_char_doc_11": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 11"
+        },
+        "cca_char_doc_12": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 12"
+        },
+        "cca_char_doc_13": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 13"
+        },
+        "cca_char_doc_14": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 14"
+        },
+        "cca_char_doc_15": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 15"
+        },
+        "cca_char_doc_16": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 16"
+        },
+        "cca_char_doc_17": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 17"
+        },
+        "cca_char_doc_18": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 18"
+        },
+        "cca_char_doc_19": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 19"
+        },
+        "cca_char_doc_20": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Doc 20"
+        },
+        "cca_integer_doc_1": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 1"
+        },
+        "cca_integer_doc_2": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 2"
+        },
+        "cca_integer_doc_3": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 3"
+        },
+        "cca_integer_doc_4": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 4"
+        },
+        "cca_integer_doc_5": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 5"
+        },
+        "cca_integer_doc_6": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 6"
+        },
+        "cca_integer_doc_7": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 7"
+        },
+        "cca_integer_doc_8": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 8"
+        },
+        "cca_integer_doc_9": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 9"
+        },
+        "cca_integer_doc_10": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 10"
+        },
+        "cca_integer_doc_11": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 11"
+        },
+        "cca_integer_doc_12": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 12"
+        },
+        "cca_integer_doc_13": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 13"
+        },
+        "cca_integer_doc_14": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 14"
+        },
+        "cca_integer_doc_15": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 15"
+        },
+        "cca_integer_doc_16": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 16"
+        },
+        "cca_integer_doc_17": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 17"
+        },
+        "cca_integer_doc_18": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 18"
+        },
+        "cca_integer_doc_19": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 19"
+        },
+        "cca_integer_doc_20": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Doc 20"
+        },
+        "cca_float_doc_1": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 1"
+        },
+        "cca_float_doc_2": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 2"
+        },
+        "cca_float_doc_3": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 3"
+        },
+        "cca_float_doc_4": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 4"
+        },
+        "cca_float_doc_5": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 5"
+        },
+        "cca_float_doc_6": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 6"
+        },
+        "cca_float_doc_7": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 7"
+        },
+        "cca_float_doc_8": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 8"
+        },
+        "cca_float_doc_9": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 9"
+        },
+        "cca_float_doc_10": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 10"
+        },
+        "cca_float_doc_11": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 11"
+        },
+        "cca_float_doc_12": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 12"
+        },
+        "cca_float_doc_13": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 13"
+        },
+        "cca_float_doc_14": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 14"
+        },
+        "cca_float_doc_15": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 15"
+        },
+        "cca_float_doc_16": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 16"
+        },
+        "cca_float_doc_17": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 17"
+        },
+        "cca_float_doc_18": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 18"
+        },
+        "cca_float_doc_19": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 19"
+        },
+        "cca_float_doc_20": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Doc 20"
+        },
+        "cca_date_doc_2": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 2"
+        },
+        "cca_date_doc_3": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 3"
+        },
+        "cca_date_doc_4": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 4"
+        },
+        "cca_date_doc_5": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 5"
+        },
+        "cca_date_doc_6": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 6"
+        },
+        "cca_date_doc_7": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 7"
+        },
+        "cca_date_doc_8": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 8"
+        },
+        "cca_date_doc_9": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 9"
+        },
+        "cca_date_doc_10": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 10"
+        },
+        "cca_date_doc_11": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 11"
+        },
+        "cca_date_doc_12": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 12"
+        },
+        "cca_date_doc_13": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 13"
+        },
+        "cca_date_doc_14": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 14"
+        },
+        "cca_date_doc_15": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 15"
+        },
+        "cca_date_doc_16": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 16"
+        },
+        "cca_date_doc_17": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 17"
+        },
+        "cca_date_doc_18": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 18"
+        },
+        "cca_date_doc_19": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 19"
+        },
+        "cca_date_doc_20": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 20"
+        },
+        "cca_date_doc_1": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Doc 1"
+        },
+        "cca_bool_doc_1": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 1"
+        },
+        "cca_bool_doc_2": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 2"
+        },
+        "cca_bool_doc_3": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 3"
+        },
+        "cca_bool_doc_4": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 4"
+        },
+        "cca_bool_doc_5": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 5"
+        },
+        "cca_bool_doc_6": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 6"
+        },
+        "cca_bool_doc_7": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 7"
+        },
+        "cca_bool_doc_8": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 8"
+        },
+        "cca_bool_doc_9": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 9"
+        },
+        "cca_bool_doc_10": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 10"
+        },
+        "cca_bool_doc_11": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 11"
+        },
+        "cca_bool_doc_12": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 12"
+        },
+        "cca_bool_doc_13": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 13"
+        },
+        "cca_bool_doc_14": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 14"
+        },
+        "cca_bool_doc_15": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 15"
+        },
+        "cca_bool_doc_16": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 16"
+        },
+        "cca_bool_doc_17": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 17"
+        },
+        "cca_bool_doc_18": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 18"
+        },
+        "cca_bool_doc_19": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 19"
+        },
+        "cca_bool_doc_20": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Doc 20"
+        },
+        "cca_bigchar_doc_1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 1"
+        },
+        "cca_bigchar_doc_2": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 2"
+        },
+        "cca_bigchar_doc_3": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 3"
+        },
+        "cca_bigchar_doc_4": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 4"
+        },
+        "cca_bigchar_doc_5": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 5"
+        },
+        "cca_bigchar_doc_6": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 6"
+        },
+        "cca_bigchar_doc_7": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 7"
+        },
+        "cca_bigchar_doc_8": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 8"
+        },
+        "cca_bigchar_doc_9": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 9"
+        },
+        "cca_bigchar_doc_10": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 10"
+        },
+        "cca_bigchar_doc_11": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 11"
+        },
+        "cca_bigchar_doc_12": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 12"
+        },
+        "cca_bigchar_doc_13": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 13"
+        },
+        "cca_bigchar_doc_14": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 14"
+        },
+        "cca_bigchar_doc_15": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 15"
+        },
+        "cca_bigchar_doc_16": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 16"
+        },
+        "cca_bigchar_doc_17": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 17"
+        },
+        "cca_bigchar_doc_18": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 18"
+        },
+        "cca_bigchar_doc_19": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 19"
+        },
+        "cca_bigchar_doc_20": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Doc 20"
+        },
+        "cca_char_model_1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 1"
+        },
+        "cca_char_model_2": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 2"
+        },
+        "cca_char_model_3": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 3"
+        },
+        "cca_char_model_4": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 4"
+        },
+        "cca_char_model_5": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 5"
+        },
+        "cca_char_model_6": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 6"
+        },
+        "cca_char_model_7": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 7"
+        },
+        "cca_char_model_8": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 8"
+        },
+        "cca_char_model_9": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 9"
+        },
+        "cca_char_model_10": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 10"
+        },
+        "cca_char_model_11": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 11"
+        },
+        "cca_char_model_12": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 12"
+        },
+        "cca_char_model_13": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 13"
+        },
+        "cca_char_model_14": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 14"
+        },
+        "cca_char_model_15": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 15"
+        },
+        "cca_char_model_16": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 16"
+        },
+        "cca_char_model_17": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 17"
+        },
+        "cca_char_model_18": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 18"
+        },
+        "cca_char_model_19": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 19"
+        },
+        "cca_char_model_20": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Model 20"
+        },
+        "cca_bigchar_model_1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 1"
+        },
+        "cca_bigchar_model_2": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 2"
+        },
+        "cca_bigchar_model_3": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 3"
+        },
+        "cca_bigchar_model_4": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 4"
+        },
+        "cca_bigchar_model_5": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 5"
+        },
+        "cca_bigchar_model_6": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 6"
+        },
+        "cca_bigchar_model_7": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 7"
+        },
+        "cca_bigchar_model_8": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 8"
+        },
+        "cca_bigchar_model_9": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 9"
+        },
+        "cca_bigchar_model_10": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 10"
+        },
+        "cca_bigchar_model_11": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 11"
+        },
+        "cca_bigchar_model_12": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 12"
+        },
+        "cca_bigchar_model_13": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 13"
+        },
+        "cca_bigchar_model_14": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 14"
+        },
+        "cca_bigchar_model_15": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 15"
+        },
+        "cca_bigchar_model_16": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 16"
+        },
+        "cca_bigchar_model_17": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 17"
+        },
+        "cca_bigchar_model_18": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 18"
+        },
+        "cca_bigchar_model_19": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 19"
+        },
+        "cca_bigchar_model_20": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Model 20"
+        },
+        "cca_integer_model_1": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 1"
+        },
+        "cca_integer_model_2": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 2"
+        },
+        "cca_integer_model_3": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 3"
+        },
+        "cca_integer_model_4": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 4"
+        },
+        "cca_integer_model_5": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 5"
+        },
+        "cca_integer_model_6": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 6"
+        },
+        "cca_integer_model_7": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 7"
+        },
+        "cca_integer_model_8": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 8"
+        },
+        "cca_integer_model_9": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 9"
+        },
+        "cca_integer_model_10": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 10"
+        },
+        "cca_integer_model_11": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 11"
+        },
+        "cca_integer_model_12": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 12"
+        },
+        "cca_integer_model_13": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 13"
+        },
+        "cca_integer_model_14": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 14"
+        },
+        "cca_integer_model_15": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 15"
+        },
+        "cca_integer_model_16": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 16"
+        },
+        "cca_integer_model_17": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 17"
+        },
+        "cca_integer_model_18": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 18"
+        },
+        "cca_integer_model_19": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 19"
+        },
+        "cca_integer_model_20": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Model 20"
+        },
+        "cca_float_model_1": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 1"
+        },
+        "cca_float_model_2": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 2"
+        },
+        "cca_float_model_3": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 3"
+        },
+        "cca_float_model_4": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 4"
+        },
+        "cca_float_model_5": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 5"
+        },
+        "cca_float_model_6": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 6"
+        },
+        "cca_float_model_7": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 7"
+        },
+        "cca_float_model_8": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 8"
+        },
+        "cca_float_model_9": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 9"
+        },
+        "cca_float_model_10": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 10"
+        },
+        "cca_float_model_11": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 11"
+        },
+        "cca_float_model_12": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 12"
+        },
+        "cca_float_model_13": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 13"
+        },
+        "cca_float_model_14": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 14"
+        },
+        "cca_float_model_15": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 15"
+        },
+        "cca_float_model_16": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 16"
+        },
+        "cca_float_model_17": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 17"
+        },
+        "cca_float_model_18": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 18"
+        },
+        "cca_float_model_19": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 19"
+        },
+        "cca_float_model_20": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Model 20"
+        },
+        "cca_bool_model_1": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 1"
+        },
+        "cca_bool_model_2": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 2"
+        },
+        "cca_bool_model_3": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 3"
+        },
+        "cca_bool_model_4": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 4"
+        },
+        "cca_bool_model_5": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 5"
+        },
+        "cca_bool_model_6": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 6"
+        },
+        "cca_bool_model_7": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 7"
+        },
+        "cca_bool_model_8": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 8"
+        },
+        "cca_bool_model_9": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 9"
+        },
+        "cca_bool_model_10": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 10"
+        },
+        "cca_bool_model_11": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 11"
+        },
+        "cca_bool_model_12": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 12"
+        },
+        "cca_bool_model_13": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 13"
+        },
+        "cca_bool_model_14": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 14"
+        },
+        "cca_bool_model_15": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 15"
+        },
+        "cca_bool_model_16": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 16"
+        },
+        "cca_bool_model_17": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 17"
+        },
+        "cca_bool_model_18": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 18"
+        },
+        "cca_bool_model_19": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 19"
+        },
+        "cca_bool_model_20": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Model 20"
+        },
+        "cca_date_model_1": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 1"
+        },
+        "cca_date_model_2": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 2"
+        },
+        "cca_date_model_3": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 3"
+        },
+        "cca_date_model_4": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 4"
+        },
+        "cca_date_model_5": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 5"
+        },
+        "cca_date_model_6": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 6"
+        },
+        "cca_date_model_7": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 7"
+        },
+        "cca_date_model_8": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 8"
+        },
+        "cca_date_model_9": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 9"
+        },
+        "cca_date_model_10": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 10"
+        },
+        "cca_date_model_11": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 11"
+        },
+        "cca_date_model_12": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 12"
+        },
+        "cca_date_model_13": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 13"
+        },
+        "cca_date_model_14": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 14"
+        },
+        "cca_date_model_15": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 15"
+        },
+        "cca_date_model_16": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 16"
+        },
+        "cca_date_model_17": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 17"
+        },
+        "cca_date_model_18": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 18"
+        },
+        "cca_date_model_19": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 19"
+        },
+        "cca_date_model_20": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Model 20"
+        },
         "files": {
           "default": [],
           "description": "Files attached to the document",
@@ -2679,6 +5919,1586 @@
           "default": null,
           "description": "Width",
           "title": "St Breite"
+        },
+        "cca_char_1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 1"
+        },
+        "cca_char_2": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 2"
+        },
+        "cca_char_3": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 3"
+        },
+        "cca_char_4": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 4"
+        },
+        "cca_char_5": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 5"
+        },
+        "cca_char_6": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 6"
+        },
+        "cca_char_7": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 7"
+        },
+        "cca_char_8": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 8"
+        },
+        "cca_char_9": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 9"
+        },
+        "cca_char_10": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 10"
+        },
+        "cca_char_11": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 11"
+        },
+        "cca_char_12": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 12"
+        },
+        "cca_char_13": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 13"
+        },
+        "cca_char_14": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 14"
+        },
+        "cca_char_15": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 15"
+        },
+        "cca_char_16": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 16"
+        },
+        "cca_char_17": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 17"
+        },
+        "cca_char_18": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 18"
+        },
+        "cca_char_19": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 19"
+        },
+        "cca_char_20": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char 20"
+        },
+        "cca_bigchar_part_1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 1"
+        },
+        "cca_bigchar_part_2": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 2"
+        },
+        "cca_bigchar_part_3": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 3"
+        },
+        "cca_bigchar_part_4": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 4"
+        },
+        "cca_bigchar_part_5": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 5"
+        },
+        "cca_bigchar_part_6": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 6"
+        },
+        "cca_bigchar_part_7": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 7"
+        },
+        "cca_bigchar_part_8": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 8"
+        },
+        "cca_bigchar_part_9": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 9"
+        },
+        "cca_bigchar_part_10": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 10"
+        },
+        "cca_bigchar_part_11": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 11"
+        },
+        "cca_bigchar_part_12": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 12"
+        },
+        "cca_bigchar_part_13": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 13"
+        },
+        "cca_bigchar_part_14": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 14"
+        },
+        "cca_bigchar_part_15": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 15"
+        },
+        "cca_bigchar_part_16": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 16"
+        },
+        "cca_bigchar_part_17": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 17"
+        },
+        "cca_bigchar_part_18": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 18"
+        },
+        "cca_bigchar_part_19": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 19"
+        },
+        "cca_bigchar_part_20": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Part 20"
+        },
+        "cca_integer_part_1": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 1"
+        },
+        "cca_integer_part_2": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 2"
+        },
+        "cca_integer_part_3": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 3"
+        },
+        "cca_integer_part_4": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 4"
+        },
+        "cca_integer_part_5": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 5"
+        },
+        "cca_integer_part_6": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 6"
+        },
+        "cca_integer_part_7": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 7"
+        },
+        "cca_integer_part_8": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 8"
+        },
+        "cca_integer_part_9": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 9"
+        },
+        "cca_integer_part_10": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 10"
+        },
+        "cca_integer_part_11": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 11"
+        },
+        "cca_integer_part_12": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 12"
+        },
+        "cca_integer_part_13": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 13"
+        },
+        "cca_integer_part_14": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 14"
+        },
+        "cca_integer_part_15": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 15"
+        },
+        "cca_integer_part_16": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 16"
+        },
+        "cca_integer_part_17": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 17"
+        },
+        "cca_integer_part_18": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 18"
+        },
+        "cca_integer_part_19": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 19"
+        },
+        "cca_integer_part_20": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Part 20"
+        },
+        "cca_float_part_1": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 1"
+        },
+        "cca_float_part_2": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 2"
+        },
+        "cca_float_part_3": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 3"
+        },
+        "cca_float_part_4": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 4"
+        },
+        "cca_float_part_5": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 5"
+        },
+        "cca_float_part_6": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 6"
+        },
+        "cca_float_part_7": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 7"
+        },
+        "cca_float_part_8": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 8"
+        },
+        "cca_float_part_9": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 9"
+        },
+        "cca_float_part_10": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 10"
+        },
+        "cca_float_part_11": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 11"
+        },
+        "cca_float_part_12": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 12"
+        },
+        "cca_float_part_13": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 13"
+        },
+        "cca_float_part_14": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 14"
+        },
+        "cca_float_part_15": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 15"
+        },
+        "cca_float_part_16": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 16"
+        },
+        "cca_float_part_17": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 17"
+        },
+        "cca_float_part_18": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 18"
+        },
+        "cca_float_part_19": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 19"
+        },
+        "cca_float_part_20": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Part 20"
+        },
+        "cca_bool_part_1": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 1"
+        },
+        "cca_bool_part_2": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 2"
+        },
+        "cca_bool_part_3": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 3"
+        },
+        "cca_bool_part_4": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 4"
+        },
+        "cca_bool_part_5": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 5"
+        },
+        "cca_bool_part_6": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 6"
+        },
+        "cca_bool_part_7": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 7"
+        },
+        "cca_bool_part_8": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 8"
+        },
+        "cca_bool_part_9": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 9"
+        },
+        "cca_bool_part_10": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 10"
+        },
+        "cca_bool_part_11": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 11"
+        },
+        "cca_bool_part_12": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 12"
+        },
+        "cca_bool_part_13": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 13"
+        },
+        "cca_bool_part_14": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 14"
+        },
+        "cca_bool_part_15": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 15"
+        },
+        "cca_bool_part_16": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 16"
+        },
+        "cca_bool_part_17": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 17"
+        },
+        "cca_bool_part_18": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 18"
+        },
+        "cca_bool_part_19": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 19"
+        },
+        "cca_bool_part_20": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Part 20"
+        },
+        "cca_date_part_1": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 1"
+        },
+        "cca_date_part_2": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 2"
+        },
+        "cca_date_part_3": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 3"
+        },
+        "cca_date_part_4": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 4"
+        },
+        "cca_date_part_5": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 5"
+        },
+        "cca_date_part_6": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 6"
+        },
+        "cca_date_part_7": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 7"
+        },
+        "cca_date_part_8": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 8"
+        },
+        "cca_date_part_9": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 9"
+        },
+        "cca_date_part_10": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 10"
+        },
+        "cca_date_part_11": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 11"
+        },
+        "cca_date_part_12": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 12"
+        },
+        "cca_date_part_13": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 13"
+        },
+        "cca_date_part_14": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 14"
+        },
+        "cca_date_part_15": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 15"
+        },
+        "cca_date_part_16": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 16"
+        },
+        "cca_date_part_17": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 17"
+        },
+        "cca_date_part_18": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 18"
+        },
+        "cca_date_part_19": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 19"
+        },
+        "cca_date_part_20": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Part 20"
         },
         "document_ids": {
           "default": [],
