@@ -3,6 +3,9 @@ hide:
   - toc
 ---
 
+### Version 0.18.1:
+- Fix: Incorrect typing of custom model date fields
+
 ### Version 0.18.0:
 - Feat: Add support for custom attributes on documents and parts
 
