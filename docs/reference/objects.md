@@ -309,26 +309,26 @@ Normal Document that doesn't contain a CAD-Model.
 | cca_bool_model_18        | bool \| None                             | Custom Boolean Field               |
 | cca_bool_model_19        | bool \| None                             | Custom Boolean Field               |
 | cca_bool_model_20        | bool \| None                             | Custom Boolean Field               |
-| cca_date_model_1         | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_2         | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_3         | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_4         | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_5         | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_6         | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_7         | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_8         | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_9         | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_10        | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_11        | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_12        | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_13        | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_14        | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_15        | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_16        | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_17        | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_18        | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_19        | date \| datetime \| None                 | Custom Date Field                  |
-| cca_date_model_20        | date \| datetime \| None                 | Custom Date Field                  |
+| cca_date_model_1         | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_2         | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_3         | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_4         | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_5         | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_6         | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_7         | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_8         | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_9         | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_10        | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_11        | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_12        | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_13        | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_14        | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_15        | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_16        | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_17        | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_18        | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_19        | datetime \| None                         | Custom Date Field                  |
+| cca_date_model_20        | datetime \| None                         | Custom Date Field                  |
 | files                    | list[[File](objects.md#file)]            | Files attached to the document     |
 | part                     | typing.Optional[[Part](objects.md#part)] |                                    |
 
