@@ -3574,10 +3574,6 @@
         "cca_date_model_1": {
           "anyOf": [
             {
-              "format": "date",
-              "type": "string"
-            },
-            {
               "format": "date-time",
               "type": "string"
             },
@@ -3591,10 +3587,6 @@
         },
         "cca_date_model_2": {
           "anyOf": [
-            {
-              "format": "date",
-              "type": "string"
-            },
             {
               "format": "date-time",
               "type": "string"
@@ -3610,10 +3602,6 @@
         "cca_date_model_3": {
           "anyOf": [
             {
-              "format": "date",
-              "type": "string"
-            },
-            {
               "format": "date-time",
               "type": "string"
             },
@@ -3627,10 +3615,6 @@
         },
         "cca_date_model_4": {
           "anyOf": [
-            {
-              "format": "date",
-              "type": "string"
-            },
             {
               "format": "date-time",
               "type": "string"
@@ -3646,10 +3630,6 @@
         "cca_date_model_5": {
           "anyOf": [
             {
-              "format": "date",
-              "type": "string"
-            },
-            {
               "format": "date-time",
               "type": "string"
             },
@@ -3663,10 +3643,6 @@
         },
         "cca_date_model_6": {
           "anyOf": [
-            {
-              "format": "date",
-              "type": "string"
-            },
             {
               "format": "date-time",
               "type": "string"
@@ -3682,10 +3658,6 @@
         "cca_date_model_7": {
           "anyOf": [
             {
-              "format": "date",
-              "type": "string"
-            },
-            {
               "format": "date-time",
               "type": "string"
             },
@@ -3699,10 +3671,6 @@
         },
         "cca_date_model_8": {
           "anyOf": [
-            {
-              "format": "date",
-              "type": "string"
-            },
             {
               "format": "date-time",
               "type": "string"
@@ -3718,10 +3686,6 @@
         "cca_date_model_9": {
           "anyOf": [
             {
-              "format": "date",
-              "type": "string"
-            },
-            {
               "format": "date-time",
               "type": "string"
             },
@@ -3735,10 +3699,6 @@
         },
         "cca_date_model_10": {
           "anyOf": [
-            {
-              "format": "date",
-              "type": "string"
-            },
             {
               "format": "date-time",
               "type": "string"
@@ -3754,10 +3714,6 @@
         "cca_date_model_11": {
           "anyOf": [
             {
-              "format": "date",
-              "type": "string"
-            },
-            {
               "format": "date-time",
               "type": "string"
             },
@@ -3771,10 +3727,6 @@
         },
         "cca_date_model_12": {
           "anyOf": [
-            {
-              "format": "date",
-              "type": "string"
-            },
             {
               "format": "date-time",
               "type": "string"
@@ -3790,10 +3742,6 @@
         "cca_date_model_13": {
           "anyOf": [
             {
-              "format": "date",
-              "type": "string"
-            },
-            {
               "format": "date-time",
               "type": "string"
             },
@@ -3807,10 +3755,6 @@
         },
         "cca_date_model_14": {
           "anyOf": [
-            {
-              "format": "date",
-              "type": "string"
-            },
             {
               "format": "date-time",
               "type": "string"
@@ -3826,10 +3770,6 @@
         "cca_date_model_15": {
           "anyOf": [
             {
-              "format": "date",
-              "type": "string"
-            },
-            {
               "format": "date-time",
               "type": "string"
             },
@@ -3843,10 +3783,6 @@
         },
         "cca_date_model_16": {
           "anyOf": [
-            {
-              "format": "date",
-              "type": "string"
-            },
             {
               "format": "date-time",
               "type": "string"
@@ -3862,10 +3798,6 @@
         "cca_date_model_17": {
           "anyOf": [
             {
-              "format": "date",
-              "type": "string"
-            },
-            {
               "format": "date-time",
               "type": "string"
             },
@@ -3879,10 +3811,6 @@
         },
         "cca_date_model_18": {
           "anyOf": [
-            {
-              "format": "date",
-              "type": "string"
-            },
             {
               "format": "date-time",
               "type": "string"
@@ -3898,10 +3826,6 @@
         "cca_date_model_19": {
           "anyOf": [
             {
-              "format": "date",
-              "type": "string"
-            },
-            {
               "format": "date-time",
               "type": "string"
             },
@@ -3915,10 +3839,6 @@
         },
         "cca_date_model_20": {
           "anyOf": [
-            {
-              "format": "date",
-              "type": "string"
-            },
             {
               "format": "date-time",
               "type": "string"
