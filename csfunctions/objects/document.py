@@ -68,6 +68,8 @@ class Document(BaseObject):
     z_art: str | None = Field(None, description="Document Type")
     mapped_materialnr_erp: str | None = Field(None, description="Materialnumber ERP")
     cdb_object_id: str | None = Field(None, description="Object ID")
+    pruefer: str | None = Field(None, description="Reviewer")
+    pruef_datum: datetime | None = Field(None, description="Review Date")
 
     # Custom Char Fields
     cca_char_doc_1: str | None = Field(None, description="Custom Char Field")
