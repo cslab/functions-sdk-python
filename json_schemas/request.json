@@ -691,6 +691,33 @@
           "description": "Object ID",
           "title": "Cdb Object Id"
         },
+        "pruefer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Reviewer",
+          "title": "Pruefer"
+        },
+        "pruef_datum": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Review Date",
+          "title": "Pruef Datum"
+        },
         "cca_char_doc_1": {
           "anyOf": [
             {
