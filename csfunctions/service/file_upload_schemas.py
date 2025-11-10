@@ -1,5 +1,3 @@
-from typing import Optional
-
 from pydantic import BaseModel, Field
 
 
@@ -11,12 +9,12 @@ class PresignedWriteUrls(BaseModel):
     blob_id: str
     urls: list[str]
     chunksize: int
-    upload_id: Optional[str] = None
-    etags: Optional[list[str]] = None
-    block_ids: Optional[list[str]] = None
-    headers: Optional[dict[str, str]] = None
-    metadata: Optional[dict[str, str]] = None
-    signature: Optional[str] = None
+    upload_id: str | None = None
+    etags: list[str] | None = None
+    block_ids: list[str] | None = None
+    headers: dict[str, str] | None = None
+    metadata: dict[str, str] | None = None
+    signature: str | None = None
 
 
 class GeneratePresignedUrlRequest(BaseModel):
@@ -39,7 +37,7 @@ class CompleteFileUploadRequest(BaseModel):
     check_access: bool = Field(..., description="Whether to check access permissions.")
     persno: str = Field(..., description="The persno of the user who is uploading the file.")
     presigned_write_urls: PresignedWriteUrls = Field(..., description="The presigned write URLs for the file upload.")
-    sha256: Optional[str] = Field(None, description="The SHA256 hash of the file content.")
+    sha256: str | None = Field(None, description="The SHA256 hash of the file content.")
     lock_id: str = Field(..., description="The lock ID the file was locked with")
     delete_derived_files: bool = Field(True, description="Whether to delete derived files (e.g. converted pdfs).")
 

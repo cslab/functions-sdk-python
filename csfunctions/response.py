@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Annotated, Literal, Union
+from typing import Annotated, Literal
 from uuid import uuid4
 
 from pydantic import BaseModel, Field
@@ -74,5 +74,5 @@ class ErrorResponse(BaseModel):
     trace: str = Field(..., description="trace to the error")
 
 
-ResponseUnion = Union[WorkloadResponse, DataResponse, ErrorResponse]
+ResponseUnion = WorkloadResponse | DataResponse | ErrorResponse
 Response = Annotated[ResponseUnion, Field(discriminator="response_type")]

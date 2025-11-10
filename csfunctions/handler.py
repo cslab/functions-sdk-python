@@ -3,9 +3,9 @@ import logging
 import os
 import sys
 import traceback
+from collections.abc import Callable
 from functools import lru_cache
 from importlib import import_module
-from typing import Callable
 
 import yaml
 
