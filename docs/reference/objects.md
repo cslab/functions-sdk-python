@@ -89,6 +89,8 @@ Normal Document that doesn't contain a CAD-Model.
 |z_art|str \| None|Document Type|
 |mapped_materialnr_erp|str \| None|Materialnumber ERP|
 |cdb_object_id|str \| None|Object ID|
+|pruefer|str \| None|Reviewer|
+|pruef_datum|datetime \| None|Review Date|
 |cca_char_doc_1|str \| None|Custom Char Field|
 |cca_char_doc_2|str \| None|Custom Char Field|
 |cca_char_doc_3|str \| None|Custom Char Field|
@@ -441,7 +443,7 @@ An objects property, used by classification.
 |ce_valid_to|date \| datetime \| None|Effective to|
 |mengeneinheit_name_de|str \| None|Quantity Unit|
 |mengeneinheit_name_en|str \| None|Quantity Unit|
-|st_gewicht|typing.Optional[float]|Weight (kg)|
+|st_gewicht|float \| None|Weight (kg)|
 |material_object_id|str \| None|Material ID|
 |surface_name_en|str \| None|Surface|
 |surface_name_de|str \| None|Surface|

@@ -3,6 +3,9 @@ hide:
   - toc
 ---
 
+### Version 0.19.0
+- Feat: Add reviewer and review date fields to documents
+
 ### Version 0.18.1:
 - Fix: Incorrect typing of custom model date fields
 
