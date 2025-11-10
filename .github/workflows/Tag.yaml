@@ -54,7 +54,6 @@ jobs:
 
       - name: Set version and build
         run: |
-          uv version ${{ github.ref_name }}
           uv build
 
       - name: Publish to PyPI
