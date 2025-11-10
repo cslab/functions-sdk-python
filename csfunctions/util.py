@@ -1,11 +1,11 @@
-from typing import List, Type, TypeVar
+from typing import TypeVar
 
 from pydantic import BaseModel
 
 T = TypeVar("T")
 
 
-def get_items_of_type(model: BaseModel, target_type: Type[T]) -> List[T]:
+def get_items_of_type(model: BaseModel, target_type: type[T]) -> list[T]:
     """
     Retrieve items of a specific type from lists within a Pydantic model.
 

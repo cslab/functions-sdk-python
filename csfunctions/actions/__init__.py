@@ -1,4 +1,4 @@
-from typing import Annotated, Union
+from typing import Annotated
 
 from pydantic import Field
 
@@ -7,7 +7,7 @@ from .base import ActionNames
 from .dummy import DummyAction
 from .start_workflow import StartWorkflowAction
 
-ActionUnion = Union[AbortAndShowErrorAction, DummyAction, StartWorkflowAction]
+ActionUnion = AbortAndShowErrorAction | DummyAction | StartWorkflowAction
 Action = Annotated[ActionUnion, Field(discriminator="name")]
 
 __all__ = [

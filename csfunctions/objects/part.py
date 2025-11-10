@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from typing import TYPE_CHECKING, Literal, Optional
+from typing import TYPE_CHECKING, Literal
 
 from pydantic import Field
 
@@ -35,7 +35,7 @@ class Part(BaseObject):
     ce_valid_to: date | datetime | None = Field(None, description="Effective to")
     mengeneinheit_name_de: str | None = Field(None, description="Quantity Unit")
     mengeneinheit_name_en: str | None = Field(None, description="Quantity Unit")
-    st_gewicht: Optional[float] = Field(None, description="Weight (kg)")
+    st_gewicht: float | None = Field(None, description="Weight (kg)")
     material_object_id: str | None = Field(None, description="Material ID")
     surface_name_en: str | None = Field(None, description="Surface")
     surface_name_de: str | None = Field(None, description="Surface")

@@ -1,5 +1,6 @@
+from collections.abc import Hashable
 from enum import Enum
-from typing import TYPE_CHECKING, Hashable
+from typing import TYPE_CHECKING
 
 from pydantic import BaseModel, ConfigDict
 

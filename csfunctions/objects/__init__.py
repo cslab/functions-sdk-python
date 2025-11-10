@@ -1,4 +1,4 @@
-from typing import Annotated, Union
+from typing import Annotated
 
 from pydantic import Field
 
@@ -13,19 +13,17 @@ from .person import Person
 from .workflow import Workflow
 
 Object = Annotated[
-    Union[
-        Document,
-        CADDocument,
-        Part,
-        File,
-        EngineeringChange,
-        Material,
-        BOMItem,
-        ObjectPropertyValue,
-        Briefcase,
-        Workflow,
-        Person,
-    ],
+    Document
+    | CADDocument
+    | Part
+    | File
+    | EngineeringChange
+    | Material
+    | BOMItem
+    | ObjectPropertyValue
+    | Briefcase
+    | Workflow
+    | Person,
     Field(discriminator="object_type"),
 ]
 

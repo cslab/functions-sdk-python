@@ -1,4 +1,4 @@
-from typing import Annotated, Union
+from typing import Annotated
 
 from pydantic import Field
 
@@ -25,46 +25,44 @@ from .part_released import PartReleasedData, PartReleasedEvent
 from .workflow_task_trigger import WorkflowTaskTriggerEvent, WorkflowTaskTriggerEventData
 
 Event = Annotated[
-    Union[
-        DocumentReleasedEvent,
-        DocumentReleaseCheckEvent,
-        DocumentFieldCalculationEvent,
-        PartReleasedEvent,
-        PartReleaseCheckEvent,
-        PartFieldCalculationEvent,
-        FieldValueCalculationEvent,
-        DummyEvent,
-        EngineeringChangeReleasedEvent,
-        EngineeringChangeReleaseCheckEvent,
-        EngineeringChangeStatusChangedEvent,
-        EngineeringChangeStatusChangeCheckEvent,
-        WorkflowTaskTriggerEvent,
-        DocumentCreateCheckEvent,
-        DocumentModifyCheckEvent,
-        PartCreateCheckEvent,
-        PartModifyCheckEvent,
-    ],
+    DocumentReleasedEvent
+    | DocumentReleaseCheckEvent
+    | DocumentFieldCalculationEvent
+    | PartReleasedEvent
+    | PartReleaseCheckEvent
+    | PartFieldCalculationEvent
+    | FieldValueCalculationEvent
+    | DummyEvent
+    | EngineeringChangeReleasedEvent
+    | EngineeringChangeReleaseCheckEvent
+    | EngineeringChangeStatusChangedEvent
+    | EngineeringChangeStatusChangeCheckEvent
+    | WorkflowTaskTriggerEvent
+    | DocumentCreateCheckEvent
+    | DocumentModifyCheckEvent
+    | PartCreateCheckEvent
+    | PartModifyCheckEvent,
     Field(discriminator="name"),
 ]
-EventData = Union[
-    DocumentReleasedData,
-    DocumentReleaseCheckData,
-    DocumentFieldCalculationData,
-    PartReleasedData,
-    PartReleaseCheckData,
-    PartFieldCalculationData,
-    FieldValueCalculationData,
-    DummyEventData,
-    EngineeringChangeReleasedData,
-    EngineeringChangeReleaseCheckData,
-    EngineeringChangeStatusChangedData,
-    EngineeringChangeStatusChangeCheckData,
-    WorkflowTaskTriggerEventData,
-    DocumentCreateCheckData,
-    DocumentModifyCheckData,
-    PartCreateCheckData,
-    PartModifyCheckData,
-]
+EventData = (
+    DocumentReleasedData
+    | DocumentReleaseCheckData
+    | DocumentFieldCalculationData
+    | PartReleasedData
+    | PartReleaseCheckData
+    | PartFieldCalculationData
+    | FieldValueCalculationData
+    | DummyEventData
+    | EngineeringChangeReleasedData
+    | EngineeringChangeReleaseCheckData
+    | EngineeringChangeStatusChangedData
+    | EngineeringChangeStatusChangeCheckData
+    | WorkflowTaskTriggerEventData
+    | DocumentCreateCheckData
+    | DocumentModifyCheckData
+    | PartCreateCheckData
+    | PartModifyCheckData
+)
 
 __all__ = [
     "DocumentReleasedEvent",

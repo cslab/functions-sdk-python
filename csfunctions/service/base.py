@@ -1,5 +1,3 @@
-from typing import Optional
-
 import requests
 
 from csfunctions.metadata import MetaData
@@ -39,7 +37,7 @@ class BaseService:
         self.metadata = metadata
 
     def request(
-        self, endpoint: str, method: str = "GET", params: Optional[dict] = None, json: Optional[dict] = None
+        self, endpoint: str, method: str = "GET", params: dict | None = None, json: dict | None = None
     ) -> dict | list:
         """
         Make a request to the access service.
