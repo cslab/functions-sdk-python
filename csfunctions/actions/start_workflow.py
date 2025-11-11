@@ -1,4 +1,4 @@
-from typing import Literal, Optional
+from typing import Literal
 
 from pydantic import BaseModel, Field
 
@@ -14,7 +14,7 @@ class Subject(BaseModel):
 
 class TaskConfiguration(BaseModel):
     task_id: str = Field(..., description="Identifier for the task")
-    responsible: Optional[Subject] = Field(default=None, description="Responsible subject for the task")
+    responsible: Subject | None = Field(default=None, description="Responsible subject for the task")
     recipients: list[Subject] = Field(
         default_factory=list,
         description="List of recipients for the task (only used by information tasks)",

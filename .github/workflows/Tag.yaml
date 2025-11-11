@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-    - uses: pre-commit/action@v3.0.0
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - uses: pre-commit/action@v3.0.0
 
   unittest:
     runs-on: ubuntu-latest
@@ -23,29 +23,17 @@ jobs:
         python-version: ["3.10", "3.11"]
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install poetry
-      run: |
-        pip install --upgrade pip
-        pip install poetry
-    - name: Setup a local virtual environment (if no poetry.toml file)
-      run: |
-        poetry config virtualenvs.create true --local
-        poetry config virtualenvs.in-project true --local
-    - name: Define a cache for the virtual environment based on the dependencies lock file
-      uses: actions/cache@v3
-      with:
-        path: ./.venv
-        key: venv-${{ hashFiles('poetry.lock') }}
-    - name: Set up Python environment
-      run: |
-        poetry install --with test
-    - name: Run Tests
-      run: poetry run pytest --junit-xml=testresults/test-client.xml
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+      - name: Set up Python environment
+        run: uv sync --group test
+      - name: Run Tests
+        run: uv run pytest --junit-xml=testresults/test-client.xml
 
   # ---- Publish ----
   build-and-publish:
@@ -61,17 +49,17 @@ jobs:
         with:
           python-version: 3.11
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install poetry
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
 
-      - name: Build Package
+      - name: Set version and build
         run: |
-          poetry config pypi-token.pypi ${{secrets.PYPI_LIB_TOKEN}}
-          poetry version ${{ github.ref_name }}
-          poetry build
-          poetry publish
+          uv build
+
+      - name: Publish to PyPI
+        env:
+          UV_PUBLISH_TOKEN: ${{secrets.PYPI_LIB_TOKEN}}
+        run: uv publish
 
   publish-docs:
     runs-on: ubuntu-latest
@@ -84,7 +72,11 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: 3.11
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+      - name: Install dependencies for docs
+        run: uv sync
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - uses: actions/cache@v4
         with:
@@ -92,5 +84,5 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material
-      - run: mkdocs gh-deploy --force
+      - name: Deploy docs
+        run: uv run mkdocs gh-deploy --force

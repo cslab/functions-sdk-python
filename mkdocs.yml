@@ -50,6 +50,7 @@ nav:
     - reference/events.md
     - reference/objects.md
     - reference/actions.md
+    - reference/service.md
     - development_server.md
     - Python runtime: reference/runtime.md
   - Releases: release_notes.md

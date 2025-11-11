@@ -3,6 +3,19 @@ hide:
   - toc
 ---
 
+### Version 0.19.0
+- Feat: Add reviewer and review date fields to documents
+
+### Version 0.18.1:
+- Fix: Incorrect typing of custom model date fields
+
+### Version 0.18.0:
+- Feat: Add support for custom attributes on documents and parts
+
+### Version 0.15.0:
+- Feat: Upload service
+- improve documentation
+
 ### Version 0.14.0:
 - Feat: Improve error logging when using the devserver
 - Feat: Add StartWorkflowAction

@@ -3,9 +3,9 @@ import logging
 import os
 import sys
 import traceback
+from collections.abc import Callable
 from functools import lru_cache
 from importlib import import_module
-from typing import Callable
 
 import yaml
 
@@ -96,9 +96,7 @@ def execute(function_name: str, request_body: str, function_dir: str = "src") ->
         link_objects(request.event)
 
         function_callback = get_function_callable(function_name, function_dir)
-        service = Service(
-            str(request.metadata.service_url) if request.metadata.service_url else None, request.metadata.service_token
-        )
+        service = Service(metadata=request.metadata)
 
         response = function_callback(request.metadata, request.event, service)
 

@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import Optional
 
 from pydantic import AnyHttpUrl, BaseModel, Field
 
@@ -13,6 +12,6 @@ class MetaData(BaseModel):
     request_datetime: datetime = Field(..., description="Time when the request was started.")
     transaction_id: str = Field(..., description="Unique identifier of the transaction.")
     instance_url: AnyHttpUrl = Field(..., description="URL to the instance where the webhook was triggered.")
-    db_service_url: Optional[AnyHttpUrl] = Field(
+    db_service_url: AnyHttpUrl | None = Field(
         None, description="URL to the DB Access Service responsible for the instance."
     )

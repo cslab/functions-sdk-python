@@ -89,6 +89,248 @@ Normal Document that doesn't contain a CAD-Model.
 |z_art|str \| None|Document Type|
 |mapped_materialnr_erp|str \| None|Materialnumber ERP|
 |cdb_object_id|str \| None|Object ID|
+|pruefer|str \| None|Reviewer|
+|pruef_datum|datetime \| None|Review Date|
+|cca_char_doc_1|str \| None|Custom Char Field|
+|cca_char_doc_2|str \| None|Custom Char Field|
+|cca_char_doc_3|str \| None|Custom Char Field|
+|cca_char_doc_4|str \| None|Custom Char Field|
+|cca_char_doc_5|str \| None|Custom Char Field|
+|cca_char_doc_6|str \| None|Custom Char Field|
+|cca_char_doc_7|str \| None|Custom Char Field|
+|cca_char_doc_8|str \| None|Custom Char Field|
+|cca_char_doc_9|str \| None|Custom Char Field|
+|cca_char_doc_10|str \| None|Custom Char Field|
+|cca_char_doc_11|str \| None|Custom Char Field|
+|cca_char_doc_12|str \| None|Custom Char Field|
+|cca_char_doc_13|str \| None|Custom Char Field|
+|cca_char_doc_14|str \| None|Custom Char Field|
+|cca_char_doc_15|str \| None|Custom Char Field|
+|cca_char_doc_16|str \| None|Custom Char Field|
+|cca_char_doc_17|str \| None|Custom Char Field|
+|cca_char_doc_18|str \| None|Custom Char Field|
+|cca_char_doc_19|str \| None|Custom Char Field|
+|cca_char_doc_20|str \| None|Custom Char Field|
+|cca_integer_doc_1|int \| None|Custom Integer Field|
+|cca_integer_doc_2|int \| None|Custom Integer Field|
+|cca_integer_doc_3|int \| None|Custom Integer Field|
+|cca_integer_doc_4|int \| None|Custom Integer Field|
+|cca_integer_doc_5|int \| None|Custom Integer Field|
+|cca_integer_doc_6|int \| None|Custom Integer Field|
+|cca_integer_doc_7|int \| None|Custom Integer Field|
+|cca_integer_doc_8|int \| None|Custom Integer Field|
+|cca_integer_doc_9|int \| None|Custom Integer Field|
+|cca_integer_doc_10|int \| None|Custom Integer Field|
+|cca_integer_doc_11|int \| None|Custom Integer Field|
+|cca_integer_doc_12|int \| None|Custom Integer Field|
+|cca_integer_doc_13|int \| None|Custom Integer Field|
+|cca_integer_doc_14|int \| None|Custom Integer Field|
+|cca_integer_doc_15|int \| None|Custom Integer Field|
+|cca_integer_doc_16|int \| None|Custom Integer Field|
+|cca_integer_doc_17|int \| None|Custom Integer Field|
+|cca_integer_doc_18|int \| None|Custom Integer Field|
+|cca_integer_doc_19|int \| None|Custom Integer Field|
+|cca_integer_doc_20|int \| None|Custom Integer Field|
+|cca_float_doc_1|float \| None|Custom Float Field|
+|cca_float_doc_2|float \| None|Custom Float Field|
+|cca_float_doc_3|float \| None|Custom Float Field|
+|cca_float_doc_4|float \| None|Custom Float Field|
+|cca_float_doc_5|float \| None|Custom Float Field|
+|cca_float_doc_6|float \| None|Custom Float Field|
+|cca_float_doc_7|float \| None|Custom Float Field|
+|cca_float_doc_8|float \| None|Custom Float Field|
+|cca_float_doc_9|float \| None|Custom Float Field|
+|cca_float_doc_10|float \| None|Custom Float Field|
+|cca_float_doc_11|float \| None|Custom Float Field|
+|cca_float_doc_12|float \| None|Custom Float Field|
+|cca_float_doc_13|float \| None|Custom Float Field|
+|cca_float_doc_14|float \| None|Custom Float Field|
+|cca_float_doc_15|float \| None|Custom Float Field|
+|cca_float_doc_16|float \| None|Custom Float Field|
+|cca_float_doc_17|float \| None|Custom Float Field|
+|cca_float_doc_18|float \| None|Custom Float Field|
+|cca_float_doc_19|float \| None|Custom Float Field|
+|cca_float_doc_20|float \| None|Custom Float Field|
+|cca_date_doc_2|datetime \| None|Custom Date Field|
+|cca_date_doc_3|datetime \| None|Custom Date Field|
+|cca_date_doc_4|datetime \| None|Custom Date Field|
+|cca_date_doc_5|datetime \| None|Custom Date Field|
+|cca_date_doc_6|datetime \| None|Custom Date Field|
+|cca_date_doc_7|datetime \| None|Custom Date Field|
+|cca_date_doc_8|datetime \| None|Custom Date Field|
+|cca_date_doc_9|datetime \| None|Custom Date Field|
+|cca_date_doc_10|datetime \| None|Custom Date Field|
+|cca_date_doc_11|datetime \| None|Custom Date Field|
+|cca_date_doc_12|datetime \| None|Custom Date Field|
+|cca_date_doc_13|datetime \| None|Custom Date Field|
+|cca_date_doc_14|datetime \| None|Custom Date Field|
+|cca_date_doc_15|datetime \| None|Custom Date Field|
+|cca_date_doc_16|datetime \| None|Custom Date Field|
+|cca_date_doc_17|datetime \| None|Custom Date Field|
+|cca_date_doc_18|datetime \| None|Custom Date Field|
+|cca_date_doc_19|datetime \| None|Custom Date Field|
+|cca_date_doc_20|datetime \| None|Custom Date Field|
+|cca_date_doc_1|datetime \| None|Custom Date Field|
+|cca_bool_doc_1|bool \| None|Custom Boolean Field|
+|cca_bool_doc_2|bool \| None|Custom Boolean Field|
+|cca_bool_doc_3|bool \| None|Custom Boolean Field|
+|cca_bool_doc_4|bool \| None|Custom Boolean Field|
+|cca_bool_doc_5|bool \| None|Custom Boolean Field|
+|cca_bool_doc_6|bool \| None|Custom Boolean Field|
+|cca_bool_doc_7|bool \| None|Custom Boolean Field|
+|cca_bool_doc_8|bool \| None|Custom Boolean Field|
+|cca_bool_doc_9|bool \| None|Custom Boolean Field|
+|cca_bool_doc_10|bool \| None|Custom Boolean Field|
+|cca_bool_doc_11|bool \| None|Custom Boolean Field|
+|cca_bool_doc_12|bool \| None|Custom Boolean Field|
+|cca_bool_doc_13|bool \| None|Custom Boolean Field|
+|cca_bool_doc_14|bool \| None|Custom Boolean Field|
+|cca_bool_doc_15|bool \| None|Custom Boolean Field|
+|cca_bool_doc_16|bool \| None|Custom Boolean Field|
+|cca_bool_doc_17|bool \| None|Custom Boolean Field|
+|cca_bool_doc_18|bool \| None|Custom Boolean Field|
+|cca_bool_doc_19|bool \| None|Custom Boolean Field|
+|cca_bool_doc_20|bool \| None|Custom Boolean Field|
+|cca_bigchar_doc_1|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_2|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_3|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_4|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_5|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_6|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_7|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_8|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_9|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_10|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_11|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_12|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_13|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_14|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_15|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_16|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_17|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_18|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_19|str \| None|Custom BigChar Field|
+|cca_bigchar_doc_20|str \| None|Custom BigChar Field|
+|cca_char_model_1|str \| None|Custom Char Field|
+|cca_char_model_2|str \| None|Custom Char Field|
+|cca_char_model_3|str \| None|Custom Char Field|
+|cca_char_model_4|str \| None|Custom Char Field|
+|cca_char_model_5|str \| None|Custom Char Field|
+|cca_char_model_6|str \| None|Custom Char Field|
+|cca_char_model_7|str \| None|Custom Char Field|
+|cca_char_model_8|str \| None|Custom Char Field|
+|cca_char_model_9|str \| None|Custom Char Field|
+|cca_char_model_10|str \| None|Custom Char Field|
+|cca_char_model_11|str \| None|Custom Char Field|
+|cca_char_model_12|str \| None|Custom Char Field|
+|cca_char_model_13|str \| None|Custom Char Field|
+|cca_char_model_14|str \| None|Custom Char Field|
+|cca_char_model_15|str \| None|Custom Char Field|
+|cca_char_model_16|str \| None|Custom Char Field|
+|cca_char_model_17|str \| None|Custom Char Field|
+|cca_char_model_18|str \| None|Custom Char Field|
+|cca_char_model_19|str \| None|Custom Char Field|
+|cca_char_model_20|str \| None|Custom Char Field|
+|cca_bigchar_model_1|str \| None|Custom BigChar Field|
+|cca_bigchar_model_2|str \| None|Custom BigChar Field|
+|cca_bigchar_model_3|str \| None|Custom BigChar Field|
+|cca_bigchar_model_4|str \| None|Custom BigChar Field|
+|cca_bigchar_model_5|str \| None|Custom BigChar Field|
+|cca_bigchar_model_6|str \| None|Custom BigChar Field|
+|cca_bigchar_model_7|str \| None|Custom BigChar Field|
+|cca_bigchar_model_8|str \| None|Custom BigChar Field|
+|cca_bigchar_model_9|str \| None|Custom BigChar Field|
+|cca_bigchar_model_10|str \| None|Custom BigChar Field|
+|cca_bigchar_model_11|str \| None|Custom BigChar Field|
+|cca_bigchar_model_12|str \| None|Custom BigChar Field|
+|cca_bigchar_model_13|str \| None|Custom BigChar Field|
+|cca_bigchar_model_14|str \| None|Custom BigChar Field|
+|cca_bigchar_model_15|str \| None|Custom BigChar Field|
+|cca_bigchar_model_16|str \| None|Custom BigChar Field|
+|cca_bigchar_model_17|str \| None|Custom BigChar Field|
+|cca_bigchar_model_18|str \| None|Custom BigChar Field|
+|cca_bigchar_model_19|str \| None|Custom BigChar Field|
+|cca_bigchar_model_20|str \| None|Custom BigChar Field|
+|cca_integer_model_1|int \| None|Custom Integer Field|
+|cca_integer_model_2|int \| None|Custom Integer Field|
+|cca_integer_model_3|int \| None|Custom Integer Field|
+|cca_integer_model_4|int \| None|Custom Integer Field|
+|cca_integer_model_5|int \| None|Custom Integer Field|
+|cca_integer_model_6|int \| None|Custom Integer Field|
+|cca_integer_model_7|int \| None|Custom Integer Field|
+|cca_integer_model_8|int \| None|Custom Integer Field|
+|cca_integer_model_9|int \| None|Custom Integer Field|
+|cca_integer_model_10|int \| None|Custom Integer Field|
+|cca_integer_model_11|int \| None|Custom Integer Field|
+|cca_integer_model_12|int \| None|Custom Integer Field|
+|cca_integer_model_13|int \| None|Custom Integer Field|
+|cca_integer_model_14|int \| None|Custom Integer Field|
+|cca_integer_model_15|int \| None|Custom Integer Field|
+|cca_integer_model_16|int \| None|Custom Integer Field|
+|cca_integer_model_17|int \| None|Custom Integer Field|
+|cca_integer_model_18|int \| None|Custom Integer Field|
+|cca_integer_model_19|int \| None|Custom Integer Field|
+|cca_integer_model_20|int \| None|Custom Integer Field|
+|cca_float_model_1|float \| None|Custom Float Field|
+|cca_float_model_2|float \| None|Custom Float Field|
+|cca_float_model_3|float \| None|Custom Float Field|
+|cca_float_model_4|float \| None|Custom Float Field|
+|cca_float_model_5|float \| None|Custom Float Field|
+|cca_float_model_6|float \| None|Custom Float Field|
+|cca_float_model_7|float \| None|Custom Float Field|
+|cca_float_model_8|float \| None|Custom Float Field|
+|cca_float_model_9|float \| None|Custom Float Field|
+|cca_float_model_10|float \| None|Custom Float Field|
+|cca_float_model_11|float \| None|Custom Float Field|
+|cca_float_model_12|float \| None|Custom Float Field|
+|cca_float_model_13|float \| None|Custom Float Field|
+|cca_float_model_14|float \| None|Custom Float Field|
+|cca_float_model_15|float \| None|Custom Float Field|
+|cca_float_model_16|float \| None|Custom Float Field|
+|cca_float_model_17|float \| None|Custom Float Field|
+|cca_float_model_18|float \| None|Custom Float Field|
+|cca_float_model_19|float \| None|Custom Float Field|
+|cca_float_model_20|float \| None|Custom Float Field|
+|cca_bool_model_1|bool \| None|Custom Boolean Field|
+|cca_bool_model_2|bool \| None|Custom Boolean Field|
+|cca_bool_model_3|bool \| None|Custom Boolean Field|
+|cca_bool_model_4|bool \| None|Custom Boolean Field|
+|cca_bool_model_5|bool \| None|Custom Boolean Field|
+|cca_bool_model_6|bool \| None|Custom Boolean Field|
+|cca_bool_model_7|bool \| None|Custom Boolean Field|
+|cca_bool_model_8|bool \| None|Custom Boolean Field|
+|cca_bool_model_9|bool \| None|Custom Boolean Field|
+|cca_bool_model_10|bool \| None|Custom Boolean Field|
+|cca_bool_model_11|bool \| None|Custom Boolean Field|
+|cca_bool_model_12|bool \| None|Custom Boolean Field|
+|cca_bool_model_13|bool \| None|Custom Boolean Field|
+|cca_bool_model_14|bool \| None|Custom Boolean Field|
+|cca_bool_model_15|bool \| None|Custom Boolean Field|
+|cca_bool_model_16|bool \| None|Custom Boolean Field|
+|cca_bool_model_17|bool \| None|Custom Boolean Field|
+|cca_bool_model_18|bool \| None|Custom Boolean Field|
+|cca_bool_model_19|bool \| None|Custom Boolean Field|
+|cca_bool_model_20|bool \| None|Custom Boolean Field|
+|cca_date_model_1|datetime \| None|Custom Date Field|
+|cca_date_model_2|datetime \| None|Custom Date Field|
+|cca_date_model_3|datetime \| None|Custom Date Field|
+|cca_date_model_4|datetime \| None|Custom Date Field|
+|cca_date_model_5|datetime \| None|Custom Date Field|
+|cca_date_model_6|datetime \| None|Custom Date Field|
+|cca_date_model_7|datetime \| None|Custom Date Field|
+|cca_date_model_8|datetime \| None|Custom Date Field|
+|cca_date_model_9|datetime \| None|Custom Date Field|
+|cca_date_model_10|datetime \| None|Custom Date Field|
+|cca_date_model_11|datetime \| None|Custom Date Field|
+|cca_date_model_12|datetime \| None|Custom Date Field|
+|cca_date_model_13|datetime \| None|Custom Date Field|
+|cca_date_model_14|datetime \| None|Custom Date Field|
+|cca_date_model_15|datetime \| None|Custom Date Field|
+|cca_date_model_16|datetime \| None|Custom Date Field|
+|cca_date_model_17|datetime \| None|Custom Date Field|
+|cca_date_model_18|datetime \| None|Custom Date Field|
+|cca_date_model_19|datetime \| None|Custom Date Field|
+|cca_date_model_20|datetime \| None|Custom Date Field|
 |files|list[[File](objects.md#file)]|Files attached to the document|
 |part|typing.Optional[[Part](objects.md#part)]||
 
@@ -152,6 +394,9 @@ Normal Document that doesn't contain a CAD-Model.
 |material_id|str \| None|Material ID|
 |name_de|str \| None|Name DE|
 |name_en|str \| None|Name EN|
+|short_name|str \| None|Short Name|
+|application|str \| None|Applications|
+|remark|str \| None|Remarks|
 
 ## ObjectPropertyValue
 `csfunctions.objects.ObjectPropertyValue`
@@ -198,7 +443,7 @@ An objects property, used by classification.
 |ce_valid_to|date \| datetime \| None|Effective to|
 |mengeneinheit_name_de|str \| None|Quantity Unit|
 |mengeneinheit_name_en|str \| None|Quantity Unit|
-|st_gewicht|typing.Optional[float]|Weight (kg)|
+|st_gewicht|float \| None|Weight (kg)|
 |material_object_id|str \| None|Material ID|
 |surface_name_en|str \| None|Surface|
 |surface_name_de|str \| None|Surface|
@@ -237,8 +482,146 @@ An objects property, used by classification.
 |mengeneinheit|str \| None|Unit of Measure|
 |gebrauchsstand|str \| None|Usability|
 |st_breite|float \| None|Width|
+|cca_char_1|str \| None|Custom Char Field|
+|cca_char_2|str \| None|Custom Char Field|
+|cca_char_3|str \| None|Custom Char Field|
+|cca_char_4|str \| None|Custom Char Field|
+|cca_char_5|str \| None|Custom Char Field|
+|cca_char_6|str \| None|Custom Char Field|
+|cca_char_7|str \| None|Custom Char Field|
+|cca_char_8|str \| None|Custom Char Field|
+|cca_char_9|str \| None|Custom Char Field|
+|cca_char_10|str \| None|Custom Char Field|
+|cca_char_11|str \| None|Custom Char Field|
+|cca_char_12|str \| None|Custom Char Field|
+|cca_char_13|str \| None|Custom Char Field|
+|cca_char_14|str \| None|Custom Char Field|
+|cca_char_15|str \| None|Custom Char Field|
+|cca_char_16|str \| None|Custom Char Field|
+|cca_char_17|str \| None|Custom Char Field|
+|cca_char_18|str \| None|Custom Char Field|
+|cca_char_19|str \| None|Custom Char Field|
+|cca_char_20|str \| None|Custom Char Field|
+|cca_bigchar_part_1|str \| None|Custom BigChar Field|
+|cca_bigchar_part_2|str \| None|Custom BigChar Field|
+|cca_bigchar_part_3|str \| None|Custom BigChar Field|
+|cca_bigchar_part_4|str \| None|Custom BigChar Field|
+|cca_bigchar_part_5|str \| None|Custom BigChar Field|
+|cca_bigchar_part_6|str \| None|Custom BigChar Field|
+|cca_bigchar_part_7|str \| None|Custom BigChar Field|
+|cca_bigchar_part_8|str \| None|Custom BigChar Field|
+|cca_bigchar_part_9|str \| None|Custom BigChar Field|
+|cca_bigchar_part_10|str \| None|Custom BigChar Field|
+|cca_bigchar_part_11|str \| None|Custom BigChar Field|
+|cca_bigchar_part_12|str \| None|Custom BigChar Field|
+|cca_bigchar_part_13|str \| None|Custom BigChar Field|
+|cca_bigchar_part_14|str \| None|Custom BigChar Field|
+|cca_bigchar_part_15|str \| None|Custom BigChar Field|
+|cca_bigchar_part_16|str \| None|Custom BigChar Field|
+|cca_bigchar_part_17|str \| None|Custom BigChar Field|
+|cca_bigchar_part_18|str \| None|Custom BigChar Field|
+|cca_bigchar_part_19|str \| None|Custom BigChar Field|
+|cca_bigchar_part_20|str \| None|Custom BigChar Field|
+|cca_integer_part_1|int \| None|Custom Integer Field|
+|cca_integer_part_2|int \| None|Custom Integer Field|
+|cca_integer_part_3|int \| None|Custom Integer Field|
+|cca_integer_part_4|int \| None|Custom Integer Field|
+|cca_integer_part_5|int \| None|Custom Integer Field|
+|cca_integer_part_6|int \| None|Custom Integer Field|
+|cca_integer_part_7|int \| None|Custom Integer Field|
+|cca_integer_part_8|int \| None|Custom Integer Field|
+|cca_integer_part_9|int \| None|Custom Integer Field|
+|cca_integer_part_10|int \| None|Custom Integer Field|
+|cca_integer_part_11|int \| None|Custom Integer Field|
+|cca_integer_part_12|int \| None|Custom Integer Field|
+|cca_integer_part_13|int \| None|Custom Integer Field|
+|cca_integer_part_14|int \| None|Custom Integer Field|
+|cca_integer_part_15|int \| None|Custom Integer Field|
+|cca_integer_part_16|int \| None|Custom Integer Field|
+|cca_integer_part_17|int \| None|Custom Integer Field|
+|cca_integer_part_18|int \| None|Custom Integer Field|
+|cca_integer_part_19|int \| None|Custom Integer Field|
+|cca_integer_part_20|int \| None|Custom Integer Field|
+|cca_float_part_1|float \| None|Custom Float Field|
+|cca_float_part_2|float \| None|Custom Float Field|
+|cca_float_part_3|float \| None|Custom Float Field|
+|cca_float_part_4|float \| None|Custom Float Field|
+|cca_float_part_5|float \| None|Custom Float Field|
+|cca_float_part_6|float \| None|Custom Float Field|
+|cca_float_part_7|float \| None|Custom Float Field|
+|cca_float_part_8|float \| None|Custom Float Field|
+|cca_float_part_9|float \| None|Custom Float Field|
+|cca_float_part_10|float \| None|Custom Float Field|
+|cca_float_part_11|float \| None|Custom Float Field|
+|cca_float_part_12|float \| None|Custom Float Field|
+|cca_float_part_13|float \| None|Custom Float Field|
+|cca_float_part_14|float \| None|Custom Float Field|
+|cca_float_part_15|float \| None|Custom Float Field|
+|cca_float_part_16|float \| None|Custom Float Field|
+|cca_float_part_17|float \| None|Custom Float Field|
+|cca_float_part_18|float \| None|Custom Float Field|
+|cca_float_part_19|float \| None|Custom Float Field|
+|cca_float_part_20|float \| None|Custom Float Field|
+|cca_bool_part_1|bool \| None|Custom Boolean Field|
+|cca_bool_part_2|bool \| None|Custom Boolean Field|
+|cca_bool_part_3|bool \| None|Custom Boolean Field|
+|cca_bool_part_4|bool \| None|Custom Boolean Field|
+|cca_bool_part_5|bool \| None|Custom Boolean Field|
+|cca_bool_part_6|bool \| None|Custom Boolean Field|
+|cca_bool_part_7|bool \| None|Custom Boolean Field|
+|cca_bool_part_8|bool \| None|Custom Boolean Field|
+|cca_bool_part_9|bool \| None|Custom Boolean Field|
+|cca_bool_part_10|bool \| None|Custom Boolean Field|
+|cca_bool_part_11|bool \| None|Custom Boolean Field|
+|cca_bool_part_12|bool \| None|Custom Boolean Field|
+|cca_bool_part_13|bool \| None|Custom Boolean Field|
+|cca_bool_part_14|bool \| None|Custom Boolean Field|
+|cca_bool_part_15|bool \| None|Custom Boolean Field|
+|cca_bool_part_16|bool \| None|Custom Boolean Field|
+|cca_bool_part_17|bool \| None|Custom Boolean Field|
+|cca_bool_part_18|bool \| None|Custom Boolean Field|
+|cca_bool_part_19|bool \| None|Custom Boolean Field|
+|cca_bool_part_20|bool \| None|Custom Boolean Field|
+|cca_date_part_1|datetime \| None|Custom Date Field|
+|cca_date_part_2|datetime \| None|Custom Date Field|
+|cca_date_part_3|datetime \| None|Custom Date Field|
+|cca_date_part_4|datetime \| None|Custom Date Field|
+|cca_date_part_5|datetime \| None|Custom Date Field|
+|cca_date_part_6|datetime \| None|Custom Date Field|
+|cca_date_part_7|datetime \| None|Custom Date Field|
+|cca_date_part_8|datetime \| None|Custom Date Field|
+|cca_date_part_9|datetime \| None|Custom Date Field|
+|cca_date_part_10|datetime \| None|Custom Date Field|
+|cca_date_part_11|datetime \| None|Custom Date Field|
+|cca_date_part_12|datetime \| None|Custom Date Field|
+|cca_date_part_13|datetime \| None|Custom Date Field|
+|cca_date_part_14|datetime \| None|Custom Date Field|
+|cca_date_part_15|datetime \| None|Custom Date Field|
+|cca_date_part_16|datetime \| None|Custom Date Field|
+|cca_date_part_17|datetime \| None|Custom Date Field|
+|cca_date_part_18|datetime \| None|Custom Date Field|
+|cca_date_part_19|datetime \| None|Custom Date Field|
+|cca_date_part_20|datetime \| None|Custom Date Field|
 |document_ids|list[str]|List of document IDs, that were changed. (z_nummer@z_index)|
 |documents|list[[Document](objects.md#document)]||
+
+## Person
+`csfunctions.objects.Person`
+
+|Attribute|Type|Description|
+|-|-|-|
+|personalnummer|str|Personal Number|
+|name|str|System-Name|
+|firstname|str \| None|First Name|
+|lastname|str \| None|Last Name|
+|gender|str \| None|Gender|
+|title|str \| None|Title|
+|initials|str \| None|Initials|
+|active_account|bool \| None|Active Account|
+|org_id|str \| None|Organization ID|
+|abt_nummer|str \| None|Department Number|
+|e_mail|str \| None|Email|
+|telefon|str \| None|Phone|
 
 ## Workflow
 `csfunctions.objects.Workflow`
