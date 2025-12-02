@@ -1,6 +1,6 @@
 # Basic Report
 
-This example shows, how you can use custom operations to generate a basic report on a document and attach that report to the document.
+This example shows how you can use custom operations to generate a basic report on a document and attach that report to the document.
 
 The example uses [python-docx](https://python-docx.readthedocs.io/en/latest/) to generate a Word file.
 To install the library in your Function, you need to add it to the `requirements.txt`:
