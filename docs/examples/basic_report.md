@@ -39,7 +39,7 @@ def simple_report(metadata: MetaData, event: CustomOperationDocumentEvent, servi
             # we need to use a tempfile, because the rest of the filesystem is read-only
             with tempfile.NamedTemporaryFile(suffix=".docx", delete=False) as tmp:
                 temp_file_path = tmp.name
-            report.save("test.docx")
+            report.save(temp_file_path)
 
             # check if the document already has a report file, so we can overwrite it
             file_name = "myreport.docx"
