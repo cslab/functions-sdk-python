@@ -48,11 +48,13 @@ def simple_report(metadata: MetaData, event: CustomOperationDocumentEvent, servi
             with open(temp_file_path, "rb") as file_stream:
                 if existing_file:
                     # overwrite the existing report file
+                    # we set check_access to false to allow attaching reports to released documents
                     service.file_upload.upload_file_content(
                         file_object_id=existing_file.cdb_object_id, stream=file_stream, check_access=False
                     )
                 else:
                     # create a new one
+                    # we set check_access to false to allow attaching reports to released documents
                     service.file_upload.upload_new_file(
                         parent_object_id=document.cdb_object_id,  # type: ignore
                         filename=file_name,
