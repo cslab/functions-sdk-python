@@ -2,6 +2,12 @@ from typing import Annotated
 
 from pydantic import Field
 
+from .custom_operations import (
+    CustomOperationDocumentData,
+    CustomOperationDocumentEvent,
+    CustomOperationPartData,
+    CustomOperationPartEvent,
+)
 from .dialog_data import DocumentReleasedDialogData, PartReleasedDialogData
 from .document_create_check import DocumentCreateCheckData, DocumentCreateCheckEvent
 from .document_field_calculation import DocumentFieldCalculationData, DocumentFieldCalculationEvent
@@ -41,7 +47,9 @@ Event = Annotated[
     | DocumentCreateCheckEvent
     | DocumentModifyCheckEvent
     | PartCreateCheckEvent
-    | PartModifyCheckEvent,
+    | PartModifyCheckEvent
+    | CustomOperationDocumentEvent
+    | CustomOperationPartEvent,
     Field(discriminator="name"),
 ]
 EventData = (
@@ -62,6 +70,8 @@ EventData = (
     | DocumentModifyCheckData
     | PartCreateCheckData
     | PartModifyCheckData
+    | CustomOperationDocumentData
+    | CustomOperationPartData
 )
 
 __all__ = [
@@ -99,4 +109,8 @@ __all__ = [
     "PartCreateCheckEvent",
     "PartModifyCheckData",
     "PartModifyCheckEvent",
+    "CustomOperationDocumentData",
+    "CustomOperationDocumentEvent",
+    "CustomOperationPartData",
+    "CustomOperationPartEvent",
 ]

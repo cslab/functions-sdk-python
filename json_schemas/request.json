@@ -85,6 +85,108 @@
       "title": "Briefcase",
       "type": "object"
     },
+    "CustomOperationDocumentData": {
+      "properties": {
+        "documents": {
+          "description": "List of documents that the custom operation was called on",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of parts that belong to the documents",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "parts"
+      ],
+      "title": "CustomOperationDocumentData",
+      "type": "object"
+    },
+    "CustomOperationDocumentEvent": {
+      "description": "Event triggered when a custom operation is called on a document.",
+      "properties": {
+        "name": {
+          "const": "custom_operation_document",
+          "default": "custom_operation_document",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/CustomOperationDocumentData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "CustomOperationDocumentEvent",
+      "type": "object"
+    },
+    "CustomOperationPartData": {
+      "properties": {
+        "parts": {
+          "description": "List of parts that the custom operation was called on",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "documents": {
+          "description": "List of documents that belong to the parts",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        }
+      },
+      "required": [
+        "parts",
+        "documents"
+      ],
+      "title": "CustomOperationPartData",
+      "type": "object"
+    },
+    "CustomOperationPartEvent": {
+      "description": "Event triggered when a custom operation is called on a part.",
+      "properties": {
+        "name": {
+          "const": "custom_operation_part",
+          "default": "custom_operation_part",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/CustomOperationPartData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "CustomOperationPartEvent",
+      "type": "object"
+    },
     "Document": {
       "description": "Normal Document that doesn't contain a CAD-Model.",
       "properties": {
@@ -7957,6 +8059,8 @@
     "event": {
       "discriminator": {
         "mapping": {
+          "custom_operation_document": "#/$defs/CustomOperationDocumentEvent",
+          "custom_operation_part": "#/$defs/CustomOperationPartEvent",
           "document_create_check": "#/$defs/DocumentCreateCheckEvent",
           "document_field_calculation": "#/$defs/DocumentFieldCalculationEvent",
           "document_modify_check": "#/$defs/DocumentModifyCheckEvent",
@@ -8028,6 +8132,12 @@
         },
         {
           "$ref": "#/$defs/PartModifyCheckEvent"
+        },
+        {
+          "$ref": "#/$defs/CustomOperationDocumentEvent"
+        },
+        {
+          "$ref": "#/$defs/CustomOperationPartEvent"
         }
       ],
       "title": "Event"

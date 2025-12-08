@@ -317,3 +317,44 @@ This event is fired when a user tries to modify an engineering change's status. 
 | target_status      | int                                               | The status the engineering change will be set to          |
 | documents          | list[[Document](objects.md#document)]             | List of documents attached to the engineering change      |
 | parts              | list[[Part](objects.md#part)]                     | List of parts attached to the engineering change          |
+
+
+## CustomOperationDocumentEvent
+`csfunctions.events.CustomOperationDocumentEvent`
+
+
+This event is triggered when a custom operation is called on one or more documents.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#startworkflowaction)
+- [AbortAndShowErrorAction](actions.md#abortandshowerroraction)
+
+**CustomOperationDocumentEvent.name:** custom_operation_document
+
+**CustomOperationDocumentEvent.data:**
+
+| Attribute | Type                                  | Description                                                |
+| --------- | ------------------------------------- | ---------------------------------------------------------- |
+| documents | list[[Document](objects.md#document)] | List of documents that the custom operation was called on. |
+| parts     | list[[Part](objects.md#part)]         | List of parts that belong to the documents.                |
+
+## CustomOperationPartEvent
+`csfunctions.events.CustomOperationPartEvent`
+
+
+This event is triggered when a custom operation is called on one or more parts.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#startworkflowaction)
+- [AbortAndShowErrorAction](actions.md#abortandshowerroraction)
+
+**CustomOperationPartEvent.name:** custom_operation_part
+
+**CustomOperationPartEvent.data:**
+
+| Attribute | Type                                  | Description                                            |
+| --------- | ------------------------------------- | ------------------------------------------------------ |
+| parts     | list[[Part](objects.md#part)]         | List of parts that the custom operation was called on. |
+| documents | list[[Document](objects.md#document)] | List of documents that belong to the parts.            |
