@@ -3,6 +3,9 @@ hide:
   - toc
 ---
 
+### Version 0.20.0
+- Feat: Add Custom operations for documents and parts
+
 ### Version 0.19.0
 - Feat: Add reviewer and review date fields to documents
 
