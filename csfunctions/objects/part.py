@@ -247,3 +247,12 @@ class BOMItem(BaseObject):
     mengeneinheit: str | None = Field(None, description="Unit of Measure")
     teilenummer: str = Field(..., description="part number")
     t_index: str = Field(..., description="part index")
+
+    part: Part | None = Field(None, description="Part of the BOM item", exclude=True)
+
+    def link_objects(self, data: "EventData"):
+        parts = get_items_of_type(data, Part)
+        for part in parts:
+            if part.teilenummer == self.teilenummer and part.t_index == self.t_index:
+                self.part = part
+                break
