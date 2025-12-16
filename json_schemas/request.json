@@ -161,6 +161,1586 @@
           "title": "T Index",
           "type": "string"
         },
+        "cca_char_bom_item_1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 1"
+        },
+        "cca_char_bom_item_2": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 2"
+        },
+        "cca_char_bom_item_3": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 3"
+        },
+        "cca_char_bom_item_4": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 4"
+        },
+        "cca_char_bom_item_5": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 5"
+        },
+        "cca_char_bom_item_6": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 6"
+        },
+        "cca_char_bom_item_7": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 7"
+        },
+        "cca_char_bom_item_8": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 8"
+        },
+        "cca_char_bom_item_9": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 9"
+        },
+        "cca_char_bom_item_10": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 10"
+        },
+        "cca_char_bom_item_11": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 11"
+        },
+        "cca_char_bom_item_12": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 12"
+        },
+        "cca_char_bom_item_13": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 13"
+        },
+        "cca_char_bom_item_14": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 14"
+        },
+        "cca_char_bom_item_15": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 15"
+        },
+        "cca_char_bom_item_16": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 16"
+        },
+        "cca_char_bom_item_17": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 17"
+        },
+        "cca_char_bom_item_18": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 18"
+        },
+        "cca_char_bom_item_19": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 19"
+        },
+        "cca_char_bom_item_20": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Char Field",
+          "title": "Cca Char Bom Item 20"
+        },
+        "cca_bigchar_bom_item_1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 1"
+        },
+        "cca_bigchar_bom_item_2": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 2"
+        },
+        "cca_bigchar_bom_item_3": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 3"
+        },
+        "cca_bigchar_bom_item_4": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 4"
+        },
+        "cca_bigchar_bom_item_5": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 5"
+        },
+        "cca_bigchar_bom_item_6": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 6"
+        },
+        "cca_bigchar_bom_item_7": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 7"
+        },
+        "cca_bigchar_bom_item_8": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 8"
+        },
+        "cca_bigchar_bom_item_9": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 9"
+        },
+        "cca_bigchar_bom_item_10": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 10"
+        },
+        "cca_bigchar_bom_item_11": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 11"
+        },
+        "cca_bigchar_bom_item_12": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 12"
+        },
+        "cca_bigchar_bom_item_13": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 13"
+        },
+        "cca_bigchar_bom_item_14": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 14"
+        },
+        "cca_bigchar_bom_item_15": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 15"
+        },
+        "cca_bigchar_bom_item_16": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 16"
+        },
+        "cca_bigchar_bom_item_17": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 17"
+        },
+        "cca_bigchar_bom_item_18": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 18"
+        },
+        "cca_bigchar_bom_item_19": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 19"
+        },
+        "cca_bigchar_bom_item_20": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom BigChar Field",
+          "title": "Cca Bigchar Bom Item 20"
+        },
+        "cca_integer_bom_item_1": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 1"
+        },
+        "cca_integer_bom_item_2": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 2"
+        },
+        "cca_integer_bom_item_3": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 3"
+        },
+        "cca_integer_bom_item_4": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 4"
+        },
+        "cca_integer_bom_item_5": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 5"
+        },
+        "cca_integer_bom_item_6": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 6"
+        },
+        "cca_integer_bom_item_7": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 7"
+        },
+        "cca_integer_bom_item_8": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 8"
+        },
+        "cca_integer_bom_item_9": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 9"
+        },
+        "cca_integer_bom_item_10": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 10"
+        },
+        "cca_integer_bom_item_11": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 11"
+        },
+        "cca_integer_bom_item_12": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 12"
+        },
+        "cca_integer_bom_item_13": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 13"
+        },
+        "cca_integer_bom_item_14": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 14"
+        },
+        "cca_integer_bom_item_15": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 15"
+        },
+        "cca_integer_bom_item_16": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 16"
+        },
+        "cca_integer_bom_item_17": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 17"
+        },
+        "cca_integer_bom_item_18": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 18"
+        },
+        "cca_integer_bom_item_19": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 19"
+        },
+        "cca_integer_bom_item_20": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Integer Field",
+          "title": "Cca Integer Bom Item 20"
+        },
+        "cca_float_bom_item_1": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 1"
+        },
+        "cca_float_bom_item_2": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 2"
+        },
+        "cca_float_bom_item_3": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 3"
+        },
+        "cca_float_bom_item_4": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 4"
+        },
+        "cca_float_bom_item_5": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 5"
+        },
+        "cca_float_bom_item_6": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 6"
+        },
+        "cca_float_bom_item_7": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 7"
+        },
+        "cca_float_bom_item_8": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 8"
+        },
+        "cca_float_bom_item_9": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 9"
+        },
+        "cca_float_bom_item_10": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 10"
+        },
+        "cca_float_bom_item_11": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 11"
+        },
+        "cca_float_bom_item_12": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 12"
+        },
+        "cca_float_bom_item_13": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 13"
+        },
+        "cca_float_bom_item_14": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 14"
+        },
+        "cca_float_bom_item_15": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 15"
+        },
+        "cca_float_bom_item_16": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 16"
+        },
+        "cca_float_bom_item_17": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 17"
+        },
+        "cca_float_bom_item_18": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 18"
+        },
+        "cca_float_bom_item_19": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 19"
+        },
+        "cca_float_bom_item_20": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Float Field",
+          "title": "Cca Float Bom Item 20"
+        },
+        "cca_bool_bom_item_1": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 1"
+        },
+        "cca_bool_bom_item_2": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 2"
+        },
+        "cca_bool_bom_item_3": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 3"
+        },
+        "cca_bool_bom_item_4": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 4"
+        },
+        "cca_bool_bom_item_5": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 5"
+        },
+        "cca_bool_bom_item_6": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 6"
+        },
+        "cca_bool_bom_item_7": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 7"
+        },
+        "cca_bool_bom_item_8": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 8"
+        },
+        "cca_bool_bom_item_9": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 9"
+        },
+        "cca_bool_bom_item_10": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 10"
+        },
+        "cca_bool_bom_item_11": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 11"
+        },
+        "cca_bool_bom_item_12": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 12"
+        },
+        "cca_bool_bom_item_13": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 13"
+        },
+        "cca_bool_bom_item_14": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 14"
+        },
+        "cca_bool_bom_item_15": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 15"
+        },
+        "cca_bool_bom_item_16": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 16"
+        },
+        "cca_bool_bom_item_17": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 17"
+        },
+        "cca_bool_bom_item_18": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 18"
+        },
+        "cca_bool_bom_item_19": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 19"
+        },
+        "cca_bool_bom_item_20": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Boolean Field",
+          "title": "Cca Bool Bom Item 20"
+        },
+        "cca_date_bom_item_1": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 1"
+        },
+        "cca_date_bom_item_2": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 2"
+        },
+        "cca_date_bom_item_3": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 3"
+        },
+        "cca_date_bom_item_4": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 4"
+        },
+        "cca_date_bom_item_5": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 5"
+        },
+        "cca_date_bom_item_6": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 6"
+        },
+        "cca_date_bom_item_7": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 7"
+        },
+        "cca_date_bom_item_8": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 8"
+        },
+        "cca_date_bom_item_9": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 9"
+        },
+        "cca_date_bom_item_10": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 10"
+        },
+        "cca_date_bom_item_11": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 11"
+        },
+        "cca_date_bom_item_12": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 12"
+        },
+        "cca_date_bom_item_13": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 13"
+        },
+        "cca_date_bom_item_14": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 14"
+        },
+        "cca_date_bom_item_15": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 15"
+        },
+        "cca_date_bom_item_16": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 16"
+        },
+        "cca_date_bom_item_17": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 17"
+        },
+        "cca_date_bom_item_18": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 18"
+        },
+        "cca_date_bom_item_19": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 19"
+        },
+        "cca_date_bom_item_20": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Custom Date Field",
+          "title": "Cca Date Bom Item 20"
+        },
         "part": {
           "anyOf": [
             {
