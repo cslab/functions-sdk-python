@@ -17,6 +17,7 @@
 |mengeneinheit|str \| None|Unit of Measure|
 |teilenummer|str|part number|
 |t_index|str|part index|
+|part|[Part](objects.md#part) \| None|Part of the BOM item|
 
 ## Briefcase
 `csfunctions.objects.Briefcase`
