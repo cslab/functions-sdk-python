@@ -201,12 +201,21 @@
         "part": {
           "$ref": "#/$defs/Part",
           "description": "Part of the BOM item"
+        },
+        "documents": {
+          "description": "List of documents that are referenced by the part.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
         }
       },
       "required": [
         "bom_item",
         "action",
-        "part"
+        "part",
+        "documents"
       ],
       "title": "BOMItemFieldCalculationData",
       "type": "object"
