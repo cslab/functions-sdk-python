@@ -26,4 +26,6 @@ def get_items_of_type(model: BaseModel, target_type: type[T]) -> list[T]:
             for item in attr:
                 if isinstance(item, target_type):
                     items.append(item)
+        elif isinstance(attr, target_type):
+            items.append(attr)
     return items
