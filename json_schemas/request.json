@@ -1,5 +1,240 @@
 {
   "$defs": {
+    "BOMItem": {
+      "properties": {
+        "object_type": {
+          "const": "bom_item",
+          "default": "bom_item",
+          "title": "Object Type",
+          "type": "string"
+        },
+        "baugruppe": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Assembly",
+          "title": "Baugruppe"
+        },
+        "b_index": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Assembly Index",
+          "title": "B Index"
+        },
+        "component_materialnr_erp": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Material Number ERP Component",
+          "title": "Component Materialnr Erp"
+        },
+        "netto_durchm": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Net. Diameter",
+          "title": "Netto Durchm"
+        },
+        "netto_hoehe": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Net. Height",
+          "title": "Netto Hoehe"
+        },
+        "netto_laenge": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Net. Length",
+          "title": "Netto Laenge"
+        },
+        "netto_breite": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Net. Width",
+          "title": "Netto Breite"
+        },
+        "position": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Position",
+          "title": "Position"
+        },
+        "menge": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Quantity",
+          "title": "Menge"
+        },
+        "stlbemerkung": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Remarks",
+          "title": "Stlbemerkung"
+        },
+        "mengeneinheit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Unit of Measure",
+          "title": "Mengeneinheit"
+        },
+        "teilenummer": {
+          "description": "part number",
+          "title": "Teilenummer",
+          "type": "string"
+        },
+        "t_index": {
+          "description": "part index",
+          "title": "T Index",
+          "type": "string"
+        },
+        "part": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Part"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Part of the BOM item"
+        }
+      },
+      "required": [
+        "teilenummer",
+        "t_index"
+      ],
+      "title": "BOMItem",
+      "type": "object"
+    },
+    "BOMItemFieldCalculationData": {
+      "properties": {
+        "bom_item": {
+          "$ref": "#/$defs/BOMItem",
+          "description": "Current state of the BOM item"
+        },
+        "action": {
+          "description": "Action being performed",
+          "enum": [
+            "create",
+            "modify",
+            "copy",
+            "index"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "part": {
+          "$ref": "#/$defs/Part",
+          "description": "Part of the BOM item"
+        }
+      },
+      "required": [
+        "bom_item",
+        "action",
+        "part"
+      ],
+      "title": "BOMItemFieldCalculationData",
+      "type": "object"
+    },
+    "BOMItemFieldCalculationEvent": {
+      "properties": {
+        "name": {
+          "const": "bom_item_field_calculation",
+          "default": "bom_item_field_calculation",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/BOMItemFieldCalculationData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "BOMItemFieldCalculationEvent",
+      "type": "object"
+    },
     "Briefcase": {
       "description": "Briefcases are used by Workflows and can contain parts, documents or engineering changes.",
       "properties": {
@@ -8059,6 +8294,7 @@
     "event": {
       "discriminator": {
         "mapping": {
+          "bom_item_field_calculation": "#/$defs/BOMItemFieldCalculationEvent",
           "custom_operation_document": "#/$defs/CustomOperationDocumentEvent",
           "custom_operation_part": "#/$defs/CustomOperationPartEvent",
           "document_create_check": "#/$defs/DocumentCreateCheckEvent",
@@ -8099,6 +8335,9 @@
         },
         {
           "$ref": "#/$defs/PartFieldCalculationEvent"
+        },
+        {
+          "$ref": "#/$defs/BOMItemFieldCalculationEvent"
         },
         {
           "$ref": "#/$defs/FieldValueCalculationEvent"
