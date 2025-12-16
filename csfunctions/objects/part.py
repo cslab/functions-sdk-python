@@ -234,6 +234,8 @@ class Material(BaseObject):
 class BOMItem(BaseObject):
     object_type: Literal[ObjectType.BOM_ITEM] = ObjectType.BOM_ITEM
 
+    cdb_object_id: str | None = Field(None, description="Object ID")
+
     baugruppe: str | None = Field(None, description="Assembly")
     b_index: str | None = Field(None, description="Assembly Index")
     component_materialnr_erp: str | None = Field(None, description="Material Number ERP Component")
