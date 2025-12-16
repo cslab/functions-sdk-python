@@ -276,11 +276,12 @@ The event expects a DataResponse containing a dictionary of field names and thei
 
 **BOMItemFieldCalculationEvent.data:**
 
-| Attribute | Type                                         | Description                   |
-| --------- | -------------------------------------------- | ----------------------------- |
-| bom_item  | [BOMItem](objects.md#bomitem)                | Current state of the BOM item |
-| action    | Literal["create", "modify", "copy", "index"] | Action being performed        |
-| part      | [Part](objects.md#part)                      | Part of the BOM item          |
+| Attribute | Type                                         | Description                                        |
+| --------- | -------------------------------------------- | -------------------------------------------------- |
+| bom_item  | [BOMItem](objects.md#bomitem)                | Current state of the BOM item                      |
+| action    | Literal["create", "modify", "copy", "index"] | Action being performed                             |
+| part      | [Part](objects.md#part)                      | Part of the BOM item                               |
+| documents | list[[Document](objects.md#document)]        | List of documents that are referenced by the part. |
 
 
 ## WorkflowTaskTriggerEvent
