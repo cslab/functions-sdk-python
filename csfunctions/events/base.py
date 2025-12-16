@@ -11,6 +11,7 @@ class EventNames(str, Enum):
     PART_RELEASED = "part_released"
     PART_RELEASE_CHECK = "part_release_check"
     PART_FIELD_CALCULATION = "part_field_calculation"
+    BOM_ITEM_FIELD_CALCULATION = "bom_item_field_calculation"
     ENGINEERING_CHANGE_RELEASED = "engineering_change_released"
     ENGINEERING_CHANGE_RELEASE_CHECK = "engineering_change_release_check"
     FIELD_VALUE_CALCULATION = "field_value_calculation"

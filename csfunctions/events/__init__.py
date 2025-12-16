@@ -2,6 +2,7 @@ from typing import Annotated
 
 from pydantic import Field
 
+from .bom_item_field_calculation import BOMItemFieldCalculationData, BOMItemFieldCalculationEvent
 from .custom_operations import (
     CustomOperationDocumentData,
     CustomOperationDocumentEvent,
@@ -37,6 +38,7 @@ Event = Annotated[
     | PartReleasedEvent
     | PartReleaseCheckEvent
     | PartFieldCalculationEvent
+    | BOMItemFieldCalculationEvent
     | FieldValueCalculationEvent
     | DummyEvent
     | EngineeringChangeReleasedEvent
@@ -59,6 +61,7 @@ EventData = (
     | PartReleasedData
     | PartReleaseCheckData
     | PartFieldCalculationData
+    | BOMItemFieldCalculationData
     | FieldValueCalculationData
     | DummyEventData
     | EngineeringChangeReleasedData
@@ -81,6 +84,7 @@ __all__ = [
     "PartReleasedEvent",
     "PartReleaseCheckEvent",
     "PartFieldCalculationEvent",
+    "BOMItemFieldCalculationEvent",
     "FieldValueCalculationEvent",
     "DummyEvent",
     "EngineeringChangeReleasedEvent",
@@ -91,6 +95,7 @@ __all__ = [
     "DocumentFieldCalculationData",
     "PartReleasedData",
     "PartReleaseCheckData",
+    "BOMItemFieldCalculationData",
     "FieldValueCalculationData",
     "DummyEventData",
     "EngineeringChangeReleasedData",
