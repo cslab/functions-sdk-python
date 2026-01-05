@@ -8,6 +8,19 @@
           "title": "Object Type",
           "type": "string"
         },
+        "cdb_object_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Object ID",
+          "title": "Cdb Object Id"
+        },
         "baugruppe": {
           "anyOf": [
             {
