@@ -1,0 +1,4613 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../events/">
+      
+      
+        <link rel="next" href="../actions/">
+      
+      
+      <link rel="icon" href="../../assets/branding_web_favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Objects - Functions-SDK for Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bomitem" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Functions-SDK for Python" class="md-header__button md-logo" aria-label="Functions-SDK for Python" data-md-component="logo">
+      
+  <img src="../../assets/branding_web_app_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Functions-SDK for Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Objects
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cslab/functions-sdk-python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Functions-SDK for Python" class="md-nav__button md-logo" aria-label="Functions-SDK for Python" data-md-component="logo">
+      
+  <img src="../../assets/branding_web_app_icon.png" alt="logo">
+
+    </a>
+    Functions-SDK for Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cslab/functions-sdk-python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../key_concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/enforce_field_rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enforce field rules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/field_calculation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Field calculation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Working with workflows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/basic_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic Report
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Objects
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Objects
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bomitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      BOMItem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#briefcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Briefcase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineeringchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      EngineeringChange
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
+      File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectpropertyvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      ObjectPropertyValue
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#person" class="md-nav__link">
+    <span class="md-ellipsis">
+      Person
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions Access Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python runtime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release_notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Releases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bomitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      BOMItem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#briefcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Briefcase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineeringchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      EngineeringChange
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
+      File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectpropertyvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      ObjectPropertyValue
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#person" class="md-nav__link">
+    <span class="md-ellipsis">
+      Person
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Objects</h1>
+
+<h2 id="bomitem">BOMItem</h2>
+<p><code>csfunctions.objects.BOMItem</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>baugruppe</td>
+<td>str | None</td>
+<td>Assembly</td>
+</tr>
+<tr>
+<td>b_index</td>
+<td>str | None</td>
+<td>Assembly Index</td>
+</tr>
+<tr>
+<td>component_materialnr_erp</td>
+<td>str | None</td>
+<td>Material Number ERP Component</td>
+</tr>
+<tr>
+<td>netto_durchm</td>
+<td>float | None</td>
+<td>Net. Diameter</td>
+</tr>
+<tr>
+<td>netto_hoehe</td>
+<td>float | None</td>
+<td>Net. Height</td>
+</tr>
+<tr>
+<td>netto_laenge</td>
+<td>float | None</td>
+<td>Net. Length</td>
+</tr>
+<tr>
+<td>netto_breite</td>
+<td>float | None</td>
+<td>Net. Width</td>
+</tr>
+<tr>
+<td>position</td>
+<td>int | None</td>
+<td>Position</td>
+</tr>
+<tr>
+<td>menge</td>
+<td>float | None</td>
+<td>Quantity</td>
+</tr>
+<tr>
+<td>stlbemerkung</td>
+<td>str | None</td>
+<td>Remarks</td>
+</tr>
+<tr>
+<td>mengeneinheit</td>
+<td>str | None</td>
+<td>Unit of Measure</td>
+</tr>
+<tr>
+<td>teilenummer</td>
+<td>str</td>
+<td>part number</td>
+</tr>
+<tr>
+<td>t_index</td>
+<td>str</td>
+<td>part index</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_1</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_2</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_3</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_4</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_5</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_6</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_7</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_8</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_9</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_10</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_11</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_12</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_13</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_14</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_15</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_16</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_17</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_18</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_19</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_bom_item_20</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_1</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_2</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_3</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_4</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_5</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_6</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_7</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_8</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_9</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_10</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_11</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_12</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_13</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_14</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_15</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_16</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_17</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_18</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_19</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_bom_item_20</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_1</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_2</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_3</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_4</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_5</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_6</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_7</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_8</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_9</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_10</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_11</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_12</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_13</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_14</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_15</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_16</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_17</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_18</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_19</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_bom_item_20</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_1</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_2</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_3</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_4</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_5</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_6</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_7</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_8</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_9</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_10</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_11</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_12</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_13</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_14</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_15</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_16</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_17</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_18</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_19</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_bom_item_20</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_1</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_2</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_3</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_4</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_5</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_6</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_7</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_8</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_9</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_10</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_11</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_12</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_13</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_14</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_15</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_16</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_17</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_18</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_19</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_bom_item_20</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_1</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_2</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_3</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_4</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_5</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_6</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_7</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_8</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_9</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_10</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_11</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_12</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_13</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_14</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_15</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_16</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_17</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_18</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_19</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_bom_item_20</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>part</td>
+<td><a href="./#part">Part</a> | None</td>
+<td>Part of the BOM item</td>
+</tr>
+</tbody>
+</table>
+<h2 id="briefcase">Briefcase</h2>
+<p><code>csfunctions.objects.Briefcase</code></p>
+<p>Briefcases are used by Workflows and can contain parts, documents or engineering changes.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cdb_object_id</td>
+<td>str</td>
+<td>Briefcase ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>str | None</td>
+<td>Briefcase Name</td>
+</tr>
+<tr>
+<td>part_ids</td>
+<td>list[str]</td>
+<td>List of part IDs in this Briefcase. (teilenummer@t_index)</td>
+</tr>
+<tr>
+<td>document_ids</td>
+<td>list[str]</td>
+<td>List of document IDs in this Briefcase. (z_nummer@z_index)</td>
+</tr>
+<tr>
+<td>engineering_change_ids</td>
+<td>list[str]</td>
+<td>List of engineering change IDs in this Briefcase. (cdb_ec_id)</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>list[<a href="./#part">Part</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="./#document">Document</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td>engineering_changes</td>
+<td>list[<a href="./#engineeringchange">EngineeringChange</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="document">Document</h2>
+<p><code>csfunctions.objects.Document</code></p>
+<p>Normal Document that doesn't contain a CAD-Model.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>z_nummer</td>
+<td>str</td>
+<td>document number</td>
+</tr>
+<tr>
+<td>z_index</td>
+<td>str</td>
+<td>index</td>
+</tr>
+<tr>
+<td>titel</td>
+<td>str | None</td>
+<td>title</td>
+</tr>
+<tr>
+<td>category1_name_en</td>
+<td>str | None</td>
+<td>Main Category</td>
+</tr>
+<tr>
+<td>category1_name_de</td>
+<td>str | None</td>
+<td>Main Category</td>
+</tr>
+<tr>
+<td>category2_name_en</td>
+<td>str | None</td>
+<td>Category</td>
+</tr>
+<tr>
+<td>category2_name_de</td>
+<td>str | None</td>
+<td>Category</td>
+</tr>
+<tr>
+<td>z_categ1</td>
+<td>str | None</td>
+<td>Main Category</td>
+</tr>
+<tr>
+<td>z_categ2</td>
+<td>str | None</td>
+<td>Category</td>
+</tr>
+<tr>
+<td>cdb_obsolete</td>
+<td>int | None</td>
+<td>Obsolete</td>
+</tr>
+<tr>
+<td>z_status</td>
+<td>int</td>
+<td>Status Number</td>
+</tr>
+<tr>
+<td>z_status_txt</td>
+<td>str</td>
+<td>Status Text</td>
+</tr>
+<tr>
+<td>autoren</td>
+<td>str | None</td>
+<td>Authors, comma separated</td>
+</tr>
+<tr>
+<td>z_bereich</td>
+<td>str | None</td>
+<td>Department.</td>
+</tr>
+<tr>
+<td>z_language</td>
+<td>str | None</td>
+<td>language</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>str | None</td>
+<td>Keywords</td>
+</tr>
+<tr>
+<td>z_bemerkung</td>
+<td>str | None</td>
+<td>Remarks</td>
+</tr>
+<tr>
+<td>joined_status_name</td>
+<td>str | None</td>
+<td>Status</td>
+</tr>
+<tr>
+<td>erzeug_system</td>
+<td>str | None</td>
+<td>Program that created the document</td>
+</tr>
+<tr>
+<td>cdb_lock</td>
+<td>str | None</td>
+<td>User that locked the document.</td>
+</tr>
+<tr>
+<td>mapped_cdb_lock_name</td>
+<td>str | None</td>
+<td>Username that locked the document.</td>
+</tr>
+<tr>
+<td>ce_valid_from</td>
+<td>date | datetime | None</td>
+<td>Effective from</td>
+</tr>
+<tr>
+<td>ce_valid_to</td>
+<td>date | datetime | None</td>
+<td>Effective to</td>
+</tr>
+<tr>
+<td>cdb_ec_id</td>
+<td>str | None</td>
+<td>Engineering Change ID</td>
+</tr>
+<tr>
+<td>ursprungs_z</td>
+<td>str | None</td>
+<td>Origin</td>
+</tr>
+<tr>
+<td>teilenummer</td>
+<td>str | None</td>
+<td>Part No.</td>
+</tr>
+<tr>
+<td>t_index</td>
+<td>str | None</td>
+<td>Part Index</td>
+</tr>
+<tr>
+<td>cdb_project_id</td>
+<td>str | None</td>
+<td>Project No.</td>
+</tr>
+<tr>
+<td>project_name</td>
+<td>str | None</td>
+<td>Project Name</td>
+</tr>
+<tr>
+<td>src_name</td>
+<td>str | None</td>
+<td>Source</td>
+</tr>
+<tr>
+<td>src_cdate</td>
+<td>datetime | None</td>
+<td>Source created on</td>
+</tr>
+<tr>
+<td>src_rdate</td>
+<td>datetime | None</td>
+<td>Source received on</td>
+</tr>
+<tr>
+<td>src_number</td>
+<td>str | None</td>
+<td>Original No.</td>
+</tr>
+<tr>
+<td>src_index</td>
+<td>str | None</td>
+<td>Original Index</td>
+</tr>
+<tr>
+<td>src_fname</td>
+<td>str | None</td>
+<td>Original Filename</td>
+</tr>
+<tr>
+<td>source_oid</td>
+<td>str | None</td>
+<td>Based on Template</td>
+</tr>
+<tr>
+<td>cdb_cpersno</td>
+<td>str | None</td>
+<td>Created by</td>
+</tr>
+<tr>
+<td>mapped_cdb_cpersno_name</td>
+<td>str | None</td>
+<td>Created by</td>
+</tr>
+<tr>
+<td>cdb_cdate</td>
+<td>datetime | None</td>
+<td>Created on</td>
+</tr>
+<tr>
+<td>cdb_mpersno</td>
+<td>str | None</td>
+<td>Last Modified by</td>
+</tr>
+<tr>
+<td>mapped_cdb_mpersno_name</td>
+<td>str | None</td>
+<td>Last Modified by</td>
+</tr>
+<tr>
+<td>cdb_mdate</td>
+<td>datetime | None</td>
+<td>Last Modified on</td>
+</tr>
+<tr>
+<td>cdb_m2persno</td>
+<td>str | None</td>
+<td>File Last Saved by</td>
+</tr>
+<tr>
+<td>mapped_cdb_m2persno_name</td>
+<td>str | None</td>
+<td>File Last Saved by</td>
+</tr>
+<tr>
+<td>cdb_m2date</td>
+<td>datetime | None</td>
+<td>File Last Saved on</td>
+</tr>
+<tr>
+<td>z_art</td>
+<td>str | None</td>
+<td>Document Type</td>
+</tr>
+<tr>
+<td>mapped_materialnr_erp</td>
+<td>str | None</td>
+<td>Materialnumber ERP</td>
+</tr>
+<tr>
+<td>cdb_object_id</td>
+<td>str | None</td>
+<td>Object ID</td>
+</tr>
+<tr>
+<td>pruefer</td>
+<td>str | None</td>
+<td>Reviewer</td>
+</tr>
+<tr>
+<td>pruef_datum</td>
+<td>datetime | None</td>
+<td>Review Date</td>
+</tr>
+<tr>
+<td>cca_char_doc_1</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_2</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_3</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_4</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_5</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_6</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_7</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_8</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_9</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_10</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_11</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_12</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_13</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_14</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_15</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_16</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_17</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_18</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_19</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_doc_20</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_1</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_2</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_3</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_4</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_5</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_6</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_7</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_8</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_9</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_10</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_11</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_12</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_13</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_14</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_15</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_16</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_17</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_18</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_19</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_doc_20</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_1</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_2</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_3</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_4</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_5</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_6</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_7</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_8</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_9</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_10</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_11</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_12</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_13</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_14</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_15</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_16</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_17</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_18</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_19</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_doc_20</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_2</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_3</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_4</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_5</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_6</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_7</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_8</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_9</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_10</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_11</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_12</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_13</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_14</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_15</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_16</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_17</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_18</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_19</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_20</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_doc_1</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_1</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_2</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_3</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_4</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_5</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_6</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_7</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_8</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_9</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_10</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_11</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_12</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_13</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_14</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_15</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_16</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_17</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_18</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_19</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_doc_20</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_1</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_2</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_3</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_4</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_5</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_6</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_7</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_8</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_9</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_10</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_11</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_12</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_13</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_14</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_15</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_16</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_17</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_18</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_19</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_doc_20</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_char_model_1</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_2</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_3</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_4</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_5</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_6</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_7</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_8</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_9</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_10</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_11</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_12</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_13</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_14</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_15</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_16</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_17</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_18</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_19</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_model_20</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_1</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_2</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_3</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_4</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_5</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_6</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_7</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_8</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_9</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_10</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_11</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_12</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_13</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_14</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_15</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_16</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_17</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_18</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_19</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_model_20</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_1</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_2</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_3</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_4</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_5</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_6</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_7</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_8</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_9</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_10</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_11</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_12</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_13</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_14</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_15</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_16</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_17</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_18</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_19</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_model_20</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_float_model_1</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_2</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_3</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_4</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_5</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_6</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_7</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_8</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_9</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_10</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_11</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_12</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_13</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_14</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_15</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_16</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_17</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_18</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_19</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_model_20</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_1</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_2</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_3</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_4</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_5</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_6</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_7</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_8</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_9</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_10</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_11</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_12</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_13</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_14</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_15</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_16</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_17</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_18</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_19</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_model_20</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_date_model_1</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_2</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_3</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_4</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_5</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_6</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_7</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_8</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_9</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_10</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_11</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_12</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_13</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_14</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_15</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_16</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_17</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_18</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_19</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_model_20</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>files</td>
+<td>list[<a href="./#file">File</a>]</td>
+<td>Files attached to the document</td>
+</tr>
+<tr>
+<td>part</td>
+<td>typing.Optional[<a href="./#part">Part</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="engineeringchange">EngineeringChange</h2>
+<p><code>csfunctions.objects.EngineeringChange</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cdb_ec_id</td>
+<td>str</td>
+<td>Engineering Change ID</td>
+</tr>
+<tr>
+<td>cdb_project_id</td>
+<td>str | None</td>
+<td>Project ID</td>
+</tr>
+<tr>
+<td>ec_state</td>
+<td>str</td>
+<td></td>
+</tr>
+<tr>
+<td>end_time_plan</td>
+<td>datetime | None</td>
+<td>Planned end time</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>Status</td>
+</tr>
+<tr>
+<td>title</td>
+<td>str | None</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>template_ec_id</td>
+<td>str | None</td>
+<td>Template ID</td>
+</tr>
+<tr>
+<td>cdb_object_id</td>
+<td>str | None</td>
+<td>Object ID</td>
+</tr>
+<tr>
+<td>c_department</td>
+<td>str | None</td>
+<td>Department</td>
+</tr>
+<tr>
+<td>c_description</td>
+<td>str | None</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>c_event</td>
+<td>str | None</td>
+<td>Event</td>
+</tr>
+<tr>
+<td>c_reason</td>
+<td>str | None</td>
+<td>Reason</td>
+</tr>
+<tr>
+<td>c_source</td>
+<td>str | None</td>
+<td>Source</td>
+</tr>
+<tr>
+<td>category</td>
+<td>str | None</td>
+<td>Category</td>
+</tr>
+<tr>
+<td>part_ids</td>
+<td>list[str]</td>
+<td>List of part IDs, that were changed. (teilenummer@t_index)</td>
+</tr>
+<tr>
+<td>document_ids</td>
+<td>list[str]</td>
+<td>List of document IDs, that were changed. (z_nummer@z_index)</td>
+</tr>
+<tr>
+<td>planned_changes_part_ids</td>
+<td>list[str]</td>
+<td>List of part IDs, that were planned to be changed. (teilenummer@t_index)</td>
+</tr>
+<tr>
+<td>planned_changes_document_ids</td>
+<td>list[str]</td>
+<td>List of document IDs, that were planned to be changed. (z_nummer@z_index)</td>
+</tr>
+<tr>
+<td>accompanying_document_ids</td>
+<td>list[str]</td>
+<td>List of document IDs, that accompany the change. (z_nummer@z_index)</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>list[<a href="./#part">Part</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="./#document">Document</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td>planned_changes_parts</td>
+<td>list[<a href="./#part">Part</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td>planned_changes_documents</td>
+<td>list[<a href="./#document">Document</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td>accompanying_documents</td>
+<td>list[<a href="./#document">Document</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td>cdb_cpersno</td>
+<td>str | None</td>
+<td>Created by</td>
+</tr>
+<tr>
+<td>cdb_cdate</td>
+<td>datetime | None</td>
+<td>Created on</td>
+</tr>
+<tr>
+<td>cdb_mpersno</td>
+<td>str</td>
+<td>Last Modified by</td>
+</tr>
+<tr>
+<td>cdb_mdate</td>
+<td>datetime | None</td>
+<td>Last Modified on</td>
+</tr>
+</tbody>
+</table>
+<h2 id="file">File</h2>
+<p><code>csfunctions.objects.File</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cdb_object_id</td>
+<td>str</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>cdbf_name</td>
+<td>str | None</td>
+<td>file name</td>
+</tr>
+<tr>
+<td>cdbf_type</td>
+<td>str | None</td>
+<td>file type</td>
+</tr>
+<tr>
+<td>cdb_cpersno</td>
+<td>str | None</td>
+<td>Created by</td>
+</tr>
+<tr>
+<td>mapped_cdb_cpersno_name</td>
+<td>str | None</td>
+<td>Created by</td>
+</tr>
+<tr>
+<td>cdb_cdate</td>
+<td>datetime | None</td>
+<td>Created on</td>
+</tr>
+<tr>
+<td>cdb_mpersno</td>
+<td>str | None</td>
+<td>Last Modified by</td>
+</tr>
+<tr>
+<td>mapped_cdb_mpersno_name</td>
+<td>str | None</td>
+<td>Last Modified by</td>
+</tr>
+<tr>
+<td>cdb_mdate</td>
+<td>datetime | None</td>
+<td>Last Modified on</td>
+</tr>
+<tr>
+<td>blob_url</td>
+<td>str | None</td>
+<td>Presigned Blob URL</td>
+</tr>
+</tbody>
+</table>
+<h2 id="material">Material</h2>
+<p><code>csfunctions.objects.Material</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cdb_object_id</td>
+<td>str | None</td>
+<td>Object ID</td>
+</tr>
+<tr>
+<td>material_index</td>
+<td>str | None</td>
+<td>Material Index</td>
+</tr>
+<tr>
+<td>material_id</td>
+<td>str | None</td>
+<td>Material ID</td>
+</tr>
+<tr>
+<td>name_de</td>
+<td>str | None</td>
+<td>Name DE</td>
+</tr>
+<tr>
+<td>name_en</td>
+<td>str | None</td>
+<td>Name EN</td>
+</tr>
+<tr>
+<td>short_name</td>
+<td>str | None</td>
+<td>Short Name</td>
+</tr>
+<tr>
+<td>application</td>
+<td>str | None</td>
+<td>Applications</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>str | None</td>
+<td>Remarks</td>
+</tr>
+</tbody>
+</table>
+<h2 id="objectpropertyvalue">ObjectPropertyValue</h2>
+<p><code>csfunctions.objects.ObjectPropertyValue</code></p>
+<p>An objects property, used by classification.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ref_object_id</td>
+<td>str</td>
+<td>Referenced Object</td>
+</tr>
+<tr>
+<td>boolean_value</td>
+<td>int | None</td>
+<td>Boolean Value</td>
+</tr>
+<tr>
+<td>datetime_value</td>
+<td>datetime | None</td>
+<td>Datetime Value</td>
+</tr>
+<tr>
+<td>float_value</td>
+<td>float | None</td>
+<td>Float Value</td>
+</tr>
+<tr>
+<td>float_value_normalized</td>
+<td>float | None</td>
+<td>Float Value Normalized</td>
+</tr>
+<tr>
+<td>integer_value</td>
+<td>int | None</td>
+<td>Integer Value</td>
+</tr>
+<tr>
+<td>iso_language_code</td>
+<td>str | None</td>
+<td>ISO Language Code</td>
+</tr>
+<tr>
+<td>value_pos</td>
+<td>int | None</td>
+<td>Position</td>
+</tr>
+<tr>
+<td>property_code</td>
+<td>str | None</td>
+<td>Property Code</td>
+</tr>
+<tr>
+<td>property_path</td>
+<td>str | None</td>
+<td>Property Path</td>
+</tr>
+<tr>
+<td>property_type</td>
+<td>str | None</td>
+<td>Property Type</td>
+</tr>
+<tr>
+<td>range_identifier</td>
+<td>str | None</td>
+<td>Range ID</td>
+</tr>
+<tr>
+<td>text_value</td>
+<td>str | None</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<h2 id="part">Part</h2>
+<p><code>csfunctions.objects.Part</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>teilenummer</td>
+<td>str</td>
+<td>part number</td>
+</tr>
+<tr>
+<td>t_index</td>
+<td>str</td>
+<td>part index</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>Status Number</td>
+</tr>
+<tr>
+<td>materialnr_erp</td>
+<td>str | None</td>
+<td>Material No. (ERP)</td>
+</tr>
+<tr>
+<td>benennung</td>
+<td>str | None</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>eng_benennung</td>
+<td>str | None</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>benennung2</td>
+<td>str | None</td>
+<td>Additional Name</td>
+</tr>
+<tr>
+<td>t_kategorie_name_de</td>
+<td>str | None</td>
+<td>Category Name</td>
+</tr>
+<tr>
+<td>t_kategorie_name_en</td>
+<td>str | None</td>
+<td>Category Name</td>
+</tr>
+<tr>
+<td>cdb_t_project_id</td>
+<td>str | None</td>
+<td>Project ID</td>
+</tr>
+<tr>
+<td>t_bereich</td>
+<td>str | None</td>
+<td>Department</td>
+</tr>
+<tr>
+<td>cdb_t_ec_id</td>
+<td>str | None</td>
+<td>Engineering Change ID</td>
+</tr>
+<tr>
+<td>item_maturity</td>
+<td>int | None</td>
+<td>Maturity Level</td>
+</tr>
+<tr>
+<td>gebrauchsstand_name_de</td>
+<td>str | None</td>
+<td>Usage Status</td>
+</tr>
+<tr>
+<td>gebrauchsstand_name_en</td>
+<td>str | None</td>
+<td>Usage Status</td>
+</tr>
+<tr>
+<td>ce_valid_from</td>
+<td>date | datetime | None</td>
+<td>Effective from</td>
+</tr>
+<tr>
+<td>ce_valid_to</td>
+<td>date | datetime | None</td>
+<td>Effective to</td>
+</tr>
+<tr>
+<td>mengeneinheit_name_de</td>
+<td>str | None</td>
+<td>Quantity Unit</td>
+</tr>
+<tr>
+<td>mengeneinheit_name_en</td>
+<td>str | None</td>
+<td>Quantity Unit</td>
+</tr>
+<tr>
+<td>st_gewicht</td>
+<td>float | None</td>
+<td>Weight (kg)</td>
+</tr>
+<tr>
+<td>material_object_id</td>
+<td>str | None</td>
+<td>Material ID</td>
+</tr>
+<tr>
+<td>surface_name_en</td>
+<td>str | None</td>
+<td>Surface</td>
+</tr>
+<tr>
+<td>surface_name_de</td>
+<td>str | None</td>
+<td>Surface</td>
+</tr>
+<tr>
+<td>techdaten</td>
+<td>str | None</td>
+<td>Engineering Data</td>
+</tr>
+<tr>
+<td>cssaas_mirrored_from</td>
+<td>str | None</td>
+<td>Mirror Part ID</td>
+</tr>
+<tr>
+<td>t_ersatz_fuer</td>
+<td>str | None</td>
+<td>Replacement for</td>
+</tr>
+<tr>
+<td>t_ersatz_durch</td>
+<td>str | None</td>
+<td>Replaced by</td>
+</tr>
+<tr>
+<td>din</td>
+<td>str | None</td>
+<td>Norms</td>
+</tr>
+<tr>
+<td>bemerkung</td>
+<td>str | None</td>
+<td>Remarks</td>
+</tr>
+<tr>
+<td>cdb_copy_of_item_id</td>
+<td>str | None</td>
+<td>Copy of ID</td>
+</tr>
+<tr>
+<td>type_object_id</td>
+<td>str | None</td>
+<td>BOM Type ID</td>
+</tr>
+<tr>
+<td>cdb_depends_on</td>
+<td>str | None</td>
+<td>Derived from</td>
+</tr>
+<tr>
+<td>site_object_id</td>
+<td>str | None</td>
+<td>Plant</td>
+</tr>
+<tr>
+<td>cssaas_frame_add_attr_1</td>
+<td>str | None</td>
+<td>Additional Attribute 1</td>
+</tr>
+<tr>
+<td>cssaas_frame_add_attr_2</td>
+<td>str | None</td>
+<td>Additional Attribute 2</td>
+</tr>
+<tr>
+<td>cssaas_frame_add_attr_3</td>
+<td>str | None</td>
+<td>Additional Attribute 3</td>
+</tr>
+<tr>
+<td>cssaas_frame_add_attr_4</td>
+<td>str | None</td>
+<td>Additional Attribute 4</td>
+</tr>
+<tr>
+<td>cssaas_frame_add_attr_5</td>
+<td>str | None</td>
+<td>Additional Attribute 5</td>
+</tr>
+<tr>
+<td>cdb_cpersno</td>
+<td>str | None</td>
+<td>Created by</td>
+</tr>
+<tr>
+<td>cdb_cpersno_name</td>
+<td>str | None</td>
+<td>Created by</td>
+</tr>
+<tr>
+<td>cdb_cdate</td>
+<td>datetime | None</td>
+<td>Created on</td>
+</tr>
+<tr>
+<td>cdb_mpersno</td>
+<td>str | None</td>
+<td>Last Modified by</td>
+</tr>
+<tr>
+<td>cdb_mpersno_name</td>
+<td>str | None</td>
+<td>Last Modified by</td>
+</tr>
+<tr>
+<td>cdb_mdate</td>
+<td>datetime | None</td>
+<td>Last Modified on</td>
+</tr>
+<tr>
+<td>cdb_m2persno</td>
+<td>str | None</td>
+<td>File Last Saved by</td>
+</tr>
+<tr>
+<td>cdb_m2persno_name</td>
+<td>str | None</td>
+<td>File Last Saved by</td>
+</tr>
+<tr>
+<td>cdb_m2date</td>
+<td>datetime | None</td>
+<td>File Last Saved on</td>
+</tr>
+<tr>
+<td>st_durchmesser</td>
+<td>float | None</td>
+<td>Diameter</td>
+</tr>
+<tr>
+<td>st_laenge</td>
+<td>float | None</td>
+<td>Length</td>
+</tr>
+<tr>
+<td>st_hoehe</td>
+<td>float | None</td>
+<td>Height</td>
+</tr>
+<tr>
+<td>cdb_object_id</td>
+<td>str | None</td>
+<td>Object ID</td>
+</tr>
+<tr>
+<td>site_erp</td>
+<td>str | None</td>
+<td>Plant</td>
+</tr>
+<tr>
+<td>fertart</td>
+<td>str | None</td>
+<td>Production Type</td>
+</tr>
+<tr>
+<td>t_pruef_datum</td>
+<td>datetime | None</td>
+<td>Release Date</td>
+</tr>
+<tr>
+<td>oberflaeche</td>
+<td>str | None</td>
+<td>Surface</td>
+</tr>
+<tr>
+<td>mengeneinheit</td>
+<td>str | None</td>
+<td>Unit of Measure</td>
+</tr>
+<tr>
+<td>gebrauchsstand</td>
+<td>str | None</td>
+<td>Usability</td>
+</tr>
+<tr>
+<td>st_breite</td>
+<td>float | None</td>
+<td>Width</td>
+</tr>
+<tr>
+<td>cca_char_1</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_2</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_3</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_4</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_5</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_6</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_7</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_8</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_9</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_10</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_11</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_12</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_13</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_14</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_15</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_16</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_17</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_18</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_19</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_char_20</td>
+<td>str | None</td>
+<td>Custom Char Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_1</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_2</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_3</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_4</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_5</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_6</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_7</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_8</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_9</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_10</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_11</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_12</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_13</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_14</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_15</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_16</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_17</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_18</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_19</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_bigchar_part_20</td>
+<td>str | None</td>
+<td>Custom BigChar Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_1</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_2</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_3</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_4</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_5</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_6</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_7</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_8</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_9</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_10</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_11</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_12</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_13</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_14</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_15</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_16</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_17</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_18</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_19</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_integer_part_20</td>
+<td>int | None</td>
+<td>Custom Integer Field</td>
+</tr>
+<tr>
+<td>cca_float_part_1</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_2</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_3</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_4</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_5</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_6</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_7</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_8</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_9</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_10</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_11</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_12</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_13</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_14</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_15</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_16</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_17</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_18</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_19</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_float_part_20</td>
+<td>float | None</td>
+<td>Custom Float Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_1</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_2</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_3</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_4</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_5</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_6</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_7</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_8</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_9</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_10</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_11</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_12</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_13</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_14</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_15</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_16</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_17</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_18</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_19</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_bool_part_20</td>
+<td>bool | None</td>
+<td>Custom Boolean Field</td>
+</tr>
+<tr>
+<td>cca_date_part_1</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_2</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_3</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_4</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_5</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_6</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_7</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_8</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_9</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_10</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_11</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_12</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_13</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_14</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_15</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_16</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_17</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_18</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_19</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>cca_date_part_20</td>
+<td>datetime | None</td>
+<td>Custom Date Field</td>
+</tr>
+<tr>
+<td>document_ids</td>
+<td>list[str]</td>
+<td>List of document IDs, that were changed. (z_nummer@z_index)</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="./#document">Document</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="person">Person</h2>
+<p><code>csfunctions.objects.Person</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>personalnummer</td>
+<td>str</td>
+<td>Personal Number</td>
+</tr>
+<tr>
+<td>name</td>
+<td>str</td>
+<td>System-Name</td>
+</tr>
+<tr>
+<td>firstname</td>
+<td>str | None</td>
+<td>First Name</td>
+</tr>
+<tr>
+<td>lastname</td>
+<td>str | None</td>
+<td>Last Name</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>str | None</td>
+<td>Gender</td>
+</tr>
+<tr>
+<td>title</td>
+<td>str | None</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>initials</td>
+<td>str | None</td>
+<td>Initials</td>
+</tr>
+<tr>
+<td>active_account</td>
+<td>bool | None</td>
+<td>Active Account</td>
+</tr>
+<tr>
+<td>org_id</td>
+<td>str | None</td>
+<td>Organization ID</td>
+</tr>
+<tr>
+<td>abt_nummer</td>
+<td>str | None</td>
+<td>Department Number</td>
+</tr>
+<tr>
+<td>e_mail</td>
+<td>str | None</td>
+<td>Email</td>
+</tr>
+<tr>
+<td>telefon</td>
+<td>str | None</td>
+<td>Phone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="workflow">Workflow</h2>
+<p><code>csfunctions.objects.Workflow</code></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cdb_process_id</td>
+<td>str</td>
+<td>Workflow ID</td>
+</tr>
+<tr>
+<td>title</td>
+<td>str | None</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>started_at</td>
+<td>datetime | None</td>
+<td>Date when the workflow was started.</td>
+</tr>
+<tr>
+<td>started_by</td>
+<td>str | None</td>
+<td>ID of the user who started the workflow.</td>
+</tr>
+<tr>
+<td>local_briefcase_ids</td>
+<td>list[str]</td>
+<td>List of local briefcase ids (cdb_object_id)</td>
+</tr>
+<tr>
+<td>global_briefcase_ids</td>
+<td>list[str]</td>
+<td>List of global briefcase ids (cdb_object_id)</td>
+</tr>
+<tr>
+<td>local_briefcases</td>
+<td>list[<a href="./#briefcase">Briefcase</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td>global_briefcases</td>
+<td>list[<a href="./#briefcase">Briefcase</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
