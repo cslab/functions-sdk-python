@@ -3,6 +3,9 @@ hide:
   - toc
 ---
 
+### Version 0.21.0
+- Feat: Add BOM Item field calculation event.
+
 ### Version 0.20.0
 - Feat: Add Custom operations for documents and parts
 
