@@ -265,6 +265,25 @@ The event expects a DataResponse containing a dictionary of field names and thei
 | documents | list[[Document](objects.md#document)]        | List of documents that belong to the part |
 
 
+## BOMItemFieldCalculationEvent
+`csfunctions.events.BOMItemFieldCalculationEvent`
+
+This event is fired when a BOM item is created, modified, copied or indexed. It is triggered after the field calculations defined in the datasheet editor are performed.
+
+The event expects a DataResponse containing a dictionary of field names and their new values. Fields that are not mentioned in the response are not updated.
+
+**BOMItemFieldCalculationEvent.name:** bom_item_field_calculation
+
+**BOMItemFieldCalculationEvent.data:**
+
+| Attribute | Type                                         | Description                                        |
+| --------- | -------------------------------------------- | -------------------------------------------------- |
+| bom_item  | [BOMItem](objects.md#bomitem)                | Current state of the BOM item                      |
+| action    | Literal["create", "modify", "copy", "index"] | Action being performed                             |
+| part      | [Part](objects.md#part)                      | Part of the BOM item                               |
+| documents | list[[Document](objects.md#document)]        | List of documents that are referenced by the part. |
+
+
 ## WorkflowTaskTriggerEvent
 `csfunctions.events.WorkflowTaskTriggerEvent`
 
