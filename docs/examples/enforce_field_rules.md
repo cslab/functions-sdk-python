@@ -148,7 +148,7 @@ def part_materialnr_unique(metadata: MetaData, event: PartReleaseCheckEvent, ser
             return AbortAndShowErrorAction(message=f"The ERP number {part.materialnr_erp} is already in use by part number {existing_part_number}.")
 ```
 
-!!! note
-    This example only checks for duplicates during part release, but you can easily adapt it to other events like part creation or modification.
-    Keep in mind though, that field calculations run AFTER the check events, meaning you can't use this to check uniqueness of fields that are set via field calculation.
+!!! warning
+    Keep in mind that field calculations run AFTER the check events, meaning you can't use this to check uniqueness of fields that are set via field calculation.
+
     If you need to enforce uniqueness of calculated fields, you need to implement the uniqueness check within the field calculation itself.
