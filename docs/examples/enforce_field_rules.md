@@ -96,3 +96,59 @@ def parts_need_classification(
             )
 
 ```
+
+
+### Enforce uniqueness of fields
+
+In some cases, you may want to ensure that certain fields are unique across all parts or documents in your system.
+This example demonstrates how to enforce uniqueness of the *"ERP Material No"* field for parts before they are released.
+
+```python
+from csfunctions import MetaData, Service
+from csfunctions.actions import AbortAndShowErrorAction
+from csfunctions.events import PartReleaseCheckEvent
+
+import requests
+
+
+def find_duplicates(metadata: MetaData, materialnr_erp: str, teilenummer: str):
+    # we try to find parts with the same materialnr_erp but different teilenummer
+    graphql_url = str(metadata.db_service_url).rstrip("/") + "/graphql/v1"
+    query = f"""{{
+            parts(_filter: {{materialnr_erp: {{eq: \"{materialnr_erp}\"}}, teilenummer: {{neq: \"{teilenummer}\"}}}}) {{
+                materialnr_erp,
+                teilenummer,
+                t_index
+            }}
+        }}
+        """
+
+    response = requests.post(
+        graphql_url,
+        headers={"Authorization": f"Bearer {metadata.service_token}"},
+        json={"query": query},
+    )
+
+    response.raise_for_status()
+    parts = response.json()["data"]["parts"]
+
+    return parts
+
+
+def part_materialnr_unique(metadata: MetaData, event: PartReleaseCheckEvent, service: Service):
+    """
+    Checks if an ERP number is already in use by a different part
+    """
+
+    for part in event.data.parts:
+        duplicates = find_duplicates(
+            metadata=metadata, materialnr_erp=part.materialnr_erp, teilenummer=part.teilenummer)
+        if duplicates:
+            existing_part_number = duplicates[0]["teilenummer"]
+            return AbortAndShowErrorAction(message=f"The ERP number {part.materialnr_erp} is already in use by part number {existing_part_number}.")
+```
+
+!!! note
+    This example only checks for duplicates during part release, but you can easily adapt it to other events like part creation or modification.
+    Keep in mind though, that field calculations run AFTER the check events, meaning you can't use this to check uniqueness of fields that are set via field calculation.
+    If you need to enforce uniqueness of calculated fields, you need to implement the uniqueness check within the field calculation itself.
