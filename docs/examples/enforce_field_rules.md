@@ -115,7 +115,7 @@ def find_duplicates(metadata: MetaData, materialnr_erp: str, teilenummer: str):
     # we try to find parts with the same materialnr_erp but different teilenummer
     graphql_url = str(metadata.db_service_url).rstrip("/") + "/graphql/v1"
     query = f"""{{
-            parts(_filter: {{materialnr_erp: {{eq: \"{materialnr_erp}\"}}, teilenummer: {{neq: \"{teilenummer}\"}}}}) {{
+            parts(_filter: {{materialnr_erp: {{eq: "{materialnr_erp}"}}, teilenummer: {{neq: "{teilenummer}"}}}}) {{
                 materialnr_erp,
                 teilenummer,
                 t_index
