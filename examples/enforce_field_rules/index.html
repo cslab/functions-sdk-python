@@ -446,6 +446,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#enforce-uniqueness-of-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enforce uniqueness of fields
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -792,6 +801,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#enforce-uniqueness-of-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enforce uniqueness of fields
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -898,6 +916,57 @@ With this example Function, you can require that parts are classified before the
 <a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>                <span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;The part &#39;</span><span class="si">{</span><span class="n">part</span><span class="o">.</span><span class="n">eng_benennung</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">part</span><span class="o">.</span><span class="n">benennung</span><span class="si">}</span><span class="s2">&#39; is missing classification data.&quot;</span>
 <a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>            <span class="p">)</span>
 </code></pre></div>
+<h3 id="enforce-uniqueness-of-fields">Enforce uniqueness of fields</h3>
+<p>In some cases, you may want to ensure that certain fields are unique across all parts or documents in your system.
+This example demonstrates how to enforce uniqueness of the <em>"ERP Material No"</em> field for parts before they are released.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">csfunctions</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetaData</span><span class="p">,</span> <span class="n">Service</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">csfunctions.actions</span><span class="w"> </span><span class="kn">import</span> <span class="n">AbortAndShowErrorAction</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">csfunctions.events</span><span class="w"> </span><span class="kn">import</span> <span class="n">PartReleaseCheckEvent</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">find_duplicates</span><span class="p">(</span><span class="n">metadata</span><span class="p">:</span> <span class="n">MetaData</span><span class="p">,</span> <span class="n">materialnr_erp</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">teilenummer</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="c1"># we try to find parts with the same materialnr_erp but different teilenummer</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">graphql_url</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">db_service_url</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/graphql/v1&quot;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="se">{{</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="s2">            parts(_filter: </span><span class="se">{{</span><span class="s2">materialnr_erp: </span><span class="se">{{</span><span class="s2">eq: &quot;</span><span class="si">{</span><span class="n">materialnr_erp</span><span class="si">}</span><span class="s2">&quot;</span><span class="se">}}</span><span class="s2">, teilenummer: </span><span class="se">{{</span><span class="s2">neq: &quot;</span><span class="si">{</span><span class="n">teilenummer</span><span class="si">}</span><span class="s2">&quot;</span><span class="se">}}}}</span><span class="s2">) </span><span class="se">{{</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="s2">                materialnr_erp,</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="s2">                teilenummer,</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="s2">                t_index</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="s2">            </span><span class="se">}}</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="s2">        </span><span class="se">}}</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="s2">        &quot;&quot;&quot;</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>        <span class="n">graphql_url</span><span class="p">,</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">metadata</span><span class="o">.</span><span class="n">service_token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>        <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="n">query</span><span class="p">},</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>    <span class="p">)</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>    <span class="n">parts</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;parts&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    <span class="k">return</span> <span class="n">parts</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="k">def</span><span class="w"> </span><span class="nf">part_materialnr_unique</span><span class="p">(</span><span class="n">metadata</span><span class="p">:</span> <span class="n">MetaData</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">PartReleaseCheckEvent</span><span class="p">,</span> <span class="n">service</span><span class="p">:</span> <span class="n">Service</span><span class="p">):</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="sd">    Checks if an ERP number is already in use by a different part</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>    <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">parts</span><span class="p">:</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>        <span class="n">duplicates</span> <span class="o">=</span> <span class="n">find_duplicates</span><span class="p">(</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>            <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="n">materialnr_erp</span><span class="o">=</span><span class="n">part</span><span class="o">.</span><span class="n">materialnr_erp</span><span class="p">,</span> <span class="n">teilenummer</span><span class="o">=</span><span class="n">part</span><span class="o">.</span><span class="n">teilenummer</span><span class="p">)</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>        <span class="k">if</span> <span class="n">duplicates</span><span class="p">:</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>            <span class="n">existing_part_number</span> <span class="o">=</span> <span class="n">duplicates</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;teilenummer&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>            <span class="k">return</span> <span class="n">AbortAndShowErrorAction</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;The ERP number </span><span class="si">{</span><span class="n">part</span><span class="o">.</span><span class="n">materialnr_erp</span><span class="si">}</span><span class="s2"> is already in use by part number </span><span class="si">{</span><span class="n">existing_part_number</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Keep in mind that field calculations run AFTER the check events, meaning you can't use this to check uniqueness of fields that are set via field calculation.</p>
+<p>If you need to enforce uniqueness of calculated fields, you need to implement the uniqueness check within the field calculation itself.</p>
+</div>
 
 
 
