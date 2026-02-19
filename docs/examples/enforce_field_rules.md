@@ -103,6 +103,10 @@ def parts_need_classification(
 In some cases, you may want to ensure that certain fields are unique across all parts or documents in your system.
 This example demonstrates how to enforce uniqueness of the *"ERP Material No"* field for parts before they are released.
 
+!!! danger
+    Doing uniqueness checks via Functions can lead to race conditions, especially if multiple users are creating or modifying parts at the same time. It is recommended to
+    enforce uniqueness at the time of release and not at the time of creation or modification to reduce the risk of race conditions.
+
 ```python
 from csfunctions import MetaData, Service
 from csfunctions.actions import AbortAndShowErrorAction
