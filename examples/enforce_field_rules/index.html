@@ -919,6 +919,11 @@ With this example Function, you can require that parts are classified before the
 <h3 id="enforce-uniqueness-of-fields">Enforce uniqueness of fields</h3>
 <p>In some cases, you may want to ensure that certain fields are unique across all parts or documents in your system.
 This example demonstrates how to enforce uniqueness of the <em>"ERP Material No"</em> field for parts before they are released.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Doing uniqueness checks via Functions can lead to race conditions, especially if multiple users are creating or modifying parts at the same time. It is recommended to
+enforce uniqueness at the time of release and not at the time of creation or modification to reduce the risk of race conditions.</p>
+</div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">csfunctions</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetaData</span><span class="p">,</span> <span class="n">Service</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">csfunctions.actions</span><span class="w"> </span><span class="kn">import</span> <span class="n">AbortAndShowErrorAction</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">csfunctions.events</span><span class="w"> </span><span class="kn">import</span> <span class="n">PartReleaseCheckEvent</span>
