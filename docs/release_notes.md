@@ -3,6 +3,9 @@ hide:
   - toc
 ---
 
+### Version 0.22.0
+- Feat: Add material attributes for tracking creation and modification details
+
 ### Version 0.21.0
 - Feat: Add BOM Item field calculation event.
 
