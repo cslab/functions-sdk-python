@@ -229,6 +229,12 @@ class Material(BaseObject):
     short_name: str | None = Field(None, description="Short Name")
     application: str | None = Field(None, description="Applications")
     remark: str | None = Field(None, description="Remarks")
+    cdb_cpersno: str | None = Field(None, description="Created by")
+    cdb_cdate: datetime | None = Field(None, description="Created on")
+    cdb_mpersno: str | None = Field(None, description="Last Modified by")
+    cdb_mdate: datetime | None = Field(None, description="Last Modified on")
+
+    status: int = Field(..., description="Status Number")
 
 
 class BOMItem(BaseObject):
