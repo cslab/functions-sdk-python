@@ -21,7 +21,6 @@ class ObjectType(str, Enum):
     BRIEFCASE = "briefcase"
     PERSON = "person"
     MATURITY_LEVEL = "maturity_level"
-    MATURITY_MODEL = "maturity_model"
 
 
 class BaseObject(BaseModel):
