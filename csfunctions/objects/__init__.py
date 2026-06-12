@@ -23,7 +23,8 @@ Object = Annotated[
     | ObjectPropertyValue
     | Briefcase
     | Workflow
-    | Person,
+    | Person
+    | MaturityLevel,
     Field(discriminator="object_type"),
 ]
 
