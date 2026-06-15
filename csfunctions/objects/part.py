@@ -23,6 +23,9 @@ class Part(BaseObject):
     benennung: str | None = Field(None, description="Name")
     eng_benennung: str | None = Field(None, description="Name")
     benennung2: str | None = Field(None, description="Additional Name")
+    cssaas_benennung3_en: str | None = Field(None, description="Supplementary Name")
+    cssaas_benennung3_de: str | None = Field(None, description="Supplementary Name")
+
     t_kategorie_name_de: str | None = Field(None, description="Category Name")
     t_kategorie_name_en: str | None = Field(None, description="Category Name")
     cdb_t_project_id: str | None = Field(None, description="Project ID")

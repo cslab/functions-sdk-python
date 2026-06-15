@@ -7129,6 +7129,32 @@
           "description": "Additional Name",
           "title": "Benennung2"
         },
+        "cssaas_benennung3_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Supplementary Name",
+          "title": "Cssaas Benennung3 En"
+        },
+        "cssaas_benennung3_de": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Supplementary Name",
+          "title": "Cssaas Benennung3 De"
+        },
         "t_kategorie_name_de": {
           "anyOf": [
             {
