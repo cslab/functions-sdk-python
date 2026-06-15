@@ -5,6 +5,7 @@
 |Attribute|Type|Description|
 |-|-|-|
 |cdb_object_id|str \| None|Object ID|
+|cdb_object_id|str \| None|Object ID|
 |baugruppe|str \| None|Assembly|
 |b_index|str \| None|Assembly Index|
 |component_materialnr_erp|str \| None|Material Number ERP Component|

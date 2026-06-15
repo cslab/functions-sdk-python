@@ -3,6 +3,9 @@ hide:
   - toc
 ---
 
+### Version 0.23.0
+- Feat: Add cssaas_benennung3_en and cssaas_benennung3_de fields to Part
+
 ### Version 0.22.0
 - Feat: Add material attributes for tracking creation and modification details
 
