@@ -570,6 +570,8 @@ An objects property, used by classification.
 |benennung|str \| None|Name|
 |eng_benennung|str \| None|Name|
 |benennung2|str \| None|Additional Name|
+|cssaas_benennung3_en|str \| None|Supplementary Name|
+|cssaas_benennung3_de|str \| None|Supplementary Name|
 |t_kategorie_name_de|str \| None|Category Name|
 |t_kategorie_name_en|str \| None|Category Name|
 |cdb_t_project_id|str \| None|Project ID|
