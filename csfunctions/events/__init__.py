@@ -3,6 +3,14 @@ from typing import Annotated
 from pydantic import Field
 
 from .bom_item_field_calculation import BOMItemFieldCalculationData, BOMItemFieldCalculationEvent
+from .change_order_release_check import ChangeOrderReleaseCheckData, ChangeOrderReleaseCheckEvent
+from .change_order_released import ChangeOrderReleasedData, ChangeOrderReleasedEvent
+from .change_order_status_change_check import ChangeOrderStatusChangeCheckData, ChangeOrderStatusChangeCheckEvent
+from .change_order_status_changed import ChangeOrderStatusChangedData, ChangeOrderStatusChangedEvent
+from .change_request_release_check import ChangeRequestReleaseCheckData, ChangeRequestReleaseCheckEvent
+from .change_request_released import ChangeRequestReleasedData, ChangeRequestReleasedEvent
+from .change_request_status_change_check import ChangeRequestStatusChangeCheckData, ChangeRequestStatusChangeCheckEvent
+from .change_request_status_changed import ChangeRequestStatusChangedData, ChangeRequestStatusChangedEvent
 from .custom_operations import (
     CustomOperationDocumentData,
     CustomOperationDocumentEvent,
@@ -45,6 +53,14 @@ Event = Annotated[
     | EngineeringChangeReleaseCheckEvent
     | EngineeringChangeStatusChangedEvent
     | EngineeringChangeStatusChangeCheckEvent
+    | ChangeOrderReleasedEvent
+    | ChangeOrderReleaseCheckEvent
+    | ChangeOrderStatusChangedEvent
+    | ChangeOrderStatusChangeCheckEvent
+    | ChangeRequestReleasedEvent
+    | ChangeRequestReleaseCheckEvent
+    | ChangeRequestStatusChangedEvent
+    | ChangeRequestStatusChangeCheckEvent
     | WorkflowTaskTriggerEvent
     | DocumentCreateCheckEvent
     | DocumentModifyCheckEvent
@@ -68,6 +84,14 @@ EventData = (
     | EngineeringChangeReleaseCheckData
     | EngineeringChangeStatusChangedData
     | EngineeringChangeStatusChangeCheckData
+    | ChangeOrderReleasedData
+    | ChangeOrderReleaseCheckData
+    | ChangeOrderStatusChangedData
+    | ChangeOrderStatusChangeCheckData
+    | ChangeRequestReleasedData
+    | ChangeRequestReleaseCheckData
+    | ChangeRequestStatusChangedData
+    | ChangeRequestStatusChangeCheckData
     | WorkflowTaskTriggerEventData
     | DocumentCreateCheckData
     | DocumentModifyCheckData
@@ -89,6 +113,16 @@ __all__ = [
     "DummyEvent",
     "EngineeringChangeReleasedEvent",
     "EngineeringChangeReleaseCheckEvent",
+    "EngineeringChangeStatusChangedEvent",
+    "EngineeringChangeStatusChangeCheckEvent",
+    "ChangeOrderReleasedEvent",
+    "ChangeOrderReleaseCheckEvent",
+    "ChangeOrderStatusChangedEvent",
+    "ChangeOrderStatusChangeCheckEvent",
+    "ChangeRequestReleasedEvent",
+    "ChangeRequestReleaseCheckEvent",
+    "ChangeRequestStatusChangedEvent",
+    "ChangeRequestStatusChangeCheckEvent",
     "WorkflowTaskTriggerEvent",
     "DocumentReleasedData",
     "DocumentReleaseCheckData",
@@ -102,6 +136,14 @@ __all__ = [
     "EngineeringChangeReleaseCheckData",
     "EngineeringChangeStatusChangedData",
     "EngineeringChangeStatusChangeCheckData",
+    "ChangeOrderReleasedData",
+    "ChangeOrderReleaseCheckData",
+    "ChangeOrderStatusChangedData",
+    "ChangeOrderStatusChangeCheckData",
+    "ChangeRequestReleasedData",
+    "ChangeRequestReleaseCheckData",
+    "ChangeRequestStatusChangedData",
+    "ChangeRequestStatusChangeCheckData",
     "WorkflowTaskTriggerEventData",
     "DocumentReleasedDialogData",
     "PartReleasedDialogData",

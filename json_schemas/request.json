@@ -1838,7 +1838,7 @@
       "type": "object"
     },
     "Briefcase": {
-      "description": "Briefcases are used by Workflows and can contain parts, documents or engineering changes.",
+      "description": "Briefcases are used by Workflows and can contain parts, documents, engineering changes,\nchange orders or change requests.",
       "properties": {
         "object_type": {
           "const": "briefcase",
@@ -1891,6 +1891,24 @@
           "title": "Engineering Change Ids",
           "type": "array"
         },
+        "change_order_ids": {
+          "default": [],
+          "description": "List of change order IDs in this Briefcase. (cs_eco_id)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Change Order Ids",
+          "type": "array"
+        },
+        "change_request_ids": {
+          "default": [],
+          "description": "List of change request IDs in this Briefcase. (cs_eco_id)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Change Request Ids",
+          "type": "array"
+        },
         "parts": {
           "default": [],
           "items": {
@@ -1914,12 +1932,1086 @@
           },
           "title": "Engineering Changes",
           "type": "array"
+        },
+        "change_orders": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ChangeOrder"
+          },
+          "title": "Change Orders",
+          "type": "array"
+        },
+        "change_requests": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ChangeRequest"
+          },
+          "title": "Change Requests",
+          "type": "array"
         }
       },
       "required": [
         "cdb_object_id"
       ],
       "title": "Briefcase",
+      "type": "object"
+    },
+    "ChangeOrder": {
+      "properties": {
+        "object_type": {
+          "const": "change_order",
+          "default": "change_order",
+          "title": "Object Type",
+          "type": "string"
+        },
+        "cs_eco_id": {
+          "description": "Engineering Change Order ID",
+          "title": "Cs Eco Id",
+          "type": "string"
+        },
+        "cdb_project_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Project ID",
+          "title": "Cdb Project Id"
+        },
+        "end_time_plan": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Planned end time",
+          "title": "End Time Plan"
+        },
+        "status": {
+          "description": "Status",
+          "title": "Status",
+          "type": "integer"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Title",
+          "title": "Title"
+        },
+        "cdb_object_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Object ID",
+          "title": "Cdb Object Id"
+        },
+        "change_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Change Type",
+          "title": "Change Type"
+        },
+        "c_department": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Department",
+          "title": "C Department"
+        },
+        "cs_ecm_change_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Description",
+          "title": "Cs Ecm Change Description"
+        },
+        "c_event": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Event",
+          "title": "C Event"
+        },
+        "change_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Reason",
+          "title": "Change Reason"
+        },
+        "c_source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Source",
+          "title": "C Source"
+        },
+        "part_ids": {
+          "default": [],
+          "description": "List of part IDs, that were changed. (teilenummer@t_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Part Ids",
+          "type": "array"
+        },
+        "document_ids": {
+          "default": [],
+          "description": "List of document IDs, that were changed. (z_nummer@z_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Document Ids",
+          "type": "array"
+        },
+        "affected_part_ids": {
+          "default": [],
+          "description": "List of part IDs, that were planned to be changed. (teilenummer@t_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Affected Part Ids",
+          "type": "array"
+        },
+        "affected_document_ids": {
+          "default": [],
+          "description": "List of document IDs, that were planned to be changed. (z_nummer@z_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Affected Document Ids",
+          "type": "array"
+        },
+        "accompanying_document_ids": {
+          "default": [],
+          "description": "List of document IDs, that accompany the change. (z_nummer@z_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Accompanying Document Ids",
+          "type": "array"
+        },
+        "parts": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "documents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "affected_parts": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Affected Parts",
+          "type": "array"
+        },
+        "affected_documents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Affected Documents",
+          "type": "array"
+        },
+        "accompanying_documents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Accompanying Documents",
+          "type": "array"
+        },
+        "cdb_cpersno": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Created by",
+          "title": "Cdb Cpersno"
+        },
+        "cdb_cdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Created on",
+          "title": "Cdb Cdate"
+        },
+        "cdb_mpersno": {
+          "default": "",
+          "description": "Last Modified by",
+          "title": "Cdb Mpersno",
+          "type": "string"
+        },
+        "cdb_mdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Last Modified on",
+          "title": "Cdb Mdate"
+        }
+      },
+      "required": [
+        "cs_eco_id",
+        "status"
+      ],
+      "title": "ChangeOrder",
+      "type": "object"
+    },
+    "ChangeOrderReleaseCheckData": {
+      "properties": {
+        "documents": {
+          "description": "List of included documents.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of included parts.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "change_orders": {
+          "description": "List of change orders that will be released.",
+          "items": {
+            "$ref": "#/$defs/ChangeOrder"
+          },
+          "title": "Change Orders",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "parts",
+        "change_orders"
+      ],
+      "title": "ChangeOrderReleaseCheckData",
+      "type": "object"
+    },
+    "ChangeOrderReleaseCheckEvent": {
+      "properties": {
+        "name": {
+          "const": "change_order_release_check",
+          "default": "change_order_release_check",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/ChangeOrderReleaseCheckData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "ChangeOrderReleaseCheckEvent",
+      "type": "object"
+    },
+    "ChangeOrderReleasedData": {
+      "properties": {
+        "documents": {
+          "description": "List of included documents.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of included parts.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "change_orders": {
+          "description": "List of change orders that were released.",
+          "items": {
+            "$ref": "#/$defs/ChangeOrder"
+          },
+          "title": "Change Orders",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "parts",
+        "change_orders"
+      ],
+      "title": "ChangeOrderReleasedData",
+      "type": "object"
+    },
+    "ChangeOrderReleasedEvent": {
+      "properties": {
+        "name": {
+          "const": "change_order_released",
+          "default": "change_order_released",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/ChangeOrderReleasedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "ChangeOrderReleasedEvent",
+      "type": "object"
+    },
+    "ChangeOrderStatusChangeCheckData": {
+      "properties": {
+        "change_order": {
+          "$ref": "#/$defs/ChangeOrder",
+          "description": "The change order that will have its status modified"
+        },
+        "target_status": {
+          "description": "The target status of the change order",
+          "title": "Target Status",
+          "type": "integer"
+        },
+        "documents": {
+          "description": "List of documents attached to the change order",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of parts attached to the change order",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "change_order",
+        "target_status",
+        "documents",
+        "parts"
+      ],
+      "title": "ChangeOrderStatusChangeCheckData",
+      "type": "object"
+    },
+    "ChangeOrderStatusChangeCheckEvent": {
+      "properties": {
+        "name": {
+          "const": "change_order_status_change_check",
+          "default": "change_order_status_change_check",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/ChangeOrderStatusChangeCheckData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "ChangeOrderStatusChangeCheckEvent",
+      "type": "object"
+    },
+    "ChangeOrderStatusChangedData": {
+      "properties": {
+        "change_order": {
+          "$ref": "#/$defs/ChangeOrder",
+          "description": "The change order that had its status modified"
+        },
+        "prev_status": {
+          "description": "The previous status of the change order",
+          "title": "Prev Status",
+          "type": "integer"
+        },
+        "documents": {
+          "description": "List of documents attached to the change order",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of parts attached to the change order",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "change_order",
+        "prev_status",
+        "documents",
+        "parts"
+      ],
+      "title": "ChangeOrderStatusChangedData",
+      "type": "object"
+    },
+    "ChangeOrderStatusChangedEvent": {
+      "properties": {
+        "name": {
+          "const": "change_order_status_changed",
+          "default": "change_order_status_changed",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/ChangeOrderStatusChangedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "ChangeOrderStatusChangedEvent",
+      "type": "object"
+    },
+    "ChangeRequest": {
+      "properties": {
+        "object_type": {
+          "const": "change_request",
+          "default": "change_request",
+          "title": "Object Type",
+          "type": "string"
+        },
+        "cs_eco_id": {
+          "description": "Engineering Change Order ID",
+          "title": "Cs Eco Id",
+          "type": "string"
+        },
+        "cdb_project_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Project ID",
+          "title": "Cdb Project Id"
+        },
+        "end_time_plan": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Planned end time",
+          "title": "End Time Plan"
+        },
+        "status": {
+          "description": "Status",
+          "title": "Status",
+          "type": "integer"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Title",
+          "title": "Title"
+        },
+        "cdb_object_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Object ID",
+          "title": "Cdb Object Id"
+        },
+        "change_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Change Type",
+          "title": "Change Type"
+        },
+        "c_department": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Department",
+          "title": "C Department"
+        },
+        "cs_ecm_change_description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Description",
+          "title": "Cs Ecm Change Description"
+        },
+        "c_event": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Event",
+          "title": "C Event"
+        },
+        "change_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Reason",
+          "title": "Change Reason"
+        },
+        "c_source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Source",
+          "title": "C Source"
+        },
+        "part_ids": {
+          "default": [],
+          "description": "List of part IDs, that were changed. (teilenummer@t_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Part Ids",
+          "type": "array"
+        },
+        "document_ids": {
+          "default": [],
+          "description": "List of document IDs, that were changed. (z_nummer@z_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Document Ids",
+          "type": "array"
+        },
+        "affected_part_ids": {
+          "default": [],
+          "description": "List of part IDs, that were planned to be changed. (teilenummer@t_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Affected Part Ids",
+          "type": "array"
+        },
+        "affected_document_ids": {
+          "default": [],
+          "description": "List of document IDs, that were planned to be changed. (z_nummer@z_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Affected Document Ids",
+          "type": "array"
+        },
+        "accompanying_document_ids": {
+          "default": [],
+          "description": "List of document IDs, that accompany the change. (z_nummer@z_index)",
+          "items": {
+            "type": "string"
+          },
+          "title": "Accompanying Document Ids",
+          "type": "array"
+        },
+        "parts": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "documents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "affected_parts": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Affected Parts",
+          "type": "array"
+        },
+        "affected_documents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Affected Documents",
+          "type": "array"
+        },
+        "accompanying_documents": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Accompanying Documents",
+          "type": "array"
+        },
+        "cdb_cpersno": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Created by",
+          "title": "Cdb Cpersno"
+        },
+        "cdb_cdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Created on",
+          "title": "Cdb Cdate"
+        },
+        "cdb_mpersno": {
+          "default": "",
+          "description": "Last Modified by",
+          "title": "Cdb Mpersno",
+          "type": "string"
+        },
+        "cdb_mdate": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Last Modified on",
+          "title": "Cdb Mdate"
+        }
+      },
+      "required": [
+        "cs_eco_id",
+        "status"
+      ],
+      "title": "ChangeRequest",
+      "type": "object"
+    },
+    "ChangeRequestReleaseCheckData": {
+      "properties": {
+        "documents": {
+          "description": "List of included documents.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of included parts.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "change_requests": {
+          "description": "List of change requests that will be released.",
+          "items": {
+            "$ref": "#/$defs/ChangeRequest"
+          },
+          "title": "Change Requests",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "parts",
+        "change_requests"
+      ],
+      "title": "ChangeRequestReleaseCheckData",
+      "type": "object"
+    },
+    "ChangeRequestReleaseCheckEvent": {
+      "properties": {
+        "name": {
+          "const": "change_request_release_check",
+          "default": "change_request_release_check",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/ChangeRequestReleaseCheckData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "ChangeRequestReleaseCheckEvent",
+      "type": "object"
+    },
+    "ChangeRequestReleasedData": {
+      "properties": {
+        "documents": {
+          "description": "List of included documents.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of included parts.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "change_requests": {
+          "description": "List of change requests that were released.",
+          "items": {
+            "$ref": "#/$defs/ChangeRequest"
+          },
+          "title": "Change Requests",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "parts",
+        "change_requests"
+      ],
+      "title": "ChangeRequestReleasedData",
+      "type": "object"
+    },
+    "ChangeRequestReleasedEvent": {
+      "properties": {
+        "name": {
+          "const": "change_request_released",
+          "default": "change_request_released",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/ChangeRequestReleasedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "ChangeRequestReleasedEvent",
+      "type": "object"
+    },
+    "ChangeRequestStatusChangeCheckData": {
+      "properties": {
+        "change_request": {
+          "$ref": "#/$defs/ChangeRequest",
+          "description": "The change request that will have its status modified"
+        },
+        "target_status": {
+          "description": "The target status of the change request",
+          "title": "Target Status",
+          "type": "integer"
+        },
+        "documents": {
+          "description": "List of documents attached to the change request",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of parts attached to the change request",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "change_request",
+        "target_status",
+        "documents",
+        "parts"
+      ],
+      "title": "ChangeRequestStatusChangeCheckData",
+      "type": "object"
+    },
+    "ChangeRequestStatusChangeCheckEvent": {
+      "properties": {
+        "name": {
+          "const": "change_request_status_change_check",
+          "default": "change_request_status_change_check",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/ChangeRequestStatusChangeCheckData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "ChangeRequestStatusChangeCheckEvent",
+      "type": "object"
+    },
+    "ChangeRequestStatusChangedData": {
+      "properties": {
+        "change_request": {
+          "$ref": "#/$defs/ChangeRequest",
+          "description": "The change request that had its status modified"
+        },
+        "prev_status": {
+          "description": "The previous status of the change request",
+          "title": "Prev Status",
+          "type": "integer"
+        },
+        "documents": {
+          "description": "List of documents attached to the change request",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of parts attached to the change request",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "change_request",
+        "prev_status",
+        "documents",
+        "parts"
+      ],
+      "title": "ChangeRequestStatusChangedData",
+      "type": "object"
+    },
+    "ChangeRequestStatusChangedEvent": {
+      "properties": {
+        "name": {
+          "const": "change_request_status_changed",
+          "default": "change_request_status_changed",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/ChangeRequestStatusChangedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "ChangeRequestStatusChangedEvent",
       "type": "object"
     },
     "CustomOperationDocumentData": {
@@ -9897,6 +10989,24 @@
           "title": "Engineering Changes",
           "type": "array"
         },
+        "change_orders": {
+          "default": [],
+          "description": "List of change orders attached to the workflow.",
+          "items": {
+            "$ref": "#/$defs/ChangeOrder"
+          },
+          "title": "Change Orders",
+          "type": "array"
+        },
+        "change_requests": {
+          "default": [],
+          "description": "List of change requests attached to the workflow.",
+          "items": {
+            "$ref": "#/$defs/ChangeRequest"
+          },
+          "title": "Change Requests",
+          "type": "array"
+        },
         "briefcases": {
           "default": [],
           "description": "List of briefcases attached to the workflow.",
@@ -9923,6 +11033,14 @@
       "discriminator": {
         "mapping": {
           "bom_item_field_calculation": "#/$defs/BOMItemFieldCalculationEvent",
+          "change_order_release_check": "#/$defs/ChangeOrderReleaseCheckEvent",
+          "change_order_released": "#/$defs/ChangeOrderReleasedEvent",
+          "change_order_status_change_check": "#/$defs/ChangeOrderStatusChangeCheckEvent",
+          "change_order_status_changed": "#/$defs/ChangeOrderStatusChangedEvent",
+          "change_request_release_check": "#/$defs/ChangeRequestReleaseCheckEvent",
+          "change_request_released": "#/$defs/ChangeRequestReleasedEvent",
+          "change_request_status_change_check": "#/$defs/ChangeRequestStatusChangeCheckEvent",
+          "change_request_status_changed": "#/$defs/ChangeRequestStatusChangedEvent",
           "custom_operation_document": "#/$defs/CustomOperationDocumentEvent",
           "custom_operation_part": "#/$defs/CustomOperationPartEvent",
           "document_create_check": "#/$defs/DocumentCreateCheckEvent",
@@ -9984,6 +11102,30 @@
         },
         {
           "$ref": "#/$defs/EngineeringChangeStatusChangeCheckEvent"
+        },
+        {
+          "$ref": "#/$defs/ChangeOrderReleasedEvent"
+        },
+        {
+          "$ref": "#/$defs/ChangeOrderReleaseCheckEvent"
+        },
+        {
+          "$ref": "#/$defs/ChangeOrderStatusChangedEvent"
+        },
+        {
+          "$ref": "#/$defs/ChangeOrderStatusChangeCheckEvent"
+        },
+        {
+          "$ref": "#/$defs/ChangeRequestReleasedEvent"
+        },
+        {
+          "$ref": "#/$defs/ChangeRequestReleaseCheckEvent"
+        },
+        {
+          "$ref": "#/$defs/ChangeRequestStatusChangedEvent"
+        },
+        {
+          "$ref": "#/$defs/ChangeRequestStatusChangeCheckEvent"
         },
         {
           "$ref": "#/$defs/WorkflowTaskTriggerEvent"

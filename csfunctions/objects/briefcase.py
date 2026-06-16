@@ -4,7 +4,7 @@ from pydantic import Field
 
 from .base import BaseObject, ObjectType
 from .document import Document
-from .engineering_change import EngineeringChange
+from .engineering_change import ChangeOrder, ChangeRequest, EngineeringChange
 from .part import Part
 
 if TYPE_CHECKING:
@@ -13,7 +13,8 @@ if TYPE_CHECKING:
 
 class Briefcase(BaseObject):
     """
-    Briefcases are used by Workflows and can contain parts, documents or engineering changes.
+    Briefcases are used by Workflows and can contain parts, documents, engineering changes,
+    change orders or change requests.
     """
 
     object_type: Literal[ObjectType.BRIEFCASE] = ObjectType.BRIEFCASE
@@ -25,15 +26,21 @@ class Briefcase(BaseObject):
     engineering_change_ids: list[str] = Field(
         [], description="List of engineering change IDs in this Briefcase. (cdb_ec_id)"
     )
+    change_order_ids: list[str] = Field([], description="List of change order IDs in this Briefcase. (cs_eco_id)")
+    change_request_ids: list[str] = Field([], description="List of change request IDs in this Briefcase. (cs_eco_id)")
 
     parts: list[Part] = Field([], exclude=True)
     documents: list[Document] = Field([], exclude=True)
     engineering_changes: list[EngineeringChange] = Field([], exclude=True)
+    change_orders: list[ChangeOrder] = Field([], exclude=True)
+    change_requests: list[ChangeRequest] = Field([], exclude=True)
 
     def link_objects(self, data: "EventData"):
         parts = getattr(data, "parts", None)
         documents = getattr(data, "documents", None)
         engineering_changes = getattr(data, "engineering_changes", None)
+        change_orders = getattr(data, "change_orders", None)
+        change_requests = getattr(data, "change_requests", None)
 
         if parts and self.part_ids:
             self._link_parts(parts)
@@ -41,6 +48,10 @@ class Briefcase(BaseObject):
             self._link_documents(documents)
         if engineering_changes and self.engineering_change_ids:
             self._link_engineering_changes(engineering_changes)
+        if change_orders and self.change_order_ids:
+            self._link_change_orders(change_orders)
+        if change_requests and self.change_request_ids:
+            self._link_change_requests(change_requests)
 
     def _link_parts(self, parts: list["Part"]):
         for part in parts:
@@ -59,3 +70,13 @@ class Briefcase(BaseObject):
                 and engineering_change not in self.engineering_changes
             ):
                 self.engineering_changes.append(engineering_change)
+
+    def _link_change_orders(self, change_orders: list["ChangeOrder"]):
+        for change_order in change_orders:
+            if change_order.cs_eco_id in self.change_order_ids and change_order not in self.change_orders:
+                self.change_orders.append(change_order)
+
+    def _link_change_requests(self, change_requests: list["ChangeRequest"]):
+        for change_request in change_requests:
+            if change_request.cs_eco_id in self.change_request_ids and change_request not in self.change_requests:
+                self.change_requests.append(change_request)
