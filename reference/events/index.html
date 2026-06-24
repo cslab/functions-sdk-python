@@ -1,0 +1,1865 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../examples/basic_report/">
+      
+      
+        <link rel="next" href="../objects/">
+      
+      
+      <link rel="icon" href="../../assets/branding_web_favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Events - Functions-SDK for Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documentcreatecheckevent" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Functions-SDK for Python" class="md-header__button md-logo" aria-label="Functions-SDK for Python" data-md-component="logo">
+      
+  <img src="../../assets/branding_web_app_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Functions-SDK for Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Events
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cslab/functions-sdk-python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Functions-SDK for Python" class="md-nav__button md-logo" aria-label="Functions-SDK for Python" data-md-component="logo">
+      
+  <img src="../../assets/branding_web_app_icon.png" alt="logo">
+
+    </a>
+    Functions-SDK for Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cslab/functions-sdk-python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../key_concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/enforce_field_rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enforce field rules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/field_calculation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Field calculation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Working with workflows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/basic_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic Report
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Events
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Events
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documentcreatecheckevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      DocumentCreateCheckEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentmodifycheckevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      DocumentModifyCheckEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentreleasecheckevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      DocumentReleaseCheckEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentreleasedevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      DocumentReleasedEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentfieldcalculationevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      DocumentFieldCalculationEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineeringchangereleasecheck" class="md-nav__link">
+    <span class="md-ellipsis">
+      EngineeringChangeReleaseCheck
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineeringchangereleasedevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      EngineeringChangeReleasedEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partcreatecheckevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      PartCreateCheckEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partmodifycheckevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      PartModifyCheckEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partreleasecheckevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      PartReleaseCheckEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partreleasedevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      PartReleasedEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partfieldcalculationevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      PartFieldCalculationEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bomitemfieldcalculationevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      BOMItemFieldCalculationEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflowtasktriggerevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      WorkflowTaskTriggerEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineeringchangestatuschanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      EngineeringChangeStatusChanged
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineeringchangestatuschangecheck" class="md-nav__link">
+    <span class="md-ellipsis">
+      EngineeringChangeStatusChangeCheck
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customoperationdocumentevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      CustomOperationDocumentEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customoperationpartevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      CustomOperationPartEvent
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions Access Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python runtime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release_notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Releases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documentcreatecheckevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      DocumentCreateCheckEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentmodifycheckevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      DocumentModifyCheckEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentreleasecheckevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      DocumentReleaseCheckEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentreleasedevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      DocumentReleasedEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentfieldcalculationevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      DocumentFieldCalculationEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineeringchangereleasecheck" class="md-nav__link">
+    <span class="md-ellipsis">
+      EngineeringChangeReleaseCheck
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineeringchangereleasedevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      EngineeringChangeReleasedEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partcreatecheckevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      PartCreateCheckEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partmodifycheckevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      PartModifyCheckEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partreleasecheckevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      PartReleaseCheckEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partreleasedevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      PartReleasedEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partfieldcalculationevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      PartFieldCalculationEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bomitemfieldcalculationevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      BOMItemFieldCalculationEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflowtasktriggerevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      WorkflowTaskTriggerEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineeringchangestatuschanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      EngineeringChangeStatusChanged
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineeringchangestatuschangecheck" class="md-nav__link">
+    <span class="md-ellipsis">
+      EngineeringChangeStatusChangeCheck
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customoperationdocumentevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      CustomOperationDocumentEvent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customoperationpartevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      CustomOperationPartEvent
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Events</h1>
+
+<p>Events always have a <code>name</code> and a <code>data</code> attribute. The contents of those attributes depend on the type of the event.</p>
+<h2 id="documentcreatecheckevent">DocumentCreateCheckEvent</h2>
+<p><code>csfunctions.events.DocumentCreateCheckEvent</code></p>
+<p>This event is fired when a user tries to create or copy a document. Raising an exception will prevent the creation.
+The event is triggered before any field calculations are performed.</p>
+<p><strong>Supported actions:</strong></p>
+<ul>
+<li><a href="../actions/#abortandshowerroraction">AbortAndShowErrorAction</a></li>
+</ul>
+<p><strong>DocumentCreateCheckEvent.name:</strong> document_create_check</p>
+<p><strong>DocumentCreateCheckEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents that are about to be created.</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of parts that belong to the documents.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="documentmodifycheckevent">DocumentModifyCheckEvent</h2>
+<p><code>csfunctions.events.DocumentModifyCheckEvent</code></p>
+<p>This event is fired when a user tries to modify a document. Raising an exception will prevent the modification.
+The event is triggered before any field calculations are performed.</p>
+<p><strong>Supported actions:</strong></p>
+<ul>
+<li><a href="../actions/#abortandshowerroraction">AbortAndShowErrorAction</a></li>
+</ul>
+<p><strong>DocumentModifyCheckEvent.name:</strong> document_modify_check</p>
+<p><strong>DocumentModifyCheckEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents that are about to be modified.</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of parts that belong to the documents.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="documentreleasecheckevent">DocumentReleaseCheckEvent</h2>
+<p><code>csfunctions.events.DocumentReleaseCheckEvent</code></p>
+<p>This event is fired when a user tries to release a document. Raising an exception will prevent the release. If the release is done via the express release, the event is triggered before reviewers are notified.
+Be aware that the document is not released yet and the release might still be aborted for other reasons (e.g. the reviewers don't give approval), so don't sent the document to e.g. an ERP system yet.</p>
+<p><strong>Supported actions:</strong></p>
+<ul>
+<li><a href="../actions/#abortandshowerroraction">AbortAndShowErrorAction</a></li>
+</ul>
+<p><strong>DocumentReleaseCheckEvent.name:</strong> document_release_check</p>
+<p><strong>DocumentReleaseCheckEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents that will be released.</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of parts that belong to the documents.</td>
+</tr>
+<tr>
+<td>dialog_data</td>
+<td>DocumentReleaseDialogData</td>
+<td>Contents of the dialog.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DocumentReleaseCheckDialogData:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cdbprot_remark</td>
+<td>str | None</td>
+<td>Remark</td>
+</tr>
+<tr>
+<td>cdb_ec_id</td>
+<td>str | None</td>
+<td>Engineering Change ID</td>
+</tr>
+</tbody>
+</table>
+<h2 id="documentreleasedevent">DocumentReleasedEvent</h2>
+<p><code>csfunctions.events.DocumentReleasedEvent</code></p>
+<p>This event is fired <strong>after</strong> a document has been released. Raising an exception thus can not prevent the release.</p>
+<p><strong>Supported actions:</strong></p>
+<ul>
+<li><a href="../actions/#startworkflowaction">StartWorkflowAction</a></li>
+</ul>
+<p><strong>DocumentReleasedEvent.name:</strong> document_released</p>
+<p><strong>DocumentReleasedEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents that were released.</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of parts that belong to the released documents.</td>
+</tr>
+<tr>
+<td>dialog_data</td>
+<td>DocumentReleaseDialogData</td>
+<td>Contents of the dialog.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DocumentReleasedDialogData:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cdbprot_remark</td>
+<td>str | None</td>
+<td>Remark</td>
+</tr>
+<tr>
+<td>cdb_ec_id</td>
+<td>str | None</td>
+<td>Engineering Change ID</td>
+</tr>
+</tbody>
+</table>
+<h2 id="documentfieldcalculationevent">DocumentFieldCalculationEvent</h2>
+<p><code>csfunctions.events.DocumentFieldCalculationEvent</code></p>
+<p>This event is fired when a document is created, modified, copied or indexed. It is triggered after the field calculations defined in the datasheet editor are performed.</p>
+<p>The event expects a DataResponse containing a dictionary of field names and their new values. Fields that are not mentioned in the response are not updated.</p>
+<p><strong>DocumentFieldCalculationEvent.name:</strong> document_field_calculation</p>
+<p><strong>DocumentFieldCalculationEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document</td>
+<td><a href="../objects/#document">Document</a></td>
+<td>Current state of the document</td>
+</tr>
+<tr>
+<td>action</td>
+<td>Literal["create", "modify", "copy", "index"]</td>
+<td>Action being performed</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>Parts that belong to the document</td>
+</tr>
+</tbody>
+</table>
+<h2 id="engineeringchangereleasecheck">EngineeringChangeReleaseCheck</h2>
+<p><code>csfunctions.events.EngineeringChangeReleaseCheck</code></p>
+<p>This event is fired when a user tries to release an engineering change. Raising an exception will prevent the release.
+Be aware that the engineering change is not released yet and the release might still be aborted for other reasons, so don't sent the engineering change to e.g. an ERP system yet.</p>
+<p><strong>Supported actions:</strong></p>
+<ul>
+<li><a href="../actions/#abortandshowerroraction">AbortAndShowErrorAction</a></li>
+</ul>
+<p><strong>EngineeringChangeReleaseCheck.name:</strong> engineering_change_check_release</p>
+<p><strong>EngineeringChangeReleaseCheck.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>engineering_changes</td>
+<td>list[<a href="../objects/#engineeringchange">EngineeringChange</a>]</td>
+<td>List of engineering changes that will be released.</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of included documents.</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of included parts.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="engineeringchangereleasedevent">EngineeringChangeReleasedEvent</h2>
+<p><code>csfunctions.events.EngineeringChangeReleasedEvent</code></p>
+<p>This event is fired <strong>after</strong> an engineering change has been released. Raising an exception thus can not prevent the release.</p>
+<p><strong>Supported actions:</strong></p>
+<ul>
+<li><a href="../actions/#startworkflowaction">StartWorkflowAction</a></li>
+</ul>
+<p><strong>EngineeringChangeReleasedEvent.name:</strong> engineering_change_released</p>
+<p><strong>EngineeringChangeReleasedEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>engineering_changes</td>
+<td>list[<a href="../objects/#engineeringchange">EngineeringChange</a>]</td>
+<td>List of engineering changes that were released.</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of included documents.</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of included parts.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="partcreatecheckevent">PartCreateCheckEvent</h2>
+<p><code>csfunctions.events.PartCreateCheckEvent</code></p>
+<p>This event is fired when a user tries to create or copy a part. Raising an exception will prevent the creation.
+The event is triggered before any field calculations are performed.</p>
+<p><strong>Supported actions:</strong></p>
+<ul>
+<li><a href="../actions/#abortandshowerroraction">AbortAndShowErrorAction</a></li>
+</ul>
+<p><strong>PartCreateCheckEvent.name:</strong> part_create_check</p>
+<p><strong>PartCreateCheckEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of parts that are about to be created.</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents that are referenced by the parts.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="partmodifycheckevent">PartModifyCheckEvent</h2>
+<p><code>csfunctions.events.PartModifyCheckEvent</code></p>
+<p>This event is fired when a user tries to modify a part. Raising an exception will prevent the modification.
+The event is triggered before any field calculations are performed.</p>
+<p><strong>Supported actions:</strong></p>
+<ul>
+<li><a href="../actions/#abortandshowerroraction">AbortAndShowErrorAction</a></li>
+</ul>
+<p><strong>PartModifyCheckEvent.name:</strong> part_modify_check</p>
+<p><strong>PartModifyCheckEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of parts that are about to be modified.</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents that are referenced by the parts.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="partreleasecheckevent">PartReleaseCheckEvent</h2>
+<p><code>csfunctions.events.PartReleaseCheckEvent</code></p>
+<p>This event is fired when a user tries to release a part. Raising an exception will prevent the release. If the release is done via the express release, the event is triggered before reviewers are notified.
+Be aware that the part is not released yet and the release might still be aborted for other reasons (e.g. the reviewers don't give approval), so don't sent the part to e.g. an ERP system yet.</p>
+<p><strong>Supported actions:</strong></p>
+<ul>
+<li><a href="../actions/#abortandshowerroraction">AbortAndShowErrorAction</a></li>
+</ul>
+<p><strong>PartRPartReleaseCheckEventeleaseEvent.name:</strong> part_release_check</p>
+<p><strong>PartReleaseCheckEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of parts that will released.</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents that belong to the released parts.</td>
+</tr>
+<tr>
+<td>dialog_data</td>
+<td>PartReleaseDialogData</td>
+<td>Contents of the dialog.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PartReleaseCheckDialogData:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cdbprot_remark</td>
+<td>str | None</td>
+<td>Remark</td>
+</tr>
+<tr>
+<td>cdb_ec_id</td>
+<td>str | None</td>
+<td>Engineering Change ID</td>
+</tr>
+</tbody>
+</table>
+<h2 id="partreleasedevent">PartReleasedEvent</h2>
+<p><code>csfunctions.events.PartReleasedEvent</code></p>
+<p>This event is fired <strong>after</strong> a part has been released. Raising an exception thus can not prevent the release.</p>
+<p><strong>Supported actions:</strong></p>
+<ul>
+<li><a href="../actions/#startworkflowaction">StartWorkflowAction</a></li>
+</ul>
+<p><strong>PartReleasedEvent.name:</strong> part_released</p>
+<p><strong>PartReleasedEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of parts that were released.</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents that belong to the released parts.</td>
+</tr>
+<tr>
+<td>dialog_data</td>
+<td>PartReleasedDialogData</td>
+<td>Contents of the dialog.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PartReleasedDialogData:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cdbprot_remark</td>
+<td>str | None</td>
+<td>Remark</td>
+</tr>
+<tr>
+<td>cdb_ec_id</td>
+<td>str | None</td>
+<td>Engineering Change ID</td>
+</tr>
+</tbody>
+</table>
+<h2 id="partfieldcalculationevent">PartFieldCalculationEvent</h2>
+<p><code>csfunctions.events.PartFieldCalculationEvent</code></p>
+<p>This event is fired when a part is created, modified, copied or indexed. It is triggered after the field calculations defined in the datasheet editor are performed.</p>
+<p>The event expects a DataResponse containing a dictionary of field names and their new values. Fields that are not mentioned in the response are not updated.</p>
+<p><strong>PartFieldCalculationEvent.name:</strong> part_field_calculation</p>
+<p><strong>PartFieldCalculationEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>part</td>
+<td><a href="../objects/#part">Part</a></td>
+<td>Current state of the part</td>
+</tr>
+<tr>
+<td>action</td>
+<td>Literal["create", "modify", "copy", "index"]</td>
+<td>Action being performed</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents that belong to the part</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bomitemfieldcalculationevent">BOMItemFieldCalculationEvent</h2>
+<p><code>csfunctions.events.BOMItemFieldCalculationEvent</code></p>
+<p>This event is fired when a BOM item is created, modified, copied or indexed. It is triggered after the field calculations defined in the datasheet editor are performed.</p>
+<p>The event expects a DataResponse containing a dictionary of field names and their new values. Fields that are not mentioned in the response are not updated.</p>
+<p><strong>BOMItemFieldCalculationEvent.name:</strong> bom_item_field_calculation</p>
+<p><strong>BOMItemFieldCalculationEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bom_item</td>
+<td><a href="../objects/#bomitem">BOMItem</a></td>
+<td>Current state of the BOM item</td>
+</tr>
+<tr>
+<td>action</td>
+<td>Literal["create", "modify", "copy", "index"]</td>
+<td>Action being performed</td>
+</tr>
+<tr>
+<td>part</td>
+<td><a href="../objects/#part">Part</a></td>
+<td>Part of the BOM item</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents that are referenced by the part.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="workflowtasktriggerevent">WorkflowTaskTriggerEvent</h2>
+<p><code>csfunctions.events.WorkflowTaskTriggerEvent</code></p>
+<p>This event is fired by the workflow task "Trigger Webhook".</p>
+<p><strong>WorkflowTaskTriggerEvent.name:</strong> workflow_task_trigger</p>
+<p><strong>WorkflowTaskTriggerEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>workflows</td>
+<td>list[<a href="../objects/#workflow">Workflow</a>]</td>
+<td>List of workflows in this event.</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of parts attached to the workflow.</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents attached to the workflow.</td>
+</tr>
+<tr>
+<td>engineering_changes</td>
+<td>list[<a href="../objects/#engineeringchange">EngineeringChange</a>]</td>
+<td>List of engineering changes attached to the workflow.</td>
+</tr>
+<tr>
+<td>briefcases</td>
+<td>list[<a href="../objects/#briefcase">Briefcase</a>]</td>
+<td>List of briefcases attached to the workflow.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="engineeringchangestatuschanged">EngineeringChangeStatusChanged</h2>
+<p><code>csfunctions.events.EngineeringChangeStatusChanged</code></p>
+<p>This event is fired <strong>after</strong> an engineering change's status has been modified. Raising an exception cannot prevent the status change.</p>
+<p><strong>EngineeringChangeStatusChanged.name:</strong> engineering_change_status_changed</p>
+<p><strong>EngineeringChangeStatusChanged.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>engineering_change</td>
+<td><a href="../objects/#engineeringchange">EngineeringChange</a></td>
+<td>The engineering change that had its status modified</td>
+</tr>
+<tr>
+<td>prev_status</td>
+<td>str</td>
+<td>The previous status of the engineering change</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents attached to the engineering change</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of parts attached to the engineering change</td>
+</tr>
+</tbody>
+</table>
+<h2 id="engineeringchangestatuschangecheck">EngineeringChangeStatusChangeCheck</h2>
+<p><code>csfunctions.events.EngineeringChangeStatusChangeCheck</code></p>
+<p>This event is fired when a user tries to modify an engineering change's status. Raising an exception will prevent the status change.</p>
+<p><strong>Supported actions:</strong></p>
+<ul>
+<li><a href="../actions/#abortandshowerroraction">AbortAndShowErrorAction</a></li>
+</ul>
+<p><strong>EngineeringChangeStatusChangeCheck.name:</strong> engineering_change_status_change_check</p>
+<p><strong>EngineeringChangeStatusChangeCheck.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>engineering_change</td>
+<td><a href="../objects/#engineeringchange">EngineeringChange</a></td>
+<td>The engineering change that will have its status modified</td>
+</tr>
+<tr>
+<td>target_status</td>
+<td>int</td>
+<td>The status the engineering change will be set to</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents attached to the engineering change</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of parts attached to the engineering change</td>
+</tr>
+</tbody>
+</table>
+<h2 id="customoperationdocumentevent">CustomOperationDocumentEvent</h2>
+<p><code>csfunctions.events.CustomOperationDocumentEvent</code></p>
+<p>This event is triggered when a custom operation is called on one or more documents.</p>
+<p><strong>Supported actions:</strong></p>
+<ul>
+<li><a href="../actions/#startworkflowaction">StartWorkflowAction</a></li>
+<li><a href="../actions/#abortandshowerroraction">AbortAndShowErrorAction</a></li>
+</ul>
+<p><strong>CustomOperationDocumentEvent.name:</strong> custom_operation_document</p>
+<p><strong>CustomOperationDocumentEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents that the custom operation was called on.</td>
+</tr>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of parts that belong to the documents.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="customoperationpartevent">CustomOperationPartEvent</h2>
+<p><code>csfunctions.events.CustomOperationPartEvent</code></p>
+<p>This event is triggered when a custom operation is called on one or more parts.</p>
+<p><strong>Supported actions:</strong></p>
+<ul>
+<li><a href="../actions/#startworkflowaction">StartWorkflowAction</a></li>
+<li><a href="../actions/#abortandshowerroraction">AbortAndShowErrorAction</a></li>
+</ul>
+<p><strong>CustomOperationPartEvent.name:</strong> custom_operation_part</p>
+<p><strong>CustomOperationPartEvent.data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parts</td>
+<td>list[<a href="../objects/#part">Part</a>]</td>
+<td>List of parts that the custom operation was called on.</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>list[<a href="../objects/#document">Document</a>]</td>
+<td>List of documents that belong to the parts.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
