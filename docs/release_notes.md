@@ -3,6 +3,9 @@ hide:
   - toc
 ---
 
+### Version 0.24.0
+- Feat: Add maturity levels
+
 ### Version 0.23.0
 - Feat: Add cssaas_benennung3_en and cssaas_benennung3_de fields to Part
 
