@@ -2053,7 +2053,7 @@
           "description": "Department",
           "title": "C Department"
         },
-        "cs_ecm_change_description": {
+        "cs_ecm_change_description_de": {
           "anyOf": [
             {
               "type": "string"
@@ -2064,7 +2064,20 @@
           ],
           "default": "",
           "description": "Description",
-          "title": "Cs Ecm Change Description"
+          "title": "Cs Ecm Change Description De"
+        },
+        "cs_ecm_change_description_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Description",
+          "title": "Cs Ecm Change Description En"
         },
         "c_event": {
           "anyOf": [
@@ -2582,7 +2595,7 @@
           "description": "Department",
           "title": "C Department"
         },
-        "cs_ecm_change_description": {
+        "cs_ecm_change_description_de": {
           "anyOf": [
             {
               "type": "string"
@@ -2593,7 +2606,20 @@
           ],
           "default": "",
           "description": "Description",
-          "title": "Cs Ecm Change Description"
+          "title": "Cs Ecm Change Description De"
+        },
+        "cs_ecm_change_description_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Description",
+          "title": "Cs Ecm Change Description En"
         },
         "c_event": {
           "anyOf": [

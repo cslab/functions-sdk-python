@@ -122,7 +122,8 @@ class Change(BaseObject):
     change_type: str | None = Field(None, description="Change Type")
 
     c_department: str | None = Field("", description="Department")
-    cs_ecm_change_description: str | None = Field("", description="Description")
+    cs_ecm_change_description_de: str | None = Field("", description="Description")
+    cs_ecm_change_description_en: str | None = Field("", description="Description")
     c_event: str | None = Field("", description="Event")
     change_reason: str | None = Field("", description="Reason")
     c_source: str | None = Field("", description="Source")
