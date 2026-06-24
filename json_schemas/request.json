@@ -7832,6 +7832,19 @@
           "description": "Width",
           "title": "St Breite"
         },
+        "cssaas_maturity_level": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Maturity Level cdb_object_id",
+          "title": "Cssaas Maturity Level"
+        },
         "cca_char_1": {
           "anyOf": [
             {

@@ -5,6 +5,7 @@
 |Attribute|Type|Description|
 |-|-|-|
 |cdb_object_id|str \| None|Object ID|
+|cdb_object_id|str \| None|Object ID|
 |baugruppe|str \| None|Assembly|
 |b_index|str \| None|Assembly Index|
 |component_materialnr_erp|str \| None|Material Number ERP Component|
@@ -525,6 +526,18 @@ Normal Document that doesn't contain a CAD-Model.
 |cdb_mdate|datetime \| None|Last Modified on|
 |status|int|Status Number|
 
+## MaturityLevel
+`csfunctions.objects.MaturityLevel`
+
+|Attribute|Type|Description|
+|-|-|-|
+|cdb_object_id|str \| None|Object ID|
+|id|int \| None|Maturity Level|
+|name_de|str \| None|Name DE|
+|name_en|str \| None|Name EN|
+|obsolete|bool \| None|Obsolete Flag|
+|template_workflow_object_id|str \| None|Template Workflow Object ID|
+
 ## ObjectPropertyValue
 `csfunctions.objects.ObjectPropertyValue`
 
@@ -611,6 +624,7 @@ An objects property, used by classification.
 |mengeneinheit|str \| None|Unit of Measure|
 |gebrauchsstand|str \| None|Usability|
 |st_breite|float \| None|Width|
+|cssaas_maturity_level|str \| None|Maturity Level cdb_object_id|
 |cca_char_1|str \| None|Custom Char Field|
 |cca_char_2|str \| None|Custom Char Field|
 |cca_char_3|str \| None|Custom Char Field|

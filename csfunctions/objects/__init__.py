@@ -8,7 +8,7 @@ from .classification import ObjectPropertyValue
 from .document import CADDocument, Document
 from .engineering_change import EngineeringChange
 from .file import File
-from .part import BOMItem, Material, Part
+from .part import BOMItem, Material, MaturityLevel, Part
 from .person import Person
 from .workflow import Workflow
 
@@ -23,7 +23,8 @@ Object = Annotated[
     | ObjectPropertyValue
     | Briefcase
     | Workflow
-    | Person,
+    | Person
+    | MaturityLevel,
     Field(discriminator="object_type"),
 ]
 
@@ -41,4 +42,5 @@ __all__ = [
     "Workflow",
     "BaseObject",
     "Person",
+    "MaturityLevel",
 ]

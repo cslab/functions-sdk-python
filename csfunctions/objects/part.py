@@ -78,6 +78,8 @@ class Part(BaseObject):
     gebrauchsstand: str | None = Field(None, description="Usability")
     st_breite: float | None = Field(None, description="Width")
 
+    cssaas_maturity_level: str | None = Field(None, description="Maturity Level cdb_object_id")
+
     # Custom Char Fields
     cca_char_1: str | None = Field(None, description="Custom Char Field")
     cca_char_2: str | None = Field(None, description="Custom Char Field")
@@ -238,6 +240,17 @@ class Material(BaseObject):
     cdb_mdate: datetime | None = Field(None, description="Last Modified on")
 
     status: int = Field(..., description="Status Number")
+
+
+class MaturityLevel(BaseObject):
+    object_type: Literal[ObjectType.MATURITY_LEVEL] = ObjectType.MATURITY_LEVEL
+
+    cdb_object_id: str | None = Field(None, description="Object ID")
+    id: int | None = Field(None, description="Maturity Level")
+    name_de: str | None = Field(None, description="Name DE")
+    name_en: str | None = Field(None, description="Name EN")
+    obsolete: bool | None = Field(None, description="Obsolete Flag")
+    template_workflow_object_id: str | None = Field(None, description="Template Workflow Object ID")
 
 
 class BOMItem(BaseObject):

@@ -20,6 +20,7 @@ class ObjectType(str, Enum):
     WORKFLOW = "workflow"
     BRIEFCASE = "briefcase"
     PERSON = "person"
+    MATURITY_LEVEL = "maturity_level"
 
 
 class BaseObject(BaseModel):
