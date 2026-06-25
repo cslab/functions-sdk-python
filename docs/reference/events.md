@@ -154,6 +154,164 @@ This event is fired **after** an engineering change has been released. Raising a
 | documents           | list[[Document](objects.md#document)]                   | List of included documents.                     |
 | parts               | list[[Part](objects.md#part)]                           | List of included parts.                         |
 
+## ChangeOrderReleaseCheckEvent
+`csfunctions.events.ChangeOrderReleaseCheckEvent`
+
+This event is fired when a user tries to release a change order. Raising an exception will prevent the release.
+Be aware that the change order is not released yet and the release might still be aborted for other reasons, so don't sent the change order to e.g. an ERP system yet.
+
+**Supported actions:**
+
+- [AbortAndShowErrorAction](actions.md#abortandshowerroraction)
+
+**ChangeOrderReleaseCheckEvent.name:** change_order_release_check
+
+**ChangeOrderReleaseCheckEvent.data:**
+
+| Attribute     | Type                                        | Description                                  |
+| ------------- | ------------------------------------------- | -------------------------------------------- |
+| change_orders | list[[ChangeOrder](objects.md#changeorder)] | List of change orders that will be released. |
+| documents     | list[[Document](objects.md#document)]       | List of included documents.                  |
+| parts         | list[[Part](objects.md#part)]               | List of included parts.                      |
+
+
+## ChangeOrderReleasedEvent
+`csfunctions.events.ChangeOrderReleasedEvent`
+
+This event is fired **after** a change order has been released. Raising an exception thus can not prevent the release.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#startworkflowaction)
+
+**ChangeOrderReleasedEvent.name:** change_order_released
+
+**ChangeOrderReleasedEvent.data:**
+
+| Attribute     | Type                                        | Description                               |
+| ------------- | ------------------------------------------- | ----------------------------------------- |
+| change_orders | list[[ChangeOrder](objects.md#changeorder)] | List of change orders that were released. |
+| documents     | list[[Document](objects.md#document)]       | List of included documents.               |
+| parts         | list[[Part](objects.md#part)]               | List of included parts.                   |
+
+
+## ChangeOrderStatusChangedEvent
+`csfunctions.events.ChangeOrderStatusChangedEvent`
+
+This event is fired **after** a change order's status has been modified. Raising an exception cannot prevent the status change.
+
+**ChangeOrderStatusChangedEvent.name:** change_order_status_changed
+
+**ChangeOrderStatusChangedEvent.data:**
+
+| Attribute    | Type                                  | Description                                       |
+| ------------ | ------------------------------------- | ------------------------------------------------- |
+| change_order | [ChangeOrder](objects.md#changeorder) | The change order that had its status modified     |
+| prev_status  | int                                   | The previous status of the change order           |
+| documents    | list[[Document](objects.md#document)] | List of documents attached to the change order    |
+| parts        | list[[Part](objects.md#part)]         | List of parts attached to the change order        |
+
+
+## ChangeOrderStatusChangeCheckEvent
+`csfunctions.events.ChangeOrderStatusChangeCheckEvent`
+
+This event is fired when a user tries to modify a change order's status. Raising an exception will prevent the status change.
+
+**Supported actions:**
+
+- [AbortAndShowErrorAction](actions.md#abortandshowerroraction)
+
+**ChangeOrderStatusChangeCheckEvent.name:** change_order_status_change_check
+
+**ChangeOrderStatusChangeCheckEvent.data:**
+
+| Attribute     | Type                                  | Description                                       |
+| ------------- | ------------------------------------- | ------------------------------------------------- |
+| change_order  | [ChangeOrder](objects.md#changeorder) | The change order that will have its status modified |
+| target_status | int                                   | The target status of the change order             |
+| documents     | list[[Document](objects.md#document)] | List of documents attached to the change order    |
+| parts         | list[[Part](objects.md#part)]         | List of parts attached to the change order        |
+
+
+## ChangeRequestReleaseCheckEvent
+`csfunctions.events.ChangeRequestReleaseCheckEvent`
+
+This event is fired when a user tries to release a change request. Raising an exception will prevent the release.
+Be aware that the change request is not released yet and the release might still be aborted for other reasons, so don't sent the change request to e.g. an ERP system yet.
+
+**Supported actions:**
+
+- [AbortAndShowErrorAction](actions.md#abortandshowerroraction)
+
+**ChangeRequestReleaseCheckEvent.name:** change_request_release_check
+
+**ChangeRequestReleaseCheckEvent.data:**
+
+| Attribute       | Type                                            | Description                                    |
+| --------------- | ----------------------------------------------- | ---------------------------------------------- |
+| change_requests | list[[ChangeRequest](objects.md#changerequest)] | List of change requests that will be released. |
+| documents       | list[[Document](objects.md#document)]           | List of included documents.                    |
+| parts           | list[[Part](objects.md#part)]                   | List of included parts.                        |
+
+
+## ChangeRequestReleasedEvent
+`csfunctions.events.ChangeRequestReleasedEvent`
+
+This event is fired **after** a change request has been released. Raising an exception thus can not prevent the release.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#startworkflowaction)
+
+**ChangeRequestReleasedEvent.name:** change_request_released
+
+**ChangeRequestReleasedEvent.data:**
+
+| Attribute       | Type                                            | Description                                 |
+| --------------- | ----------------------------------------------- | ------------------------------------------- |
+| change_requests | list[[ChangeRequest](objects.md#changerequest)] | List of change requests that were released. |
+| documents       | list[[Document](objects.md#document)]           | List of included documents.                 |
+| parts           | list[[Part](objects.md#part)]                   | List of included parts.                     |
+
+
+## ChangeRequestStatusChangedEvent
+`csfunctions.events.ChangeRequestStatusChangedEvent`
+
+This event is fired **after** a change request's status has been modified. Raising an exception cannot prevent the status change.
+
+**ChangeRequestStatusChangedEvent.name:** change_request_status_changed
+
+**ChangeRequestStatusChangedEvent.data:**
+
+| Attribute      | Type                                      | Description                                      |
+| -------------- | ----------------------------------------- | ------------------------------------------------ |
+| change_request | [ChangeRequest](objects.md#changerequest) | The change request that had its status modified  |
+| prev_status    | int                                       | The previous status of the change request        |
+| documents      | list[[Document](objects.md#document)]     | List of documents attached to the change request |
+| parts          | list[[Part](objects.md#part)]             | List of parts attached to the change request     |
+
+
+## ChangeRequestStatusChangeCheckEvent
+`csfunctions.events.ChangeRequestStatusChangeCheckEvent`
+
+This event is fired when a user tries to modify a change request's status. Raising an exception will prevent the status change.
+
+**Supported actions:**
+
+- [AbortAndShowErrorAction](actions.md#abortandshowerroraction)
+
+**ChangeRequestStatusChangeCheckEvent.name:** change_request_status_change_check
+
+**ChangeRequestStatusChangeCheckEvent.data:**
+
+| Attribute      | Type                                      | Description                                          |
+| -------------- | ----------------------------------------- | ---------------------------------------------------- |
+| change_request | [ChangeRequest](objects.md#changerequest) | The change request that will have its status modified |
+| target_status  | int                                       | The target status of the change request              |
+| documents      | list[[Document](objects.md#document)]     | List of documents attached to the change request     |
+| parts          | list[[Part](objects.md#part)]             | List of parts attached to the change request         |
+
+
 ## PartCreateCheckEvent
 `csfunctions.events.PartCreateCheckEvent`
 
@@ -299,6 +457,8 @@ This event is fired by the workflow task "Trigger Webhook".
 | parts               | list[[Part](objects.md#part)]                           | List of parts attached to the workflow.               |
 | documents           | list[[Document](objects.md#document)]                   | List of documents attached to the workflow.           |
 | engineering_changes | list[[EngineeringChange](objects.md#engineeringchange)] | List of engineering changes attached to the workflow. |
+| change_orders       | list[[ChangeOrder](objects.md#changeorder)]             | List of change orders attached to the workflow.       |
+| change_requests     | list[[ChangeRequest](objects.md#changerequest)]         | List of change requests attached to the workflow.     |
 | briefcases          | list[[Briefcase](objects.md#briefcase)]                 | List of briefcases attached to the workflow.          |
 
 ## EngineeringChangeStatusChanged

@@ -14,6 +14,8 @@ class ObjectType(str, Enum):
     PART = "part"
     FILE = "file"
     ENGINEERING_CHANGE = "engineering_change"
+    CHANGE_ORDER = "change_order"
+    CHANGE_REQUEST = "change_request"
     MATERIAL = "material"
     BOM_ITEM = "bom_item"
     OBJECT_PROPERTY_VALUE = "object_property_value"
