@@ -143,7 +143,7 @@
 ## Briefcase
 `csfunctions.objects.Briefcase`
 
-Briefcases are used by Workflows and can contain parts, documents or engineering changes.
+Briefcases are used by Workflows and can contain parts, documents, engineering changes, change orders or change requests.
 
 |Attribute|Type|Description|
 |-|-|-|
@@ -152,9 +152,87 @@ Briefcases are used by Workflows and can contain parts, documents or engineering
 |part_ids|list[str]|List of part IDs in this Briefcase. (teilenummer@t_index)|
 |document_ids|list[str]|List of document IDs in this Briefcase. (z_nummer@z_index)|
 |engineering_change_ids|list[str]|List of engineering change IDs in this Briefcase. (cdb_ec_id)|
+|change_order_ids|list[str]|List of change order IDs in this Briefcase. (cs_change_id)|
+|change_request_ids|list[str]|List of change request IDs in this Briefcase. (cs_change_id)|
 |parts|list[[Part](objects.md#part)]||
 |documents|list[[Document](objects.md#document)]||
 |engineering_changes|list[[EngineeringChange](objects.md#engineeringchange)]||
+|change_orders|list[[ChangeOrder](objects.md#changeorder)]||
+|change_requests|list[[ChangeRequest](objects.md#changerequest)]||
+
+## ChangeOrder
+`csfunctions.objects.ChangeOrder`
+
+A change order of the ECM module. Shares all attributes of its base class `csfunctions.objects.Change`.
+
+|Attribute|Type|Description|
+|-|-|-|
+|cs_change_id|str|Change ID|
+|cdb_project_id|str \| None|Project ID|
+|product_object_oid|str \| None|Product object ID|
+|end_time_plan|datetime \| None|Planned end time|
+|status|int|Status|
+|title_de|str \| None|Title (de)|
+|title_en|str \| None|Title (en)|
+|cdb_object_id|str \| None|Object ID|
+|change_type|str \| None|Change Type|
+|cs_ecm_change_description_de|str \| None|Description (de)|
+|cs_ecm_change_description_en|str \| None|Description (en)|
+|c_event|str \| None|Event|
+|change_reason_de|str \| None|Reason (de)|
+|change_reason_en|str \| None|Reason (en)|
+|c_source|str \| None|Source|
+|part_ids|list[str]|List of part IDs, that were changed. (teilenummer@t_index)|
+|document_ids|list[str]|List of document IDs, that were changed. (z_nummer@z_index)|
+|affected_part_ids|list[str]|List of part IDs, that were planned to be changed. (teilenummer@t_index)|
+|affected_document_ids|list[str]|List of document IDs, that were planned to be changed. (z_nummer@z_index)|
+|accompanying_document_ids|list[str]|List of document IDs, that accompany the change. (z_nummer@z_index)|
+|parts|list[[Part](objects.md#part)]||
+|documents|list[[Document](objects.md#document)]||
+|affected_parts|list[[Part](objects.md#part)]||
+|affected_documents|list[[Document](objects.md#document)]||
+|accompanying_documents|list[[Document](objects.md#document)]||
+|cdb_cpersno|str \| None|Created by|
+|cdb_cdate|datetime \| None|Created on|
+|cdb_mpersno|str|Last Modified by|
+|cdb_mdate|datetime \| None|Last Modified on|
+
+## ChangeRequest
+`csfunctions.objects.ChangeRequest`
+
+A change request of the ECM module. Shares all attributes of its base class `csfunctions.objects.Change`.
+
+|Attribute|Type|Description|
+|-|-|-|
+|cs_change_id|str|Change ID|
+|cdb_project_id|str \| None|Project ID|
+|product_object_oid|str \| None|Product object ID|
+|end_time_plan|datetime \| None|Planned end time|
+|status|int|Status|
+|title_de|str \| None|Title (de)|
+|title_en|str \| None|Title (en)|
+|cdb_object_id|str \| None|Object ID|
+|change_type|str \| None|Change Type|
+|cs_ecm_change_description_de|str \| None|Description (de)|
+|cs_ecm_change_description_en|str \| None|Description (en)|
+|c_event|str \| None|Event|
+|change_reason_de|str \| None|Reason (de)|
+|change_reason_en|str \| None|Reason (en)|
+|c_source|str \| None|Source|
+|part_ids|list[str]|List of part IDs, that were changed. (teilenummer@t_index)|
+|document_ids|list[str]|List of document IDs, that were changed. (z_nummer@z_index)|
+|affected_part_ids|list[str]|List of part IDs, that were planned to be changed. (teilenummer@t_index)|
+|affected_document_ids|list[str]|List of document IDs, that were planned to be changed. (z_nummer@z_index)|
+|accompanying_document_ids|list[str]|List of document IDs, that accompany the change. (z_nummer@z_index)|
+|parts|list[[Part](objects.md#part)]||
+|documents|list[[Document](objects.md#document)]||
+|affected_parts|list[[Part](objects.md#part)]||
+|affected_documents|list[[Document](objects.md#document)]||
+|accompanying_documents|list[[Document](objects.md#document)]||
+|cdb_cpersno|str \| None|Created by|
+|cdb_cdate|datetime \| None|Created on|
+|cdb_mpersno|str|Last Modified by|
+|cdb_mdate|datetime \| None|Last Modified on|
 
 ## Document
 `csfunctions.objects.Document`
