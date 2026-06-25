@@ -1893,7 +1893,7 @@
         },
         "change_order_ids": {
           "default": [],
-          "description": "List of change order IDs in this Briefcase. (cs_eco_id)",
+          "description": "List of change order IDs in this Briefcase. (cs_change_id)",
           "items": {
             "type": "string"
           },
@@ -1902,7 +1902,7 @@
         },
         "change_request_ids": {
           "default": [],
-          "description": "List of change request IDs in this Briefcase. (cs_eco_id)",
+          "description": "List of change request IDs in this Briefcase. (cs_change_id)",
           "items": {
             "type": "string"
           },
@@ -1964,9 +1964,9 @@
           "title": "Object Type",
           "type": "string"
         },
-        "cs_eco_id": {
-          "description": "Engineering Change Order ID",
-          "title": "Cs Eco Id",
+        "cs_change_id": {
+          "description": "Change ID",
+          "title": "Cs Change Id",
           "type": "string"
         },
         "cdb_project_id": {
@@ -1981,6 +1981,19 @@
           "default": "",
           "description": "Project ID",
           "title": "Cdb Project Id"
+        },
+        "product_object_oid": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Product object ID",
+          "title": "Product Object Oid"
         },
         "end_time_plan": {
           "anyOf": [
@@ -2001,7 +2014,7 @@
           "title": "Status",
           "type": "integer"
         },
-        "title": {
+        "title_de": {
           "anyOf": [
             {
               "type": "string"
@@ -2011,8 +2024,21 @@
             }
           ],
           "default": "",
-          "description": "Title",
-          "title": "Title"
+          "description": "Title (de)",
+          "title": "Title De"
+        },
+        "title_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Title (en)",
+          "title": "Title En"
         },
         "cdb_object_id": {
           "anyOf": [
@@ -2040,19 +2066,6 @@
           "description": "Change Type",
           "title": "Change Type"
         },
-        "c_department": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": "",
-          "description": "Department",
-          "title": "C Department"
-        },
         "cs_ecm_change_description_de": {
           "anyOf": [
             {
@@ -2063,7 +2076,7 @@
             }
           ],
           "default": "",
-          "description": "Description",
+          "description": "Description (de)",
           "title": "Cs Ecm Change Description De"
         },
         "cs_ecm_change_description_en": {
@@ -2076,7 +2089,7 @@
             }
           ],
           "default": "",
-          "description": "Description",
+          "description": "Description (en)",
           "title": "Cs Ecm Change Description En"
         },
         "c_event": {
@@ -2092,7 +2105,7 @@
           "description": "Event",
           "title": "C Event"
         },
-        "change_reason": {
+        "change_reason_de": {
           "anyOf": [
             {
               "type": "string"
@@ -2102,8 +2115,21 @@
             }
           ],
           "default": "",
-          "description": "Reason",
-          "title": "Change Reason"
+          "description": "Reason (de)",
+          "title": "Change Reason De"
+        },
+        "change_reason_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Reason (en)",
+          "title": "Change Reason En"
         },
         "c_source": {
           "anyOf": [
@@ -2252,7 +2278,7 @@
         }
       },
       "required": [
-        "cs_eco_id",
+        "cs_change_id",
         "status"
       ],
       "title": "ChangeOrder",
@@ -2506,9 +2532,9 @@
           "title": "Object Type",
           "type": "string"
         },
-        "cs_eco_id": {
-          "description": "Engineering Change Order ID",
-          "title": "Cs Eco Id",
+        "cs_change_id": {
+          "description": "Change ID",
+          "title": "Cs Change Id",
           "type": "string"
         },
         "cdb_project_id": {
@@ -2523,6 +2549,19 @@
           "default": "",
           "description": "Project ID",
           "title": "Cdb Project Id"
+        },
+        "product_object_oid": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Product object ID",
+          "title": "Product Object Oid"
         },
         "end_time_plan": {
           "anyOf": [
@@ -2543,7 +2582,7 @@
           "title": "Status",
           "type": "integer"
         },
-        "title": {
+        "title_de": {
           "anyOf": [
             {
               "type": "string"
@@ -2553,8 +2592,21 @@
             }
           ],
           "default": "",
-          "description": "Title",
-          "title": "Title"
+          "description": "Title (de)",
+          "title": "Title De"
+        },
+        "title_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Title (en)",
+          "title": "Title En"
         },
         "cdb_object_id": {
           "anyOf": [
@@ -2582,19 +2634,6 @@
           "description": "Change Type",
           "title": "Change Type"
         },
-        "c_department": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": "",
-          "description": "Department",
-          "title": "C Department"
-        },
         "cs_ecm_change_description_de": {
           "anyOf": [
             {
@@ -2605,7 +2644,7 @@
             }
           ],
           "default": "",
-          "description": "Description",
+          "description": "Description (de)",
           "title": "Cs Ecm Change Description De"
         },
         "cs_ecm_change_description_en": {
@@ -2618,7 +2657,7 @@
             }
           ],
           "default": "",
-          "description": "Description",
+          "description": "Description (en)",
           "title": "Cs Ecm Change Description En"
         },
         "c_event": {
@@ -2634,7 +2673,7 @@
           "description": "Event",
           "title": "C Event"
         },
-        "change_reason": {
+        "change_reason_de": {
           "anyOf": [
             {
               "type": "string"
@@ -2644,8 +2683,21 @@
             }
           ],
           "default": "",
-          "description": "Reason",
-          "title": "Change Reason"
+          "description": "Reason (de)",
+          "title": "Change Reason De"
+        },
+        "change_reason_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Reason (en)",
+          "title": "Change Reason En"
         },
         "c_source": {
           "anyOf": [
@@ -2794,7 +2846,7 @@
         }
       },
       "required": [
-        "cs_eco_id",
+        "cs_change_id",
         "status"
       ],
       "title": "ChangeRequest",
