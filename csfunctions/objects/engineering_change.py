@@ -113,19 +113,21 @@ class Change(BaseObject):
     Use the concrete subclasses :class:`ChangeOrder` and :class:`ChangeRequest`.
     """
 
-    cs_eco_id: str = Field(..., description="Engineering Change Order ID")
+    cs_change_id: str = Field(..., description="Change ID")
     cdb_project_id: str | None = Field("", description="Project ID")
+    product_object_oid: str | None = Field("", description="Product object ID")
     end_time_plan: datetime | None = Field(None, description="Planned end time")
     status: int = Field(..., description="Status")
-    title: str | None = Field("", description="Title")
+    title_de: str | None = Field("", description="Title (de)")
+    title_en: str | None = Field("", description="Title (en)")
     cdb_object_id: str | None = Field(None, description="Object ID")
     change_type: str | None = Field(None, description="Change Type")
 
-    c_department: str | None = Field("", description="Department")
-    cs_ecm_change_description_de: str | None = Field("", description="Description")
-    cs_ecm_change_description_en: str | None = Field("", description="Description")
+    cs_ecm_change_description_de: str | None = Field("", description="Description (de)")
+    cs_ecm_change_description_en: str | None = Field("", description="Description (en)")
     c_event: str | None = Field("", description="Event")
-    change_reason: str | None = Field("", description="Reason")
+    change_reason_de: str | None = Field("", description="Reason (de)")
+    change_reason_en: str | None = Field("", description="Reason (en)")
     c_source: str | None = Field("", description="Source")
 
     part_ids: list[str] = Field([], description="List of part IDs, that were changed. (teilenummer@t_index)")

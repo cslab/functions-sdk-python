@@ -26,8 +26,10 @@ class Briefcase(BaseObject):
     engineering_change_ids: list[str] = Field(
         [], description="List of engineering change IDs in this Briefcase. (cdb_ec_id)"
     )
-    change_order_ids: list[str] = Field([], description="List of change order IDs in this Briefcase. (cs_eco_id)")
-    change_request_ids: list[str] = Field([], description="List of change request IDs in this Briefcase. (cs_eco_id)")
+    change_order_ids: list[str] = Field([], description="List of change order IDs in this Briefcase. (cs_change_id)")
+    change_request_ids: list[str] = Field(
+        [], description="List of change request IDs in this Briefcase. (cs_change_id)"
+    )
 
     parts: list[Part] = Field([], exclude=True)
     documents: list[Document] = Field([], exclude=True)
@@ -73,10 +75,10 @@ class Briefcase(BaseObject):
 
     def _link_change_orders(self, change_orders: list["ChangeOrder"]):
         for change_order in change_orders:
-            if change_order.cs_eco_id in self.change_order_ids and change_order not in self.change_orders:
+            if change_order.cs_change_id in self.change_order_ids and change_order not in self.change_orders:
                 self.change_orders.append(change_order)
 
     def _link_change_requests(self, change_requests: list["ChangeRequest"]):
         for change_request in change_requests:
-            if change_request.cs_eco_id in self.change_request_ids and change_request not in self.change_requests:
+            if change_request.cs_change_id in self.change_request_ids and change_request not in self.change_requests:
                 self.change_requests.append(change_request)
