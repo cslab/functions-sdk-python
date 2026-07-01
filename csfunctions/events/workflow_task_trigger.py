@@ -2,7 +2,7 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-from csfunctions.objects import Briefcase, Document, EngineeringChange, Part, Workflow
+from csfunctions.objects import Briefcase, ChangeOrder, ChangeRequest, Document, EngineeringChange, Part, Workflow
 
 from .base import BaseEvent, EventNames
 
@@ -14,6 +14,8 @@ class WorkflowTaskTriggerEventData(BaseModel):
     engineering_changes: list[EngineeringChange] = Field(
         [], description="List of engineering changes attached to the workflow."
     )
+    change_orders: list[ChangeOrder] = Field([], description="List of change orders attached to the workflow.")
+    change_requests: list[ChangeRequest] = Field([], description="List of change requests attached to the workflow.")
     briefcases: list[Briefcase] = Field([], description="List of briefcases attached to the workflow.")
 
 

@@ -6,7 +6,7 @@ from .base import BaseObject
 from .briefcase import Briefcase
 from .classification import ObjectPropertyValue
 from .document import CADDocument, Document
-from .engineering_change import EngineeringChange
+from .engineering_change import Change, ChangeOrder, ChangeRequest, EngineeringChange
 from .file import File
 from .part import BOMItem, Material, MaturityLevel, Part
 from .person import Person
@@ -18,6 +18,8 @@ Object = Annotated[
     | Part
     | File
     | EngineeringChange
+    | ChangeOrder
+    | ChangeRequest
     | Material
     | BOMItem
     | ObjectPropertyValue
@@ -35,6 +37,9 @@ __all__ = [
     "Part",
     "File",
     "EngineeringChange",
+    "Change",
+    "ChangeOrder",
+    "ChangeRequest",
     "Material",
     "BOMItem",
     "ObjectPropertyValue",
