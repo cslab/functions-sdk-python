@@ -20,6 +20,24 @@ The event is triggered before any field calculations are performed.
 | documents | list[[Document](objects.md#document)] | List of documents that are about to be created. |
 | parts     | list[[Part](objects.md#part)]         | List of parts that belong to the documents.     |
 
+## DocumentCreatedEvent
+`csfunctions.events.DocumentCreatedEvent`
+
+This event is fired **after** a document has been created. Raising an exception thus can not prevent the creation.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#startworkflowaction)
+
+**DocumentCreatedEvent.name:** document_created
+
+**DocumentCreatedEvent.data:**
+
+| Attribute | Type                                  | Description                                 |
+| --------- | ------------------------------------- | ------------------------------------------- |
+| documents | list[[Document](objects.md#document)] | List of documents that were created.        |
+| parts     | list[[Part](objects.md#part)]         | List of parts that belong to the documents. |
+
 ## DocumentModifyCheckEvent
 `csfunctions.events.DocumentModifyCheckEvent`
 
@@ -329,6 +347,24 @@ The event is triggered before any field calculations are performed.
 | Attribute | Type                                  | Description                                         |
 | --------- | ------------------------------------- | --------------------------------------------------- |
 | parts     | list[[Part](objects.md#part)]         | List of parts that are about to be created.         |
+| documents | list[[Document](objects.md#document)] | List of documents that are referenced by the parts. |
+
+## PartCreatedEvent
+`csfunctions.events.PartCreatedEvent`
+
+This event is fired **after** a part has been created. Raising an exception thus can not prevent the creation.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#startworkflowaction)
+
+**PartCreatedEvent.name:** part_created
+
+**PartCreatedEvent.data:**
+
+| Attribute | Type                                  | Description                                         |
+| --------- | ------------------------------------- | --------------------------------------------------- |
+| parts     | list[[Part](objects.md#part)]         | List of parts that were created.                    |
 | documents | list[[Document](objects.md#document)] | List of documents that are referenced by the parts. |
 
 ## PartModifyCheckEvent
