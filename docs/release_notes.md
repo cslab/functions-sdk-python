@@ -3,8 +3,11 @@ hide:
   - toc
 ---
 
-### Version 0.25.0
+### Version 0.26.0
 - Feat: Add part_created and document_created events
+
+### Version 0.25.0
+- Feat: Add events and objects needed for new ECM
 
 ### Version 0.24.0
 - Feat: Add maturity levels
