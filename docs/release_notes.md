@@ -3,6 +3,12 @@ hide:
   - toc
 ---
 
+### Version 0.26.0
+- Feat: Extend all multi-language object fields with Japanese (ja) and Chinese (zh) variants
+
+### Version 0.25.0
+- Feat: Add change objects (ChangeOrder and ChangeRequest) with their release and status change events
+
 ### Version 0.24.0
 - Feat: Add maturity levels
 
