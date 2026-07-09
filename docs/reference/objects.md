@@ -175,13 +175,19 @@ A change order of the ECM module. Shares all attributes of its base class `csfun
 |status|int|Status|
 |title_de|str \| None|Title (de)|
 |title_en|str \| None|Title (en)|
+|title_ja|str \| None|Title (ja)|
+|title_zh|str \| None|Title (zh)|
 |cdb_object_id|str \| None|Object ID|
 |change_type|str \| None|Change Type|
 |cs_ecm_change_description_de|str \| None|Description (de)|
 |cs_ecm_change_description_en|str \| None|Description (en)|
+|cs_ecm_change_description_ja|str \| None|Description (ja)|
+|cs_ecm_change_description_zh|str \| None|Description (zh)|
 |c_event|str \| None|Event|
 |change_reason_de|str \| None|Reason (de)|
 |change_reason_en|str \| None|Reason (en)|
+|change_reason_ja|str \| None|Reason (ja)|
+|change_reason_zh|str \| None|Reason (zh)|
 |c_source|str \| None|Source|
 |part_ids|list[str]|List of part IDs, that were changed. (teilenummer@t_index)|
 |document_ids|list[str]|List of document IDs, that were changed. (z_nummer@z_index)|
@@ -212,13 +218,19 @@ A change request of the ECM module. Shares all attributes of its base class `csf
 |status|int|Status|
 |title_de|str \| None|Title (de)|
 |title_en|str \| None|Title (en)|
+|title_ja|str \| None|Title (ja)|
+|title_zh|str \| None|Title (zh)|
 |cdb_object_id|str \| None|Object ID|
 |change_type|str \| None|Change Type|
 |cs_ecm_change_description_de|str \| None|Description (de)|
 |cs_ecm_change_description_en|str \| None|Description (en)|
+|cs_ecm_change_description_ja|str \| None|Description (ja)|
+|cs_ecm_change_description_zh|str \| None|Description (zh)|
 |c_event|str \| None|Event|
 |change_reason_de|str \| None|Reason (de)|
 |change_reason_en|str \| None|Reason (en)|
+|change_reason_ja|str \| None|Reason (ja)|
+|change_reason_zh|str \| None|Reason (zh)|
 |c_source|str \| None|Source|
 |part_ids|list[str]|List of part IDs, that were changed. (teilenummer@t_index)|
 |document_ids|list[str]|List of document IDs, that were changed. (z_nummer@z_index)|
@@ -247,8 +259,12 @@ Normal Document that doesn't contain a CAD-Model.
 |titel|str \| None|title|
 |category1_name_en|str \| None|Main Category|
 |category1_name_de|str \| None|Main Category|
+|category1_name_ja|str \| None|Main Category|
+|category1_name_zh|str \| None|Main Category|
 |category2_name_en|str \| None|Category|
 |category2_name_de|str \| None|Category|
+|category2_name_ja|str \| None|Category|
+|category2_name_zh|str \| None|Category|
 |z_categ1|str \| None|Main Category|
 |z_categ2|str \| None|Category|
 |cdb_obsolete|int \| None|Obsolete|
@@ -595,6 +611,8 @@ Normal Document that doesn't contain a CAD-Model.
 |material_id|str \| None|Material ID|
 |name_de|str \| None|Name DE|
 |name_en|str \| None|Name EN|
+|name_ja|str \| None|Name JA|
+|name_zh|str \| None|Name ZH|
 |short_name|str \| None|Short Name|
 |application|str \| None|Applications|
 |remark|str \| None|Remarks|
@@ -613,6 +631,8 @@ Normal Document that doesn't contain a CAD-Model.
 |id|int \| None|Maturity Level|
 |name_de|str \| None|Name DE|
 |name_en|str \| None|Name EN|
+|name_ja|str \| None|Name JA|
+|name_zh|str \| None|Name ZH|
 |obsolete|bool \| None|Obsolete Flag|
 |template_workflow_object_id|str \| None|Template Workflow Object ID|
 
@@ -651,22 +671,32 @@ An objects property, used by classification.
 |benennung2|str \| None|Additional Name|
 |cssaas_benennung3_en|str \| None|Supplementary Name|
 |cssaas_benennung3_de|str \| None|Supplementary Name|
+|cssaas_benennung3_ja|str \| None|Supplementary Name|
+|cssaas_benennung3_zh|str \| None|Supplementary Name|
 |t_kategorie_name_de|str \| None|Category Name|
 |t_kategorie_name_en|str \| None|Category Name|
+|t_kategorie_name_ja|str \| None|Category Name|
+|t_kategorie_name_zh|str \| None|Category Name|
 |cdb_t_project_id|str \| None|Project ID|
 |t_bereich|str \| None|Department|
 |cdb_t_ec_id|str \| None|Engineering Change ID|
 |item_maturity|int \| None|Maturity Level|
 |gebrauchsstand_name_de|str \| None|Usage Status|
 |gebrauchsstand_name_en|str \| None|Usage Status|
+|gebrauchsstand_name_ja|str \| None|Usage Status|
+|gebrauchsstand_name_zh|str \| None|Usage Status|
 |ce_valid_from|date \| datetime \| None|Effective from|
 |ce_valid_to|date \| datetime \| None|Effective to|
 |mengeneinheit_name_de|str \| None|Quantity Unit|
 |mengeneinheit_name_en|str \| None|Quantity Unit|
+|mengeneinheit_name_ja|str \| None|Quantity Unit|
+|mengeneinheit_name_zh|str \| None|Quantity Unit|
 |st_gewicht|float \| None|Weight (kg)|
 |material_object_id|str \| None|Material ID|
 |surface_name_en|str \| None|Surface|
 |surface_name_de|str \| None|Surface|
+|surface_name_ja|str \| None|Surface|
+|surface_name_zh|str \| None|Surface|
 |techdaten|str \| None|Engineering Data|
 |cssaas_mirrored_from|str \| None|Mirror Part ID|
 |t_ersatz_fuer|str \| None|Replacement for|
