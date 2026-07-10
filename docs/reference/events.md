@@ -94,6 +94,24 @@ This event is fired **after** a document has been released. Raising an exception
 | cdb_ec_id      | str \| None | Engineering Change ID |
 
 
+## DocumentBlockedEvent
+`csfunctions.events.DocumentBlockedEvent`
+
+This event is fired **after** a document has been blocked (status set to 170). Raising an exception thus can not prevent the blocking.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#startworkflowaction)
+
+**DocumentBlockedEvent.name:** document_blocked
+
+**DocumentBlockedEvent.data:**
+
+| Attribute | Type                                  | Description                                 |
+| --------- | ------------------------------------- | ------------------------------------------- |
+| documents | list[[Document](objects.md#document)] | List of documents that were blocked.        |
+| parts     | list[[Part](objects.md#part)]         | List of parts that belong to the documents. |
+
 ## DocumentFieldCalculationEvent
 `csfunctions.events.DocumentFieldCalculationEvent`
 
@@ -404,6 +422,24 @@ This event is fired **after** a part has been released. Raising an exception thu
 | cdbprot_remark | str \| None | Remark                |
 | cdb_ec_id      | str \| None | Engineering Change ID |
 
+
+## PartBlockedEvent
+`csfunctions.events.PartBlockedEvent`
+
+This event is fired **after** a part has been blocked (status set to 170). Raising an exception thus can not prevent the blocking.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#startworkflowaction)
+
+**PartBlockedEvent.name:** part_blocked
+
+**PartBlockedEvent.data:**
+
+| Attribute | Type                                  | Description                              |
+| --------- | ------------------------------------- | ---------------------------------------- |
+| parts     | list[[Part](objects.md#part)]         | List of parts that were blocked.         |
+| documents | list[[Document](objects.md#document)] | List of documents that belong to the parts. |
 
 ## PartFieldCalculationEvent
 `csfunctions.events.PartFieldCalculationEvent`

@@ -3,6 +3,9 @@ hide:
   - toc
 ---
 
+### Version 0.27.0
+- Feat: Add part_blocked and document_blocked events
+
 ### Version 0.26.0
 - Feat: Extend all multi-language object fields with Japanese (ja) and Chinese (zh) variants
 
