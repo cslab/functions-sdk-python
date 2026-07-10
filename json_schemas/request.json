@@ -2040,6 +2040,32 @@
           "description": "Title (en)",
           "title": "Title En"
         },
+        "title_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Title (ja)",
+          "title": "Title Ja"
+        },
+        "title_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Title (zh)",
+          "title": "Title Zh"
+        },
         "cdb_object_id": {
           "anyOf": [
             {
@@ -2092,6 +2118,32 @@
           "description": "Description (en)",
           "title": "Cs Ecm Change Description En"
         },
+        "cs_ecm_change_description_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Description (ja)",
+          "title": "Cs Ecm Change Description Ja"
+        },
+        "cs_ecm_change_description_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Description (zh)",
+          "title": "Cs Ecm Change Description Zh"
+        },
         "c_event": {
           "anyOf": [
             {
@@ -2130,6 +2182,32 @@
           "default": "",
           "description": "Reason (en)",
           "title": "Change Reason En"
+        },
+        "change_reason_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Reason (ja)",
+          "title": "Change Reason Ja"
+        },
+        "change_reason_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Reason (zh)",
+          "title": "Change Reason Zh"
         },
         "c_source": {
           "anyOf": [
@@ -2608,6 +2686,32 @@
           "description": "Title (en)",
           "title": "Title En"
         },
+        "title_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Title (ja)",
+          "title": "Title Ja"
+        },
+        "title_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Title (zh)",
+          "title": "Title Zh"
+        },
         "cdb_object_id": {
           "anyOf": [
             {
@@ -2660,6 +2764,32 @@
           "description": "Description (en)",
           "title": "Cs Ecm Change Description En"
         },
+        "cs_ecm_change_description_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Description (ja)",
+          "title": "Cs Ecm Change Description Ja"
+        },
+        "cs_ecm_change_description_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Description (zh)",
+          "title": "Cs Ecm Change Description Zh"
+        },
         "c_event": {
           "anyOf": [
             {
@@ -2698,6 +2828,32 @@
           "default": "",
           "description": "Reason (en)",
           "title": "Change Reason En"
+        },
+        "change_reason_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Reason (ja)",
+          "title": "Change Reason Ja"
+        },
+        "change_reason_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "",
+          "description": "Reason (zh)",
+          "title": "Change Reason Zh"
         },
         "c_source": {
           "anyOf": [
@@ -3249,6 +3405,32 @@
           "description": "Main Category",
           "title": "Category1 Name De"
         },
+        "category1_name_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Main Category",
+          "title": "Category1 Name Ja"
+        },
+        "category1_name_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Main Category",
+          "title": "Category1 Name Zh"
+        },
         "category2_name_en": {
           "anyOf": [
             {
@@ -3272,6 +3454,32 @@
           ],
           "description": "Category",
           "title": "Category2 Name De"
+        },
+        "category2_name_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Category",
+          "title": "Category2 Name Ja"
+        },
+        "category2_name_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Category",
+          "title": "Category2 Name Zh"
         },
         "z_categ1": {
           "anyOf": [
@@ -8425,6 +8633,32 @@
           "description": "Supplementary Name",
           "title": "Cssaas Benennung3 De"
         },
+        "cssaas_benennung3_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Supplementary Name",
+          "title": "Cssaas Benennung3 Ja"
+        },
+        "cssaas_benennung3_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Supplementary Name",
+          "title": "Cssaas Benennung3 Zh"
+        },
         "t_kategorie_name_de": {
           "anyOf": [
             {
@@ -8450,6 +8684,32 @@
           "default": null,
           "description": "Category Name",
           "title": "T Kategorie Name En"
+        },
+        "t_kategorie_name_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Category Name",
+          "title": "T Kategorie Name Ja"
+        },
+        "t_kategorie_name_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Category Name",
+          "title": "T Kategorie Name Zh"
         },
         "cdb_t_project_id": {
           "anyOf": [
@@ -8529,6 +8789,32 @@
           "description": "Usage Status",
           "title": "Gebrauchsstand Name En"
         },
+        "gebrauchsstand_name_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Usage Status",
+          "title": "Gebrauchsstand Name Ja"
+        },
+        "gebrauchsstand_name_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Usage Status",
+          "title": "Gebrauchsstand Name Zh"
+        },
         "ce_valid_from": {
           "anyOf": [
             {
@@ -8591,6 +8877,32 @@
           "description": "Quantity Unit",
           "title": "Mengeneinheit Name En"
         },
+        "mengeneinheit_name_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Quantity Unit",
+          "title": "Mengeneinheit Name Ja"
+        },
+        "mengeneinheit_name_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Quantity Unit",
+          "title": "Mengeneinheit Name Zh"
+        },
         "st_gewicht": {
           "anyOf": [
             {
@@ -8642,6 +8954,32 @@
           "default": null,
           "description": "Surface",
           "title": "Surface Name De"
+        },
+        "surface_name_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Surface",
+          "title": "Surface Name Ja"
+        },
+        "surface_name_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Surface",
+          "title": "Surface Name Zh"
         },
         "techdaten": {
           "anyOf": [
