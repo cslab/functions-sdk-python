@@ -5,6 +5,7 @@ hide:
 
 ### Version 0.26.0
 - Feat: Add part_created and document_created events
+- Feat: Add part_indexed and document_indexed events
 
 ### Version 0.25.0
 - Feat: Add events and objects needed for new ECM

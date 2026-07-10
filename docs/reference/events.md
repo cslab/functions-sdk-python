@@ -38,6 +38,24 @@ This event is fired **after** a document has been created. Raising an exception 
 | documents | list[[Document](objects.md#document)] | List of documents that were created.        |
 | parts     | list[[Part](objects.md#part)]         | List of parts that belong to the documents. |
 
+## DocumentIndexedEvent
+`csfunctions.events.DocumentIndexedEvent`
+
+This event is fired **after** a document has been indexed (a new version was created). Raising an exception thus can not prevent the indexing.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#startworkflowaction)
+
+**DocumentIndexedEvent.name:** document_indexed
+
+**DocumentIndexedEvent.data:**
+
+| Attribute | Type                                  | Description                                 |
+| --------- | ------------------------------------- | ------------------------------------------- |
+| documents | list[[Document](objects.md#document)] | List of documents that were indexed.        |
+| parts     | list[[Part](objects.md#part)]         | List of parts that belong to the documents. |
+
 ## DocumentModifyCheckEvent
 `csfunctions.events.DocumentModifyCheckEvent`
 
@@ -365,6 +383,24 @@ This event is fired **after** a part has been created. Raising an exception thus
 | Attribute | Type                                  | Description                                         |
 | --------- | ------------------------------------- | --------------------------------------------------- |
 | parts     | list[[Part](objects.md#part)]         | List of parts that were created.                    |
+| documents | list[[Document](objects.md#document)] | List of documents that are referenced by the parts. |
+
+## PartIndexedEvent
+`csfunctions.events.PartIndexedEvent`
+
+This event is fired **after** a part has been indexed (a new version was created). Raising an exception thus can not prevent the indexing.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#startworkflowaction)
+
+**PartIndexedEvent.name:** part_indexed
+
+**PartIndexedEvent.data:**
+
+| Attribute | Type                                  | Description                                         |
+| --------- | ------------------------------------- | --------------------------------------------------- |
+| parts     | list[[Part](objects.md#part)]         | List of parts that were indexed.                    |
 | documents | list[[Document](objects.md#document)] | List of documents that are referenced by the parts. |
 
 ## PartModifyCheckEvent

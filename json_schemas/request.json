@@ -7185,6 +7185,56 @@
       "title": "DocumentFieldCalculationEvent",
       "type": "object"
     },
+    "DocumentIndexedData": {
+      "properties": {
+        "documents": {
+          "description": "List of documents that were indexed (a new version was created).",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of parts that belong to the documents.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "parts"
+      ],
+      "title": "DocumentIndexedData",
+      "type": "object"
+    },
+    "DocumentIndexedEvent": {
+      "properties": {
+        "name": {
+          "const": "document_indexed",
+          "default": "document_indexed",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/DocumentIndexedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "DocumentIndexedEvent",
+      "type": "object"
+    },
     "DocumentModifyCheckData": {
       "properties": {
         "documents": {
@@ -10829,6 +10879,56 @@
       "title": "PartFieldCalculationEvent",
       "type": "object"
     },
+    "PartIndexedData": {
+      "properties": {
+        "parts": {
+          "description": "List of parts that were indexed (a new version was created).",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "documents": {
+          "description": "List of documents that are referenced by the parts.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        }
+      },
+      "required": [
+        "parts",
+        "documents"
+      ],
+      "title": "PartIndexedData",
+      "type": "object"
+    },
+    "PartIndexedEvent": {
+      "properties": {
+        "name": {
+          "const": "part_indexed",
+          "default": "part_indexed",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/PartIndexedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "PartIndexedEvent",
+      "type": "object"
+    },
     "PartModifyCheckData": {
       "properties": {
         "parts": {
@@ -11237,6 +11337,7 @@
           "document_create_check": "#/$defs/DocumentCreateCheckEvent",
           "document_created": "#/$defs/DocumentCreatedEvent",
           "document_field_calculation": "#/$defs/DocumentFieldCalculationEvent",
+          "document_indexed": "#/$defs/DocumentIndexedEvent",
           "document_modify_check": "#/$defs/DocumentModifyCheckEvent",
           "document_release_check": "#/$defs/DocumentReleaseCheckEvent",
           "document_released": "#/$defs/DocumentReleasedEvent",
@@ -11249,6 +11350,7 @@
           "part_create_check": "#/$defs/PartCreateCheckEvent",
           "part_created": "#/$defs/PartCreatedEvent",
           "part_field_calculation": "#/$defs/PartFieldCalculationEvent",
+          "part_indexed": "#/$defs/PartIndexedEvent",
           "part_modify_check": "#/$defs/PartModifyCheckEvent",
           "part_release_check": "#/$defs/PartReleaseCheckEvent",
           "part_released": "#/$defs/PartReleasedEvent",
@@ -11261,6 +11363,9 @@
           "$ref": "#/$defs/DocumentCreatedEvent"
         },
         {
+          "$ref": "#/$defs/DocumentIndexedEvent"
+        },
+        {
           "$ref": "#/$defs/DocumentReleasedEvent"
         },
         {
@@ -11271,6 +11376,9 @@
         },
         {
           "$ref": "#/$defs/PartCreatedEvent"
+        },
+        {
+          "$ref": "#/$defs/PartIndexedEvent"
         },
         {
           "$ref": "#/$defs/PartReleasedEvent"

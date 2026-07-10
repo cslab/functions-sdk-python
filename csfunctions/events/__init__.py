@@ -21,6 +21,7 @@ from .dialog_data import DocumentReleasedDialogData, PartReleasedDialogData
 from .document_create_check import DocumentCreateCheckData, DocumentCreateCheckEvent
 from .document_created import DocumentCreatedData, DocumentCreatedEvent
 from .document_field_calculation import DocumentFieldCalculationData, DocumentFieldCalculationEvent
+from .document_indexed import DocumentIndexedData, DocumentIndexedEvent
 from .document_modify_check import DocumentModifyCheckData, DocumentModifyCheckEvent
 from .document_release_check import DocumentReleaseCheckData, DocumentReleaseCheckEvent
 from .document_released import DocumentReleasedData, DocumentReleasedEvent
@@ -36,6 +37,7 @@ from .field_value_calculation import FieldValueCalculationData, FieldValueCalcul
 from .part_create_check import PartCreateCheckData, PartCreateCheckEvent
 from .part_created import PartCreatedData, PartCreatedEvent
 from .part_field_calculation import PartFieldCalculationData, PartFieldCalculationEvent
+from .part_indexed import PartIndexedData, PartIndexedEvent
 from .part_modify_check import PartModifyCheckData, PartModifyCheckEvent
 from .part_release_check import PartReleaseCheckData, PartReleaseCheckEvent
 from .part_released import PartReleasedData, PartReleasedEvent
@@ -43,10 +45,12 @@ from .workflow_task_trigger import WorkflowTaskTriggerEvent, WorkflowTaskTrigger
 
 Event = Annotated[
     DocumentCreatedEvent
+    | DocumentIndexedEvent
     | DocumentReleasedEvent
     | DocumentReleaseCheckEvent
     | DocumentFieldCalculationEvent
     | PartCreatedEvent
+    | PartIndexedEvent
     | PartReleasedEvent
     | PartReleaseCheckEvent
     | PartFieldCalculationEvent
@@ -76,10 +80,12 @@ Event = Annotated[
 ]
 EventData = (
     DocumentCreatedData
+    | DocumentIndexedData
     | DocumentReleasedData
     | DocumentReleaseCheckData
     | DocumentFieldCalculationData
     | PartCreatedData
+    | PartIndexedData
     | PartReleasedData
     | PartReleaseCheckData
     | PartFieldCalculationData
@@ -109,10 +115,12 @@ EventData = (
 
 __all__ = [
     "DocumentCreatedEvent",
+    "DocumentIndexedEvent",
     "DocumentReleasedEvent",
     "DocumentReleaseCheckEvent",
     "DocumentFieldCalculationEvent",
     "PartCreatedEvent",
+    "PartIndexedEvent",
     "PartReleasedEvent",
     "PartReleaseCheckEvent",
     "PartFieldCalculationEvent",
@@ -133,10 +141,12 @@ __all__ = [
     "ChangeRequestStatusChangeCheckEvent",
     "WorkflowTaskTriggerEvent",
     "DocumentCreatedData",
+    "DocumentIndexedData",
     "DocumentReleasedData",
     "DocumentReleaseCheckData",
     "DocumentFieldCalculationData",
     "PartCreatedData",
+    "PartIndexedData",
     "PartReleasedData",
     "PartReleaseCheckData",
     "BOMItemFieldCalculationData",
