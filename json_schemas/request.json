@@ -7396,7 +7396,7 @@
     "DocumentIndexedData": {
       "properties": {
         "documents": {
-          "description": "List of documents that were indexed (a new version was created).",
+          "description": "List of documents that were indexed.",
           "items": {
             "$ref": "#/$defs/Document"
           },
@@ -11220,7 +11220,7 @@
     "PartIndexedData": {
       "properties": {
         "parts": {
-          "description": "List of parts that were indexed (a new version was created).",
+          "description": "List of parts that were indexed.",
           "items": {
             "$ref": "#/$defs/Part"
           },

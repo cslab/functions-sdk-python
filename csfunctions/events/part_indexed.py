@@ -8,7 +8,7 @@ from .base import BaseEvent, EventNames
 
 
 class PartIndexedData(BaseModel):
-    parts: list[Part] = Field(..., description="List of parts that were indexed (a new version was created).")
+    parts: list[Part] = Field(..., description="List of parts that were indexed.")
     documents: list[Document] = Field(..., description="List of documents that are referenced by the parts.")
 
 

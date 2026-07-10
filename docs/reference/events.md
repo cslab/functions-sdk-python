@@ -41,7 +41,7 @@ This event is fired **after** a document has been created. Raising an exception 
 ## DocumentIndexedEvent
 `csfunctions.events.DocumentIndexedEvent`
 
-This event is fired **after** a document has been indexed (a new version was created). Raising an exception thus can not prevent the indexing.
+This event is fired **after** a document has been indexed. Raising an exception thus can not prevent the indexing.
 
 **Supported actions:**
 
@@ -388,7 +388,7 @@ This event is fired **after** a part has been created. Raising an exception thus
 ## PartIndexedEvent
 `csfunctions.events.PartIndexedEvent`
 
-This event is fired **after** a part has been indexed (a new version was created). Raising an exception thus can not prevent the indexing.
+This event is fired **after** a part has been indexed. Raising an exception thus can not prevent the indexing.
 
 **Supported actions:**
 

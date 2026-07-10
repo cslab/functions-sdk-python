@@ -8,9 +8,7 @@ from .base import BaseEvent, EventNames
 
 
 class DocumentIndexedData(BaseModel):
-    documents: list[Document] = Field(
-        ..., description="List of documents that were indexed (a new version was created)."
-    )
+    documents: list[Document] = Field(..., description="List of documents that were indexed.")
     parts: list[Part] = Field(..., description="List of parts that belong to the documents.")
 
 
