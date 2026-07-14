@@ -18,6 +18,7 @@ from .custom_operations import (
     CustomOperationPartEvent,
 )
 from .dialog_data import DocumentReleasedDialogData, PartReleasedDialogData
+from .document_blocked import DocumentBlockedData, DocumentBlockedEvent
 from .document_create_check import DocumentCreateCheckData, DocumentCreateCheckEvent
 from .document_created import DocumentCreatedData, DocumentCreatedEvent
 from .document_field_calculation import DocumentFieldCalculationData, DocumentFieldCalculationEvent
@@ -34,6 +35,7 @@ from .engineering_change_status_change_check import (
 )
 from .engineering_change_status_changed import EngineeringChangeStatusChangedData, EngineeringChangeStatusChangedEvent
 from .field_value_calculation import FieldValueCalculationData, FieldValueCalculationEvent
+from .part_blocked import PartBlockedData, PartBlockedEvent
 from .part_create_check import PartCreateCheckData, PartCreateCheckEvent
 from .part_created import PartCreatedData, PartCreatedEvent
 from .part_field_calculation import PartFieldCalculationData, PartFieldCalculationEvent
@@ -46,11 +48,13 @@ from .workflow_task_trigger import WorkflowTaskTriggerEvent, WorkflowTaskTrigger
 Event = Annotated[
     DocumentCreatedEvent
     | DocumentIndexedEvent
+    | DocumentBlockedEvent
     | DocumentReleasedEvent
     | DocumentReleaseCheckEvent
     | DocumentFieldCalculationEvent
     | PartCreatedEvent
     | PartIndexedEvent
+    | PartBlockedEvent
     | PartReleasedEvent
     | PartReleaseCheckEvent
     | PartFieldCalculationEvent
@@ -81,11 +85,13 @@ Event = Annotated[
 EventData = (
     DocumentCreatedData
     | DocumentIndexedData
+    | DocumentBlockedData
     | DocumentReleasedData
     | DocumentReleaseCheckData
     | DocumentFieldCalculationData
     | PartCreatedData
     | PartIndexedData
+    | PartBlockedData
     | PartReleasedData
     | PartReleaseCheckData
     | PartFieldCalculationData
@@ -116,11 +122,13 @@ EventData = (
 __all__ = [
     "DocumentCreatedEvent",
     "DocumentIndexedEvent",
+    "DocumentBlockedEvent",
     "DocumentReleasedEvent",
     "DocumentReleaseCheckEvent",
     "DocumentFieldCalculationEvent",
     "PartCreatedEvent",
     "PartIndexedEvent",
+    "PartBlockedEvent",
     "PartReleasedEvent",
     "PartReleaseCheckEvent",
     "PartFieldCalculationEvent",
@@ -142,11 +150,13 @@ __all__ = [
     "WorkflowTaskTriggerEvent",
     "DocumentCreatedData",
     "DocumentIndexedData",
+    "DocumentBlockedData",
     "DocumentReleasedData",
     "DocumentReleaseCheckData",
     "DocumentFieldCalculationData",
     "PartCreatedData",
     "PartIndexedData",
+    "PartBlockedData",
     "PartReleasedData",
     "PartReleaseCheckData",
     "BOMItemFieldCalculationData",

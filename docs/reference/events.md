@@ -90,11 +90,12 @@ Be aware that the document is not released yet and the release might still be ab
 
 **DocumentReleaseCheckEvent.data:**
 
-| Attribute   | Type                                  | Description                                 |
-| ----------- | ------------------------------------- | ------------------------------------------- |
-| documents   | list[[Document](objects.md#document)] | List of documents that will be released.    |
-| parts       | list[[Part](objects.md#part)]         | List of parts that belong to the documents. |
-| dialog_data | DocumentReleaseDialogData             | Contents of the dialog.                     |
+| Attribute   | Type                                  | Description                                                                     |
+| ----------- | ------------------------------------- | -------------------------------------------------------------------------------- |
+| documents   | list[[Document](objects.md#document)] | List of documents that will be released.                                        |
+| parts       | list[[Part](objects.md#part)]         | List of parts that belong to the documents.                                     |
+| dialog_data | DocumentReleaseDialogData             | Contents of the dialog.                                                          |
+| reviewers   | list[Subject]                         | List of reviewers assigned to the release. Only populated for express releases. |
 
 **DocumentReleaseCheckDialogData:**
 
@@ -102,6 +103,13 @@ Be aware that the document is not released yet and the release might still be ab
 | -------------- | ----------- | --------------------- |
 | cdbprot_remark | str \| None | Remark                |
 | cdb_ec_id      | str \| None | Engineering Change ID |
+
+**Subject:**
+
+| Attribute    | Type | Description                                                       |
+| ------------ | ---- | ------------------------------------------------------------------ |
+| subject_id   | str  | ID of the subject, e.g. a role name or "personalnummer"            |
+| subject_type | str  | Type of the subject. Can be "Person", "PCS Role" or "Common Role"  |
 
 ## DocumentReleasedEvent
 `csfunctions.events.DocumentReleasedEvent`
@@ -129,6 +137,24 @@ This event is fired **after** a document has been released. Raising an exception
 | cdbprot_remark | str \| None | Remark                |
 | cdb_ec_id      | str \| None | Engineering Change ID |
 
+
+## DocumentBlockedEvent
+`csfunctions.events.DocumentBlockedEvent`
+
+This event is fired **after** a document has been blocked (status set to 170). Raising an exception thus can not prevent the blocking.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#startworkflowaction)
+
+**DocumentBlockedEvent.name:** document_blocked
+
+**DocumentBlockedEvent.data:**
+
+| Attribute | Type                                  | Description                                 |
+| --------- | ------------------------------------- | ------------------------------------------- |
+| documents | list[[Document](objects.md#document)] | List of documents that were blocked.        |
+| parts     | list[[Part](objects.md#part)]         | List of parts that belong to the documents. |
 
 ## DocumentFieldCalculationEvent
 `csfunctions.events.DocumentFieldCalculationEvent`
@@ -436,11 +462,12 @@ Be aware that the part is not released yet and the release might still be aborte
 
 **PartReleaseCheckEvent.data:**
 
-| Attribute   | Type                                  | Description                                          |
-| ----------- | ------------------------------------- | ---------------------------------------------------- |
-| parts       | list[[Part](objects.md#part)]         | List of parts that will released.                    |
-| documents   | list[[Document](objects.md#document)] | List of documents that belong to the released parts. |
-| dialog_data | PartReleaseDialogData                 | Contents of the dialog.                              |
+| Attribute   | Type                                  | Description                                                                     |
+| ----------- | ------------------------------------- | -------------------------------------------------------------------------------- |
+| parts       | list[[Part](objects.md#part)]         | List of parts that will released.                                              |
+| documents   | list[[Document](objects.md#document)] | List of documents that belong to the released parts.                           |
+| dialog_data | PartReleaseDialogData                 | Contents of the dialog.                                                          |
+| reviewers   | list[Subject]                         | List of reviewers assigned to the release. Only populated for express releases. |
 
 **PartReleaseCheckDialogData:**
 
@@ -448,6 +475,13 @@ Be aware that the part is not released yet and the release might still be aborte
 | -------------- | ----------- | --------------------- |
 | cdbprot_remark | str \| None | Remark                |
 | cdb_ec_id      | str \| None | Engineering Change ID |
+
+**Subject:**
+
+| Attribute    | Type | Description                                                       |
+| ------------ | ---- | ------------------------------------------------------------------ |
+| subject_id   | str  | ID of the subject, e.g. a role name or "personalnummer"            |
+| subject_type | str  | Type of the subject. Can be "Person", "PCS Role" or "Common Role"  |
 
 
 ## PartReleasedEvent
@@ -476,6 +510,24 @@ This event is fired **after** a part has been released. Raising an exception thu
 | cdbprot_remark | str \| None | Remark                |
 | cdb_ec_id      | str \| None | Engineering Change ID |
 
+
+## PartBlockedEvent
+`csfunctions.events.PartBlockedEvent`
+
+This event is fired **after** a part has been blocked (status set to 170). Raising an exception thus can not prevent the blocking.
+
+**Supported actions:**
+
+- [StartWorkflowAction](actions.md#startworkflowaction)
+
+**PartBlockedEvent.name:** part_blocked
+
+**PartBlockedEvent.data:**
+
+| Attribute | Type                                  | Description                              |
+| --------- | ------------------------------------- | ---------------------------------------- |
+| parts     | list[[Part](objects.md#part)]         | List of parts that were blocked.         |
+| documents | list[[Document](objects.md#document)] | List of documents that belong to the parts. |
 
 ## PartFieldCalculationEvent
 `csfunctions.events.PartFieldCalculationEvent`
