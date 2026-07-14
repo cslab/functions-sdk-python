@@ -7235,6 +7235,56 @@
       "title": "Document",
       "type": "object"
     },
+    "DocumentBlockedData": {
+      "properties": {
+        "documents": {
+          "description": "List of documents that were blocked.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of parts that belong to the documents.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "parts"
+      ],
+      "title": "DocumentBlockedData",
+      "type": "object"
+    },
+    "DocumentBlockedEvent": {
+      "properties": {
+        "name": {
+          "const": "document_blocked",
+          "default": "document_blocked",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/DocumentBlockedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "DocumentBlockedEvent",
+      "type": "object"
+    },
     "DocumentCreateCheckData": {
       "properties": {
         "documents": {
@@ -10967,6 +11017,56 @@
       "title": "Part",
       "type": "object"
     },
+    "PartBlockedData": {
+      "properties": {
+        "parts": {
+          "description": "List of parts that were blocked.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "documents": {
+          "description": "List of documents that belong to the parts.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        }
+      },
+      "required": [
+        "parts",
+        "documents"
+      ],
+      "title": "PartBlockedData",
+      "type": "object"
+    },
+    "PartBlockedEvent": {
+      "properties": {
+        "name": {
+          "const": "part_blocked",
+          "default": "part_blocked",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/PartBlockedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "PartBlockedEvent",
+      "type": "object"
+    },
     "PartCreateCheckData": {
       "properties": {
         "parts": {
@@ -11513,6 +11613,7 @@
           "change_request_status_changed": "#/$defs/ChangeRequestStatusChangedEvent",
           "custom_operation_document": "#/$defs/CustomOperationDocumentEvent",
           "custom_operation_part": "#/$defs/CustomOperationPartEvent",
+          "document_blocked": "#/$defs/DocumentBlockedEvent",
           "document_create_check": "#/$defs/DocumentCreateCheckEvent",
           "document_field_calculation": "#/$defs/DocumentFieldCalculationEvent",
           "document_modify_check": "#/$defs/DocumentModifyCheckEvent",
@@ -11524,6 +11625,7 @@
           "engineering_change_status_change_check": "#/$defs/EngineeringChangeStatusChangeCheckEvent",
           "engineering_change_status_changed": "#/$defs/EngineeringChangeStatusChangedEvent",
           "field_value_calculation": "#/$defs/FieldValueCalculationEvent",
+          "part_blocked": "#/$defs/PartBlockedEvent",
           "part_create_check": "#/$defs/PartCreateCheckEvent",
           "part_field_calculation": "#/$defs/PartFieldCalculationEvent",
           "part_modify_check": "#/$defs/PartModifyCheckEvent",
@@ -11535,6 +11637,9 @@
       },
       "oneOf": [
         {
+          "$ref": "#/$defs/DocumentBlockedEvent"
+        },
+        {
           "$ref": "#/$defs/DocumentReleasedEvent"
         },
         {
@@ -11542,6 +11647,9 @@
         },
         {
           "$ref": "#/$defs/DocumentFieldCalculationEvent"
+        },
+        {
+          "$ref": "#/$defs/PartBlockedEvent"
         },
         {
           "$ref": "#/$defs/PartReleasedEvent"
