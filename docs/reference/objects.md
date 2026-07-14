@@ -5,7 +5,6 @@
 |Attribute|Type|Description|
 |-|-|-|
 |cdb_object_id|str \| None|Object ID|
-|cdb_object_id|str \| None|Object ID|
 |baugruppe|str \| None|Assembly|
 |b_index|str \| None|Assembly Index|
 |component_materialnr_erp|str \| None|Material Number ERP Component|
@@ -144,7 +143,8 @@
 ## Briefcase
 `csfunctions.objects.Briefcase`
 
-Briefcases are used by Workflows and can contain parts, documents, engineering changes, change orders or change requests.
+Briefcases are used by Workflows and can contain parts, documents, engineering changes,
+change orders or change requests.
 
 |Attribute|Type|Description|
 |-|-|-|
@@ -158,56 +158,14 @@ Briefcases are used by Workflows and can contain parts, documents, engineering c
 |parts|list[[Part](objects.md#part)]||
 |documents|list[[Document](objects.md#document)]||
 |engineering_changes|list[[EngineeringChange](objects.md#engineeringchange)]||
-|change_orders|list[[ChangeOrder](objects.md#changeorder)]||
-|change_requests|list[[ChangeRequest](objects.md#changerequest)]||
+|change_orders|list[[Change](objects.md#change)Order]||
+|change_requests|list[[Change](objects.md#change)Request]||
 
-## ChangeOrder
-`csfunctions.objects.ChangeOrder`
+## Change
+`csfunctions.objects.Change`
 
-A change order of the ECM module. Shares all attributes of its base class `csfunctions.objects.Change`.
-
-|Attribute|Type|Description|
-|-|-|-|
-|cs_change_id|str|Change ID|
-|cdb_project_id|str \| None|Project ID|
-|product_object_oid|str \| None|Product object ID|
-|end_time_plan|datetime \| None|Planned end time|
-|status|int|Status|
-|title_de|str \| None|Title (de)|
-|title_en|str \| None|Title (en)|
-|title_ja|str \| None|Title (ja)|
-|title_zh|str \| None|Title (zh)|
-|cdb_object_id|str \| None|Object ID|
-|change_type|str \| None|Change Type|
-|cs_ecm_change_description_de|str \| None|Description (de)|
-|cs_ecm_change_description_en|str \| None|Description (en)|
-|cs_ecm_change_description_ja|str \| None|Description (ja)|
-|cs_ecm_change_description_zh|str \| None|Description (zh)|
-|c_event|str \| None|Event|
-|change_reason_de|str \| None|Reason (de)|
-|change_reason_en|str \| None|Reason (en)|
-|change_reason_ja|str \| None|Reason (ja)|
-|change_reason_zh|str \| None|Reason (zh)|
-|c_source|str \| None|Source|
-|part_ids|list[str]|List of part IDs, that were changed. (teilenummer@t_index)|
-|document_ids|list[str]|List of document IDs, that were changed. (z_nummer@z_index)|
-|affected_part_ids|list[str]|List of part IDs, that were planned to be changed. (teilenummer@t_index)|
-|affected_document_ids|list[str]|List of document IDs, that were planned to be changed. (z_nummer@z_index)|
-|accompanying_document_ids|list[str]|List of document IDs, that accompany the change. (z_nummer@z_index)|
-|parts|list[[Part](objects.md#part)]||
-|documents|list[[Document](objects.md#document)]||
-|affected_parts|list[[Part](objects.md#part)]||
-|affected_documents|list[[Document](objects.md#document)]||
-|accompanying_documents|list[[Document](objects.md#document)]||
-|cdb_cpersno|str \| None|Created by|
-|cdb_cdate|datetime \| None|Created on|
-|cdb_mpersno|str|Last Modified by|
-|cdb_mdate|datetime \| None|Last Modified on|
-
-## ChangeRequest
-`csfunctions.objects.ChangeRequest`
-
-A change request of the ECM module. Shares all attributes of its base class `csfunctions.objects.Change`.
+Base class for changes of the ECM module (change orders and change requests).
+Use the concrete subclasses :class:`ChangeOrder` and :class:`ChangeRequest`.
 
 |Attribute|Type|Description|
 |-|-|-|
