@@ -3,11 +3,12 @@ hide:
   - toc
 ---
 
-
 ### Version 0.26.0
 - Feat: Extend all multi-language object fields with Japanese (ja) and Chinese (zh) variants
 - Feat: Add part_blocked and document_blocked events
 - Feat: Add reviewers field to PartReleaseCheckEvent and DocumentReleaseCheckEvent, populated for express releases
+- Feat: Add part_created and document_created events
+- Feat: Add part_indexed and document_indexed events
 
 ### Version 0.25.0
 - Feat: Add change objects (ChangeOrder and ChangeRequest) with their release and status change events

@@ -5,10 +5,14 @@ from pydantic import BaseModel, Field
 
 class EventNames(str, Enum):
     DUMMY = "dummy"
+    DOCUMENT_CREATED = "document_created"
+    DOCUMENT_INDEXED = "document_indexed"
     DOCUMENT_BLOCKED = "document_blocked"
     DOCUMENT_RELEASED = "document_released"
     DOCUMENT_RELEASE_CHECK = "document_release_check"
     DOCUMENT_FIELD_CALCULATION = "document_field_calculation"
+    PART_CREATED = "part_created"
+    PART_INDEXED = "part_indexed"
     PART_BLOCKED = "part_blocked"
     PART_RELEASED = "part_released"
     PART_RELEASE_CHECK = "part_release_check"

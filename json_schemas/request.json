@@ -7335,6 +7335,56 @@
       "title": "DocumentCreateCheckEvent",
       "type": "object"
     },
+    "DocumentCreatedData": {
+      "properties": {
+        "documents": {
+          "description": "List of documents that were created.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of parts that belong to the documents.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "parts"
+      ],
+      "title": "DocumentCreatedData",
+      "type": "object"
+    },
+    "DocumentCreatedEvent": {
+      "properties": {
+        "name": {
+          "const": "document_created",
+          "default": "document_created",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/DocumentCreatedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "DocumentCreatedEvent",
+      "type": "object"
+    },
     "DocumentFieldCalculationData": {
       "properties": {
         "document": {
@@ -7391,6 +7441,56 @@
         "data"
       ],
       "title": "DocumentFieldCalculationEvent",
+      "type": "object"
+    },
+    "DocumentIndexedData": {
+      "properties": {
+        "documents": {
+          "description": "List of documents that were indexed.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        },
+        "parts": {
+          "description": "List of parts that belong to the documents.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "documents",
+        "parts"
+      ],
+      "title": "DocumentIndexedData",
+      "type": "object"
+    },
+    "DocumentIndexedEvent": {
+      "properties": {
+        "name": {
+          "const": "document_indexed",
+          "default": "document_indexed",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/DocumentIndexedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "DocumentIndexedEvent",
       "type": "object"
     },
     "DocumentModifyCheckData": {
@@ -11117,6 +11217,56 @@
       "title": "PartCreateCheckEvent",
       "type": "object"
     },
+    "PartCreatedData": {
+      "properties": {
+        "parts": {
+          "description": "List of parts that were created.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "documents": {
+          "description": "List of documents that are referenced by the parts.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        }
+      },
+      "required": [
+        "parts",
+        "documents"
+      ],
+      "title": "PartCreatedData",
+      "type": "object"
+    },
+    "PartCreatedEvent": {
+      "properties": {
+        "name": {
+          "const": "part_created",
+          "default": "part_created",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/PartCreatedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "PartCreatedEvent",
+      "type": "object"
+    },
     "PartFieldCalculationData": {
       "properties": {
         "part": {
@@ -11173,6 +11323,56 @@
         "data"
       ],
       "title": "PartFieldCalculationEvent",
+      "type": "object"
+    },
+    "PartIndexedData": {
+      "properties": {
+        "parts": {
+          "description": "List of parts that were indexed.",
+          "items": {
+            "$ref": "#/$defs/Part"
+          },
+          "title": "Parts",
+          "type": "array"
+        },
+        "documents": {
+          "description": "List of documents that are referenced by the parts.",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "title": "Documents",
+          "type": "array"
+        }
+      },
+      "required": [
+        "parts",
+        "documents"
+      ],
+      "title": "PartIndexedData",
+      "type": "object"
+    },
+    "PartIndexedEvent": {
+      "properties": {
+        "name": {
+          "const": "part_indexed",
+          "default": "part_indexed",
+          "title": "Name",
+          "type": "string"
+        },
+        "event_id": {
+          "description": "unique identifier",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/PartIndexedData"
+        }
+      },
+      "required": [
+        "event_id",
+        "data"
+      ],
+      "title": "PartIndexedEvent",
       "type": "object"
     },
     "PartModifyCheckData": {
@@ -11615,7 +11815,9 @@
           "custom_operation_part": "#/$defs/CustomOperationPartEvent",
           "document_blocked": "#/$defs/DocumentBlockedEvent",
           "document_create_check": "#/$defs/DocumentCreateCheckEvent",
+          "document_created": "#/$defs/DocumentCreatedEvent",
           "document_field_calculation": "#/$defs/DocumentFieldCalculationEvent",
+          "document_indexed": "#/$defs/DocumentIndexedEvent",
           "document_modify_check": "#/$defs/DocumentModifyCheckEvent",
           "document_release_check": "#/$defs/DocumentReleaseCheckEvent",
           "document_released": "#/$defs/DocumentReleasedEvent",
@@ -11627,7 +11829,9 @@
           "field_value_calculation": "#/$defs/FieldValueCalculationEvent",
           "part_blocked": "#/$defs/PartBlockedEvent",
           "part_create_check": "#/$defs/PartCreateCheckEvent",
+          "part_created": "#/$defs/PartCreatedEvent",
           "part_field_calculation": "#/$defs/PartFieldCalculationEvent",
+          "part_indexed": "#/$defs/PartIndexedEvent",
           "part_modify_check": "#/$defs/PartModifyCheckEvent",
           "part_release_check": "#/$defs/PartReleaseCheckEvent",
           "part_released": "#/$defs/PartReleasedEvent",
@@ -11636,6 +11840,12 @@
         "propertyName": "name"
       },
       "oneOf": [
+        {
+          "$ref": "#/$defs/DocumentCreatedEvent"
+        },
+        {
+          "$ref": "#/$defs/DocumentIndexedEvent"
+        },
         {
           "$ref": "#/$defs/DocumentBlockedEvent"
         },
@@ -11647,6 +11857,12 @@
         },
         {
           "$ref": "#/$defs/DocumentFieldCalculationEvent"
+        },
+        {
+          "$ref": "#/$defs/PartCreatedEvent"
+        },
+        {
+          "$ref": "#/$defs/PartIndexedEvent"
         },
         {
           "$ref": "#/$defs/PartBlockedEvent"
