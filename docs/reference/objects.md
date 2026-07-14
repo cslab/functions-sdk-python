@@ -143,8 +143,7 @@
 ## Briefcase
 `csfunctions.objects.Briefcase`
 
-Briefcases are used by Workflows and can contain parts, documents, engineering changes,
-change orders or change requests.
+Briefcases are used by Workflows and can contain parts, documents, engineering changes, change orders or change requests.
 
 |Attribute|Type|Description|
 |-|-|-|
