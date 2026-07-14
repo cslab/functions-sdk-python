@@ -54,11 +54,12 @@ Be aware that the document is not released yet and the release might still be ab
 
 **DocumentReleaseCheckEvent.data:**
 
-| Attribute   | Type                                  | Description                                 |
-| ----------- | ------------------------------------- | ------------------------------------------- |
-| documents   | list[[Document](objects.md#document)] | List of documents that will be released.    |
-| parts       | list[[Part](objects.md#part)]         | List of parts that belong to the documents. |
-| dialog_data | DocumentReleaseDialogData             | Contents of the dialog.                     |
+| Attribute   | Type                                  | Description                                                                     |
+| ----------- | ------------------------------------- | -------------------------------------------------------------------------------- |
+| documents   | list[[Document](objects.md#document)] | List of documents that will be released.                                        |
+| parts       | list[[Part](objects.md#part)]         | List of parts that belong to the documents.                                     |
+| dialog_data | DocumentReleaseDialogData             | Contents of the dialog.                                                          |
+| reviewers   | list[Subject]                         | List of reviewers assigned to the release. Only populated for express releases. |
 
 **DocumentReleaseCheckDialogData:**
 
@@ -66,6 +67,13 @@ Be aware that the document is not released yet and the release might still be ab
 | -------------- | ----------- | --------------------- |
 | cdbprot_remark | str \| None | Remark                |
 | cdb_ec_id      | str \| None | Engineering Change ID |
+
+**Subject:**
+
+| Attribute    | Type | Description                                                       |
+| ------------ | ---- | ------------------------------------------------------------------ |
+| subject_id   | str  | ID of the subject, e.g. a role name or "personalnummer"            |
+| subject_type | str  | Type of the subject. Can be "Person", "PCS Role" or "Common Role"  |
 
 ## DocumentReleasedEvent
 `csfunctions.events.DocumentReleasedEvent`
@@ -382,11 +390,12 @@ Be aware that the part is not released yet and the release might still be aborte
 
 **PartReleaseCheckEvent.data:**
 
-| Attribute   | Type                                  | Description                                          |
-| ----------- | ------------------------------------- | ---------------------------------------------------- |
-| parts       | list[[Part](objects.md#part)]         | List of parts that will released.                    |
-| documents   | list[[Document](objects.md#document)] | List of documents that belong to the released parts. |
-| dialog_data | PartReleaseDialogData                 | Contents of the dialog.                              |
+| Attribute   | Type                                  | Description                                                                     |
+| ----------- | ------------------------------------- | -------------------------------------------------------------------------------- |
+| parts       | list[[Part](objects.md#part)]         | List of parts that will released.                                              |
+| documents   | list[[Document](objects.md#document)] | List of documents that belong to the released parts.                           |
+| dialog_data | PartReleaseDialogData                 | Contents of the dialog.                                                          |
+| reviewers   | list[Subject]                         | List of reviewers assigned to the release. Only populated for express releases. |
 
 **PartReleaseCheckDialogData:**
 
@@ -394,6 +403,13 @@ Be aware that the part is not released yet and the release might still be aborte
 | -------------- | ----------- | --------------------- |
 | cdbprot_remark | str \| None | Remark                |
 | cdb_ec_id      | str \| None | Engineering Change ID |
+
+**Subject:**
+
+| Attribute    | Type | Description                                                       |
+| ------------ | ---- | ------------------------------------------------------------------ |
+| subject_id   | str  | ID of the subject, e.g. a role name or "personalnummer"            |
+| subject_type | str  | Type of the subject. Can be "Person", "PCS Role" or "Common Role"  |
 
 
 ## PartReleasedEvent

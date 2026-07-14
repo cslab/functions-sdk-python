@@ -7463,6 +7463,14 @@
         },
         "dialog_data": {
           "$ref": "#/$defs/DocumentReleasedDialogData"
+        },
+        "reviewers": {
+          "description": "List of reviewers assigned to the release. Only populated for express releases.",
+          "items": {
+            "$ref": "#/$defs/Subject"
+          },
+          "title": "Reviewers",
+          "type": "array"
         }
       },
       "required": [
@@ -11237,6 +11245,14 @@
         },
         "dialog_data": {
           "$ref": "#/$defs/PartReleasedDialogData"
+        },
+        "reviewers": {
+          "description": "List of reviewers assigned to the release. Only populated for express releases.",
+          "items": {
+            "$ref": "#/$defs/Subject"
+          },
+          "title": "Reviewers",
+          "type": "array"
         }
       },
       "required": [
@@ -11361,6 +11377,31 @@
         "data"
       ],
       "title": "PartReleasedEvent",
+      "type": "object"
+    },
+    "Subject": {
+      "properties": {
+        "subject_id": {
+          "description": "ID of the subject, eg. a role name or personalnummer",
+          "title": "Subject Id",
+          "type": "string"
+        },
+        "subject_type": {
+          "description": "Type of the subject: Person, PCS Role or Common Role",
+          "enum": [
+            "Person",
+            "PCS Role",
+            "Common Role"
+          ],
+          "title": "Subject Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "subject_id",
+        "subject_type"
+      ],
+      "title": "Subject",
       "type": "object"
     },
     "Workflow": {
