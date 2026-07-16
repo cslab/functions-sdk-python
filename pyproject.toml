@@ -22,7 +22,7 @@ Documentation = "https://cslab.github.io/functions-sdk-python/"
 
 [dependency-groups]
 test = [
-    "pytest>=8.3.4,<9",
+    "pytest>=8.3.4,<10",
     "requests-mock>=1.12.1,<2",
 ]
 dev = [
