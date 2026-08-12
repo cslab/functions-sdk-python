@@ -10,6 +10,7 @@ from .engineering_change import Change, ChangeOrder, ChangeRequest, EngineeringC
 from .file import File
 from .part import BOMItem, Material, MaturityLevel, Part
 from .person import Person
+from .role import Role
 from .workflow import Workflow
 
 Object = Annotated[
@@ -26,7 +27,8 @@ Object = Annotated[
     | Briefcase
     | Workflow
     | Person
-    | MaturityLevel,
+    | MaturityLevel
+    | Role,
     Field(discriminator="object_type"),
 ]
 
@@ -48,4 +50,5 @@ __all__ = [
     "BaseObject",
     "Person",
     "MaturityLevel",
+    "Role",
 ]

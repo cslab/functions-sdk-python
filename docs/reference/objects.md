@@ -873,6 +873,20 @@ An objects property, used by classification.
 |e_mail|str \| None|Email|
 |telefon|str \| None|Phone|
 
+## Role
+`csfunctions.objects.Role`
+
+A Common (global) Role that can be assigned to a Person.
+
+|Attribute|Type|Description|
+|-|-|-|
+|role_id|str|Role ID|
+|name_de|str \| None|Name DE|
+|name_en|str \| None|Name EN|
+|name_ja|str \| None|Name JA|
+|name_zh|str \| None|Name ZH|
+|cdb_object_id|str \| None|Object ID|
+
 ## Workflow
 `csfunctions.objects.Workflow`
 

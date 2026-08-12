@@ -3,6 +3,9 @@ hide:
   - toc
 ---
 
+### Version next
+- Feat: Add Role object (Common Roles only)
+
 ### Version 0.27.0
 - Feat: Add part_blocked and document_blocked events
 - Feat: Add reviewers field to PartReleaseCheckEvent and DocumentReleaseCheckEvent, populated for express releases
