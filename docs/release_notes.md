@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-### Version next
+### Version 0.28.0
 - Feat: Add CommonRole object
 
 ### Version 0.27.0
