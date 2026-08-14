@@ -5,12 +5,12 @@ from pydantic import Field
 from csfunctions.objects.base import BaseObject, ObjectType
 
 
-class Role(BaseObject):
+class CommonRole(BaseObject):
     """
     A Common (global) Role that can be assigned to a Person.
     """
 
-    object_type: Literal[ObjectType.ROLE] = ObjectType.ROLE
+    object_type: Literal[ObjectType.COMMON_ROLE] = ObjectType.COMMON_ROLE
 
     role_id: str = Field(..., description="Role ID")
     name_de: str | None = Field(None, description="Name DE")

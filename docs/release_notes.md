@@ -4,7 +4,7 @@ hide:
 ---
 
 ### Version next
-- Feat: Add Role object (Common Roles only)
+- Feat: Add CommonRole object
 
 ### Version 0.27.0
 - Feat: Add part_blocked and document_blocked events

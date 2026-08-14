@@ -5,12 +5,12 @@ from pydantic import Field
 from .base import BaseObject
 from .briefcase import Briefcase
 from .classification import ObjectPropertyValue
+from .common_role import CommonRole
 from .document import CADDocument, Document
 from .engineering_change import Change, ChangeOrder, ChangeRequest, EngineeringChange
 from .file import File
 from .part import BOMItem, Material, MaturityLevel, Part
 from .person import Person
-from .role import Role
 from .workflow import Workflow
 
 Object = Annotated[
@@ -28,7 +28,7 @@ Object = Annotated[
     | Workflow
     | Person
     | MaturityLevel
-    | Role,
+    | CommonRole,
     Field(discriminator="object_type"),
 ]
 
@@ -50,5 +50,5 @@ __all__ = [
     "BaseObject",
     "Person",
     "MaturityLevel",
-    "Role",
+    "CommonRole",
 ]
