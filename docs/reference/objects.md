@@ -246,6 +246,20 @@ A change request of the ECM module. Shares all attributes of its base class `csf
 |cdb_mpersno|str|Last Modified by|
 |cdb_mdate|datetime \| None|Last Modified on|
 
+## CommonRole
+`csfunctions.objects.CommonRole`
+
+A Common (global) Role that can be assigned to a Person.
+
+|Attribute|Type|Description|
+|-|-|-|
+|role_id|str|Role ID|
+|name_de|str \| None|Name DE|
+|name_en|str \| None|Name EN|
+|name_ja|str \| None|Name JA|
+|name_zh|str \| None|Name ZH|
+|cdb_object_id|str \| None|Object ID|
+
 ## Document
 `csfunctions.objects.Document`
 

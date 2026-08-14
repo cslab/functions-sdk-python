@@ -23,6 +23,7 @@ class ObjectType(str, Enum):
     BRIEFCASE = "briefcase"
     PERSON = "person"
     MATURITY_LEVEL = "maturity_level"
+    COMMON_ROLE = "common_role"
 
 
 class BaseObject(BaseModel):
