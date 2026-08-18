@@ -632,6 +632,7 @@ This event is triggered when a custom operation is called on one or more documen
 
 - [StartWorkflowAction](actions.md#startworkflowaction)
 - [AbortAndShowErrorAction](actions.md#abortandshowerroraction)
+- [DownloadFileAction](actions.md#downloadfileaction)
 
 **CustomOperationDocumentEvent.name:** custom_operation_document
 
@@ -652,6 +653,7 @@ This event is triggered when a custom operation is called on one or more parts.
 
 - [StartWorkflowAction](actions.md#startworkflowaction)
 - [AbortAndShowErrorAction](actions.md#abortandshowerroraction)
+- [DownloadFileAction](actions.md#downloadfileaction)
 
 **CustomOperationPartEvent.name:** custom_operation_part
 

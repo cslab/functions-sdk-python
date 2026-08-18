@@ -30,6 +30,38 @@
       "title": "AbortAndShowErrorAction",
       "type": "object"
     },
+    "DownloadFileAction": {
+      "properties": {
+        "name": {
+          "const": "download_file",
+          "default": "download_file",
+          "title": "Name",
+          "type": "string"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "temp_file_id": {
+          "description": "ID of the temporary file the user should download. Use service.temp_file.upload() to create a temporary file and get its ID.",
+          "title": "Temp File Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "temp_file_id"
+      ],
+      "title": "DownloadFileAction",
+      "type": "object"
+    },
     "DummyAction": {
       "description": "Dummy Action, for unit testing",
       "properties": {
@@ -236,6 +268,7 @@
         "discriminator": {
           "mapping": {
             "abort_and_show_error": "#/$defs/AbortAndShowErrorAction",
+            "download_file": "#/$defs/DownloadFileAction",
             "dummy": "#/$defs/DummyAction",
             "start_workflow": "#/$defs/StartWorkflowAction"
           },
@@ -244,6 +277,9 @@
         "oneOf": [
           {
             "$ref": "#/$defs/AbortAndShowErrorAction"
+          },
+          {
+            "$ref": "#/$defs/DownloadFileAction"
           },
           {
             "$ref": "#/$defs/DummyAction"

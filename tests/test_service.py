@@ -9,6 +9,7 @@ from csfunctions import MetaData, Service
 from csfunctions.service.base import BaseService, Unauthorized
 from csfunctions.service.file_upload import FileUploadService
 from csfunctions.service.file_upload_schemas import PresignedWriteUrls
+from csfunctions.service.temp_file import TempFileService
 
 
 class TestNumberGeneratorService(TestCase):
@@ -349,3 +350,139 @@ class TestFileUploadService(TestCase):
             self.assertEqual(kwargs["file_object_id"], "file123")
             self.assertEqual(kwargs["persno"], "tester")
             self.assertEqual(kwargs["presigned_write_urls"], mock_presigned.return_value)
+
+
+class TestTempFileService(TestCase):
+    def setUp(self):
+        self.metadata = MetaData.model_validate(
+            {
+                "request_id": "req-1",
+                "app_lang": "en",
+                "app_user": "tester",
+                "request_datetime": datetime(2000, 1, 1),
+                "transaction_id": "txn-1",
+                "instance_url": "https://instance.contact-cloud.com",
+                "service_url": "https://some_service_url",
+                "service_token": "some_service_token",
+                "db_service_url": None,
+            }
+        )
+        self.service = TempFileService(metadata=self.metadata)
+
+    @staticmethod
+    def _presigned(etags=None) -> PresignedWriteUrls:
+        return PresignedWriteUrls(
+            blob_id="blob123",
+            urls=["https://upload.url/1", "https://upload.url/2"],
+            chunksize=2,
+            headers={"Authorization": "Bearer token"},
+            etags=etags,
+        )
+
+    def test_create_temp_file(self):
+        mock_response = {
+            "temp_file_id": "tmp123",
+            "presigned_write_urls": self._presigned().model_dump(),
+        }
+        with patch.object(self.service, "request", return_value=mock_response) as mock_request:
+            temp_file_id, presigned = self.service._create_temp_file(
+                filename="report.csv", mimetype="text/csv", filesize=4, persno="tester"
+            )
+            self.assertEqual(temp_file_id, "tmp123")
+            self.assertEqual(presigned.blob_id, "blob123")
+            mock_request.assert_called_once()
+            _args, kwargs = mock_request.call_args
+            self.assertEqual(kwargs["endpoint"], "/temp_file/create")
+            self.assertEqual(kwargs["method"], "POST")
+            self.assertEqual(kwargs["json"]["filename"], "report.csv")
+            self.assertEqual(kwargs["json"]["mimetype"], "text/csv")
+            self.assertEqual(kwargs["json"]["filesize"], 4)
+            self.assertEqual(kwargs["json"]["persno"], "tester")
+
+    def test_complete_upload(self):
+        presigned = self._presigned(etags=["etag1", "etag2"])
+        with patch.object(self.service, "request", return_value=None) as mock_request:
+            self.service._complete_upload(temp_file_id="tmp123", presigned_urls=presigned, persno="tester")
+            mock_request.assert_called_once()
+            _args, kwargs = mock_request.call_args
+            self.assertEqual(kwargs["endpoint"], "/temp_file/tmp123/complete")
+            self.assertEqual(kwargs["method"], "POST")
+            self.assertEqual(kwargs["json"]["persno"], "tester")
+            self.assertEqual(kwargs["json"]["presigned_write_urls"], presigned.model_dump())
+
+    def test_abort_upload(self):
+        presigned = self._presigned()
+        with patch.object(self.service, "request", return_value=None) as mock_request:
+            self.service._abort_upload(temp_file_id="tmp123", presigned_write_urls=presigned, persno="tester")
+            mock_request.assert_called_once()
+            _args, kwargs = mock_request.call_args
+            self.assertEqual(kwargs["endpoint"], "/temp_file/tmp123/abort")
+            self.assertEqual(kwargs["method"], "POST")
+            self.assertEqual(kwargs["json"]["persno"], "tester")
+            self.assertEqual(kwargs["json"]["presigned_write_urls"], presigned.model_dump())
+
+    def test_upload(self):
+        with (
+            patch.object(self.service, "_get_stream_size", return_value=4) as mock_size,
+            patch.object(self.service, "_create_temp_file") as mock_create,
+            patch.object(self.service, "_upload_from_stream") as mock_upload,
+            patch.object(self.service, "_complete_upload") as mock_complete,
+        ):
+            mock_create.return_value = ("tmp123", self._presigned())
+            mock_upload.return_value = (self._presigned(etags=["etag1", "etag2"]), "deadbeef")
+            stream = io.BytesIO(b"abcd")
+
+            temp_file_id = self.service.upload(stream=stream, filename="report.csv")
+
+            self.assertEqual(temp_file_id, "tmp123")
+            mock_size.assert_called_once_with(stream)
+            mock_create.assert_called_once_with(
+                filename="report.csv",
+                mimetype="text/csv",
+                filesize=4,
+                # persno defaults to the user that triggered the Function
+                persno="tester",
+            )
+            mock_upload.assert_called_once_with(presigned_urls=mock_create.return_value[1], stream=stream)
+            mock_complete.assert_called_once()
+            _args, kwargs = mock_complete.call_args
+            self.assertEqual(kwargs["temp_file_id"], "tmp123")
+            self.assertEqual(kwargs["presigned_urls"].etags, ["etag1", "etag2"])
+            self.assertEqual(kwargs["persno"], "tester")
+
+    def test_upload_guesses_mimetype(self):
+        with (
+            patch.object(self.service, "_create_temp_file") as mock_create,
+            patch.object(self.service, "_upload_from_stream") as mock_upload,
+            patch.object(self.service, "_complete_upload"),
+        ):
+            mock_create.return_value = ("tmp123", self._presigned())
+            mock_upload.return_value = (self._presigned(), "deadbeef")
+
+            self.service.upload(stream=io.BytesIO(b"abcd"), filename="report.pdf")
+            self.assertEqual(mock_create.call_args[1]["mimetype"], "application/pdf")
+
+            # unknown extensions fall back to the default mimetype
+            self.service.upload(stream=io.BytesIO(b"abcd"), filename="report.weirdext")
+            self.assertEqual(mock_create.call_args[1]["mimetype"], "application/octet-stream")
+
+            # an explicit mimetype wins over the guess
+            self.service.upload(stream=io.BytesIO(b"abcd"), filename="report.pdf", mimetype="text/plain")
+            self.assertEqual(mock_create.call_args[1]["mimetype"], "text/plain")
+
+    def test_upload_aborts_on_error(self):
+        with (
+            patch.object(self.service, "_get_stream_size", return_value=4),
+            patch.object(self.service, "_create_temp_file") as mock_create,
+            patch.object(self.service, "_upload_from_stream", side_effect=Exception("upload error")),
+            patch.object(self.service, "_abort_upload") as mock_abort,
+        ):
+            mock_create.return_value = ("tmp123", self._presigned())
+            with self.assertRaises(Exception) as cm:
+                self.service.upload(stream=io.BytesIO(b"abcd"), filename="report.csv")
+            self.assertEqual(str(cm.exception), "upload error")
+            mock_abort.assert_called_once_with(
+                temp_file_id="tmp123",
+                presigned_write_urls=mock_create.return_value[1],
+                persno="tester",
+            )

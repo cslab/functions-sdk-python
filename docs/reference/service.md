@@ -139,3 +139,62 @@ with open("updated_file.pdf", "rb") as f:
         stream=f
     )
 ```
+
+## Temporary Files
+
+The `service.temp_file` object allows you to hand a file that your Function generated
+to a user, without attaching it to a business object. Combined with the
+[DownloadFileAction](actions.md#downloadfileaction) this makes the users browser
+download the file right after the operation finished.
+
+### Upload a file for download
+
+```python
+service.temp_file.upload(
+    stream: BinaryIO,
+    filename: str,
+    mimetype: str | None = None,
+    persno: str | None = None,
+    filesize: int | None = None,
+    ) -> str
+```
+Uploads content to a new temporary file and returns the ID of that file. Pass the ID to a [DownloadFileAction](actions.md#downloadfileaction) to make the users browser download it.
+
+| Parameter  | Type          | Description                                                                                              |
+| ---------- | ------------- | -------------------------------------------------------------------------------------------------------- |
+| `stream`   | `BinaryIO`    | A binary stream containing the file data to upload.                                                      |
+| `filename` | `str`         | The name the file will have when the user downloads it.                                                  |
+| `mimetype` | `str \| None` | The MIME type of the content. Guessed from the filename if not given.                                    |
+| `persno`   | `str \| None` | The user/person number that will be allowed to download the file (defaults to the user that triggered the Function). |
+| `filesize` | `int \| None` | Size of the file in bytes (required only if the stream is not seekable).                                  |
+
+!!! warning
+    The file can be downloaded exactly **once** and only by the user given in `persno`. It is deleted after the download. Files that are never downloaded are removed automatically after some time.
+
+**Exceptions:**
+
+- `csfunctions.service.Unauthorized`: If the service token is invalid.
+- `csfunctions.service.NotFound`: If the user does not exist.
+- `csfunctions.service.UnprocessableEntity`: If the request is invalid, e.g. the file is too large.
+- `csfunctions.service.RateLimitExceeded`: If the services rate limit is exceeded.
+
+!!! info
+    Uploading a temporary file performs 2 requests to the Functions Access Service (3 if the upload fails and has to be aborted), which count towards the ratelimit of `100 req/min` per token.
+
+**Example:**
+
+```python
+import io
+
+from csfunctions.actions import DownloadFileAction
+
+def my_function(metadata, event, service):
+    content = "part_number;name\n123;My Part\n".encode("utf-8")
+
+    temp_file_id = service.temp_file.upload(
+        stream=io.BytesIO(content),
+        filename="parts.csv",
+    )
+
+    return DownloadFileAction(temp_file_id=temp_file_id)
+```

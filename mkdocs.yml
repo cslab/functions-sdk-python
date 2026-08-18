@@ -47,6 +47,7 @@ nav:
     - examples/field_calculation.md
     - examples/workflows.md
     - examples/basic_report.md
+    - examples/report_download.md
   - Reference:
     - reference/events.md
     - reference/objects.md
