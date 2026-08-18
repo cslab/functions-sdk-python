@@ -3,7 +3,7 @@ from unittest import TestCase
 from pydantic import TypeAdapter
 
 from csfunctions import Response, WorkloadResponse
-from csfunctions.actions import AbortAndShowErrorAction
+from csfunctions.actions import AbortAndShowErrorAction, DownloadFileAction
 
 
 class TestWorkloadResponse(TestCase):
@@ -22,3 +22,18 @@ class TestWorkloadResponse(TestCase):
         # check that the objects are of the correct type again
         self.assertIsInstance(response_obj, WorkloadResponse)
         self.assertIsInstance(action_obj, AbortAndShowErrorAction)
+
+    def test_discriminator_download_file(self) -> None:
+        """
+        Test that the discriminator works for the DownloadFileAction
+        """
+
+        response_json = WorkloadResponse(actions=[DownloadFileAction(temp_file_id="tmp123")]).model_dump_json()
+
+        response_obj: WorkloadResponse = TypeAdapter(Response).validate_json(response_json)
+        action_obj = response_obj.actions[0]
+
+        self.assertIsInstance(response_obj, WorkloadResponse)
+        # a plain assert instead of assertIsInstance, so that mypy narrows the type
+        assert isinstance(action_obj, DownloadFileAction)  # nosec
+        self.assertEqual("tmp123", action_obj.temp_file_id)

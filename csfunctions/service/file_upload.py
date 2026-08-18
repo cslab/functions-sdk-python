@@ -1,10 +1,6 @@
-import hashlib
-from copy import deepcopy
 from random import choice
 from string import ascii_letters
 from typing import BinaryIO
-
-import requests
 
 from csfunctions.service.base import BaseService
 from csfunctions.service.file_upload_schemas import (
@@ -15,6 +11,7 @@ from csfunctions.service.file_upload_schemas import (
     GeneratePresignedUrlRequest,
     PresignedWriteUrls,
 )
+from csfunctions.service.presigned_upload import PresignedUploadMixin
 
 
 def _generate_lock_id():
@@ -22,7 +19,7 @@ def _generate_lock_id():
     return "".join(choice(ascii_letters) for i in range(12))  # nosec
 
 
-class FileUploadService(BaseService):
+class FileUploadService(PresignedUploadMixin, BaseService):
     def _create_new_file(self, filename: str, parent_object_id: str, persno: str, check_access: bool = True) -> str:
         """Create a new empty file attached to the parent object."""
         response_json = self.request(
@@ -48,38 +45,6 @@ class FileUploadService(BaseService):
         )
 
         return PresignedWriteUrls.model_validate(response_json)
-
-    def _upload_from_stream(
-        self, presigned_urls: PresignedWriteUrls, stream: BinaryIO
-    ) -> tuple[PresignedWriteUrls, str]:
-        """Upload file stream in chunks and return updated presigned URLs and sha256 hash."""
-        etags: list[str] = []
-        sha256 = hashlib.sha256()
-        for url in presigned_urls.urls:
-            data: bytes = stream.read(presigned_urls.chunksize)
-            sha256.update(data)
-            resp = requests.put(url, data=data, headers=presigned_urls.headers, timeout=20)
-            # 20 second timeout to stay below 30s max execution time of the Function
-            # otherwise we won't get a proper error message in the logs
-            resp.raise_for_status()
-            etag = resp.headers.get("ETag")
-            if etag:
-                etags.append(etag)
-        updated = deepcopy(presigned_urls)
-        if etags:
-            updated.etags = etags
-        return updated, sha256.hexdigest()
-
-    @staticmethod
-    def _get_stream_size(stream: BinaryIO) -> int:
-        """Get the size of a seekable stream."""
-        if not stream.seekable():
-            raise ValueError("Stream is not seekable; size cannot be determined.")
-        current_pos = stream.tell()
-        stream.seek(0, 2)
-        size = stream.tell()
-        stream.seek(current_pos)
-        return size
 
     def _complete_upload(
         self,

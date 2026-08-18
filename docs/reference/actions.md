@@ -23,6 +23,48 @@ Aborts the current operation and shows an error message to the user.
 | --------- | ---- | -------------------------------------------- |
 | message   | str  | Error message that will be shown to the user |
 
+## DownloadFileAction
+
+`csfunctions.actions.DownloadFileAction`
+
+Makes the users browser download a file that the Function generated. Upload the file with
+[`service.temp_file.upload()`](service.md#upload-a-file-for-download) first and pass the
+temporary file ID it returns to this action.
+
+**Attributes:**
+
+| Attribute    | Type | Description                                                                        |
+| ------------ | ---- | ---------------------------------------------------------------------------------- |
+| temp_file_id | str  | ID of the temporary file, as returned by `service.temp_file.upload()`               |
+
+**Example:**
+
+```python
+import io
+
+from csfunctions.actions import DownloadFileAction
+
+def my_function(metadata, event, service):
+    temp_file_id = service.temp_file.upload(
+        stream=io.BytesIO(b"part_number;name\n123;My Part\n"),
+        filename="parts.csv",
+    )
+    return DownloadFileAction(temp_file_id=temp_file_id)
+```
+
+!!! warning
+    A few restrictions apply:
+
+    - Only the custom operation events support this action, because the download has to
+      be triggered while the user is waiting for the operation to finish.
+    - A response can contain **at most one** DownloadFileAction, because the browser can
+      only be sent to one URL. Pack multiple files into an archive if you need to.
+    - It cannot be combined with an
+      [AbortAndShowErrorAction](#abortandshowerroraction) - aborting the operation
+      discards the download.
+    - The file can be downloaded exactly once, and only by the user the temporary file
+      belongs to.
+
 ## StartWorkflowAction
 
 `csfunctions.actions.StartWorkflowAction`
