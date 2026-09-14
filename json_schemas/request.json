@@ -8665,6 +8665,58 @@
           "description": "Additional Name",
           "title": "Benennung2"
         },
+        "additional_name_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Additional Name",
+          "title": "Additional Name En"
+        },
+        "additional_name_de": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Additional Name",
+          "title": "Additional Name De"
+        },
+        "additional_name_ja": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Additional Name",
+          "title": "Additional Name Ja"
+        },
+        "additional_name_zh": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Additional Name",
+          "title": "Additional Name Zh"
+        },
         "cssaas_benennung3_en": {
           "anyOf": [
             {
