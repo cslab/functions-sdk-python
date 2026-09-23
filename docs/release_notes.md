@@ -3,6 +3,9 @@ hide:
   - toc
 ---
 
+### Version 0.29.0
+- Feat: Add additional_name_en, additional_name_de, additional_name_ja and additional_name_zh fields to Part
+
 ### Version 0.28.0
 - Feat: Add CommonRole object
 

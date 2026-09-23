@@ -682,6 +682,10 @@ An objects property, used by classification.
 |benennung|str \| None|Name|
 |eng_benennung|str \| None|Name|
 |benennung2|str \| None|Additional Name|
+|additional_name_en|str \| None|Additional Name|
+|additional_name_de|str \| None|Additional Name|
+|additional_name_ja|str \| None|Additional Name|
+|additional_name_zh|str \| None|Additional Name|
 |cssaas_benennung3_en|str \| None|Supplementary Name|
 |cssaas_benennung3_de|str \| None|Supplementary Name|
 |cssaas_benennung3_ja|str \| None|Supplementary Name|
