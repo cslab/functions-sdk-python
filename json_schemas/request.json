@@ -8295,6 +8295,49 @@
       "title": "EngineeringChangeStatusChangedEvent",
       "type": "object"
     },
+    "FieldValueCalculation": {
+      "description": "A single field calculation, used when several calculations are sent in one event.",
+      "properties": {
+        "sid": {
+          "description": "Identifier of the calculation, used to map the result.",
+          "title": "Sid",
+          "type": "string"
+        },
+        "attribute": {
+          "description": "Attribute of obj that receives the calculated value.",
+          "title": "Attribute",
+          "type": "string"
+        },
+        "scheme_updates": {
+          "additionalProperties": true,
+          "title": "Scheme Updates",
+          "type": "object"
+        },
+        "old_cfv_str": {
+          "title": "Old Cfv Str",
+          "type": "string"
+        },
+        "matches": {
+          "items": {},
+          "title": "Matches",
+          "type": "array"
+        },
+        "prefix": {
+          "title": "Prefix",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sid",
+        "attribute",
+        "scheme_updates",
+        "old_cfv_str",
+        "matches",
+        "prefix"
+      ],
+      "title": "FieldValueCalculation",
+      "type": "object"
+    },
     "FieldValueCalculationData": {
       "properties": {
         "scheme_updates": {
@@ -8324,6 +8367,22 @@
         "prefix": {
           "title": "Prefix",
           "type": "string"
+        },
+        "calculations": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/FieldValueCalculation"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "All calculations of the object, in the order they have to be evaluated. If set, the single calculation fields above are ignored and each calculated value is written to obj before the next calculation is evaluated.",
+          "title": "Calculations"
         }
       },
       "required": [
