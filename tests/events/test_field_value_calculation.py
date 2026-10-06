@@ -47,3 +47,14 @@ class TestFieldValueCalculation(TestCase):
         parsed = request.event.data.calculations
         self.assertEqual(["teilenummer", "benennung"], [c.attribute for c in parsed])
         self.assertEqual("cfv_part_benennung_", parsed[1].prefix)
+
+    def test_attribute_types(self):
+        # older backends don't send attribute_types
+        self.assertEqual({}, _request(SINGLE_DATA).event.data.attribute_types)
+
+        attribute_types = {"cdb_cdate": "date", "cca_integer_doc_1": "int", "Item.cdb_cdate": "date"}
+        request = _request(SINGLE_DATA | {"attribute_types": attribute_types})
+        self.assertEqual(attribute_types, request.event.data.attribute_types)
+
+        with self.assertRaises(ValueError):
+            _request(SINGLE_DATA | {"attribute_types": {"cca_bool": "bool"}})
