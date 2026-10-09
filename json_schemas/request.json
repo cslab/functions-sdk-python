@@ -8295,6 +8295,49 @@
       "title": "EngineeringChangeStatusChangedEvent",
       "type": "object"
     },
+    "FieldValueCalculation": {
+      "description": "A single field calculation, used when several calculations are sent in one event.",
+      "properties": {
+        "sid": {
+          "description": "Identifier of the calculation, used to map the result.",
+          "title": "Sid",
+          "type": "string"
+        },
+        "attribute": {
+          "description": "Attribute of obj that receives the calculated value.",
+          "title": "Attribute",
+          "type": "string"
+        },
+        "scheme_updates": {
+          "additionalProperties": true,
+          "title": "Scheme Updates",
+          "type": "object"
+        },
+        "old_cfv_str": {
+          "title": "Old Cfv Str",
+          "type": "string"
+        },
+        "matches": {
+          "items": {},
+          "title": "Matches",
+          "type": "array"
+        },
+        "prefix": {
+          "title": "Prefix",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sid",
+        "attribute",
+        "scheme_updates",
+        "old_cfv_str",
+        "matches",
+        "prefix"
+      ],
+      "title": "FieldValueCalculation",
+      "type": "object"
+    },
     "FieldValueCalculationData": {
       "properties": {
         "scheme_updates": {
@@ -8324,6 +8367,35 @@
         "prefix": {
           "title": "Prefix",
           "type": "string"
+        },
+        "attribute_types": {
+          "additionalProperties": {
+            "enum": [
+              "int",
+              "float",
+              "date"
+            ],
+            "type": "string"
+          },
+          "description": "Types of the attributes of obj that are not strings, attributes of obj['Item'] as 'Item.<attribute>'. Attributes that are missing are strings. Dates are sent as ISO 8601 strings and converted to date or datetime before the calculations are evaluated. Calculated values are converted to the type of their attribute before they are written to obj, like CIM Database Cloud does when the value is set on the object; calculated dates are returned in the format DD.MM.YYYY[ HH:MM:SS].",
+          "title": "Attribute Types",
+          "type": "object"
+        },
+        "calculations": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/FieldValueCalculation"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "All calculations of the object, in the order they have to be evaluated. If set, the single calculation fields above are ignored and each calculated value is written to obj before the next calculation is evaluated.",
+          "title": "Calculations"
         }
       },
       "required": [
