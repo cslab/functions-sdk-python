@@ -58,6 +58,7 @@ class Part(BaseObject):
     surface_name_zh: str | None = Field(None, description="Surface")
     techdaten: str | None = Field(None, description="Engineering Data")
     cssaas_mirrored_from: str | None = Field(None, description="Mirror Part ID")
+    cssaas_released_by: str | None = Field(None, description="Released by")
     t_ersatz_fuer: str | None = Field(None, description="Replacement for")
     t_ersatz_durch: str | None = Field(None, description="Replaced by")
     din: str | None = Field(None, description="Norms")

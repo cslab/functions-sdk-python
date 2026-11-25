@@ -3969,6 +3969,19 @@
           "description": "File Last Saved on",
           "title": "Cdb M2Date"
         },
+        "cssaas_released_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Released by",
+          "title": "Cssaas Released By"
+        },
         "z_art": {
           "anyOf": [
             {
@@ -9188,6 +9201,19 @@
           "default": null,
           "description": "Mirror Part ID",
           "title": "Cssaas Mirrored From"
+        },
+        "cssaas_released_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Released by",
+          "title": "Cssaas Released By"
         },
         "t_ersatz_fuer": {
           "anyOf": [
