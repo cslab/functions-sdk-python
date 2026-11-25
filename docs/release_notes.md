@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-### Version next
+### Version 0.30.0
 - Feat: Add cssaas_released_by field to Document and Part
 
 ### Version 0.29.0
