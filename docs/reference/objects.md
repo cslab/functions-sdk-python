@@ -316,6 +316,7 @@ Normal Document that doesn't contain a CAD-Model.
 |cdb_m2persno|str \| None|File Last Saved by|
 |mapped_cdb_m2persno_name|str \| None|File Last Saved by|
 |cdb_m2date|datetime \| None|File Last Saved on|
+|cssaas_released_by|str \| None|Released by|
 |z_art|str \| None|Document Type|
 |mapped_materialnr_erp|str \| None|Materialnumber ERP|
 |cdb_object_id|str \| None|Object ID|
@@ -716,6 +717,7 @@ An objects property, used by classification.
 |surface_name_zh|str \| None|Surface|
 |techdaten|str \| None|Engineering Data|
 |cssaas_mirrored_from|str \| None|Mirror Part ID|
+|cssaas_released_by|str \| None|Released by|
 |t_ersatz_fuer|str \| None|Replacement for|
 |t_ersatz_durch|str \| None|Replaced by|
 |din|str \| None|Norms|

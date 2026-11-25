@@ -69,6 +69,7 @@ class Document(BaseObject):
     cdb_m2persno: str | None = Field("", description="File Last Saved by")
     mapped_cdb_m2persno_name: str | None = Field("", description="File Last Saved by")
     cdb_m2date: datetime | None = Field(None, description="File Last Saved on")
+    cssaas_released_by: str | None = Field(None, description="Released by")
     z_art: str | None = Field(None, description="Document Type")
     mapped_materialnr_erp: str | None = Field(None, description="Materialnumber ERP")
     cdb_object_id: str | None = Field(None, description="Object ID")

@@ -3,6 +3,9 @@ hide:
   - toc
 ---
 
+### Version next
+- Feat: Add cssaas_released_by field to Document and Part
+
 ### Version 0.29.0
 - Feat: FieldValueCalculationEvent can carry several calculations of an object (`calculations`), so they can be evaluated in one call
 - Feat: FieldValueCalculationEvent supports date attributes and typed calculated values (`attribute_types`)
